@@ -1,8 +1,8 @@
 namespace FrmProyectoIO
 {
-    public partial class Form1 : Form
+    public partial class FrmInicio : Form
     {
-        public Form1()
+        public FrmInicio()
         {
             InitializeComponent();
         }
