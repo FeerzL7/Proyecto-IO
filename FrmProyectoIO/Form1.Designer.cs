@@ -30,8 +30,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicio));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             tableLayoutPanel1 = new TableLayoutPanel();
             label1 = new Label();
             guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
@@ -47,7 +47,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 30F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 30F));
@@ -62,8 +62,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1106, 723);
             tableLayoutPanel1.TabIndex = 1;
             // 
@@ -94,11 +92,11 @@
             guna2ImageButton1.ImageOffset = new Point(0, 0);
             guna2ImageButton1.ImageRotate = 0F;
             guna2ImageButton1.ImageSize = new Size(240, 125);
-            guna2ImageButton1.Location = new Point(581, 297);
+            guna2ImageButton1.Location = new Point(595, 297);
             guna2ImageButton1.Name = "guna2ImageButton1";
             guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
-            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            guna2ImageButton1.Size = new Size(243, 208);
+            guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2ImageButton1.Size = new Size(235, 208);
             guna2ImageButton1.TabIndex = 1;
             // 
             // guna2ImageButton2
@@ -111,11 +109,11 @@
             guna2ImageButton2.ImageOffset = new Point(0, 0);
             guna2ImageButton2.ImageRotate = 0F;
             guna2ImageButton2.ImageSize = new Size(240, 125);
-            guna2ImageButton2.Location = new Point(282, 297);
+            guna2ImageButton2.Location = new Point(274, 297);
             guna2ImageButton2.Name = "guna2ImageButton2";
             guna2ImageButton2.PressedState.ImageSize = new Size(64, 64);
-            guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ImageButton2.Size = new Size(243, 208);
+            guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2ImageButton2.Size = new Size(235, 208);
             guna2ImageButton2.TabIndex = 2;
             // 
             // guna2BorderlessForm1
