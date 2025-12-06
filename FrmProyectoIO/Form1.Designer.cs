@@ -36,8 +36,9 @@
             label1 = new Label();
             guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
-            guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             lblPrueba = new Label();
+            guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
+            label2 = new Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,9 +57,10 @@
             tableLayoutPanel1.Controls.Add(guna2ImageButton1, 4, 2);
             tableLayoutPanel1.Controls.Add(guna2ImageButton2, 2, 2);
             tableLayoutPanel1.Controls.Add(lblPrueba, 2, 1);
+            tableLayoutPanel1.Controls.Add(label2, 4, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(2, 2, 2, 2);
+            tableLayoutPanel1.Margin = new Padding(2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
@@ -97,7 +99,7 @@
             guna2ImageButton1.ImageRotate = 0F;
             guna2ImageButton1.ImageSize = new Size(240, 125);
             guna2ImageButton1.Location = new Point(474, 237);
-            guna2ImageButton1.Margin = new Padding(2, 2, 2, 2);
+            guna2ImageButton1.Margin = new Padding(2);
             guna2ImageButton1.Name = "guna2ImageButton1";
             guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
@@ -115,18 +117,12 @@
             guna2ImageButton2.ImageRotate = 0F;
             guna2ImageButton2.ImageSize = new Size(240, 125);
             guna2ImageButton2.Location = new Point(218, 237);
-            guna2ImageButton2.Margin = new Padding(2, 2, 2, 2);
+            guna2ImageButton2.Margin = new Padding(2);
             guna2ImageButton2.Name = "guna2ImageButton2";
             guna2ImageButton2.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton2.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2ImageButton2.Size = new Size(188, 167);
             guna2ImageButton2.TabIndex = 2;
-            // 
-            // guna2BorderlessForm1
-            // 
-            guna2BorderlessForm1.ContainerControl = this;
-            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // lblPrueba
             // 
@@ -137,6 +133,23 @@
             lblPrueba.Text = "Prueba de Cambio";
             lblPrueba.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // guna2BorderlessForm1
+            // 
+            guna2BorderlessForm1.ContainerControl = this;
+            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Fill;
+            label2.Location = new Point(475, 64);
+            label2.Name = "label2";
+            label2.Size = new Size(186, 171);
+            label2.TabIndex = 4;
+            label2.Text = "Prueba de Guardado";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // FrmInicio
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -144,7 +157,7 @@
             ClientSize = new Size(885, 578);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "FrmInicio";
             Text = "Inicio";
             tableLayoutPanel1.ResumeLayout(false);
@@ -160,5 +173,6 @@
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
         private Label lblPrueba;
+        private Label label2;
     }
 }
