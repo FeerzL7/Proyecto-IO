@@ -37,8 +37,9 @@
             guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             guna2ImageButton2 = new Guna.UI2.WinForms.Guna2ImageButton();
             lblPrueba = new Label();
-            guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             label2 = new Label();
+            guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
+            label3 = new Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,6 +59,7 @@
             tableLayoutPanel1.Controls.Add(guna2ImageButton2, 2, 2);
             tableLayoutPanel1.Controls.Add(lblPrueba, 2, 1);
             tableLayoutPanel1.Controls.Add(label2, 4, 1);
+            tableLayoutPanel1.Controls.Add(label3, 5, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Margin = new Padding(2);
@@ -133,12 +135,6 @@
             lblPrueba.Text = "Prueba de Cambio";
             lblPrueba.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // guna2BorderlessForm1
-            // 
-            guna2BorderlessForm1.ContainerControl = this;
-            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            guna2BorderlessForm1.TransparentWhileDrag = true;
-            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -149,6 +145,23 @@
             label2.TabIndex = 4;
             label2.Text = "Prueba de Guardado";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // guna2BorderlessForm1
+            // 
+            guna2BorderlessForm1.ContainerControl = this;
+            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Dock = DockStyle.Fill;
+            label3.Location = new Point(667, 235);
+            label3.Name = "label3";
+            label3.Size = new Size(186, 171);
+            label3.TabIndex = 5;
+            label3.Text = "Prueba3";
+            label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // FrmInicio
             // 
@@ -174,5 +187,6 @@
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton2;
         private Label lblPrueba;
         private Label label2;
+        private Label label3;
     }
 }
