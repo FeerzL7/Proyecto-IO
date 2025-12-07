@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FrmProyectoIO
 {
-    public partial class FrmModeloServidorUnaSolaFila : Form
+    public partial class FrmAgregarModeloMultiplesServidoresUnaSolaFila : Form
     {
-        public FrmModeloServidorUnaSolaFila()
+        public FrmAgregarModeloMultiplesServidoresUnaSolaFila()
         {
             InitializeComponent();
         }

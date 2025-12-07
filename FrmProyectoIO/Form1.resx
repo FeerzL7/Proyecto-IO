@@ -121,7 +121,7 @@
   <data name="guna2ImageButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAzYAAAFaCAYAAADM5shJAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAA/7JJREFUeF7s/QmYndlVHgrfPzchuVwSB0ggIQm2u1tSzVJPkmo4NUk9SN1qzaq5
+        vAAADrwBlbxySQAA/7JJREFUeF7s/QmYndlVHgrfPzchuVwSB0ggIQm2u1tSzVJPkmo4NUk9SN1qzaq5
         NLW62227bWMwMw4BG2NmM0MCYUoIM5d5xgEMAUwcjE3b3e5utaTSLJVaQ5VKVef8z1rv+669vqNqAje5
         BJNznmc/33f2PKy91nr32nt//8f/0fq1fq1f69f6tX6tX+vX+rV+rV/r1/q1fq1f69f6tX6tX+vX+rV+
         rV/r1/q1fq1f69f6tX6tX+vX+rV+rV/r1/q1fq1f69f6tX6tX+vX+rV+rV/r1/q1fq1f69f6tX6tX+vX
@@ -11750,7 +11750,10 @@
         Cy644IILLrjgggsuuOCCCy644IILLrjg/rbd/wea9UXXArTghAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="guna2BorderlessForm1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="guna2BorderlessForm2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>260, 17</value>
+  </metadata>
+  <metadata name="guna2DragControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>503, 17</value>
   </metadata>
 </root>
