@@ -1,6 +1,6 @@
 ﻿namespace FrmProyectoIO
 {
-    partial class frmVerProblema_1FilaMultServ
+    partial class frmEOQVerProblema_1FilaMultServ
     {
         /// <summary>
         /// Required designer variable.
@@ -468,14 +468,14 @@
             lblWQ.Text = "0";
             lblWQ.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // frmVerProblema_1FilaMultServ
+            // frmEOQVerProblema_1FilaMultServ
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 46, 74);
             ClientSize = new Size(1004, 757);
             Controls.Add(tableLayoutPanel1);
-            Name = "frmVerProblema_1FilaMultServ";
+            Name = "frmEOQVerProblema_1FilaMultServ";
             Text = "frmVerProblema_1FilaMultServ";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

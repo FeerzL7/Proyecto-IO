@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FrmProyectoIO
 {
-    public partial class frmEOQModificar_1Serv1Fila : Form
+    public partial class frmEOQModificar_1FilaMultServ : Form
     {
-        public frmEOQModificar_1Serv1Fila()
+        public frmEOQModificar_1FilaMultServ()
         {
             InitializeComponent();
         }
