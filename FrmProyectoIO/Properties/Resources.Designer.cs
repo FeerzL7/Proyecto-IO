@@ -59,5 +59,25 @@ namespace FrmProyectoIO.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2025_12_05_224003 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2025-12-05 224003", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Captura_de_pantalla_2025_12_06_112436 {
+            get {
+                object obj = ResourceManager.GetObject("Captura de pantalla 2025-12-06 112436", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
