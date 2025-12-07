@@ -284,16 +284,18 @@
             // btnModificar
             // 
             tableLayoutPanel1.SetColumnSpan(btnModificar, 3);
+            btnModificar.Dock = DockStyle.Fill;
             btnModificar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             btnModificar.Location = new Point(27, 661);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(471, 58);
+            btnModificar.Size = new Size(478, 58);
             btnModificar.TabIndex = 8;
             btnModificar.Text = "MODIFICAR";
             btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnRegresar
             // 
+            btnRegresar.Dock = DockStyle.Fill;
             btnRegresar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             btnRegresar.Location = new Point(527, 661);
             btnRegresar.Name = "btnRegresar";
