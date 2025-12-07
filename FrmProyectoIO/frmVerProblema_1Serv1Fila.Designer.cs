@@ -317,6 +317,7 @@
             // btnModificar
             // 
             tableLayoutPanel1.SetColumnSpan(btnModificar, 3);
+            btnModificar.Dock = DockStyle.Fill;
             btnModificar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             btnModificar.Location = new Point(26, 641);
             btnModificar.Name = "btnModificar";
@@ -327,6 +328,7 @@
             // 
             // btnRegresar
             // 
+            btnRegresar.Dock = DockStyle.Fill;
             btnRegresar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             btnRegresar.Location = new Point(519, 641);
             btnRegresar.Name = "btnRegresar";
