@@ -53,8 +53,8 @@
             label12 = new Label();
             label13 = new Label();
             lblLs = new Label();
-            this.lblWs = new Label();
             lblLq = new Label();
+            lblWs = new Label();
             lblWq = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -314,8 +314,8 @@
             tableLayoutPanel3.Controls.Add(label12, 0, 6);
             tableLayoutPanel3.Controls.Add(label13, 0, 8);
             tableLayoutPanel3.Controls.Add(lblLs, 1, 2);
-            tableLayoutPanel3.Controls.Add(this.lblWs, 1, 4);
             tableLayoutPanel3.Controls.Add(lblLq, 1, 6);
+            tableLayoutPanel3.Controls.Add(lblWs, 1, 4);
             tableLayoutPanel3.Controls.Add(lblWq, 1, 8);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(527, 27);
@@ -412,6 +412,7 @@
             label13.TabIndex = 5;
             label13.Text = "Wq:";
             label13.TextAlign = ContentAlignment.MiddleCenter;
+            label13.Click += label13_Click;
             // 
             // lblLs
             // 
@@ -426,19 +427,6 @@
             lblLs.Text = "0";
             lblLs.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblWs
-            // 
-            this.lblWs.AutoSize = true;
-            this.lblWs.BackColor = Color.WhiteSmoke;
-            this.lblWs.Dock = DockStyle.Fill;
-            this.lblWs.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            this.lblWs.Location = new Point(141, 244);
-            this.lblWs.Name = "lblWs";
-            this.lblWs.Size = new Size(299, 114);
-            this.lblWs.TabIndex = 9;
-            this.lblWs.Text = "0";
-            this.lblWs.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // lblLq
             // 
             lblLq.AutoSize = true;
@@ -452,6 +440,19 @@
             lblLq.Text = "0";
             lblLq.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // lblWs
+            // 
+            lblWs.AutoSize = true;
+            lblWs.BackColor = Color.WhiteSmoke;
+            lblWs.Dock = DockStyle.Fill;
+            lblWs.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblWs.Location = new Point(141, 244);
+            lblWs.Name = "lblWs";
+            lblWs.Size = new Size(299, 114);
+            lblWs.TabIndex = 11;
+            lblWs.Text = "0";
+            lblWs.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // lblWq
             // 
             lblWq.AutoSize = true;
@@ -461,7 +462,7 @@
             lblWq.Location = new Point(141, 488);
             lblWq.Name = "lblWq";
             lblWq.Size = new Size(299, 114);
-            lblWq.TabIndex = 11;
+            lblWq.TabIndex = 12;
             lblWq.Text = "0";
             lblWq.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -516,6 +517,8 @@
         private Label lblLs;
         private Label lblLq;
         private Label lblWq;
+        private Label lblWs;
         private Label lblWq;
+        // private Label lblWq;
     }
 }
