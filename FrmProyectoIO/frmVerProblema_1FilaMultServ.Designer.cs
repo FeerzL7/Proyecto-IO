@@ -55,7 +55,7 @@
             lblLs = new Label();
             lblLq = new Label();
             lblWs = new Label();
-            lblWq = new Label();
+            lblWQ = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -316,7 +316,7 @@
             tableLayoutPanel3.Controls.Add(lblLs, 1, 2);
             tableLayoutPanel3.Controls.Add(lblLq, 1, 6);
             tableLayoutPanel3.Controls.Add(lblWs, 1, 4);
-            tableLayoutPanel3.Controls.Add(lblWq, 1, 8);
+            tableLayoutPanel3.Controls.Add(lblWQ, 1, 8);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(527, 27);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -453,18 +453,18 @@
             lblWs.Text = "0";
             lblWs.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblWq
+            // lblWQ
             // 
-            lblWq.AutoSize = true;
-            lblWq.BackColor = Color.WhiteSmoke;
-            lblWq.Dock = DockStyle.Fill;
-            lblWq.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            lblWq.Location = new Point(141, 488);
-            lblWq.Name = "lblWq";
-            lblWq.Size = new Size(299, 114);
-            lblWq.TabIndex = 12;
-            lblWq.Text = "0";
-            lblWq.TextAlign = ContentAlignment.MiddleCenter;
+            lblWQ.AutoSize = true;
+            lblWQ.BackColor = Color.WhiteSmoke;
+            lblWQ.Dock = DockStyle.Fill;
+            lblWQ.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblWQ.Location = new Point(141, 488);
+            lblWQ.Name = "lblWQ";
+            lblWQ.Size = new Size(299, 114);
+            lblWQ.TabIndex = 12;
+            lblWQ.Text = "0";
+            lblWQ.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmVerProblema_1FilaMultServ
             // 
@@ -496,7 +496,7 @@
         private TextBox txtValorN;
         private TextBox txtValorM;
         private TextBox txtValorMEW;
-        private Label label7;
+        private Label lblWQ;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -518,7 +518,7 @@
         private Label lblLq;
         private Label lblWq;
         private Label lblWs;
-        private Label lblWq;
+       // private Label lblWq;
         // private Label lblWq;
     }
 }
