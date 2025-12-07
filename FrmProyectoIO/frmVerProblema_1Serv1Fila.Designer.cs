@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            label1 = new Label();
             txtTitulo = new TextBox();
+            label1 = new Label();
+            cmbDificultad = new ComboBox();
             label2 = new Label();
             label3 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
+            txtValorN = new TextBox();
+            txtValorM = new TextBox();
+            txtValorMEW = new TextBox();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
-            cmbDificultad = new ComboBox();
+            txtValorLAMBDA = new TextBox();
             label8 = new Label();
             txtEnunciado = new TextBox();
             btnModificar = new Button();
-            txtValorLAMBDA = new TextBox();
-            txtValorMEW = new TextBox();
-            txtValorM = new TextBox();
-            txtValorN = new TextBox();
             btnRegresar = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
+            lblP = new Label();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
-            lblP = new Label();
             lblPn = new Label();
             lblLs = new Label();
             lblLq = new Label();
@@ -109,6 +109,17 @@
             tableLayoutPanel1.TabIndex = 0;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
+            // txtTitulo
+            // 
+            tableLayoutPanel1.SetColumnSpan(txtTitulo, 2);
+            txtTitulo.Dock = DockStyle.Fill;
+            txtTitulo.Font = new Font("Segoe UI", 15F);
+            txtTitulo.Location = new Point(184, 21);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.ReadOnly = true;
+            txtTitulo.Size = new Size(313, 41);
+            txtTitulo.TabIndex = 1;
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -122,16 +133,17 @@
             label1.Text = "Titulo: ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // txtTitulo
+            // cmbDificultad
             // 
-            tableLayoutPanel1.SetColumnSpan(txtTitulo, 2);
-            txtTitulo.Dock = DockStyle.Fill;
-            txtTitulo.Font = new Font("Segoe UI", 15F);
-            txtTitulo.Location = new Point(184, 21);
-            txtTitulo.Name = "txtTitulo";
-            txtTitulo.ReadOnly = true;
-            txtTitulo.Size = new Size(313, 41);
-            txtTitulo.TabIndex = 1;
+            tableLayoutPanel1.SetColumnSpan(cmbDificultad, 2);
+            cmbDificultad.Dock = DockStyle.Fill;
+            cmbDificultad.Enabled = false;
+            cmbDificultad.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            cmbDificultad.FormattingEnabled = true;
+            cmbDificultad.Location = new Point(184, 73);
+            cmbDificultad.Name = "cmbDificultad";
+            cmbDificultad.Size = new Size(313, 53);
+            cmbDificultad.TabIndex = 3;
             // 
             // label2
             // 
@@ -186,6 +198,36 @@
             tableLayoutPanel2.TabIndex = 5;
             tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
+            // txtValorN
+            // 
+            txtValorN.Dock = DockStyle.Fill;
+            txtValorN.Location = new Point(365, 64);
+            txtValorN.Multiline = true;
+            txtValorN.Name = "txtValorN";
+            txtValorN.ReadOnly = true;
+            txtValorN.Size = new Size(103, 55);
+            txtValorN.TabIndex = 13;
+            // 
+            // txtValorM
+            // 
+            txtValorM.Dock = DockStyle.Fill;
+            txtValorM.Location = new Point(242, 64);
+            txtValorM.Multiline = true;
+            txtValorM.Name = "txtValorM";
+            txtValorM.ReadOnly = true;
+            txtValorM.Size = new Size(117, 55);
+            txtValorM.TabIndex = 12;
+            // 
+            // txtValorMEW
+            // 
+            txtValorMEW.Dock = DockStyle.Fill;
+            txtValorMEW.Location = new Point(120, 64);
+            txtValorMEW.Multiline = true;
+            txtValorMEW.Name = "txtValorMEW";
+            txtValorMEW.ReadOnly = true;
+            txtValorMEW.Size = new Size(116, 55);
+            txtValorMEW.TabIndex = 11;
+            // 
             // label7
             // 
             label7.AutoSize = true;
@@ -238,17 +280,15 @@
             label4.Text = "λ";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // cmbDificultad
+            // txtValorLAMBDA
             // 
-            tableLayoutPanel1.SetColumnSpan(cmbDificultad, 2);
-            cmbDificultad.Dock = DockStyle.Fill;
-            cmbDificultad.Enabled = false;
-            cmbDificultad.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            cmbDificultad.FormattingEnabled = true;
-            cmbDificultad.Location = new Point(184, 73);
-            cmbDificultad.Name = "cmbDificultad";
-            cmbDificultad.Size = new Size(313, 53);
-            cmbDificultad.TabIndex = 3;
+            txtValorLAMBDA.Dock = DockStyle.Fill;
+            txtValorLAMBDA.Location = new Point(3, 64);
+            txtValorLAMBDA.Multiline = true;
+            txtValorLAMBDA.Name = "txtValorLAMBDA";
+            txtValorLAMBDA.ReadOnly = true;
+            txtValorLAMBDA.Size = new Size(111, 55);
+            txtValorLAMBDA.TabIndex = 10;
             // 
             // label8
             // 
@@ -284,46 +324,6 @@
             btnModificar.TabIndex = 8;
             btnModificar.Text = "MODIFICAR";
             btnModificar.UseVisualStyleBackColor = true;
-            // 
-            // txtValorLAMBDA
-            // 
-            txtValorLAMBDA.Dock = DockStyle.Fill;
-            txtValorLAMBDA.Location = new Point(3, 64);
-            txtValorLAMBDA.Multiline = true;
-            txtValorLAMBDA.Name = "txtValorLAMBDA";
-            txtValorLAMBDA.ReadOnly = true;
-            txtValorLAMBDA.Size = new Size(111, 55);
-            txtValorLAMBDA.TabIndex = 10;
-            // 
-            // txtValorMEW
-            // 
-            txtValorMEW.Dock = DockStyle.Fill;
-            txtValorMEW.Location = new Point(120, 64);
-            txtValorMEW.Multiline = true;
-            txtValorMEW.Name = "txtValorMEW";
-            txtValorMEW.ReadOnly = true;
-            txtValorMEW.Size = new Size(116, 55);
-            txtValorMEW.TabIndex = 11;
-            // 
-            // txtValorM
-            // 
-            txtValorM.Dock = DockStyle.Fill;
-            txtValorM.Location = new Point(242, 64);
-            txtValorM.Multiline = true;
-            txtValorM.Name = "txtValorM";
-            txtValorM.ReadOnly = true;
-            txtValorM.Size = new Size(117, 55);
-            txtValorM.TabIndex = 12;
-            // 
-            // txtValorN
-            // 
-            txtValorN.Dock = DockStyle.Fill;
-            txtValorN.Location = new Point(365, 64);
-            txtValorN.Multiline = true;
-            txtValorN.Name = "txtValorN";
-            txtValorN.ReadOnly = true;
-            txtValorN.Size = new Size(103, 55);
-            txtValorN.TabIndex = 13;
             // 
             // btnRegresar
             // 
@@ -371,6 +371,19 @@
             tableLayoutPanel3.Size = new Size(443, 597);
             tableLayoutPanel3.TabIndex = 10;
             tableLayoutPanel3.Paint += tableLayoutPanel3_Paint;
+            // 
+            // lblP
+            // 
+            lblP.AutoSize = true;
+            lblP.BackColor = Color.WhiteSmoke;
+            lblP.Dock = DockStyle.Fill;
+            lblP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblP.Location = new Point(141, 0);
+            lblP.Name = "lblP";
+            lblP.Size = new Size(299, 92);
+            lblP.TabIndex = 7;
+            lblP.Text = "0";
+            lblP.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
@@ -449,19 +462,6 @@
             label14.TabIndex = 6;
             label14.Text = "Wq:";
             label14.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblP
-            // 
-            lblP.AutoSize = true;
-            lblP.BackColor = Color.WhiteSmoke;
-            lblP.Dock = DockStyle.Fill;
-            lblP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            lblP.Location = new Point(141, 0);
-            lblP.Name = "lblP";
-            lblP.Size = new Size(299, 92);
-            lblP.TabIndex = 7;
-            lblP.Text = "0";
-            lblP.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblPn
             // 
