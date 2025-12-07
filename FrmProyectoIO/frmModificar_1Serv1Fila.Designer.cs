@@ -1,6 +1,6 @@
 ﻿namespace FrmProyectoIO
 {
-    partial class frmModificar_1Serv1Fila
+    partial class frmEOQModificar_1Serv1Fila
     {
         /// <summary>
         /// Required designer variable.
@@ -56,12 +56,12 @@
             label13 = new Label();
             label14 = new Label();
             lblP = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            button1 = new Button();
+            lblPn = new Label();
+            lblLs = new Label();
+            lblLq = new Label();
+            lblWs = new Label();
+            lblWq = new Label();
+            btnCalcular = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -350,11 +350,11 @@
             tableLayoutPanel3.Controls.Add(label12, 0, 6);
             tableLayoutPanel3.Controls.Add(label13, 0, 8);
             tableLayoutPanel3.Controls.Add(label14, 0, 10);
-            tableLayoutPanel3.Controls.Add(label15, 1, 2);
-            tableLayoutPanel3.Controls.Add(label16, 1, 4);
-            tableLayoutPanel3.Controls.Add(label17, 1, 6);
-            tableLayoutPanel3.Controls.Add(label18, 1, 8);
-            tableLayoutPanel3.Controls.Add(label19, 1, 10);
+            tableLayoutPanel3.Controls.Add(lblPn, 1, 2);
+            tableLayoutPanel3.Controls.Add(lblLs, 1, 4);
+            tableLayoutPanel3.Controls.Add(lblLq, 1, 6);
+            tableLayoutPanel3.Controls.Add(lblWs, 1, 8);
+            tableLayoutPanel3.Controls.Add(lblWq, 1, 10);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(528, 23);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -382,7 +382,7 @@
             tableLayoutPanel3.SetColumnSpan(tableLayoutPanel4, 2);
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Controls.Add(button1, 0, 0);
+            tableLayoutPanel4.Controls.Add(btnCalcular, 0, 0);
             tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(3, 506);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -482,91 +482,91 @@
             lblP.Text = "0";
             lblP.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label15
+            // lblPn
             // 
-            label15.AutoSize = true;
-            label15.BackColor = Color.WhiteSmoke;
-            label15.Dock = DockStyle.Fill;
-            label15.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label15.Location = new Point(139, 84);
-            label15.Name = "label15";
-            label15.Size = new Size(301, 72);
-            label15.TabIndex = 9;
-            label15.Text = "0";
-            label15.TextAlign = ContentAlignment.MiddleCenter;
+            lblPn.AutoSize = true;
+            lblPn.BackColor = Color.WhiteSmoke;
+            lblPn.Dock = DockStyle.Fill;
+            lblPn.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblPn.Location = new Point(139, 84);
+            lblPn.Name = "lblPn";
+            lblPn.Size = new Size(301, 72);
+            lblPn.TabIndex = 9;
+            lblPn.Text = "0";
+            lblPn.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label16
+            // lblLs
             // 
-            label16.AutoSize = true;
-            label16.BackColor = Color.WhiteSmoke;
-            label16.Dock = DockStyle.Fill;
-            label16.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label16.Location = new Point(139, 164);
-            label16.Name = "label16";
-            label16.Size = new Size(301, 76);
-            label16.TabIndex = 10;
-            label16.Text = "0";
-            label16.TextAlign = ContentAlignment.MiddleCenter;
+            lblLs.AutoSize = true;
+            lblLs.BackColor = Color.WhiteSmoke;
+            lblLs.Dock = DockStyle.Fill;
+            lblLs.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblLs.Location = new Point(139, 164);
+            lblLs.Name = "lblLs";
+            lblLs.Size = new Size(301, 76);
+            lblLs.TabIndex = 10;
+            lblLs.Text = "0";
+            lblLs.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label17
+            // lblLq
             // 
-            label17.AutoSize = true;
-            label17.BackColor = Color.WhiteSmoke;
-            label17.Dock = DockStyle.Fill;
-            label17.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label17.Location = new Point(139, 248);
-            label17.Name = "label17";
-            label17.Size = new Size(301, 78);
-            label17.TabIndex = 11;
-            label17.Text = "0";
-            label17.TextAlign = ContentAlignment.MiddleCenter;
+            lblLq.AutoSize = true;
+            lblLq.BackColor = Color.WhiteSmoke;
+            lblLq.Dock = DockStyle.Fill;
+            lblLq.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblLq.Location = new Point(139, 248);
+            lblLq.Name = "lblLq";
+            lblLq.Size = new Size(301, 78);
+            lblLq.TabIndex = 11;
+            lblLq.Text = "0";
+            lblLq.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label18
+            // lblWs
             // 
-            label18.AutoSize = true;
-            label18.BackColor = Color.WhiteSmoke;
-            label18.Dock = DockStyle.Fill;
-            label18.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label18.Location = new Point(139, 334);
-            label18.Name = "label18";
-            label18.Size = new Size(301, 77);
-            label18.TabIndex = 12;
-            label18.Text = "0";
-            label18.TextAlign = ContentAlignment.MiddleCenter;
+            lblWs.AutoSize = true;
+            lblWs.BackColor = Color.WhiteSmoke;
+            lblWs.Dock = DockStyle.Fill;
+            lblWs.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblWs.Location = new Point(139, 334);
+            lblWs.Name = "lblWs";
+            lblWs.Size = new Size(301, 77);
+            lblWs.TabIndex = 12;
+            lblWs.Text = "0";
+            lblWs.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label19
+            // lblWq
             // 
-            label19.AutoSize = true;
-            label19.BackColor = Color.WhiteSmoke;
-            label19.Dock = DockStyle.Fill;
-            label19.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label19.Location = new Point(139, 419);
-            label19.Name = "label19";
-            label19.Size = new Size(301, 76);
-            label19.TabIndex = 13;
-            label19.Text = "0";
-            label19.TextAlign = ContentAlignment.MiddleCenter;
+            lblWq.AutoSize = true;
+            lblWq.BackColor = Color.WhiteSmoke;
+            lblWq.Dock = DockStyle.Fill;
+            lblWq.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblWq.Location = new Point(139, 419);
+            lblWq.Name = "lblWq";
+            lblWq.Size = new Size(301, 76);
+            lblWq.TabIndex = 13;
+            lblWq.Text = "0";
+            lblWq.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // btnCalcular
             // 
-            tableLayoutPanel4.SetColumnSpan(button1, 3);
-            button1.Dock = DockStyle.Fill;
-            button1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(431, 88);
-            button1.TabIndex = 9;
-            button1.Text = "CALCULAR";
-            button1.UseVisualStyleBackColor = true;
+            tableLayoutPanel4.SetColumnSpan(btnCalcular, 3);
+            btnCalcular.Dock = DockStyle.Fill;
+            btnCalcular.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            btnCalcular.Location = new Point(3, 3);
+            btnCalcular.Name = "btnCalcular";
+            btnCalcular.Size = new Size(431, 88);
+            btnCalcular.TabIndex = 9;
+            btnCalcular.Text = "CALCULAR";
+            btnCalcular.UseVisualStyleBackColor = true;
             // 
-            // frmModificar_1Serv1Fila
+            // frmEOQModificar_1Serv1Fila
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 46, 74);
             ClientSize = new Size(1005, 746);
             Controls.Add(tableLayoutPanel1);
-            Name = "frmModificar_1Serv1Fila";
+            Name = "frmEOQModificar_1Serv1Fila";
             Text = "frmModificar_1Serv1Fila";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
@@ -608,11 +608,11 @@
         private Label label13;
         private Label label14;
         private Label lblP;
-        private Button button1;
-        private Label label15;
-        private Label label16;
-        private Label label17;
-        private Label label18;
-        private Label label19;
+        private Button btnCalcular;
+        private Label lblPn;
+        private Label lblLs;
+        private Label lblLq;
+        private Label lblWs;
+        private Label lblWq;
     }
 }
