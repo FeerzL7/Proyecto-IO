@@ -8,7 +8,7 @@ namespace FrmProyectoIO.Properties
 {
     internal class UnaFilasMuchosServidores : UnaFilaUnServidor
     {
-        public float M { get; set; } = 0;
+        public float Servidores { get; set; } = 0;
         public override float Ls(float M, float m, float Y)
         {
             float ls = 0;

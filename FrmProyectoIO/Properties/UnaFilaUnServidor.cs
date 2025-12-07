@@ -15,11 +15,11 @@ namespace FrmProyectoIO.Properties
     internal class UnaFilaUnServidor
     {
         public Dificultad NivelDificultad { get; set; } = Dificultad.Facil;
-        public string titulo { get; set; } = "Sin Titulo";
-        public string Enunciado { get; set; } = "Sin Enunciado";
+        public string Titulo { get; set; } = "Sin titulo";
+        public string Enunciado { get; set; } = "Sin enunciado";
         public DateOnly FechaCreacion { get; set; } = DateOnly.FromDateTime(DateTime.Now);
-        public byte m { get; set; } = 0;  
-        public float Y { get; set; } = 0;
+        public byte TasaServicio { get; set; } = 0;  
+        public float TasaLlegada { get; set; } = 0;
         public float Po(float M, float m, float Y)
         {
             float po = 1;//
