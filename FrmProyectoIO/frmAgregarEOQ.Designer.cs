@@ -44,21 +44,22 @@
             label7 = new Label();
             textBox6 = new TextBox();
             groupBox1 = new GroupBox();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            label14 = new Label();
             label15 = new Label();
             label16 = new Label();
             label17 = new Label();
             label18 = new Label();
             label19 = new Label();
+            button1 = new Button();
+            label10 = new Label();
+            label13 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            label14 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            button2 = new Button();
+            button3 = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -222,121 +223,6 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Resultados";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = SystemColors.ButtonHighlight;
-            label8.Location = new Point(46, 69);
-            label8.Name = "label8";
-            label8.Size = new Size(78, 61);
-            label8.TabIndex = 15;
-            label8.Text = "P:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.ForeColor = SystemColors.ButtonHighlight;
-            label9.Location = new Point(46, 177);
-            label9.Name = "label9";
-            label9.Size = new Size(142, 61);
-            label9.TabIndex = 16;
-            label9.Text = "P(n):";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = Color.Transparent;
-            label10.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.ForeColor = SystemColors.ButtonHighlight;
-            label10.Location = new Point(46, 684);
-            label10.Name = "label10";
-            label10.Size = new Size(127, 61);
-            label10.TabIndex = 17;
-            label10.Text = "Wq:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.Transparent;
-            label11.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.ForeColor = SystemColors.ButtonHighlight;
-            label11.Location = new Point(46, 422);
-            label11.Name = "label11";
-            label11.Size = new Size(109, 61);
-            label11.TabIndex = 18;
-            label11.Text = "Lq:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.Transparent;
-            label12.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.ForeColor = SystemColors.ButtonHighlight;
-            label12.Location = new Point(46, 306);
-            label12.Name = "label12";
-            label12.Size = new Size(101, 61);
-            label12.TabIndex = 19;
-            label12.Text = "Ls:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.BackColor = Color.Transparent;
-            label13.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.ForeColor = SystemColors.ButtonHighlight;
-            label13.Location = new Point(46, 555);
-            label13.Name = "label13";
-            label13.Size = new Size(119, 61);
-            label13.TabIndex = 18;
-            label13.Text = "Ws:";
-            // 
-            // button1
-            // 
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(165, 832);
-            button1.Name = "button1";
-            button1.Size = new Size(338, 116);
-            button1.TabIndex = 20;
-            button1.Text = "Calcular";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.Font = new Font("Times New Roman", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(964, 1073);
-            button2.Name = "button2";
-            button2.Size = new Size(433, 105);
-            button2.TabIndex = 15;
-            button2.Text = "Regresar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Times New Roman", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(162, 1073);
-            button3.Name = "button3";
-            button3.Size = new Size(433, 105);
-            button3.TabIndex = 16;
-            button3.Text = "Añadir";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.BackColor = Color.Transparent;
-            label14.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = SystemColors.ButtonHighlight;
-            label14.Location = new Point(264, 69);
-            label14.Name = "label14";
-            label14.Size = new Size(54, 61);
-            label14.TabIndex = 21;
-            label14.Text = "0";
-            label14.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // label15
             // 
             label15.AutoSize = true;
@@ -402,6 +288,136 @@
             label19.Text = "0";
             label19.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(165, 832);
+            button1.Name = "button1";
+            button1.Size = new Size(338, 116);
+            button1.TabIndex = 20;
+            button1.Text = "Calcular";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = SystemColors.ButtonHighlight;
+            label10.Location = new Point(46, 684);
+            label10.Name = "label10";
+            label10.Size = new Size(127, 61);
+            label10.TabIndex = 17;
+            label10.Text = "Wq:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.Transparent;
+            label13.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label13.ForeColor = SystemColors.ButtonHighlight;
+            label13.Location = new Point(46, 555);
+            label13.Name = "label13";
+            label13.Size = new Size(119, 61);
+            label13.TabIndex = 18;
+            label13.Text = "Ws:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label11.ForeColor = SystemColors.ButtonHighlight;
+            label11.Location = new Point(46, 422);
+            label11.Name = "label11";
+            label11.Size = new Size(109, 61);
+            label11.TabIndex = 18;
+            label11.Text = "Lq:";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.ForeColor = SystemColors.ButtonHighlight;
+            label12.Location = new Point(46, 306);
+            label12.Name = "label12";
+            label12.Size = new Size(101, 61);
+            label12.TabIndex = 19;
+            label12.Text = "Ls:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.BackColor = Color.Transparent;
+            label14.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = SystemColors.ButtonHighlight;
+            label14.Location = new Point(264, 69);
+            label14.Name = "label14";
+            label14.Size = new Size(54, 61);
+            label14.TabIndex = 21;
+            label14.Text = "0";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.ButtonHighlight;
+            label8.Location = new Point(46, 69);
+            label8.Name = "label8";
+            label8.Size = new Size(78, 61);
+            label8.TabIndex = 15;
+            label8.Text = "P:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.ButtonHighlight;
+            label9.Location = new Point(46, 177);
+            label9.Name = "label9";
+            label9.Size = new Size(142, 61);
+            label9.TabIndex = 16;
+            label9.Text = "P(n):";
+            // 
+            // button2
+            // 
+            button2.Font = new Font("Times New Roman", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Location = new Point(964, 1073);
+            button2.Name = "button2";
+            button2.Size = new Size(433, 105);
+            button2.TabIndex = 15;
+            button2.Text = "Regresar";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Times New Roman", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.Location = new Point(162, 1073);
+            button3.Name = "button3";
+            button3.Size = new Size(433, 105);
+            button3.TabIndex = 16;
+            button3.Text = "Añadir";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackColor = Color.Transparent;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(1571, 1190);
+            tableLayoutPanel1.TabIndex = 17;
+            // 
             // frmAgregarModelo1EOQ
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -426,6 +442,7 @@
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(tableLayoutPanel1);
             Name = "frmAgregarModelo1EOQ";
             Text = "frmAgregarModelo1EOQ";
             groupBox1.ResumeLayout(false);
@@ -466,5 +483,6 @@
         private Label label18;
         private Label label19;
         private Label label14;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

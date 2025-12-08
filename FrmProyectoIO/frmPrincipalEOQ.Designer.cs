@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipalEOQ));
             groupBox1 = new GroupBox();
+            button2 = new Button();
+            button1 = new Button();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label3 = new Label();
+            label2 = new Label();
             dataGridView1 = new DataGridView();
             Ejercicios = new DataGridViewTextBoxColumn();
             VER = new DataGridViewTextBoxColumn();
@@ -38,15 +44,10 @@
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             radioButton3 = new RadioButton();
-            label2 = new Label();
-            label3 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
+            tableLayoutPanel1 = new TableLayoutPanel();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -68,6 +69,64 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Consultas";
+            // 
+            // button2
+            // 
+            button2.ForeColor = SystemColors.ActiveCaptionText;
+            button2.Location = new Point(413, 271);
+            button2.Name = "button2";
+            button2.Size = new Size(221, 61);
+            button2.TabIndex = 12;
+            button2.Text = "Limpiar";
+            button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            button1.ForeColor = SystemColors.ActiveCaptionText;
+            button1.Location = new Point(91, 271);
+            button1.Name = "button1";
+            button1.Size = new Size(220, 61);
+            button1.TabIndex = 11;
+            button1.Text = "Consultar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(328, 192);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(327, 41);
+            textBox2.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(328, 77);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(327, 41);
+            textBox1.TabIndex = 9;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ButtonHighlight;
+            label3.Location = new Point(26, 172);
+            label3.Name = "label3";
+            label3.Size = new Size(285, 61);
+            label3.TabIndex = 8;
+            label3.Text = "Enunciado:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ButtonHighlight;
+            label2.Location = new Point(26, 57);
+            label2.Name = "label2";
+            label2.Size = new Size(181, 61);
+            label2.TabIndex = 7;
+            label2.Text = "Titulo:";
             // 
             // dataGridView1
             // 
@@ -155,64 +214,6 @@
             radioButton3.Text = "Modelo 3";
             radioButton3.UseVisualStyleBackColor = false;
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(26, 57);
-            label2.Name = "label2";
-            label2.Size = new Size(181, 61);
-            label2.TabIndex = 7;
-            label2.Text = "Titulo:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Times New Roman", 19.875F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = SystemColors.ButtonHighlight;
-            label3.Location = new Point(26, 172);
-            label3.Name = "label3";
-            label3.Size = new Size(285, 61);
-            label3.TabIndex = 8;
-            label3.Text = "Enunciado:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(328, 77);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(327, 41);
-            textBox1.TabIndex = 9;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(328, 192);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(327, 41);
-            textBox2.TabIndex = 10;
-            // 
-            // button1
-            // 
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(91, 271);
-            button1.Name = "button1";
-            button1.Size = new Size(220, 61);
-            button1.TabIndex = 11;
-            button1.Text = "Consultar";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(413, 271);
-            button2.Name = "button2";
-            button2.Size = new Size(221, 61);
-            button2.TabIndex = 12;
-            button2.Text = "Limpiar";
-            button2.UseVisualStyleBackColor = true;
-            // 
             // button3
             // 
             button3.Location = new Point(53, 663);
@@ -240,6 +241,21 @@
             button5.Text = "Eliminar";
             button5.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.BackColor = Color.Transparent;
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(1370, 799);
+            tableLayoutPanel1.TabIndex = 10;
+            // 
             // frmPrincipalEOQ
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
@@ -257,6 +273,7 @@
             Controls.Add(label1);
             Controls.Add(dataGridView1);
             Controls.Add(groupBox1);
+            Controls.Add(tableLayoutPanel1);
             Name = "frmPrincipalEOQ";
             Text = "frmPrincipalEOQ";
             groupBox1.ResumeLayout(false);
@@ -286,5 +303,6 @@
         private Button button3;
         private Button button4;
         private Button button5;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }
