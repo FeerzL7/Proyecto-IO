@@ -1,4 +1,4 @@
-﻿namespace FrmProyectoIO
+ ﻿namespace FrmProyectoIO
 {
     partial class frmEOQVerProblema_1Serv1Fila
     {
