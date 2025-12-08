@@ -24,7 +24,7 @@ namespace FrmProyectoIO.Properties
         
         //Datos para hacer los calculos
         public byte TasaServicio { get; set; } = 0;  //No hay referencias para estas propiedades
-        public float TasaLlegada { get; set; } = 0;
+        public float TasaLlegada { get; set; } = 0;  // Tipos de datos incongruentes, deberian ser el mismo (double)
         
         //Metodos / Calculos                      Mañana voy a checar las formulas y corregir los tipos de datos
         public float Po(float M, float m, float Y) //Si ya tenemos propiedades no hay necesidad de llamar esos parametros
