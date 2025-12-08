@@ -12,14 +12,19 @@ namespace FrmProyectoIO
     }
     public class Inventario
     {
+       
         public string Texto { get; set; } = "";
-        public ushort D { get; set; }
+       // Cambiar los nombres de las variables a unos más claros e intuitivos
+        public ushort D { get; set; } //ejem: Demanda anual 
         public decimal Co { get; set; }
         public decimal Ch { get; set; }
         public ushort L { get; set; }
         public ushort Y { get; set; }
         public ushort d { get; set; }
+      
 
+        //Propiedades 
+        //También Agregar nombres completos a las propiedades de cálculo 
         public virtual double Q
         {
             get
