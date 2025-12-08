@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace FrmProyectoIO
 {
-    public partial class frmEOQVerProblema_1FilaMultServ : Form
+    public partial class frmEOQModificar_1Serv1Fila : Form
     {
-        public frmEOQVerProblema_1FilaMultServ()
+        public frmEOQModificar_1Serv1Fila()
         {
             InitializeComponent();
-        }
-
-        private void label13_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

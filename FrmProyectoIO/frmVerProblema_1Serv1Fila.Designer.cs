@@ -1,6 +1,6 @@
 ﻿namespace FrmProyectoIO
 {
-    partial class frmVerProblema_1Serv1Fila
+    partial class frmEOQVerProblema_1Serv1Fila
     {
         /// <summary>
         /// Required designer variable.
@@ -334,6 +334,7 @@
             // btnModificar
             // 
             tableLayoutPanel1.SetColumnSpan(btnModificar, 3);
+            btnModificar.Dock = DockStyle.Fill;
             btnModificar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             btnModificar.Location = new Point(32, 801);
             btnModificar.Margin = new Padding(4, 4, 4, 4);
@@ -345,6 +346,7 @@
             // 
             // btnRegresar
             // 
+            btnRegresar.Dock = DockStyle.Fill;
             btnRegresar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             btnRegresar.Location = new Point(648, 801);
             btnRegresar.Margin = new Padding(4, 4, 4, 4);
@@ -560,15 +562,14 @@
             lblWq.Text = "0";
             lblWq.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // frmVerProblema_1Serv1Fila
+            // frmEOQVerProblema_1Serv1Fila
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 46, 74);
             ClientSize = new Size(1245, 922);
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(4, 4, 4, 4);
-            Name = "frmVerProblema_1Serv1Fila";
+            Name = "frmEOQVerProblema_1Serv1Fila";
             Text = "frmVerProblema_1Serv1Fila";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
