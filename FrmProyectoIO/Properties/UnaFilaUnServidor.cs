@@ -14,14 +14,21 @@ namespace FrmProyectoIO.Properties
     }
     internal class UnaFilaUnServidor
     {
+        //Propiedades
+        
+        //Datos para el formulario
         public Dificultad NivelDificultad { get; set; } = Dificultad.Facil;
         public string Titulo { get; set; } = "Sin titulo";
         public string Enunciado { get; set; } = "Sin enunciado";
         public DateOnly FechaCreacion { get; set; } = DateOnly.FromDateTime(DateTime.Now);
-        public byte TasaServicio { get; set; } = 0;  
+        
+        //Datos para hacer los calculos
+        public byte TasaServicio { get; set; } = 0;  //No hay referencias para estas propiedades
         public float TasaLlegada { get; set; } = 0;
-        public float Po(float M, float m, float Y)
-        {
+        
+        //Metodos / Calculos                      Mañana voy a checar las formulas y corregir los tipos de datos
+        public float Po(float M, float m, float Y) //Si ya tenemos propiedades no hay necesidad de llamar esos parametros
+        {                                          //Por que son 3 datos si solo tenemos tasa de llegada y de servicio
             float po = 1;//
             if ((M * m) > Y)
             {
@@ -52,7 +59,8 @@ namespace FrmProyectoIO.Properties
             lq = Ls(M, m, Y) - (Y / m);
             return lq;
         }
-        public virtual float Wq(float M, float m, float Y)
+        public virtual float Wq(float M, float m, float Y) //Hay mucha repeticion de parametros de propiedades que ya teniamos
+                                                           //Creo que las formulas estna mal, porque aqui deberian ser de una fila o un servidor y son 3 datos
         {
             float wq = 0;
             wq = (Ws(M, m, Y) / 60) - (1 / m);
