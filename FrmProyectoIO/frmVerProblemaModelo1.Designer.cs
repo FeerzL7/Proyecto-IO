@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVerProblemaModelo1));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -394,12 +393,13 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Size = new Size(1486, 1172);
             tableLayoutPanel1.TabIndex = 17;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // frmVerProblemaModelo1
             // 
             AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackColor = Color.FromArgb(28, 46, 74);
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1486, 1172);
             Controls.Add(groupBox1);
