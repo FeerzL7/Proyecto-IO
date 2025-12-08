@@ -13,68 +13,68 @@ namespace FrmProyectoIO
     public class Inventario
     {
         public string Texto { get; set; } = "";
-        public ushort D { get; set; }
-        public decimal Co { get; set; }
-        public decimal Ch { get; set; }
-        public ushort L { get; set; }
-        public ushort Y { get; set; }
-        public ushort d { get; set; }
+        public ushort DemandaXunidadTiempo { get; set; }
+        public decimal CostoPorColocarOrden { get; set; }
+        public decimal CostoPorAlmacenar { get; set; }
+        public ushort TiempoDeEntrega { get; set; }
+        public ushort DiasLaboradosAño { get; set; }
+        public ushort DemandaDiaria { get; set; }
 
-        public virtual double Q
+        public virtual double CantidadDeLoteEconomico
         {
             get
             {
-                double Operacion = Math.Sqrt((double)((2 * D * Co) / Ch));
+                double Operacion = Math.Sqrt((double)((2 * DemandaXunidadTiempo * CostoPorColocarOrden) / CostoPorAlmacenar));
                 return Operacion;
             }
         }
 
-        public decimal CAO
+        public decimal CostoAnualXOrdenar
         {
-            get { return ((decimal)Q / 2) * Ch; }
+            get { return ((decimal)CantidadDeLoteEconomico / 2) * CostoPorAlmacenar; }
         }
-        public decimal CAA
+        public decimal CostoAnualXAlmacenar
         {
-            get { return (D / (decimal)Q) * Co; }
+            get { return (DemandaXunidadTiempo / (decimal)CantidadDeLoteEconomico) * CostoPorColocarOrden; }
         }
-        public virtual decimal CT
+        public virtual decimal CostoTotalXUnidadTiempo
         {
-            get { return CAA + CAO; }
+            get { return CostoAnualXAlmacenar + CostoAnualXOrdenar; }
         }
-        public double To
+        public double DuracionDelCiclo
         {
             get
             {
 
-                if (Y > 0)
+                if (DiasLaboradosAño > 0)
                 {
-                    double d = ((Q / D) * Y);
+                    double d = ((CantidadDeLoteEconomico / DemandaXunidadTiempo) * DiasLaboradosAño);
                     return d;
 
                 }
-                return (Q / D);
+                return (CantidadDeLoteEconomico / DemandaXunidadTiempo);
             }
         }
 
         public double CantidadPromInventario
         {
-            get { return (ushort)(Q / 2); }
+            get { return (ushort)(CantidadDeLoteEconomico / 2); }
         }
 
-        public double Le
+        public double TiempoEfectivo
         {
             get
             {  //L siempre esta en dias
-                if (Y == 0)
+                if (DiasLaboradosAño == 0)
                 {
                     return 0;
                 }
-                if (L > To)
+                if (TiempoDeEntrega > DuracionDelCiclo)
                 {
-                    int n = (int)(L / To);
-                    return L - (n * To);
+                    int n = (int)(TiempoDeEntrega / DuracionDelCiclo);
+                    return TiempoDeEntrega - (n * DuracionDelCiclo);
                 }
-                return L;
+                return TiempoDeEntrega;
             }
         }
 
@@ -83,11 +83,11 @@ namespace FrmProyectoIO
 
             get
             {
-                if (d == 0)
+                if (DemandaDiaria == 0)
                 {
                     return 0;
                 }
-                return (Le * d);
+                return (TiempoEfectivo * DemandaDiaria);
             }
         }
 

@@ -10,7 +10,7 @@ namespace FrmProyectoIO
     {
         public Dictionary<Dificultad, List<Inventario>> Ejercicios { get; set; } = new();
         public delegate void Profesor();
-        public event Profesor AlCambiar;
+        public event Profesor ? AlCambiar;
 
 
         public void Registrar(Dificultad dificultad, Inventario inventario)
@@ -19,13 +19,13 @@ namespace FrmProyectoIO
                 throw new ArgumentException("Seleccionó algún dato no compatible.");
             if (dificultad != Dificultad.Facil)
                 throw new ArgumentException("Este es un problema fácil.");
-            if (inventario.D <= 0)
+            if (inventario.DemandaXunidadTiempo <= 0)
                 throw new ArgumentException("La demanda anual debe ser mayor a cero.");
-            if (inventario.Co <= 0)
+            if (inventario.CostoPorColocarOrden <= 0)
                 throw new ArgumentException("El coto por ordenar debe ser mayor a cero.");
-            if (inventario.Ch <= 0)
+            if (inventario.CostoPorAlmacenar <= 0)
                 throw new ArgumentException("El costo por almacenar debe ser mayor a cero.");
-            if (inventario.L > 0 && inventario.d <= 0)
+            if (inventario.TiempoDeEntrega > 0 && inventario.DemandaDiaria <= 0)
                 throw new ArgumentException("Si el tiempo de entrega es mayor a cero debe \n proporcionarnos la demanda diaria");
             if (string.IsNullOrWhiteSpace(inventario.Texto))
                 throw new ArgumentException("No nos a proporcionado el texto");
@@ -48,17 +48,17 @@ namespace FrmProyectoIO
                 throw new ArgumentException("Seleccionó algún dato no compatible.");
             if (dificultad != Dificultad.Dificil)
                 throw new ArgumentException("Este es un problema difícil.");
-            if (inventario.D <= 0)
+            if (inventario.DemandaXunidadTiempo <= 0)
                 throw new ArgumentException("La demanda anual debe ser mayor a cero.");
-            if (inventario.Co <= 0)
+            if (inventario.CostoPorColocarOrden <= 0)
                 throw new ArgumentException("El coto por ordenar debe ser mayor a cero.");
-            if (inventario.Ch <= 0)
+            if (inventario.CostoPorAlmacenar <= 0)
                 throw new ArgumentException("El costo por almacenar debe ser mayor a cero.");
-            if (inventario.d <= 0)
+            if (inventario.DemandaDiaria <= 0)
                 throw new ArgumentException("La demanda diaria debe ser mayor a cero.");
             if (inventario.p <= 0)
                 throw new ArgumentException("La produccion diaria debe ser mayor a cero.");
-            if (inventario.p <= inventario.d)
+            if (inventario.p <= inventario.DemandaDiaria)
                 throw new ArgumentException("En EPQ la producción diaria debe ser mayor que la demanda diaria.");
             if (string.IsNullOrWhiteSpace(inventario.Texto))
                 throw new ArgumentException("No nos a proporcionado el texto.");

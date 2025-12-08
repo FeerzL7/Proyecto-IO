@@ -27,20 +27,20 @@ namespace FrmProyectoIO
             InventarioProduccion i = new InventarioProduccion()
             {
                 Texto = txtTexto.Text,
-                D = ushort.Parse(txtD.Text),
-                Co = decimal.Parse(txtCo.Text),
-                Ch = decimal.Parse(txtCh.Text),
-                d = ushort.Parse(txt_d.Text),
+                DemandaXunidadTiempo = ushort.Parse(txtD.Text),
+                CostoPorColocarOrden = decimal.Parse(txtCo.Text),
+                CostoPorAlmacenar = decimal.Parse(txtCh.Text),
+                DemandaDiaria = ushort.Parse(txt_d.Text),
                 p = ushort.Parse(txt_p.Text)
 
 
             };
             a.Registrar(Dificultad.Facil, i);
-            lblQ.Text = i.Q.ToString();
+            lblQ.Text = i.CantidadDeLoteEconomico.ToString();
             lblN.Text = i.N.ToString();
             lblCprep.Text = i.Cprep.ToString();
             lblCalm.Text = i.Calm.ToString();
-            lblCT.Text = i.CT.ToString();
+            lblCT.Text = i.CostoTotalXUnidadTiempo.ToString();
             lblTp.Text = i.Tp.ToString();
             lblImax.Text = i.Imax.ToString();
             lblIprom.Text = i.Iprom.ToString();

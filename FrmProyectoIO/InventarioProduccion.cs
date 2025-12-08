@@ -10,36 +10,36 @@ namespace FrmProyectoIO
     {
         public ushort p { get; set; }
 
-        public override double Q
+        public override double CantidadDeLoteEconomico
         {
             get
             {
-                double factor = 1 - ((double)d / p);
-                return Math.Sqrt((double)(2 * D * Co) / ((double)Ch * factor));
+                double factor = 1 - ((double)DemandaDiaria / p);
+                return Math.Sqrt((double)(2 * DemandaXunidadTiempo * CostoPorColocarOrden) / ((double)CostoPorAlmacenar * factor));
             }
         }
 
 
         public double N
         {
-            get { return (D / Q); }
+            get { return (DemandaXunidadTiempo / CantidadDeLoteEconomico); }
         }
 
         public decimal Cprep
         {
-            get { return (decimal)(D / Q) * Co; }
+            get { return (decimal)(DemandaXunidadTiempo / CantidadDeLoteEconomico) * CostoPorColocarOrden; }
         }
         public decimal Calm
         {
             get
             {
-                double factor = 1 - ((double)d / p);
+                double factor = 1 - ((double)DemandaDiaria / p);
 
-                return (decimal)(Q / 2) * Ch * (decimal)factor;
+                return (decimal)(CantidadDeLoteEconomico / 2) * CostoPorAlmacenar * (decimal)factor;
             }
         }
 
-        public override decimal CT
+        public override decimal CostoTotalXUnidadTiempo
         {
             get
             {
@@ -49,16 +49,16 @@ namespace FrmProyectoIO
         }
         public double Tp
         {
-            get { return Q / p; }
+            get { return CantidadDeLoteEconomico / p; }
         }
 
         public double Imax
         {
             get
             {
-                decimal factor = 1 - ((decimal)d / p);
+                decimal factor = 1 - ((decimal)DemandaDiaria / p);
 
-                return (Q * (double)factor);
+                return (CantidadDeLoteEconomico * (double)factor);
             }
         }
 
@@ -66,9 +66,9 @@ namespace FrmProyectoIO
         {
             get
             {
-                decimal factor = 1 - ((decimal)d / p);
+                decimal factor = 1 - ((decimal)DemandaDiaria / p);
 
-                return (Q / 2) * (double)factor;
+                return (CantidadDeLoteEconomico / 2) * (double)factor;
             }
         }
     }
