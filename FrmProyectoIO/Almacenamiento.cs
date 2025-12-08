@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace FrmProyectoIO
@@ -101,6 +102,24 @@ namespace FrmProyectoIO
                 }
             }
         }
+        public void Guardar()
+        {
+            string json = JsonSerializer.Serialize(Ejercicios, new JsonSerializerOptions() { WriteIndented = true });
+            File.WriteAllText("ArchivoEjerciciosIO.json", json);
+            AlCambiar?.Invoke();
+        }
+        public void Leer()
+        {
+            if (File.Exists("ArchivoEjerciciosIO.json"))
+            {
+                string json = File.ReadAllText("ArchivoEjerciciosIO.json");
+                Ejercicios = JsonSerializer.Deserialize<Dictionary<Dificultad, List<Inventario>>>(json)
+                 ?? new Dictionary<Dificultad, List<Inventario>>();
+                File.WriteAllText("ArchivoPaises.json", json);
+                AlCambiar?.Invoke();
+            }
+        }
+
 
     }
 }
