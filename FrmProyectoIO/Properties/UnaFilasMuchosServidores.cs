@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace FrmProyectoIO.Properties
 {
-//Cambiar Nombres de clases 
+    //Nombres de Clases
+    //ModeloMMS : ModeloMM1 o ModeloMultiplesServidores : ModeloUNSoloServidor
     internal class UnaFilasMuchosServidores : UnaFilaUnServidor
     {
         //Cambios Pendientes:
-        //Servidores deberia ser Int por que no puede haber 1.5 Servidores
+        //Servidores deberia ser Int por que no puede haber 1.5 Servidores.
+        //Checar los tipos de datos  y nombre de cada propiedad, metodo, etc.
+        //Cambiar Nombres de clases.
+        //Cambiar las referencias de los parametros (Eliminarlos) y agregar las referencias de las propiedades a los metodos.
+        //Checar si hay validaciones, etc, si no, usar campos para validar desde del VALUE (Para no validar una y otra vez por cada metodo(Solo seria necario una vez)).
+        
+        
        
         //Propiedades
         
@@ -20,28 +27,38 @@ namespace FrmProyectoIO.Properties
         //Metodos -  Calculos
         //Los metodos deden tener un nombre mas intuitivo para el equipo, aun que por formulas sabes que es Ls, Ws, etc.
         //Para los que trabajaran en el diseño se le haria mas facil tener un texto mas intuitivo para mandar la informacion correctamente al formulario
-        
+
+         // ------------------ PROMEDIO DE CLIENTES EN EL SISTEMA (Ls) ------------------ (double)
         public override float Ls(float M, float m, float Y) //Las formulas creo que estan repetidas pero que esten aqui esta correcto, creo
         {                                                   //Mañana checar formulas
             float ls = 0;
             ls = (Y * m * (float)(Math.Pow((Y / m), M))) / (Factorial(M - 1) * (float)(Math.Pow(((M * m) - Y), 2))) * Po(M, m, Y) + (Y / m);
             return ls;
         }
-        public override float Ws(float M, float m, float Y)
+        // ------------------ TIEMPO PROMEDIO EN EL SISTEMA (Ws) ------------------ (double)
+        public override float Ws(float M, float m, float Y) // TiempoPromedioEnSistema
         {
             float ws = 0;
             ws = m * (float)(Math.Pow((Y / m), M)) / (Factorial(M - 1) * (float)(Math.Pow((M * m - Y), 2))) * Po(M, m, Y) + (1 / m);
             return ws * 60; //Minutos
         }
-        public override float Lq(float M, float m, float Y)
+
+         // ------------------ CLIENTES PROMEDIO EN LA COLA (Lq) ------------------ (double)
+        public override float Lq(float M, float m, float Y) //NumeroPromedioCola
         {
+          //double
             float lq = 0;
+            //* Llamo al metodo
             lq = Ls(M, m, Y) - (Y / m);
             return lq;
         }
-        public override float Wq(float M, float m, float Y)
+
+        // ------------------ TIEMPO PROMEDIO EN LA COLA (Wq) ------------------
+        public override float Wq(float M, float m, float Y)  //TiempoPromedioEnCola
         {
+           //double, es un proceso matematico
             float wq = 0;
+               //* Llamo el metodo/60  -    1 / Tasa de sercico
             wq = (Ws(M, m, Y) / 60) - (1 / m);
             return wq * 60; //Minutos
         }
