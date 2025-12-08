@@ -115,7 +115,7 @@ namespace FrmProyectoIO
                 string json = File.ReadAllText("ArchivoEjerciciosIO.json");
                 Ejercicios = JsonSerializer.Deserialize<Dictionary<Dificultad, List<Inventario>>>(json)
                  ?? new Dictionary<Dificultad, List<Inventario>>();
-                File.WriteAllText("ArchivoPaises.json", json);
+                File.WriteAllText("ArchivoEjerciciosIO.json", json);
                 AlCambiar?.Invoke();
             }
         }
