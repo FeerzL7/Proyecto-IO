@@ -9,9 +9,9 @@ namespace FrmProyectoIO.Properties
 {
     internal class Problemario
     {
-        Dictionary<Dificultad, List<UnaFilaUnServidor>> problemas = new Dictionary<Dificultad, List<UnaFilaUnServidor>>();
+        Dictionary<Dificultad, List<UnaFilaUnServidor>> problemas { get; set; } = new Dictionary<Dificultad, List<UnaFilaUnServidor>>();
 
-        public void AgregarProblema(string titulo, string enunciado, float m, float y, Dificultad dificil)
+        public void AgregarProblema(string titulo, string enunciado, float m, float y, Dificultad dificultad)
         {
             if (string.IsNullOrEmpty(titulo) || titulo.Length > 50) { throw new ArgumentException("Ingrese un titulo valido que no exceda los 50 caracteres"); }
             if (string.IsNullOrEmpty(enunciado) || enunciado.Length > 250) { throw new ArgumentException("Ingrese el enunciado valido que no exceda los 250 caracteres"); }
@@ -23,7 +23,7 @@ namespace FrmProyectoIO.Properties
                 Enunciado = enunciado,
                 TasaServicio = (byte)m,
                 TasaLlegada = y,
-                NivelDificultad = dificil
+                NivelDificultad = dificultad
             };
             problemas[dificil].Add(problema);
         }

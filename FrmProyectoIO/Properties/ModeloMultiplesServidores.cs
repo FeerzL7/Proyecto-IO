@@ -6,16 +6,14 @@ using System.Threading.Tasks;
 
 namespace FrmProyectoIO.Properties
 {
-    //Nombres de Clases
-    //ModeloMMS : ModeloMM1 o ModeloMultiplesServidores : ModeloUNSoloServidor
-    internal class UnaFilasMuchosServidores : UnaFilaUnServidor
+
+    public class ModeloMultiplesServidores : ModeloUnSoloServidor
     {
         //Cambios Pendientes:
         //1. Servidores deberia ser Int por que no puede haber 1.5 Servidores.
-        //2. Checar los tipos de datos  y nombre de cada propiedad, metodo, etc.
-        //3. Cambiar Nombres de clases.
-        //4. Cambiar las referencias de los parametros (Eliminarlos) y agregar las referencias de las propiedades a los metodos.
-        //5. Checar si hay validaciones, etc, si no, usar campos para validar desde del VALUE (Para no validar una y otra vez por cada metodo(Solo seria necario una vez)).
+        //2. Checar los tipos de datos  y nombre de cada propiedad.
+        //3. Cambiar los metodos por propiedades.
+        //4. Checar si hay validaciones, etc, si no, usar campos para validar desde del VALUE (Para no validar una y otra vez por cada propiedad(Solo seria necesario una vez)).
         
         
        
@@ -24,7 +22,7 @@ namespace FrmProyectoIO.Properties
         //Datos para los calculos
         public float Servidores { get; set; } = 0; //No hay referencias de esta propiedades en ningun metodo
 
-        //Metodos -  Calculos
+        //Propiedades* para calculos
         //Los metodos deden tener un nombre mas intuitivo para el equipo, aun que por formulas sabes que es Ls, Ws, etc.
         //Para los que trabajaran en el diseño se le haria mas facil tener un texto mas intuitivo para mandar la informacion correctamente al formulario
 
@@ -37,7 +35,7 @@ namespace FrmProyectoIO.Properties
             return ls;
         }
         // ------------------ TIEMPO PROMEDIO EN EL SISTEMA (Ws) ------------------ (double)
-        public override float Ws(float M, float m, float Y) // TiempoPromedioEnSistema
+        public override float Ws(float M, float m, float Y) // TiempoPromedioEnServicio
         {
         //double
             float ws = 0;
@@ -45,8 +43,8 @@ namespace FrmProyectoIO.Properties
             return ws * 60; //Minutos
         }
 
-         // ------------------ CLIENTES PROMEDIO EN LA COLA (Lq) ------------------ (double)
-        public override float Lq(float M, float m, float Y) //NumeroPromedioCola
+         // ------------------ CLIENTES PROMEDIO EN LA Fila (Lq) ------------------ (double)
+        public override float Lq(float M, float m, float Y) //NumeroPromedioEnFila
         {
           //double
             float lq = 0;
@@ -55,8 +53,8 @@ namespace FrmProyectoIO.Properties
             return lq;
         }
 
-        // ------------------ TIEMPO PROMEDIO EN LA COLA (Wq) ------------------
-        public override float Wq(float M, float m, float Y)  //TiempoPromedioEnCola
+        // ------------------ TIEMPO PROMEDIO EN LA Fila (Wq) ------------------
+        public override float Wq(float M, float m, float Y)  //TiempoPromedioEnFila
         {
            //double, es un proceso matematico
             float wq = 0;
