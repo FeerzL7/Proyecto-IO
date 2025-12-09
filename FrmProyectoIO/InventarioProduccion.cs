@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace FrmProyectoIO
 {
     public class InventarioProduccion : Inventario
+
+
     {
         public ushort TasaDeProduccion { get; set; }
 
