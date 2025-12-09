@@ -14,55 +14,104 @@ namespace FrmProyectoIO.Properties
         //2. Checar los tipos de datos  y nombre de cada propiedad.
         //3. Cambiar los metodos por propiedades.
         //4. Checar si hay validaciones, etc, si no, usar campos para validar desde del VALUE (Para no validar una y otra vez por cada propiedad(Solo seria necesario una vez)).
-        
-        
-       
+
+
+
         //Propiedades
-        
+
         //Datos para los calculos
-        public float Servidores { get; set; } = 0; //No hay referencias de esta propiedades en ningun metodo
+        public int Servidores { get; set; } = 0; //No hay referencias de esta propiedades en ningun metodo
+
+        public double ProbabilidadSistemaVacio()
+        {
+            if (!((Servidores * TasaServicio) > TasaLlegada))
+                throw new ArgumentException("Parame");
+
+            double suma1 = 0;
+
+            for (int n = 0; n < Servidores; n++)
+            {
+                suma1 += Math.Pow(UtilizacionPromedioSistema, n) / Factorial(n);
+            }
+            double suma2 = Math.Pow(UtilizacionPromedioSistema, Servidores) / Factorial(Servidores) * 
+                (Servidores*TasaServicio)/ (Servidores * TasaServicio - TasaLlegada);
+
+            return 1/(suma1 + suma2);
+
+        }
 
         //Propiedades* para calculos
         //Los metodos deden tener un nombre mas intuitivo para el equipo, aun que por formulas sabes que es Ls, Ws, etc.
         //Para los que trabajaran en el diseño se le haria mas facil tener un texto mas intuitivo para mandar la informacion correctamente al formulario
 
-         // ------------------ PROMEDIO DE CLIENTES EN EL SISTEMA (Ls) ------------------ (double)
-        public override float Ls(float M, float m, float Y) //Las formulas creo que estan repetidas pero que esten aqui esta correcto, creo
-        {                                                   //Mañana checar formulas - NumeroPromedioEnSistema
-            //double
-            float ls = 0;
-            ls = (Y * m * (float)(Math.Pow((Y / m), M))) / (Factorial(M - 1) * (float)(Math.Pow(((M * m) - Y), 2))) * Po(M, m, Y) + (Y / m);
-            return ls;
-        }
-        // ------------------ TIEMPO PROMEDIO EN EL SISTEMA (Ws) ------------------ (double)
-        public override float Ws(float M, float m, float Y) // TiempoPromedioEnServicio
+        // ------------------ PROMEDIO DE CLIENTES EN EL SISTEMA (Ls) ------------------ (double)
+        //Las formulas creo que estan repetidas pero que esten aqui esta correcto, creo
+        //Mañana checar formulas - NumeroPromedioEnSistema
+        public override double NumeroPromedioEnServicio
         {
-        //double
-            float ws = 0;
-            ws = m * (float)(Math.Pow((Y / m), M)) / (Factorial(M - 1) * (float)(Math.Pow((M * m - Y), 2))) * Po(M, m, Y) + (1 / m);
-            return ws * 60; //Minutos
+            get
+            {
+                double primera = (TasaLlegada * TasaServicio * Math.Pow(UtilizacionPromedioSistema, Servidores)) /
+                    (Factorial(Servidores - 1) * Math.Pow(Servidores * TasaServicio - TasaLlegada, 2));
+
+                return (primera * ProbabilidadClientesSistema) + UtilizacionPromedioSistema;
+            }
+        }   //double
+
+
+
+        // ------------------ TIEMPO PROMEDIO EN EL SISTEMA (Ws) ------------------ (double)
+
+        public override double TiempoPromedioEnServicio
+        {
+            get
+            {
+                if (TiempoPromedioEnFila > 0)
+                {
+                    return TiempoPromedioEnFila / TasaLlegada;
+                }
+
+                double primera = (TasaServicio * Math.Pow(UtilizacionPromedioSistema, Servidores)) / (Factorial(Servidores - 1) * Math.Pow(Servidores * TasaServicio - TasaLlegada, 2));
+                return (primera * ProbabilidadClientesSistema) + (1 / TasaServicio);
+            }
         }
 
-         // ------------------ CLIENTES PROMEDIO EN LA Fila (Lq) ------------------ (double)
-        public override float Lq(float M, float m, float Y) //NumeroPromedioEnFila
+        // ------------------ CLIENTES PROMEDIO EN LA Fila (Lq) ------------------ (double)
+        public override double NumeroPromedioEnFila
         {
-          //double
-            float lq = 0;
-            //* Llamo al metodo
-            lq = Ls(M, m, Y) - (Y / m);
-            return lq;
+            get
+            {
+                return TiempoPromedioEnServicio - UtilizacionPromedioSistema;
+            }
         }
 
         // ------------------ TIEMPO PROMEDIO EN LA Fila (Wq) ------------------
-        public override float Wq(float M, float m, float Y)  //TiempoPromedioEnFila
+
+        public override double TiempoPromedioEnFila
         {
-           //double, es un proceso matematico
-            float wq = 0;
-               //* Llamo el metodo/60  -    1 / Tasa de servicio
-            wq = (Ws(M, m, Y) / 60) - (1 / m);
-            return wq * 60; //Minutos
+            get
+            {
+                if (NumeroPromedioEnFila > 0)
+                {
+                    return NumeroPromedioEnFila / TasaLlegada;
+                }
+
+                return TiempoPromedioEnServicio - (1 / TasaServicio);
+            }
         }
         //Esta bastante bien el trabajo solo que mañana hare los cambios 
         //que tengo comentados porque no tengo computadora, y si los cambio asi nomas podria generar errores en el programa
+
+        public int Factorial(int num)
+        {
+            int n = 1;
+
+            for (int i = 1; i <= num; i++)
+            {
+                n *= i;
+            }
+            return n;
+        }
+
     }
 }
