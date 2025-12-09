@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace FrmProyectoIO
 {
-    public partial class frmEOQVerProblema_1Serv1Fila : Form
+    public partial class frmVerProblema_EOQ : Form
     {
-        public frmEOQVerProblema_1Serv1Fila()
+        public frmVerProblema_EOQ()
         {
             InitializeComponent();
         }
