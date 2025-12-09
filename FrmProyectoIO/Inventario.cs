@@ -78,7 +78,7 @@ namespace FrmProyectoIO
             }
         }
 
-        public double R
+        public double PuntoDeReorden
         {
 
             get

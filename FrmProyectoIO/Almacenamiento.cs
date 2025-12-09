@@ -56,9 +56,9 @@ namespace FrmProyectoIO
                 throw new ArgumentException("El costo por almacenar debe ser mayor a cero.");
             if (inventario.DemandaDiaria <= 0)
                 throw new ArgumentException("La demanda diaria debe ser mayor a cero.");
-            if (inventario.p <= 0)
+            if (inventario.TasaDeProduccion <= 0)
                 throw new ArgumentException("La produccion diaria debe ser mayor a cero.");
-            if (inventario.p <= inventario.DemandaDiaria)
+            if (inventario.TasaDeProduccion <= inventario.DemandaDiaria)
                 throw new ArgumentException("En EPQ la producción diaria debe ser mayor que la demanda diaria.");
             if (string.IsNullOrWhiteSpace(inventario.Texto))
                 throw new ArgumentException("No nos a proporcionado el texto.");

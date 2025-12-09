@@ -31,19 +31,19 @@ namespace FrmProyectoIO
                 CostoPorColocarOrden = decimal.Parse(txtCo.Text),
                 CostoPorAlmacenar = decimal.Parse(txtCh.Text),
                 DemandaDiaria = ushort.Parse(txt_d.Text),
-                p = ushort.Parse(txt_p.Text)
+                TasaDeProduccion = ushort.Parse(txt_p.Text)
 
 
             };
             a.Registrar(Dificultad.Facil, i);
             lblQ.Text = i.CantidadDeLoteEconomico.ToString();
-            lblN.Text = i.N.ToString();
-            lblCprep.Text = i.Cprep.ToString();
-            lblCalm.Text = i.Calm.ToString();
+            lblN.Text = i.NumeroDeLotes.ToString();
+            lblCprep.Text = i.CostoAnualXPreparacion.ToString();
+            lblCalm.Text = i.CostoAnualXAlmacenar.ToString();
             lblCT.Text = i.CostoTotalXUnidadTiempo.ToString();
-            lblTp.Text = i.Tp.ToString();
-            lblImax.Text = i.Imax.ToString();
-            lblIprom.Text = i.Iprom.ToString();
+            lblTp.Text = i.TiempoDelCiclo.ToString();
+            lblImax.Text = i.InventarioMaximo.ToString();
+            lblIprom.Text = i.InventarioPromedio.ToString();
 
 
 
