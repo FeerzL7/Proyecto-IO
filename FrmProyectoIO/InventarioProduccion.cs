@@ -7,68 +7,70 @@ using System.Threading.Tasks;
 namespace FrmProyectoIO
 {
     public class InventarioProduccion : Inventario
+
+
     {
-        public ushort p { get; set; }
+        public ushort TasaDeProduccion { get; set; }
 
-        public override double Q
+        public override double CantidadDeLoteEconomico
         {
             get
             {
-                double factor = 1 - ((double)d / p);
-                return Math.Sqrt((double)(2 * D * Co) / ((double)Ch * factor));
+                double factor = 1 - ((double)DemandaDiaria / TasaDeProduccion);
+                return Math.Sqrt((double)(2 * DemandaXunidadTiempo * CostoPorColocarOrden) / ((double)CostoPorAlmacenar * factor));
             }
         }
 
 
-        public double N
+        public double NumeroDeLotes
         {
-            get { return (D / Q); }
+            get { return (DemandaXunidadTiempo / CantidadDeLoteEconomico); }
         }
 
-        public decimal Cprep
+        public decimal CostoAnualXPreparacion
         {
-            get { return (decimal)(D / Q) * Co; }
+            get { return (decimal)(DemandaXunidadTiempo / CantidadDeLoteEconomico) * CostoPorColocarOrden; }
         }
-        public decimal Calm
+        public decimal CostoAnualXAlmacenar
         {
             get
             {
-                double factor = 1 - ((double)d / p);
+                double factor = 1 - ((double)DemandaDiaria / TasaDeProduccion);
 
-                return (decimal)(Q / 2) * Ch * (decimal)factor;
+                return (decimal)(CantidadDeLoteEconomico / 2) * CostoPorAlmacenar * (decimal)factor;
             }
         }
 
-        public override decimal CT
+        public override decimal CostoTotalXUnidadTiempo
         {
             get
             {
-                return Cprep + Calm;
+                return CostoAnualXPreparacion + CostoAnualXAlmacenar;
                 ;
             }
         }
-        public double Tp
+        public double TiempoDelCiclo
         {
-            get { return Q / p; }
+            get { return CantidadDeLoteEconomico / TasaDeProduccion; }
         }
 
-        public double Imax
+        public double InventarioMaximo
         {
             get
             {
-                decimal factor = 1 - ((decimal)d / p);
+                decimal factor = 1 - ((decimal)DemandaDiaria / TasaDeProduccion);
 
-                return (Q * (double)factor);
+                return (CantidadDeLoteEconomico * (double)factor);
             }
         }
 
-        public double Iprom
+        public double InventarioPromedio
         {
             get
             {
-                decimal factor = 1 - ((decimal)d / p);
+                decimal factor = 1 - ((decimal)DemandaDiaria / TasaDeProduccion);
 
-                return (Q / 2) * (double)factor;
+                return (CantidadDeLoteEconomico / 2) * (double)factor;
             }
         }
     }
