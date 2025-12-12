@@ -34,6 +34,10 @@
             btnRegresar = new Button();
             btnModificar = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
+            txtValorY = new TextBox();
+            label12 = new Label();
+            txtValorL = new TextBox();
+            label11 = new Label();
             label7 = new Label();
             txtValorCh = new TextBox();
             txtValorCoCs = new TextBox();
@@ -66,10 +70,6 @@
             lblValorCLE = new Label();
             lblPuntoDeReorden = new Label();
             lblDuracionCiclPedido = new Label();
-            label11 = new Label();
-            txtValorL = new TextBox();
-            label12 = new Label();
-            txtValorY = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -78,6 +78,7 @@
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = Color.LightSteelBlue;
             tableLayoutPanel1.ColumnCount = 8;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 1.384083F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 98.61591F));
@@ -99,6 +100,7 @@
             tableLayoutPanel1.Controls.Add(txtEnunciado, 2, 11);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 6, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
+            tableLayoutPanel1.ForeColor = SystemColors.ControlLightLight;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 15;
@@ -196,12 +198,60 @@
             tableLayoutPanel2.Size = new Size(872, 149);
             tableLayoutPanel2.TabIndex = 5;
             // 
+            // txtValorY
+            // 
+            txtValorY.Dock = DockStyle.Fill;
+            txtValorY.Font = new Font("Verdana", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtValorY.Location = new Point(727, 101);
+            txtValorY.Multiline = true;
+            txtValorY.Name = "txtValorY";
+            txtValorY.ReadOnly = true;
+            txtValorY.Size = new Size(142, 45);
+            txtValorY.TabIndex = 19;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.FromArgb(28, 46, 74);
+            label12.Dock = DockStyle.Fill;
+            label12.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Location = new Point(727, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(142, 98);
+            label12.TabIndex = 18;
+            label12.Text = "Y (Dias Elaborados al Año):";
+            label12.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // txtValorL
+            // 
+            txtValorL.Dock = DockStyle.Fill;
+            txtValorL.Font = new Font("Verdana", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtValorL.Location = new Point(583, 101);
+            txtValorL.Multiline = true;
+            txtValorL.Name = "txtValorL";
+            txtValorL.ReadOnly = true;
+            txtValorL.Size = new Size(138, 45);
+            txtValorL.TabIndex = 17;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.FromArgb(28, 46, 74);
+            label11.Dock = DockStyle.Fill;
+            label11.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(583, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(138, 98);
+            label11.TabIndex = 16;
+            label11.Text = "L (Tiempo de Entrega):";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.BackColor = Color.LightSteelBlue;
+            label7.BackColor = Color.FromArgb(28, 46, 74);
             label7.Dock = DockStyle.Fill;
-            label7.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label7.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(441, 0);
             label7.Name = "label7";
             label7.Size = new Size(136, 98);
@@ -212,7 +262,7 @@
             // txtValorCh
             // 
             txtValorCh.Dock = DockStyle.Fill;
-            txtValorCh.Font = new Font("Segoe UI", 13F);
+            txtValorCh.Font = new Font("Verdana", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtValorCh.Location = new Point(292, 101);
             txtValorCh.Multiline = true;
             txtValorCh.Name = "txtValorCh";
@@ -223,7 +273,7 @@
             // txtValorCoCs
             // 
             txtValorCoCs.Dock = DockStyle.Fill;
-            txtValorCoCs.Font = new Font("Segoe UI", 13F);
+            txtValorCoCs.Font = new Font("Verdana", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtValorCoCs.Location = new Point(145, 101);
             txtValorCoCs.Multiline = true;
             txtValorCoCs.Name = "txtValorCoCs";
@@ -234,9 +284,9 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.BackColor = Color.LightSteelBlue;
+            label6.BackColor = Color.FromArgb(28, 46, 74);
             label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label6.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.Location = new Point(292, 0);
             label6.Name = "label6";
             label6.Size = new Size(143, 98);
@@ -247,9 +297,9 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.BackColor = Color.LightSteelBlue;
+            label5.BackColor = Color.FromArgb(28, 46, 74);
             label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label5.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(145, 0);
             label5.Name = "label5";
             label5.Size = new Size(141, 98);
@@ -260,9 +310,9 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = Color.LightSteelBlue;
+            label4.BackColor = Color.FromArgb(28, 46, 74);
             label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label4.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(3, 0);
             label4.Name = "label4";
             label4.Size = new Size(136, 98);
@@ -273,7 +323,7 @@
             // txtValorD
             // 
             txtValorD.Dock = DockStyle.Fill;
-            txtValorD.Font = new Font("Segoe UI", 13F);
+            txtValorD.Font = new Font("Verdana", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtValorD.Location = new Point(3, 101);
             txtValorD.Multiline = true;
             txtValorD.Name = "txtValorD";
@@ -284,7 +334,7 @@
             // txtValorp
             // 
             txtValorp.Dock = DockStyle.Fill;
-            txtValorp.Font = new Font("Segoe UI", 13F);
+            txtValorp.Font = new Font("Verdana", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtValorp.Location = new Point(441, 101);
             txtValorp.Multiline = true;
             txtValorp.Name = "txtValorp";
@@ -295,9 +345,9 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.BackColor = Color.LightSteelBlue;
+            label3.BackColor = Color.FromArgb(28, 46, 74);
             label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label3.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(43, 197);
             label3.Name = "label3";
             label3.Size = new Size(227, 57);
@@ -308,9 +358,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.LightSteelBlue;
+            label1.BackColor = Color.FromArgb(28, 46, 74);
             label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label1.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(43, 32);
             label1.Name = "label1";
             label1.Size = new Size(227, 68);
@@ -322,7 +372,7 @@
             // 
             tableLayoutPanel1.SetColumnSpan(txtTitulo, 2);
             txtTitulo.Dock = DockStyle.Fill;
-            txtTitulo.Font = new Font("Segoe UI", 15F);
+            txtTitulo.Font = new Font("Verdana", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTitulo.Location = new Point(276, 35);
             txtTitulo.Multiline = true;
             txtTitulo.Name = "txtTitulo";
@@ -333,9 +383,9 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = Color.LightSteelBlue;
+            label2.BackColor = Color.FromArgb(28, 46, 74);
             label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            label2.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(43, 112);
             label2.Name = "label2";
             label2.Size = new Size(227, 75);
@@ -348,17 +398,17 @@
             tableLayoutPanel1.SetColumnSpan(cmbDificultad, 2);
             cmbDificultad.Dock = DockStyle.Fill;
             cmbDificultad.Enabled = false;
-            cmbDificultad.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            cmbDificultad.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbDificultad.FormattingEnabled = true;
             cmbDificultad.Location = new Point(276, 115);
             cmbDificultad.Name = "cmbDificultad";
-            cmbDificultad.Size = new Size(639, 53);
+            cmbDificultad.Size = new Size(639, 48);
             cmbDificultad.TabIndex = 3;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.BackColor = Color.LightSteelBlue;
+            label8.BackColor = Color.FromArgb(28, 46, 74);
             label8.Dock = DockStyle.Fill;
             label8.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             label8.Location = new Point(43, 417);
@@ -372,6 +422,7 @@
             // 
             tableLayoutPanel1.SetColumnSpan(txtEnunciado, 3);
             txtEnunciado.Dock = DockStyle.Fill;
+            txtEnunciado.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtEnunciado.Location = new Point(43, 474);
             txtEnunciado.Multiline = true;
             txtEnunciado.Name = "txtEnunciado";
@@ -429,7 +480,8 @@
             lblValorCAO.AutoSize = true;
             lblValorCAO.BackColor = Color.WhiteSmoke;
             lblValorCAO.Dock = DockStyle.Fill;
-            lblValorCAO.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorCAO.Font = new Font("Verdana", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblValorCAO.ForeColor = SystemColors.ControlText;
             lblValorCAO.Location = new Point(444, 0);
             lblValorCAO.Name = "lblValorCAO";
             lblValorCAO.Size = new Size(245, 84);
@@ -440,9 +492,9 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.BackColor = Color.LightSteelBlue;
+            label9.BackColor = Color.FromArgb(28, 46, 74);
             label9.Dock = DockStyle.Fill;
-            label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label9.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.Location = new Point(3, 0);
             label9.Name = "label9";
             label9.Size = new Size(435, 84);
@@ -455,7 +507,8 @@
             lblValort0.AutoSize = true;
             lblValort0.BackColor = Color.WhiteSmoke;
             lblValort0.Dock = DockStyle.Fill;
-            lblValort0.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValort0.Font = new Font("Verdana", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblValort0.ForeColor = SystemColors.ControlText;
             lblValort0.Location = new Point(444, 99);
             lblValort0.Name = "lblValort0";
             lblValort0.Size = new Size(245, 84);
@@ -468,7 +521,8 @@
             lblValorCT.AutoSize = true;
             lblValorCT.BackColor = Color.WhiteSmoke;
             lblValorCT.Dock = DockStyle.Fill;
-            lblValorCT.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorCT.Font = new Font("Verdana", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblValorCT.ForeColor = SystemColors.ControlText;
             lblValorCT.Location = new Point(444, 198);
             lblValorCT.Name = "lblValorCT";
             lblValorCT.Size = new Size(245, 84);
@@ -479,9 +533,9 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.BackColor = Color.LightSteelBlue;
+            label13.BackColor = Color.FromArgb(28, 46, 74);
             label13.Dock = DockStyle.Fill;
-            label13.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label13.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.Location = new Point(3, 198);
             label13.Name = "label13";
             label13.Size = new Size(435, 84);
@@ -492,9 +546,9 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.BackColor = Color.LightSteelBlue;
+            label15.BackColor = Color.FromArgb(28, 46, 74);
             label15.Dock = DockStyle.Fill;
-            label15.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label15.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label15.Location = new Point(3, 297);
             label15.Name = "label15";
             label15.Size = new Size(435, 84);
@@ -505,9 +559,9 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.BackColor = Color.LightSteelBlue;
+            label16.BackColor = Color.FromArgb(28, 46, 74);
             label16.Dock = DockStyle.Fill;
-            label16.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label16.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label16.Location = new Point(3, 396);
             label16.Name = "label16";
             label16.Size = new Size(435, 84);
@@ -518,9 +572,9 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.BackColor = Color.LightSteelBlue;
+            label17.BackColor = Color.FromArgb(28, 46, 74);
             label17.Dock = DockStyle.Fill;
-            label17.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label17.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label17.Location = new Point(3, 495);
             label17.Name = "label17";
             label17.Size = new Size(435, 84);
@@ -531,9 +585,9 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.BackColor = Color.LightSteelBlue;
+            label18.BackColor = Color.FromArgb(28, 46, 74);
             label18.Dock = DockStyle.Fill;
-            label18.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label18.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label18.Location = new Point(3, 594);
             label18.Name = "label18";
             label18.Size = new Size(435, 84);
@@ -544,9 +598,9 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.BackColor = Color.LightSteelBlue;
+            label10.BackColor = Color.FromArgb(28, 46, 74);
             label10.Dock = DockStyle.Fill;
-            label10.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            label10.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.Location = new Point(3, 693);
             label10.Name = "label10";
             label10.Size = new Size(435, 84);
@@ -557,9 +611,9 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.BackColor = Color.LightSteelBlue;
+            label19.BackColor = Color.FromArgb(28, 46, 74);
             label19.Dock = DockStyle.Fill;
-            label19.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            label19.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label19.Location = new Point(3, 99);
             label19.Name = "label19";
             label19.Size = new Size(435, 84);
@@ -572,7 +626,8 @@
             lblValorCAA.AutoSize = true;
             lblValorCAA.BackColor = Color.WhiteSmoke;
             lblValorCAA.Dock = DockStyle.Fill;
-            lblValorCAA.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorCAA.Font = new Font("Verdana", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblValorCAA.ForeColor = SystemColors.ControlText;
             lblValorCAA.Location = new Point(444, 297);
             lblValorCAA.Name = "lblValorCAA";
             lblValorCAA.Size = new Size(245, 84);
@@ -585,7 +640,8 @@
             lblValorLe.AutoSize = true;
             lblValorLe.BackColor = Color.WhiteSmoke;
             lblValorLe.Dock = DockStyle.Fill;
-            lblValorLe.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorLe.Font = new Font("Verdana", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblValorLe.ForeColor = SystemColors.ControlText;
             lblValorLe.Location = new Point(444, 396);
             lblValorLe.Name = "lblValorLe";
             lblValorLe.Size = new Size(245, 84);
@@ -598,7 +654,8 @@
             lblValorCLE.AutoSize = true;
             lblValorCLE.BackColor = Color.WhiteSmoke;
             lblValorCLE.Dock = DockStyle.Fill;
-            lblValorCLE.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorCLE.Font = new Font("Verdana", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblValorCLE.ForeColor = SystemColors.ControlText;
             lblValorCLE.Location = new Point(444, 495);
             lblValorCLE.Name = "lblValorCLE";
             lblValorCLE.Size = new Size(245, 84);
@@ -611,7 +668,8 @@
             lblPuntoDeReorden.AutoSize = true;
             lblPuntoDeReorden.BackColor = Color.WhiteSmoke;
             lblPuntoDeReorden.Dock = DockStyle.Fill;
-            lblPuntoDeReorden.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblPuntoDeReorden.Font = new Font("Verdana", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPuntoDeReorden.ForeColor = SystemColors.ControlText;
             lblPuntoDeReorden.Location = new Point(444, 594);
             lblPuntoDeReorden.Name = "lblPuntoDeReorden";
             lblPuntoDeReorden.Size = new Size(245, 84);
@@ -624,61 +682,14 @@
             lblDuracionCiclPedido.AutoSize = true;
             lblDuracionCiclPedido.BackColor = Color.WhiteSmoke;
             lblDuracionCiclPedido.Dock = DockStyle.Fill;
-            lblDuracionCiclPedido.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblDuracionCiclPedido.Font = new Font("Verdana", 13.2000008F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDuracionCiclPedido.ForeColor = SystemColors.ControlText;
             lblDuracionCiclPedido.Location = new Point(444, 693);
             lblDuracionCiclPedido.Name = "lblDuracionCiclPedido";
             lblDuracionCiclPedido.Size = new Size(245, 84);
             lblDuracionCiclPedido.TabIndex = 23;
             lblDuracionCiclPedido.Text = "0";
             lblDuracionCiclPedido.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.BackColor = Color.LightSteelBlue;
-            label11.Dock = DockStyle.Fill;
-            label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label11.Location = new Point(583, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(138, 98);
-            label11.TabIndex = 16;
-            label11.Text = "L (Tiempo de Entrega):";
-            label11.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // txtValorL
-            // 
-            txtValorL.Dock = DockStyle.Fill;
-            txtValorL.Font = new Font("Segoe UI", 13F);
-            txtValorL.Location = new Point(583, 101);
-            txtValorL.Multiline = true;
-            txtValorL.Name = "txtValorL";
-            txtValorL.ReadOnly = true;
-            txtValorL.Size = new Size(138, 45);
-            txtValorL.TabIndex = 17;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.BackColor = Color.LightSteelBlue;
-            label12.Dock = DockStyle.Fill;
-            label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            label12.Location = new Point(727, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(142, 98);
-            label12.TabIndex = 18;
-            label12.Text = "Y (Dias Elaborados al Año):";
-            label12.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // txtValorY
-            // 
-            txtValorY.Dock = DockStyle.Fill;
-            txtValorY.Font = new Font("Segoe UI", 13F);
-            txtValorY.Location = new Point(727, 101);
-            txtValorY.Multiline = true;
-            txtValorY.Name = "txtValorY";
-            txtValorY.ReadOnly = true;
-            txtValorY.Size = new Size(142, 45);
-            txtValorY.TabIndex = 19;
             // 
             // frmVerProblema_EOQ
             // 
