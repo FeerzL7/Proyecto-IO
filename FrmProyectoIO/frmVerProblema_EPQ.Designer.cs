@@ -30,9 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVerProblema_EPQ));
             tableLayoutPanel1 = new TableLayoutPanel();
-            tableLayoutPanel4 = new TableLayoutPanel();
-            btnRegresar = new Button();
-            btnModificar = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             label14 = new Label();
             label7 = new Label();
@@ -49,8 +46,6 @@
             txtTitulo = new TextBox();
             label2 = new Label();
             cmbDificultad = new ComboBox();
-            label8 = new Label();
-            txtEnunciado = new TextBox();
             tableLayoutPanel3 = new TableLayoutPanel();
             lblValort = new Label();
             label9 = new Label();
@@ -72,10 +67,15 @@
             lblValorQ = new Label();
             lblValort0 = new Label();
             lblValortp = new Label();
+            btnModificar = new Button();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            btnRegresar = new Button();
+            txtEnunciado = new TextBox();
+            label8 = new Label();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -126,50 +126,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1691, 1055);
             tableLayoutPanel1.TabIndex = 1;
-            // 
-            // tableLayoutPanel4
-            // 
-            tableLayoutPanel4.ColumnCount = 3;
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 194F));
-            tableLayoutPanel4.Controls.Add(btnRegresar, 1, 0);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(956, 834);
-            tableLayoutPanel4.Name = "tableLayoutPanel4";
-            tableLayoutPanel4.RowCount = 2;
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel4.Size = new Size(692, 209);
-            tableLayoutPanel4.TabIndex = 11;
-            // 
-            // btnRegresar
-            // 
-            btnRegresar.BackgroundImage = (Image)resources.GetObject("btnRegresar.BackgroundImage");
-            btnRegresar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnRegresar.Dock = DockStyle.Fill;
-            btnRegresar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnRegresar.Location = new Point(251, 3);
-            btnRegresar.Name = "btnRegresar";
-            tableLayoutPanel4.SetRowSpan(btnRegresar, 2);
-            btnRegresar.Size = new Size(244, 203);
-            btnRegresar.TabIndex = 9;
-            btnRegresar.UseVisualStyleBackColor = true;
-            // 
-            // btnModificar
-            // 
-            btnModificar.AutoSize = true;
-            btnModificar.BackColor = Color.FromArgb(47, 76, 110);
-            btnModificar.BackgroundImage = (Image)resources.GetObject("btnModificar.BackgroundImage");
-            btnModificar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnModificar.Dock = DockStyle.Fill;
-            btnModificar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnModificar.Location = new Point(276, 834);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(292, 209);
-            btnModificar.TabIndex = 8;
-            btnModificar.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 
@@ -382,32 +338,6 @@
             cmbDificultad.Name = "cmbDificultad";
             cmbDificultad.Size = new Size(656, 48);
             cmbDificultad.TabIndex = 3;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.FromArgb(28, 46, 74);
-            tableLayoutPanel1.SetColumnSpan(label8, 3);
-            label8.Dock = DockStyle.Fill;
-            label8.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(39, 358);
-            label8.Name = "label8";
-            label8.Size = new Size(893, 51);
-            label8.TabIndex = 6;
-            label8.Text = "Enunciado: ";
-            label8.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // txtEnunciado
-            // 
-            tableLayoutPanel1.SetColumnSpan(txtEnunciado, 3);
-            txtEnunciado.Dock = DockStyle.Fill;
-            txtEnunciado.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtEnunciado.Location = new Point(39, 420);
-            txtEnunciado.Multiline = true;
-            txtEnunciado.Name = "txtEnunciado";
-            txtEnunciado.ReadOnly = true;
-            txtEnunciado.Size = new Size(893, 397);
-            txtEnunciado.TabIndex = 12;
             // 
             // tableLayoutPanel3
             // 
@@ -733,6 +663,76 @@
             lblValortp.Text = "0";
             lblValortp.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // btnModificar
+            // 
+            btnModificar.AutoSize = true;
+            btnModificar.BackColor = Color.FromArgb(47, 76, 110);
+            btnModificar.BackgroundImage = (Image)resources.GetObject("btnModificar.BackgroundImage");
+            btnModificar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnModificar.Dock = DockStyle.Fill;
+            btnModificar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            btnModificar.Location = new Point(276, 834);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(292, 209);
+            btnModificar.TabIndex = 8;
+            btnModificar.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 3;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 250F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 194F));
+            tableLayoutPanel4.Controls.Add(btnRegresar, 1, 0);
+            tableLayoutPanel4.Dock = DockStyle.Fill;
+            tableLayoutPanel4.Location = new Point(956, 834);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 2;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel4.Size = new Size(692, 209);
+            tableLayoutPanel4.TabIndex = 11;
+            // 
+            // btnRegresar
+            // 
+            btnRegresar.BackgroundImage = (Image)resources.GetObject("btnRegresar.BackgroundImage");
+            btnRegresar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnRegresar.Dock = DockStyle.Fill;
+            btnRegresar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            btnRegresar.Location = new Point(251, 3);
+            btnRegresar.Name = "btnRegresar";
+            tableLayoutPanel4.SetRowSpan(btnRegresar, 2);
+            btnRegresar.Size = new Size(244, 203);
+            btnRegresar.TabIndex = 9;
+            btnRegresar.UseVisualStyleBackColor = true;
+            // 
+            // txtEnunciado
+            // 
+            tableLayoutPanel1.SetColumnSpan(txtEnunciado, 3);
+            txtEnunciado.Dock = DockStyle.Fill;
+            txtEnunciado.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtEnunciado.Location = new Point(39, 420);
+            txtEnunciado.Multiline = true;
+            txtEnunciado.Name = "txtEnunciado";
+            txtEnunciado.ReadOnly = true;
+            txtEnunciado.Size = new Size(893, 397);
+            txtEnunciado.TabIndex = 12;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.FromArgb(28, 46, 74);
+            tableLayoutPanel1.SetColumnSpan(label8, 3);
+            label8.Dock = DockStyle.Fill;
+            label8.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(39, 358);
+            label8.Name = "label8";
+            label8.Size = new Size(893, 51);
+            label8.TabIndex = 6;
+            label8.Text = "Enunciado: ";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // frmVerProblema_EPQ
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -745,11 +745,11 @@
             Text = "frmVerProblema_1FilaMultServ";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel3.PerformLayout();
+            tableLayoutPanel4.ResumeLayout(false);
             ResumeLayout(false);
         }
 
