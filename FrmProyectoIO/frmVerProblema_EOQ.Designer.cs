@@ -648,6 +648,7 @@
             btnModificar.Size = new Size(273, 209);
             btnModificar.TabIndex = 8;
             btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += btnModificar_Click;
             // 
             // tableLayoutPanel4
             // 
@@ -678,6 +679,7 @@
             btnRegresar.Size = new Size(260, 203);
             btnRegresar.TabIndex = 9;
             btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // txtEnunciado
             // 
@@ -715,6 +717,7 @@
             Margin = new Padding(2);
             Name = "frmVerProblema_EOQ";
             Text = "frmVerProblema_1Serv1Fila";
+            Load += frmVerProblema_EOQ_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
