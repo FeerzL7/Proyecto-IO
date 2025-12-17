@@ -123,9 +123,9 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 13.1964808F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 1.384083F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 39.5894432F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 373F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 404F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 6F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 7F));
@@ -188,13 +188,13 @@
             tableLayoutPanel4.Controls.Add(label7, 0, 0);
             tableLayoutPanel4.Controls.Add(txtEnunciado, 0, 2);
             tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(20, 453);
+            tableLayoutPanel4.Location = new Point(20, 422);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 3;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 89.74359F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 10.2564106F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 322F));
-            tableLayoutPanel4.Size = new Size(842, 367);
+            tableLayoutPanel4.Size = new Size(842, 398);
             tableLayoutPanel4.TabIndex = 35;
             // 
             // label7
@@ -207,7 +207,7 @@
             label7.Location = new Point(2, 0);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(838, 40);
+            label7.Size = new Size(838, 68);
             label7.TabIndex = 12;
             label7.Text = "Enunciado:";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -217,7 +217,7 @@
             tableLayoutPanel4.SetColumnSpan(txtEnunciado, 2);
             txtEnunciado.Dock = DockStyle.Fill;
             txtEnunciado.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEnunciado.Location = new Point(2, 46);
+            txtEnunciado.Location = new Point(2, 77);
             txtEnunciado.Margin = new Padding(2);
             txtEnunciado.Multiline = true;
             txtEnunciado.Name = "txtEnunciado";
@@ -304,50 +304,50 @@
             tableLayoutPanel1.SetRowSpan(tableLayoutPanel2, 2);
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 63.29114F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 36.7088623F));
-            tableLayoutPanel2.Size = new Size(844, 196);
+            tableLayoutPanel2.Size = new Size(844, 165);
             tableLayoutPanel2.TabIndex = 17;
             // 
             // txtValorCoCs
             // 
             txtValorCoCs.Dock = DockStyle.Fill;
-            txtValorCoCs.Location = new Point(183, 126);
+            txtValorCoCs.Location = new Point(183, 106);
             txtValorCoCs.Margin = new Padding(2);
             txtValorCoCs.Multiline = true;
             txtValorCoCs.Name = "txtValorCoCs";
-            txtValorCoCs.Size = new Size(179, 68);
+            txtValorCoCs.Size = new Size(179, 57);
             txtValorCoCs.TabIndex = 18;
             txtValorCoCs.TextAlign = HorizontalAlignment.Center;
             // 
             // txtValorD
             // 
             txtValorD.Dock = DockStyle.Fill;
-            txtValorD.Location = new Point(2, 126);
+            txtValorD.Location = new Point(2, 106);
             txtValorD.Margin = new Padding(2);
             txtValorD.Multiline = true;
             txtValorD.Name = "txtValorD";
-            txtValorD.Size = new Size(177, 68);
+            txtValorD.Size = new Size(177, 57);
             txtValorD.TabIndex = 17;
             txtValorD.TextAlign = HorizontalAlignment.Center;
             // 
             // txtValorDemDiaria
             // 
             txtValorDemDiaria.Dock = DockStyle.Fill;
-            txtValorDemDiaria.Location = new Point(710, 126);
+            txtValorDemDiaria.Location = new Point(710, 106);
             txtValorDemDiaria.Margin = new Padding(2);
             txtValorDemDiaria.Multiline = true;
             txtValorDemDiaria.Name = "txtValorDemDiaria";
-            txtValorDemDiaria.Size = new Size(132, 68);
+            txtValorDemDiaria.Size = new Size(132, 57);
             txtValorDemDiaria.TabIndex = 15;
             txtValorDemDiaria.TextAlign = HorizontalAlignment.Center;
             // 
             // txtValorp
             // 
             txtValorp.Dock = DockStyle.Fill;
-            txtValorp.Location = new Point(530, 126);
+            txtValorp.Location = new Point(530, 106);
             txtValorp.Margin = new Padding(2);
             txtValorp.Multiline = true;
             txtValorp.Name = "txtValorp";
-            txtValorp.Size = new Size(176, 68);
+            txtValorp.Size = new Size(176, 57);
             txtValorp.TabIndex = 14;
             txtValorp.TextAlign = HorizontalAlignment.Center;
             // 
@@ -360,7 +360,7 @@
             label20.Location = new Point(710, 0);
             label20.Margin = new Padding(2, 0, 2, 0);
             label20.Name = "label20";
-            label20.Size = new Size(132, 124);
+            label20.Size = new Size(132, 104);
             label20.TabIndex = 12;
             label20.Text = "d (Demanda Diaria):";
             label20.TextAlign = ContentAlignment.MiddleCenter;
@@ -374,7 +374,7 @@
             label19.Location = new Point(530, 0);
             label19.Margin = new Padding(2, 0, 2, 0);
             label19.Name = "label19";
-            label19.Size = new Size(176, 124);
+            label19.Size = new Size(176, 104);
             label19.TabIndex = 11;
             label19.Text = "p (Taza de Produccion al Dia):";
             label19.TextAlign = ContentAlignment.MiddleCenter;
@@ -388,7 +388,7 @@
             label4.Location = new Point(183, 0);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(179, 124);
+            label4.Size = new Size(179, 104);
             label4.TabIndex = 9;
             label4.Text = "Co/Cs(Costo por Ordenar):";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -396,11 +396,11 @@
             // txtValorCh
             // 
             txtValorCh.Dock = DockStyle.Fill;
-            txtValorCh.Location = new Point(366, 126);
+            txtValorCh.Location = new Point(366, 106);
             txtValorCh.Margin = new Padding(2);
             txtValorCh.Multiline = true;
             txtValorCh.Name = "txtValorCh";
-            txtValorCh.Size = new Size(160, 68);
+            txtValorCh.Size = new Size(160, 57);
             txtValorCh.TabIndex = 6;
             txtValorCh.TextAlign = HorizontalAlignment.Center;
             // 
@@ -413,7 +413,7 @@
             label3.Location = new Point(2, 0);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(177, 124);
+            label3.Size = new Size(177, 104);
             label3.TabIndex = 8;
             label3.Text = "D\r\n(Demanda Anual)\r\n:";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -427,7 +427,7 @@
             label6.Location = new Point(366, 0);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(160, 124);
+            label6.Size = new Size(160, 104);
             label6.TabIndex = 10;
             label6.Text = "Ch (Costo por Almacenar):";
             label6.TextAlign = ContentAlignment.MiddleCenter;
