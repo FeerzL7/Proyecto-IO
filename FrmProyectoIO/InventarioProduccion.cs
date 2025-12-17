@@ -10,6 +10,8 @@ namespace FrmProyectoIO
 
 
     {
+        public override TipoEjercicio Tipo => TipoEjercicio.EPQ;
+
         public ushort TasaDeProduccion { get; set; }
 
         public override double CantidadDeLoteEconomico
@@ -31,7 +33,7 @@ namespace FrmProyectoIO
         {
             get { return (decimal)(DemandaXunidadTiempo / CantidadDeLoteEconomico) * CostoPorColocarOrden; }
         }
-        public decimal CostoAnualXAlmacenar
+        public override decimal CostoAnualXAlmacenar
         {
             get
             {

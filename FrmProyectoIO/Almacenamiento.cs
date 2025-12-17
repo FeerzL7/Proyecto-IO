@@ -10,12 +10,14 @@ namespace FrmProyectoIO
     public class Almacenamiento
     {
         public Dictionary<Dificultad, List<Inventario>> Ejercicios { get; set; } = new();
+
         public delegate void Profesor();
-        public event Profesor ? AlCambiar;
+        public event Profesor? AlCambiar;
 
 
         public void Registrar(Dificultad dificultad, Inventario inventario)
         {
+
             if (!Enum.IsDefined(typeof(Dificultad), dificultad))
                 throw new ArgumentException("Seleccionó algún dato no compatible.");
             if (dificultad != Dificultad.Facil)
@@ -76,32 +78,54 @@ namespace FrmProyectoIO
 
             }
         }
+        public void Modificar(Dificultad dificultad, Inventario invmodificado)
+        {
+
+            if (!Enum.IsDefined(typeof(Dificultad), dificultad))
+                throw new ArgumentException("Dificultad no valida");
+            if (invmodificado == null)
+                throw new ArgumentNullException("Inventario vacio");
+            if (!Ejercicios.ContainsKey(dificultad))
+                throw new ArgumentException("No existen ejercicios en esa dificultad");
+            var lista = Ejercicios[dificultad];
+            var ejeActual = lista.FirstOrDefault(x => x.Id == invmodificado.Id);
+
+            if (ejeActual == null)
+                throw new ArgumentException("No se encontro el ejercicio a modificar");
+            int index = lista.IndexOf(ejeActual);
+            lista[index] = invmodificado;
+
+            AlCambiar?.Invoke();
+        }
 
         public void Eliminar(Dificultad dificultad, Inventario inventario)
         {
+
             if (!Enum.IsDefined(typeof(Dificultad), dificultad))
-                throw new ArgumentException("Seleccionó algún dato no compatible.");
+                throw new ArgumentException("Dificultad no válida.");
+
+
             if (inventario == null)
-                throw new ArgumentNullException("No se encontró el ejercicio que desea eliminar");
+                throw new ArgumentNullException("Ingrese los datos del ejercicio");
 
 
-            if (Ejercicios.ContainsKey(dificultad))
-            {
+            if (!Ejercicios.ContainsKey(dificultad))
+                throw new ArgumentException("No existen ejercicios en esa dificultad.");
 
-                var ejercicioActual = Ejercicios[dificultad]
-                  .FirstOrDefault(x => x.Texto == inventario.Texto);
 
-                if (ejercicioActual != null)
-                {
-                    Ejercicios[dificultad].Remove(ejercicioActual);
-                    AlCambiar?.Invoke();
-                }
-                else
-                {
-                    throw new ArgumentException("No se encontró el ejercicio a eliminar");
-                }
-            }
+            var ejercicioActual = Ejercicios[dificultad]
+                .FirstOrDefault(x => x.Id == inventario.Id);
+
+            if (ejercicioActual == null)
+                throw new ArgumentException("No se encontró el ejercicio a eliminar.");
+
+
+            Ejercicios[dificultad].Remove(ejercicioActual);
+
+
+            AlCambiar?.Invoke();
         }
+
         public void Guardar()
         {
             string json = JsonSerializer.Serialize(Ejercicios, new JsonSerializerOptions() { WriteIndented = true });
@@ -110,14 +134,13 @@ namespace FrmProyectoIO
         }
         public void Leer()
         {
-            if (File.Exists("ArchivoEjerciciosIO.json"))
-            {
-                string json = File.ReadAllText("ArchivoEjerciciosIO.json");
-                Ejercicios = JsonSerializer.Deserialize<Dictionary<Dificultad, List<Inventario>>>(json)
-                 ?? new Dictionary<Dificultad, List<Inventario>>();
-                File.WriteAllText("ArchivoEjerciciosIO.json", json);
-                AlCambiar?.Invoke();
-            }
+            if (!File.Exists("ArchivoEjerciciosIO.json")) return;
+
+            string json = File.ReadAllText("ArchivoEjerciciosIO.json");
+            Ejercicios = JsonSerializer.Deserialize<Dictionary<Dificultad, List<Inventario>>>(json)
+                ?? new();
+
+            AlCambiar?.Invoke();
         }
 
 
