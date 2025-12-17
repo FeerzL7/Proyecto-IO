@@ -18,45 +18,65 @@ namespace FrmProyectoIO
         public void Registrar(Dificultad dificultad, Inventario inventario)
         {
             if (!Enum.IsDefined(typeof(Dificultad), dificultad))
-                throw new ArgumentException("Dificultad no válida.");
-
-            if (string.IsNullOrWhiteSpace(inventario.Texto))
-                throw new ArgumentException("No se proporcionó el texto del ejercicio.");
-
-            // Validaciones de ambos modelos
+                throw new ArgumentException("Seleccionó algún dato no compatible.");
+            if (dificultad != Dificultad.Facil)
+                throw new ArgumentException("Este es un problema fácil.");
             if (inventario.DemandaXunidadTiempo <= 0)
                 throw new ArgumentException("La demanda anual debe ser mayor a cero.");
             if (inventario.CostoPorColocarOrden <= 0)
-                throw new ArgumentException("El costo por ordenar debe ser mayor a cero.");
+                throw new ArgumentException("El coto por ordenar debe ser mayor a cero.");
             if (inventario.CostoPorAlmacenar <= 0)
                 throw new ArgumentException("El costo por almacenar debe ser mayor a cero.");
-
             if (inventario.TiempoDeEntrega > 0 && inventario.DemandaDiaria <= 0)
-                throw new ArgumentException("Debe proporcionar demanda diaria.");
-
-            // Validaciones por tipo de modelo
-            if (inventario.Tipo == TipoEjercicio.EOQ && dificultad != Dificultad.Facil)
-                throw new ArgumentException("EOQ solo corresponde a dificultad fácil.");
-
-            if (inventario.Tipo == TipoEjercicio.EPQ)
-            {
-                if (dificultad != Dificultad.Dificil)
-                    throw new ArgumentException("EPQ solo corresponde a dificultad difícil.");
-
-                var epq = inventario as InventarioProduccion
-                    ?? throw new ArgumentException("Datos EPQ inválidos.");
-
-                if (epq.TasaDeProduccion <= epq.DemandaDiaria)
-                    throw new ArgumentException("La producción debe ser mayor que la demanda.");
-            }
-
+                throw new ArgumentException("Si el tiempo de entrega es mayor a cero debe \n proporcionarnos la demanda diaria");
+            if (string.IsNullOrWhiteSpace(inventario.Texto))
+                throw new ArgumentException("No nos a proporcionado el texto");
             if (!Ejercicios.ContainsKey(dificultad))
-                Ejercicios[dificultad] = new List<Inventario>();
+            {
+                Ejercicios.Add(dificultad, new List<Inventario>() { inventario });
+                AlCambiar?.Invoke();
+            }
+            else
+            {
+                Ejercicios[dificultad].Add(inventario);
+                AlCambiar?.Invoke();
 
-            Ejercicios[dificultad].Add(inventario);
-            AlCambiar?.Invoke();
+            }
         }
+        public void Registrar(Dificultad dificultad, InventarioProduccion inventario)
+        {
 
+            if (!Enum.IsDefined(typeof(Dificultad), dificultad))
+                throw new ArgumentException("Seleccionó algún dato no compatible.");
+            if (dificultad != Dificultad.Dificil)
+                throw new ArgumentException("Este es un problema difícil.");
+            if (inventario.DemandaXunidadTiempo <= 0)
+                throw new ArgumentException("La demanda anual debe ser mayor a cero.");
+            if (inventario.CostoPorColocarOrden <= 0)
+                throw new ArgumentException("El coto por ordenar debe ser mayor a cero.");
+            if (inventario.CostoPorAlmacenar <= 0)
+                throw new ArgumentException("El costo por almacenar debe ser mayor a cero.");
+            if (inventario.DemandaDiaria <= 0)
+                throw new ArgumentException("La demanda diaria debe ser mayor a cero.");
+            if (inventario.TasaDeProduccion <= 0)
+                throw new ArgumentException("La produccion diaria debe ser mayor a cero.");
+            if (inventario.TasaDeProduccion <= inventario.DemandaDiaria)
+                throw new ArgumentException("En EPQ la producción diaria debe ser mayor que la demanda diaria.");
+            if (string.IsNullOrWhiteSpace(inventario.Texto))
+                throw new ArgumentException("No nos a proporcionado el texto.");
+            if (!Ejercicios.ContainsKey(dificultad))
+            {
+                Ejercicios.Add(dificultad, new List<Inventario>() { inventario });
+                AlCambiar?.Invoke();
+
+            }
+            else
+            {
+                Ejercicios[dificultad].Add(inventario);
+                AlCambiar?.Invoke();
+
+            }
+        }
         public void Modificar(Dificultad dificultad, Inventario invmodificado) 
         {
 
