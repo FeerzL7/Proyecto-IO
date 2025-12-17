@@ -17,6 +17,7 @@ namespace FrmProyectoIO
 
         public void Registrar(Dificultad dificultad, Inventario inventario)
         {
+
             if (!Enum.IsDefined(typeof(Dificultad), dificultad))
                 throw new ArgumentException("Seleccionó algún dato no compatible.");
             if (dificultad != Dificultad.Facil)
