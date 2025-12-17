@@ -30,30 +30,30 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal_EOQ_EPQ));
             tableLayoutPanel1 = new TableLayoutPanel();
-            dataGridView1 = new DataGridView();
+            dgvEjercicios = new DataGridView();
             Ejercicios = new DataGridViewTextBoxColumn();
             VER = new DataGridViewTextBoxColumn();
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             label1 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
-            button3 = new Button();
-            cmbDificultad = new ComboBox();
+            btnAgregar = new Button();
+            cmbNivelDificultad = new ComboBox();
             tableLayoutPanel3 = new TableLayoutPanel();
-            button5 = new Button();
+            btnEliminar = new Button();
             tableLayoutPanel4 = new TableLayoutPanel();
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            txtTitulo = new TextBox();
+            txtEnunciado = new TextBox();
             tableLayoutPanel5 = new TableLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
+            btnConsultar = new Button();
+            btnLimpiar = new Button();
             tableLayoutPanel6 = new TableLayoutPanel();
-            button4 = new Button();
+            btnRegresar = new Button();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEjercicios).BeginInit();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
@@ -78,12 +78,12 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 16F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(dataGridView1, 1, 5);
+            tableLayoutPanel1.Controls.Add(dgvEjercicios, 1, 5);
             tableLayoutPanel1.Controls.Add(radioButton1, 1, 3);
             tableLayoutPanel1.Controls.Add(radioButton2, 3, 3);
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 11);
-            tableLayoutPanel1.Controls.Add(cmbDificultad, 3, 1);
+            tableLayoutPanel1.Controls.Add(cmbNivelDificultad, 3, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 3, 11);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 7, 3);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel6, 9, 11);
@@ -108,21 +108,21 @@
             tableLayoutPanel1.Size = new Size(1608, 916);
             tableLayoutPanel1.TabIndex = 12;
             // 
-            // dataGridView1
+            // dgvEjercicios
             // 
-            dataGridView1.BackgroundColor = Color.FromArgb(28, 46, 74);
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Ejercicios, VER });
-            tableLayoutPanel1.SetColumnSpan(dataGridView1, 4);
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.Location = new Point(30, 189);
-            dataGridView1.Margin = new Padding(2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 82;
-            tableLayoutPanel1.SetRowSpan(dataGridView1, 5);
-            dataGridView1.Size = new Size(941, 496);
-            dataGridView1.TabIndex = 1;
+            dgvEjercicios.BackgroundColor = Color.FromArgb(28, 46, 74);
+            dgvEjercicios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEjercicios.Columns.AddRange(new DataGridViewColumn[] { Ejercicios, VER });
+            tableLayoutPanel1.SetColumnSpan(dgvEjercicios, 4);
+            dgvEjercicios.Dock = DockStyle.Fill;
+            dgvEjercicios.Location = new Point(30, 189);
+            dgvEjercicios.Margin = new Padding(2);
+            dgvEjercicios.Name = "dgvEjercicios";
+            dgvEjercicios.RowHeadersVisible = false;
+            dgvEjercicios.RowHeadersWidth = 82;
+            tableLayoutPanel1.SetRowSpan(dgvEjercicios, 5);
+            dgvEjercicios.Size = new Size(941, 496);
+            dgvEjercicios.TabIndex = 1;
             // 
             // Ejercicios
             // 
@@ -193,7 +193,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.1545181F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.84548F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
-            tableLayoutPanel2.Controls.Add(button3, 1, 1);
+            tableLayoutPanel2.Controls.Add(btnAgregar, 1, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(31, 695);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -204,30 +204,30 @@
             tableLayoutPanel2.Size = new Size(456, 209);
             tableLayoutPanel2.TabIndex = 15;
             // 
-            // button3
+            // btnAgregar
             // 
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.Dock = DockStyle.Fill;
-            button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(101, 10);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(236, 188);
-            button3.TabIndex = 7;
-            button3.UseVisualStyleBackColor = true;
+            btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
+            btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAgregar.Dock = DockStyle.Fill;
+            btnAgregar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregar.Location = new Point(101, 10);
+            btnAgregar.Margin = new Padding(2);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(236, 188);
+            btnAgregar.TabIndex = 7;
+            btnAgregar.UseVisualStyleBackColor = true;
             // 
-            // cmbDificultad
+            // cmbNivelDificultad
             // 
-            tableLayoutPanel1.SetColumnSpan(cmbDificultad, 3);
-            cmbDificultad.Dock = DockStyle.Fill;
-            cmbDificultad.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbDificultad.FormattingEnabled = true;
-            cmbDificultad.Location = new Point(502, 13);
-            cmbDificultad.Margin = new Padding(2);
-            cmbDificultad.Name = "cmbDificultad";
-            cmbDificultad.Size = new Size(474, 37);
-            cmbDificultad.TabIndex = 3;
+            tableLayoutPanel1.SetColumnSpan(cmbNivelDificultad, 3);
+            cmbNivelDificultad.Dock = DockStyle.Fill;
+            cmbNivelDificultad.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbNivelDificultad.FormattingEnabled = true;
+            cmbNivelDificultad.Location = new Point(502, 13);
+            cmbNivelDificultad.Margin = new Padding(2);
+            cmbNivelDificultad.Name = "cmbNivelDificultad";
+            cmbNivelDificultad.Size = new Size(474, 37);
+            cmbNivelDificultad.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
@@ -235,7 +235,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 31.988472F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 68.01153F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 88F));
-            tableLayoutPanel3.Controls.Add(button5, 1, 1);
+            tableLayoutPanel3.Controls.Add(btnEliminar, 1, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(503, 695);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -246,17 +246,17 @@
             tableLayoutPanel3.Size = new Size(436, 209);
             tableLayoutPanel3.TabIndex = 18;
             // 
-            // button5
+            // btnEliminar
             // 
-            button5.BackgroundImage = (Image)resources.GetObject("button5.BackgroundImage");
-            button5.BackgroundImageLayout = ImageLayout.Stretch;
-            button5.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(113, 11);
-            button5.Margin = new Padding(2);
-            button5.Name = "button5";
-            button5.Size = new Size(232, 183);
-            button5.TabIndex = 9;
-            button5.UseVisualStyleBackColor = true;
+            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
+            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEliminar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.Location = new Point(113, 11);
+            btnEliminar.Margin = new Padding(2);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(232, 183);
+            btnEliminar.TabIndex = 9;
+            btnEliminar.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
             // 
@@ -269,8 +269,8 @@
             tableLayoutPanel4.Controls.Add(label4, 0, 0);
             tableLayoutPanel4.Controls.Add(label3, 0, 4);
             tableLayoutPanel4.Controls.Add(label2, 0, 2);
-            tableLayoutPanel4.Controls.Add(textBox1, 1, 2);
-            tableLayoutPanel4.Controls.Add(textBox2, 0, 6);
+            tableLayoutPanel4.Controls.Add(txtTitulo, 1, 2);
+            tableLayoutPanel4.Controls.Add(txtEnunciado, 0, 6);
             tableLayoutPanel4.Controls.Add(tableLayoutPanel5, 0, 8);
             tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(990, 111);
@@ -334,27 +334,27 @@
             label2.Text = "Titulo:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox1
+            // txtTitulo
             // 
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(309, 69);
-            textBox1.Margin = new Padding(2);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(304, 36);
-            textBox1.TabIndex = 13;
+            txtTitulo.Dock = DockStyle.Fill;
+            txtTitulo.Font = new Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTitulo.Location = new Point(309, 69);
+            txtTitulo.Margin = new Padding(2);
+            txtTitulo.Multiline = true;
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(304, 36);
+            txtTitulo.TabIndex = 13;
             // 
-            // textBox2
+            // txtEnunciado
             // 
-            tableLayoutPanel4.SetColumnSpan(textBox2, 2);
-            textBox2.Dock = DockStyle.Fill;
-            textBox2.Location = new Point(2, 170);
-            textBox2.Margin = new Padding(2);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(611, 248);
-            textBox2.TabIndex = 14;
+            tableLayoutPanel4.SetColumnSpan(txtEnunciado, 2);
+            txtEnunciado.Dock = DockStyle.Fill;
+            txtEnunciado.Location = new Point(2, 170);
+            txtEnunciado.Margin = new Padding(2);
+            txtEnunciado.Multiline = true;
+            txtEnunciado.Name = "txtEnunciado";
+            txtEnunciado.Size = new Size(611, 248);
+            txtEnunciado.TabIndex = 14;
             // 
             // tableLayoutPanel5
             // 
@@ -365,8 +365,8 @@
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 22F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 267F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 22F));
-            tableLayoutPanel5.Controls.Add(button1, 1, 1);
-            tableLayoutPanel5.Controls.Add(button2, 3, 1);
+            tableLayoutPanel5.Controls.Add(btnConsultar, 1, 1);
+            tableLayoutPanel5.Controls.Add(btnLimpiar, 3, 1);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(3, 432);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -377,31 +377,31 @@
             tableLayoutPanel5.Size = new Size(609, 130);
             tableLayoutPanel5.TabIndex = 16;
             // 
-            // button1
+            // btnConsultar
             // 
-            button1.BackColor = Color.FromArgb(28, 46, 74);
-            button1.Dock = DockStyle.Fill;
-            button1.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(23, 18);
-            button1.Name = "button1";
-            button1.Size = new Size(271, 89);
-            button1.TabIndex = 0;
-            button1.Text = "Consultar";
-            button1.UseVisualStyleBackColor = false;
+            btnConsultar.BackColor = Color.FromArgb(28, 46, 74);
+            btnConsultar.Dock = DockStyle.Fill;
+            btnConsultar.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnConsultar.ForeColor = SystemColors.ButtonHighlight;
+            btnConsultar.Location = new Point(23, 18);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(271, 89);
+            btnConsultar.TabIndex = 0;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnLimpiar
             // 
-            button2.BackColor = Color.FromArgb(28, 46, 74);
-            button2.Dock = DockStyle.Fill;
-            button2.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(322, 18);
-            button2.Name = "button2";
-            button2.Size = new Size(261, 89);
-            button2.TabIndex = 1;
-            button2.Text = "Limpiar";
-            button2.UseVisualStyleBackColor = false;
+            btnLimpiar.BackColor = Color.FromArgb(28, 46, 74);
+            btnLimpiar.Dock = DockStyle.Fill;
+            btnLimpiar.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
+            btnLimpiar.Location = new Point(322, 18);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(261, 89);
+            btnLimpiar.TabIndex = 1;
+            btnLimpiar.Text = "Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel6
             // 
@@ -409,7 +409,7 @@
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.78341F));
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.21659F));
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
-            tableLayoutPanel6.Controls.Add(button4, 1, 1);
+            tableLayoutPanel6.Controls.Add(btnRegresar, 1, 1);
             tableLayoutPanel6.Dock = DockStyle.Fill;
             tableLayoutPanel6.Location = new Point(1006, 695);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -420,19 +420,18 @@
             tableLayoutPanel6.Size = new Size(542, 209);
             tableLayoutPanel6.TabIndex = 19;
             // 
-            // button4
+            // btnRegresar
             // 
-            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
-            button4.BackgroundImageLayout = ImageLayout.Stretch;
-            button4.Dock = DockStyle.Fill;
-            button4.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(175, 10);
-            button4.Margin = new Padding(2);
-            button4.Name = "button4";
-            button4.Size = new Size(248, 188);
-            button4.TabIndex = 8;
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            btnRegresar.BackgroundImage = (Image)resources.GetObject("btnRegresar.BackgroundImage");
+            btnRegresar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnRegresar.Dock = DockStyle.Fill;
+            btnRegresar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegresar.Location = new Point(175, 10);
+            btnRegresar.Margin = new Padding(2);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(248, 188);
+            btnRegresar.TabIndex = 8;
+            btnRegresar.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal_EOQ_EPQ
             // 
@@ -447,7 +446,7 @@
             Load += frmPrincipal_EOQ_EPQ_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEjercicios).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
@@ -460,27 +459,27 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvEjercicios;
         private DataGridViewTextBoxColumn Ejercicios;
         private DataGridViewTextBoxColumn VER;
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel2;
-        private Button button3;
-        private ComboBox cmbDificultad;
+        private Button btnAgregar;
+        private ComboBox cmbNivelDificultad;
         private TableLayoutPanel tableLayoutPanel3;
-        private Button button5;
+        private Button btnEliminar;
         private TableLayoutPanel tableLayoutPanel4;
         private Label label4;
         private Label label3;
         private Label label2;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtTitulo;
+        private TextBox txtEnunciado;
         private TableLayoutPanel tableLayoutPanel5;
-        private Button button1;
-        private Button button2;
+        private Button btnConsultar;
+        private Button btnLimpiar;
         private TableLayoutPanel tableLayoutPanel6;
-        private Button button4;
+        private Button btnRegresar;
     }
 }

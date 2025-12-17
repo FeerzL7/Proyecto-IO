@@ -45,7 +45,6 @@
             label1 = new Label();
             txtTitulo = new TextBox();
             label2 = new Label();
-            cmbDificultad = new ComboBox();
             tableLayoutPanel3 = new TableLayoutPanel();
             lblValort = new Label();
             label9 = new Label();
@@ -72,6 +71,7 @@
             btnRegresar = new Button();
             txtEnunciado = new TextBox();
             label8 = new Label();
+            cmbDificultad = new ComboBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -96,11 +96,11 @@
             tableLayoutPanel1.Controls.Add(txtTitulo, 3, 2);
             tableLayoutPanel1.Controls.Add(label2, 2, 4);
             tableLayoutPanel1.Controls.Add(cmbDificultad, 3, 4);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 6, 2);
             tableLayoutPanel1.Controls.Add(btnModificar, 3, 14);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 6, 14);
             tableLayoutPanel1.Controls.Add(txtEnunciado, 2, 12);
             tableLayoutPanel1.Controls.Add(label8, 2, 10);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 6, 2);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel1.ForeColor = SystemColors.ControlLightLight;
@@ -378,7 +378,7 @@
             tableLayoutPanel3.Location = new Point(557, -219);
             tableLayoutPanel3.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 20;
+            tableLayoutPanel3.RowCount = 19;
             tableLayoutPanel1.SetRowSpan(tableLayoutPanel3, 11);
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.03402F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
@@ -638,9 +638,9 @@
             lblValorQ.Dock = DockStyle.Fill;
             lblValorQ.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
             lblValorQ.ForeColor = SystemColors.ControlText;
-            lblValorQ.Location = new Point(389, 406);
+            lblValorQ.Location = new Point(444, 574);
             lblValorQ.Name = "lblValorQ";
-            lblValorQ.Size = new Size(213, 47);
+            lblValorQ.Size = new Size(245, 67);
             lblValorQ.TabIndex = 23;
             lblValorQ.Text = "0";
             lblValorQ.TextAlign = ContentAlignment.MiddleCenter;
@@ -743,6 +743,18 @@
             label8.Text = "Enunciado: ";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // cmbDificultad
+            // 
+            tableLayoutPanel1.SetColumnSpan(cmbDificultad, 2);
+            cmbDificultad.Dock = DockStyle.Fill;
+            cmbDificultad.Enabled = false;
+            cmbDificultad.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbDificultad.FormattingEnabled = true;
+            cmbDificultad.Location = new Point(276, 84);
+            cmbDificultad.Name = "cmbDificultad";
+            cmbDificultad.Size = new Size(656, 48);
+            cmbDificultad.TabIndex = 3;
+            // 
             // frmVerProblema_EPQ
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -754,6 +766,7 @@
             Name = "frmVerProblema_EPQ";
             Text = "frmVerProblema_1FilaMultServ";
             Load += frmVerProblema_EPQ_Load;
+            Text = "frmVerProblema_EPQ";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
@@ -769,7 +782,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox txtTitulo;
         private Label label1;
-        private ComboBox cmbDificultad;
         private Label label2;
         private Label label3;
         private TableLayoutPanel tableLayoutPanel2;
@@ -812,6 +824,7 @@
         private TableLayoutPanel tableLayoutPanel4;
         private Button btnRegresar;
         private TextBox txtEnunciado;
+        private ComboBox cmbDificultad;
         // private Label lblWq;
         // private Label lblWq;
     }
