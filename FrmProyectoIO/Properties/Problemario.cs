@@ -7,74 +7,190 @@ using System.Threading.Tasks;
 
 namespace FrmProyectoIO.Properties
 {
-    internal class Problemario
+    public class Problemario
     {
-        Dictionary<Dificultad, List<UnaFilaUnServidor>> problemas { get; set; } = new Dictionary<Dificultad, List<UnaFilaUnServidor>>();
+        public Dictionary<Dificultad, List<ModeloUnSoloServidor>> Reactivo { get; set; } = new();
 
-        public void AgregarProblema(string titulo, string enunciado, float m, float y, Dificultad dificultad)
+        public delegate void ProblemarioHandler();
+        public event ProblemarioHandler? SeActualizoLista;
+
+        public void AgregarProblema(string titulo, string enunciado, double tasallegada, double tasaservicio, Dificultad dificultad)
         {
-            if (string.IsNullOrEmpty(titulo) || titulo.Length > 50) { throw new ArgumentException("Ingrese un titulo valido que no exceda los 50 caracteres"); }
-            if (string.IsNullOrEmpty(enunciado) || enunciado.Length > 250) { throw new ArgumentException("Ingrese el enunciado valido que no exceda los 250 caracteres"); }
-            if (m <= 0) { throw new ArgumentException("la tasa de servicio debe ser mayor a 0"); }
-            if (y <= 0) { throw new ArgumentException("la tasa de llegada debe ser mayor a 0"); }
-            UnaFilaUnServidor problema = new UnaFilaUnServidor()
+            //Validaciones de entrada
+            if (string.IsNullOrWhiteSpace(titulo))
+            {
+                throw new ArgumentException("Ingrese el titulo del problema");
+            }
+            if (string.IsNullOrWhiteSpace(enunciado))
+            {
+                throw new ArgumentException("Ingrese el enunciado del problema");
+            }
+            if (tasallegada <= 0)
+            {
+                throw new ArgumentException("la tasa de llegada debe ser mayor que 0");
+            }
+            if (tasaservicio <= 0)
+            {
+                throw new ArgumentException("la tasa de servicio debe ser mayor que 0");
+            }
+
+            if (!Reactivo.ContainsKey(dificultad))
+            {
+                Reactivo.Add(dificultad, new List<ModeloUnSoloServidor>());
+            }
+            //Que no se repita el titulo
+            if (Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == titulo.ToUpper()))
+            {
+                throw new ArgumentException("");
+            }
+
+            Reactivo[dificultad].Add(new ModeloUnSoloServidor
             {
                 Titulo = titulo,
                 Enunciado = enunciado,
-                TasaServicio = (byte)m,
-                TasaLlegada = y,
+                TasaLlegada = tasallegada,
+                TasaServicio = tasaservicio
+            });
+            SeActualizoLista?.Invoke();
+
+        }
+        public void AgregarProblema(string titulo, string enunciado, double tasallegada, double tasaservicio, int servidores, Dificultad dificultad)
+        {
+            //Validaciones de entrada
+            if (string.IsNullOrWhiteSpace(titulo))
+            {
+                throw new ArgumentException("Ingrese el titulo del problema");
+            }
+            if (string.IsNullOrWhiteSpace(enunciado))
+            {
+                throw new ArgumentException("Ingrese el enunciado del problema");
+            }
+            if (tasallegada <= 0)
+            {
+                throw new ArgumentException("la tasa de llegada debe ser mayor que 0");
+            }
+            if (tasaservicio <= 0)
+            {
+                throw new ArgumentException("la tasa de servicio debe ser mayor que 0");
+            }
+            if (servidores <= 0)
+            {
+                throw new ArgumentException("el numero de servidores debe ser mayor que 0");
+            }
+
+            if (!Reactivo.ContainsKey(dificultad))//si no existe la llave todavia la crea
+            {
+                Reactivo.Add(dificultad, new List<ModeloUnSoloServidor>());
+            }
+
+            if (Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == titulo.ToUpper())) //si el problema a agregar ya existe
+            {
+                throw new ArgumentException("");
+            }
+            Reactivo[dificultad].Add(new ModeloMultiplesServidores
+            {
+                Titulo = titulo,
+                Enunciado = enunciado,
+                TasaLlegada = tasallegada,
+                TasaServicio = tasaservicio,
+                Servidores = servidores,
                 NivelDificultad = dificultad
-            };
-            problemas[dificil].Add(problema);
+            });
+            SeActualizoLista?.Invoke();
+
         }
-        public void AgregarProblema(string titulo, string enunciado, float m, float M, float y, Dificultad dificil)
+
+
+        public void ModificarProblema(ModeloUnSoloServidor problema, Dificultad dificultad)
         {
-            if (string.IsNullOrEmpty(titulo) || titulo.Length > 50) { throw new ArgumentException("Ingrese un titulo valido que no exceda los 50 caracteres"); }
-            if (string.IsNullOrEmpty(enunciado) || enunciado.Length > 250) { throw new ArgumentException("Ingrese el enunciado valido que no exceda los 250 caracteres"); }
-            if (m <= 0) { throw new ArgumentException("La tasa de servicio debe ser mayor a 0"); }
-            if (y <= 0) { throw new ArgumentException("La tasa de llegada debe ser mayor a 0"); }
-            if (M <= 0) { throw new ArgumentException("El numero de servidores debe ser mayor a 0"); }
-            UnaFilaUnServidor problema = new UnaFilasMuchosServidores()
+            //Validacion
+            if (problema == null)
             {
-                Titulo = titulo,
-                Enunciado = enunciado,
-                TasaServicio = (byte)m,
-                TasaLlegada = y,
-                Servidores = M,
-                NivelDificultad = dificil
-            };
-            problemas[dificil].Add(problema);
+                throw new ArgumentException("Seleccione que reactivo desea modificar");
+            }
+            if (string.IsNullOrWhiteSpace(problema.Titulo))
+            {
+                throw new ArgumentException("Ingrese el titulo del problema");
+            }
+            if (string.IsNullOrWhiteSpace(problema.Enunciado))
+            {
+                throw new ArgumentException("Ingrese el enunciado del problema");
+            }
+            if (problema.TasaLlegada <= 0 || problema.TasaServicio <= 0)
+            {
+                throw new ArgumentException("la tasa de llegada y la tasa de servicio debe ser mayor que 0");
+            }
+
+            //busca el problema que seleccionaron
+            var ProblemaModificar = Reactivo[dificultad].FirstOrDefault(x => x.Titulo == problema.Titulo);
+            if (ProblemaModificar != null) //si este no es nulo actualiza los valores 
+            {
+                ProblemaModificar.Titulo = problema.Titulo;
+                ProblemaModificar.Enunciado = problema.Enunciado;
+                ProblemaModificar.TasaLlegada = problema.TasaLlegada;
+                ProblemaModificar.TasaServicio = problema.TasaServicio;
+
+            }
+            SeActualizoLista?.Invoke();
         }
-        public void Eliminar(UnaFilaUnServidor problema)
+
+
+        public void ModificarProblema(ModeloMultiplesServidores problema, Dificultad dificultad)
         {
-            if (problema == null) { throw new ArgumentException("no se puede eliminar un problema nulo"); }
-            problemas[problema.NivelDificultad].Remove(problema);
+            //Validacion
+            if (problema == null)
+            {
+                throw new ArgumentException("Seleccione que reactivo desea modificar");
+            }
+            if (string.IsNullOrWhiteSpace(problema.Titulo))
+            {
+                throw new ArgumentException("Ingrese el titulo del problema");
+            }
+            if (string.IsNullOrWhiteSpace(problema.Enunciado))
+            {
+                throw new ArgumentException("Ingrese el enunciado del problema");
+            }
+            if (problema.TasaLlegada <= 0 || problema.TasaServicio <= 0)
+            {
+                throw new ArgumentException("la tasa de llegada y la tasa de servicio debe ser mayor que 0");
+            }
+
+            //guardalo como un ModeloMultiplesServidores
+            ModeloMultiplesServidores? ProblemaModificar = Reactivo[dificultad].FirstOrDefault(x => x.Titulo == problema.Titulo) as ModeloMultiplesServidores;
+            if (ProblemaModificar != null)
+            {
+                ProblemaModificar.Titulo = problema.Titulo;
+                ProblemaModificar.Enunciado = problema.Enunciado;
+                ProblemaModificar.TasaLlegada = problema.TasaLlegada;
+                ProblemaModificar.TasaServicio = problema.TasaServicio;
+                ProblemaModificar.Servidores = problema.Servidores;
+
+            }
+            SeActualizoLista?.Invoke();
         }
-        public void Modificar(UnaFilaUnServidor problema, string titulo, string enunciado, float m, float y)
+
+
+        public void Eliminar(ModeloUnSoloServidor problema)
         {
-            if (problema == null) { throw new ArgumentException("no se puede modificar un problema nulo"); }
-            if (string.IsNullOrEmpty(titulo) || titulo.Length > 50) { throw new ArgumentException("Ingrese un titulo valido que no exceda los 50 caracteres"); }
-            if (string.IsNullOrEmpty(enunciado) || enunciado.Length > 250) { throw new ArgumentException("Ingrese el enunciado valido que no exceda los 250 caracteres"); }
-            if (m <= 0) { throw new ArgumentException("la tasa de servicio debe ser mayor a 0"); }
-            if (y <= 0) { throw new ArgumentException("la tasa de llegada debe ser mayor a 0"); }
-            problema.Titulo = titulo;
-            problema.Enunciado = enunciado;
-            problema.TasaServicio = (byte)m;
-            problema.TasaLlegada = y;
+            if (problema == null)
+            {
+                throw new ArgumentException("no se puede eliminar un problema inexistente");
+            }
+
+            Reactivo[problema.NivelDificultad].Remove(problema);
+            SeActualizoLista?.Invoke();
         }
-        public void Modificar(UnaFilasMuchosServidores problema, string titulo, string enunciado, float m, float y, float M)
+        public void Eliminar(ModeloMultiplesServidores problema)
         {
-            if (problema == null) { throw new ArgumentException("no se puede modificar un problema nulo"); }
-            if (string.IsNullOrEmpty(titulo) || titulo.Length > 50) { throw new ArgumentException("Ingrese un titulo valido que no exceda los 50 caracteres"); }
-            if (string.IsNullOrEmpty(enunciado) ||  enunciado.Length > 250) { throw new ArgumentException("Ingrese el enunciado valido que no exceda los 250 caracteres"); }
-            if (m <= 0) { throw new ArgumentException("la tasa de servicio debe ser mayor a 0"); }
-            if (y <= 0) { throw new ArgumentException("la tasa de llegada debe ser mayor a 0"); }
-            if (M <= 0) { throw new ArgumentException("el numero de servidores debe ser mayor a 0"); }
-            problema.Titulo = titulo;
-            problema.Enunciado = enunciado;
-            problema.TasaServicio = (byte)m;
-            problema.TasaLlegada = y;
-            problema.Servidores = M;
+            if (problema == null)
+            {
+                throw new ArgumentException("no se puede eliminar un problema inexistente");
+            }
+
+            Reactivo[problema.NivelDificultad].Remove(problema);
+            SeActualizoLista?.Invoke();
         }
+
     }
 }
+
