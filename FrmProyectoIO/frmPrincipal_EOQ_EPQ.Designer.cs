@@ -38,7 +38,7 @@
             label1 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             button3 = new Button();
-            comboBox1 = new ComboBox();
+            cmbDificultad = new ComboBox();
             tableLayoutPanel3 = new TableLayoutPanel();
             button5 = new Button();
             tableLayoutPanel4 = new TableLayoutPanel();
@@ -83,7 +83,7 @@
             tableLayoutPanel1.Controls.Add(radioButton2, 3, 3);
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 11);
-            tableLayoutPanel1.Controls.Add(comboBox1, 3, 1);
+            tableLayoutPanel1.Controls.Add(cmbDificultad, 3, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 3, 11);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 7, 3);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel6, 9, 11);
@@ -217,17 +217,17 @@
             button3.TabIndex = 7;
             button3.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmbDificultad
             // 
-            tableLayoutPanel1.SetColumnSpan(comboBox1, 3);
-            comboBox1.Dock = DockStyle.Fill;
-            comboBox1.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(502, 13);
-            comboBox1.Margin = new Padding(2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(474, 37);
-            comboBox1.TabIndex = 3;
+            tableLayoutPanel1.SetColumnSpan(cmbDificultad, 3);
+            cmbDificultad.Dock = DockStyle.Fill;
+            cmbDificultad.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbDificultad.FormattingEnabled = true;
+            cmbDificultad.Location = new Point(502, 13);
+            cmbDificultad.Margin = new Padding(2);
+            cmbDificultad.Name = "cmbDificultad";
+            cmbDificultad.Size = new Size(474, 37);
+            cmbDificultad.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
@@ -432,6 +432,7 @@
             button4.Size = new Size(248, 188);
             button4.TabIndex = 8;
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // frmPrincipal_EOQ_EPQ
             // 
@@ -442,6 +443,8 @@
             Controls.Add(tableLayoutPanel1);
             Name = "frmPrincipal_EOQ_EPQ";
             Text = "frmPrincipal_EOQ_EPQ";
+            FormClosing += frmPrincipal_EOQ_EPQ_FormClosing;
+            Load += frmPrincipal_EOQ_EPQ_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -465,7 +468,7 @@
         private Label label1;
         private TableLayoutPanel tableLayoutPanel2;
         private Button button3;
-        private ComboBox comboBox1;
+        private ComboBox cmbDificultad;
         private TableLayoutPanel tableLayoutPanel3;
         private Button button5;
         private TableLayoutPanel tableLayoutPanel4;
