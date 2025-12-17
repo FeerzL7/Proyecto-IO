@@ -48,20 +48,20 @@
             btnModificar = new Button();
             btnRegresar = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
-            tableLayoutPanel4 = new TableLayoutPanel();
+            lblP = new Label();
             label9 = new Label();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            btnCalcular = new Button();
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
             label13 = new Label();
             label14 = new Label();
-            lblP = new Label();
             lblPn = new Label();
             lblLs = new Label();
             lblLq = new Label();
             lblWs = new Label();
             lblWq = new Label();
-            btnCalcular = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -376,6 +376,32 @@
             tableLayoutPanel3.Size = new Size(443, 603);
             tableLayoutPanel3.TabIndex = 10;
             // 
+            // lblP
+            // 
+            lblP.AutoSize = true;
+            lblP.BackColor = Color.WhiteSmoke;
+            lblP.Dock = DockStyle.Fill;
+            lblP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            lblP.Location = new Point(139, 0);
+            lblP.Name = "lblP";
+            lblP.Size = new Size(301, 76);
+            lblP.TabIndex = 8;
+            lblP.Text = "0";
+            lblP.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.LightSteelBlue;
+            label9.Dock = DockStyle.Fill;
+            label9.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
+            label9.Location = new Point(3, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(130, 76);
+            label9.TabIndex = 2;
+            label9.Text = "P:";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // tableLayoutPanel4
             // 
             tableLayoutPanel4.ColumnCount = 2;
@@ -391,18 +417,17 @@
             tableLayoutPanel4.Size = new Size(437, 94);
             tableLayoutPanel4.TabIndex = 0;
             // 
-            // label9
+            // btnCalcular
             // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.LightSteelBlue;
-            label9.Dock = DockStyle.Fill;
-            label9.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            label9.Location = new Point(3, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(130, 76);
-            label9.TabIndex = 2;
-            label9.Text = "P:";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
+            tableLayoutPanel4.SetColumnSpan(btnCalcular, 3);
+            btnCalcular.Dock = DockStyle.Fill;
+            btnCalcular.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            btnCalcular.Location = new Point(3, 3);
+            btnCalcular.Name = "btnCalcular";
+            btnCalcular.Size = new Size(431, 88);
+            btnCalcular.TabIndex = 9;
+            btnCalcular.Text = "CALCULAR";
+            btnCalcular.UseVisualStyleBackColor = true;
             // 
             // label10
             // 
@@ -469,19 +494,6 @@
             label14.Text = "Wq:";
             label14.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblP
-            // 
-            lblP.AutoSize = true;
-            lblP.BackColor = Color.WhiteSmoke;
-            lblP.Dock = DockStyle.Fill;
-            lblP.Font = new Font("Segoe UI", 25F, FontStyle.Bold);
-            lblP.Location = new Point(139, 0);
-            lblP.Name = "lblP";
-            lblP.Size = new Size(301, 76);
-            lblP.TabIndex = 8;
-            lblP.Text = "0";
-            lblP.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // lblPn
             // 
             lblPn.AutoSize = true;
@@ -546,18 +558,6 @@
             lblWq.TabIndex = 13;
             lblWq.Text = "0";
             lblWq.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // btnCalcular
-            // 
-            tableLayoutPanel4.SetColumnSpan(btnCalcular, 3);
-            btnCalcular.Dock = DockStyle.Fill;
-            btnCalcular.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnCalcular.Location = new Point(3, 3);
-            btnCalcular.Name = "btnCalcular";
-            btnCalcular.Size = new Size(431, 88);
-            btnCalcular.TabIndex = 9;
-            btnCalcular.Text = "CALCULAR";
-            btnCalcular.UseVisualStyleBackColor = true;
             // 
             // frmEOQModificar_1Serv1Fila
             // 

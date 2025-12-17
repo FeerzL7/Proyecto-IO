@@ -16,5 +16,21 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
+        Almacenamiento principal = new Almacenamiento();
+        private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
+        {
+            principal.Leer();
+            cmbDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
+        }
+
+        private void frmPrincipal_EOQ_EPQ_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            principal.Guardar();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
