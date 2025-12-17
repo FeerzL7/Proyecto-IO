@@ -18,7 +18,8 @@ namespace FrmProyectoIO
     public class Inventario
     {
         public virtual TipoEjercicio Tipo => TipoEjercicio.EOQ;
-
+        public Guid Id { get; set; }= Guid.NewGuid();
+        public string Titulo { get; set; } = "";
         public string Texto { get; set; } = "";
         public ushort DemandaXunidadTiempo { get; set; }
         public decimal CostoPorColocarOrden { get; set; }
