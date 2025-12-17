@@ -65,19 +65,19 @@
             // 
             tableLayoutPanel1.BackColor = Color.Transparent;
             tableLayoutPanel1.ColumnCount = 13;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5.77777767F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 94.22222F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.19560885F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 97.80439F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 442F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 31F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 11F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 5F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 9F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 11F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 31F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 5F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 548F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 16F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 16F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 24F));
             tableLayoutPanel1.Controls.Add(dgvEjercicios, 1, 5);
             tableLayoutPanel1.Controls.Add(radioButton1, 1, 3);
             tableLayoutPanel1.Controls.Add(radioButton2, 3, 3);
@@ -85,8 +85,8 @@
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 11);
             tableLayoutPanel1.Controls.Add(cmbNivelDificultad, 3, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 3, 11);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 7, 3);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel6, 9, 11);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 6, 3);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Margin = new Padding(2);
@@ -105,7 +105,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 215F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
-            tableLayoutPanel1.Size = new Size(1608, 916);
+            tableLayoutPanel1.Size = new Size(1619, 916);
             tableLayoutPanel1.TabIndex = 12;
             // 
             // dgvEjercicios
@@ -115,13 +115,13 @@
             dgvEjercicios.Columns.AddRange(new DataGridViewColumn[] { Ejercicios, VER });
             tableLayoutPanel1.SetColumnSpan(dgvEjercicios, 4);
             dgvEjercicios.Dock = DockStyle.Fill;
-            dgvEjercicios.Location = new Point(30, 189);
+            dgvEjercicios.Location = new Point(13, 189);
             dgvEjercicios.Margin = new Padding(2);
             dgvEjercicios.Name = "dgvEjercicios";
             dgvEjercicios.RowHeadersVisible = false;
             dgvEjercicios.RowHeadersWidth = 82;
             tableLayoutPanel1.SetRowSpan(dgvEjercicios, 5);
-            dgvEjercicios.Size = new Size(941, 496);
+            dgvEjercicios.Size = new Size(949, 496);
             dgvEjercicios.TabIndex = 1;
             // 
             // Ejercicios
@@ -145,10 +145,10 @@
             radioButton1.Dock = DockStyle.Fill;
             radioButton1.Font = new Font("Cooper Black", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             radioButton1.ForeColor = SystemColors.ButtonHighlight;
-            radioButton1.Location = new Point(30, 110);
+            radioButton1.Location = new Point(13, 110);
             radioButton1.Margin = new Padding(2);
             radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(458, 70);
+            radioButton1.Size = new Size(486, 70);
             radioButton1.TabIndex = 4;
             radioButton1.TabStop = true;
             radioButton1.Text = "EOQ";
@@ -163,10 +163,10 @@
             radioButton2.Dock = DockStyle.Fill;
             radioButton2.Font = new Font("Cooper Black", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
             radioButton2.ForeColor = SystemColors.ButtonHighlight;
-            radioButton2.Location = new Point(502, 110);
+            radioButton2.Location = new Point(513, 110);
             radioButton2.Margin = new Padding(2);
             radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(469, 70);
+            radioButton2.Size = new Size(449, 70);
             radioButton2.TabIndex = 5;
             radioButton2.TabStop = true;
             radioButton2.Text = "EPQ";
@@ -179,10 +179,10 @@
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Cooper Black", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
-            label1.Location = new Point(30, 11);
+            label1.Location = new Point(13, 11);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(458, 89);
+            label1.Size = new Size(486, 89);
             label1.TabIndex = 2;
             label1.Text = "Nivel de Dificultad:";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -195,13 +195,13 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
             tableLayoutPanel2.Controls.Add(btnAgregar, 1, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(31, 695);
+            tableLayoutPanel2.Location = new Point(14, 695);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 3;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 4.16666651F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 95.8333359F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
-            tableLayoutPanel2.Size = new Size(456, 209);
+            tableLayoutPanel2.Size = new Size(484, 209);
             tableLayoutPanel2.TabIndex = 15;
             // 
             // btnAgregar
@@ -210,10 +210,10 @@
             btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
             btnAgregar.Dock = DockStyle.Fill;
             btnAgregar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.Location = new Point(101, 10);
+            btnAgregar.Location = new Point(109, 10);
             btnAgregar.Margin = new Padding(2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(236, 188);
+            btnAgregar.Size = new Size(256, 188);
             btnAgregar.TabIndex = 7;
             btnAgregar.UseVisualStyleBackColor = true;
             // 
@@ -223,10 +223,10 @@
             cmbNivelDificultad.Dock = DockStyle.Fill;
             cmbNivelDificultad.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cmbNivelDificultad.FormattingEnabled = true;
-            cmbNivelDificultad.Location = new Point(502, 13);
+            cmbNivelDificultad.Location = new Point(513, 13);
             cmbNivelDificultad.Margin = new Padding(2);
             cmbNivelDificultad.Name = "cmbNivelDificultad";
-            cmbNivelDificultad.Size = new Size(474, 37);
+            cmbNivelDificultad.Size = new Size(454, 37);
             cmbNivelDificultad.TabIndex = 3;
             // 
             // tableLayoutPanel3
@@ -237,7 +237,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 88F));
             tableLayoutPanel3.Controls.Add(btnEliminar, 1, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(503, 695);
+            tableLayoutPanel3.Location = new Point(514, 695);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 3;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 4.968944F));
@@ -272,8 +272,7 @@
             tableLayoutPanel4.Controls.Add(txtTitulo, 1, 2);
             tableLayoutPanel4.Controls.Add(txtEnunciado, 0, 6);
             tableLayoutPanel4.Controls.Add(tableLayoutPanel5, 0, 8);
-            tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(990, 111);
+            tableLayoutPanel4.Location = new Point(972, 111);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 9;
             tableLayoutPanel1.SetRowSpan(tableLayoutPanel4, 6);
@@ -411,7 +410,7 @@
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
             tableLayoutPanel6.Controls.Add(btnRegresar, 1, 1);
             tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(1006, 695);
+            tableLayoutPanel6.Location = new Point(1017, 695);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 3;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 4.347826F));
@@ -438,7 +437,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(1608, 916);
+            ClientSize = new Size(1619, 916);
             Controls.Add(tableLayoutPanel1);
             Name = "frmPrincipal_EOQ_EPQ";
             Text = "frmPrincipal_EOQ_EPQ";
