@@ -41,9 +41,9 @@ namespace FrmProyectoIO
                 ReferenciaEPQ.TasaDeProduccion = ushort.Parse(txtValorp.Text);
                 ReferenciaEPQ.CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text);
                 ReferenciaEPQ.CostoPorAlmacenar = decimal.Parse(txtValorCh.Text);
-
+               
                 //SALIDAS
-                // N2, N0 y C son formatos de salida
+                //N2, N0 y C son formatos de salida
                 lblValorQ.Text = ReferenciaEPQ.CantidadDeLoteEconomico.ToString("N2");
 
                 lblValorImax.Text = ReferenciaEPQ.InventarioMaximo.ToString("N0") + " unidades";
@@ -55,9 +55,13 @@ namespace FrmProyectoIO
 
                 lblValort.Text = ReferenciaEPQ.TiempoDelCiclo.ToString("N2");
 
+                lblValort0.Text = ReferenciaEPQ.DuracionDelCiclo.ToString("N2");
+
                 lblValorCprep.Text = ReferenciaEPQ.CostoAnualXPreparacion.ToString("C");
 
                 lblValorCT.Text = ReferenciaEPQ.CostoTotalXUnidadTiempo.ToString("C");
+
+                // falta crear tp en la clase de InventarioProduccion
 
             }
             catch (Exception ex)

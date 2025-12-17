@@ -442,6 +442,8 @@
             Controls.Add(tableLayoutPanel1);
             Name = "frmPrincipal_EOQ_EPQ";
             Text = "frmPrincipal_EOQ_EPQ";
+            FormClosing += frmPrincipal_EOQ_EPQ_FormClosing;
+            Load += frmPrincipal_EOQ_EPQ_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).EndInit();
