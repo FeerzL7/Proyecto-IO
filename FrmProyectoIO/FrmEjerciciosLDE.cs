@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FrmProyectoIO.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,105 @@ namespace FrmProyectoIO
         public FrmEjerciciosLDE()
         {
             InitializeComponent();
+        }
+
+        public Problemario problema = new();
+        private void FrmEjerciciosLDE_Load(object sender, EventArgs e)
+        {
+            dgvEjercicios.AutoGenerateColumns = false;
+            problema.SeActualizoLista += Problema_SeActualizoLista1;
+            problema.CargarDatos();
+            dgvEjercicios.DataSource = problema.Reactivo.SelectMany(x => x.Value).ToList();
+
+
+        }
+
+        private void Problema_SeActualizoLista1()
+        {
+
+            dgvEjercicios.DataSource = null;
+            dgvEjercicios.DataSource = problema.Reactivo.SelectMany(x => x.Value).ToList();
+        }
+
+
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+
+            if (tscmbModelo.Text == "UNA")
+            {
+                FrmModeloServidorUnaSolaFila modelo1 = new();
+                modelo1.referenciaAgregar = problema;
+                modelo1.ShowDialog();
+            }
+            else if (tscmbModelo.Text == "MUCHAS")
+            {
+                FrmRegistrarMultiplesServidoresUnaFila modelo2 = new();
+                modelo2.referenciaRegistarMultiples = problema;
+                modelo2.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Seleccione uno de los 2");
+
+            }
+        }
+
+        private void FrmEjerciciosLDE_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            problema.GuardarDatos();
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void tscmbModelo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConsultas_Click(object sender, EventArgs e)
+        {
+            var listaEjercicios = problema.Reactivo.SelectMany(x => x.Value);
+
+            string titulo = txtTitulo.Text.Trim().ToUpper();
+            string enunciado = txtEnunciado.Text.Trim().ToUpper();
+
+            if (titulo != "")
+            {
+                listaEjercicios = listaEjercicios.Where(p => p.Titulo.ToUpper().Contains(titulo));
+            }
+            if (enunciado != "")
+            {
+                listaEjercicios = listaEjercicios.Where(p => p.Enunciado.ToUpper().Contains(enunciado));
+            }
+
+            dgvEjercicios.DataSource = null;
+            dgvEjercicios.DataSource = listaEjercicios.ToList();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvEjercicios.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un problema");
+                return;
+            }
+
+            var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
+
+            if (ejercicioSeleccionado == null)
+                return;
+
+            var confirmar = MessageBox.Show("¿Deseas eliminar este ejercicio?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmar == DialogResult.Yes)
+            {
+                problema.Eliminar(ejercicioSeleccionado);
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Text.Json.Serialization;
 namespace FrmProyectoIO.Properties
 {
 
@@ -15,7 +15,7 @@ namespace FrmProyectoIO.Properties
         //3. Cambiar los metodos por propiedades.
         //4. Checar si hay validaciones, etc, si no, usar campos para validar desde del VALUE (Para no validar una y otra vez por cada propiedad(Solo seria necesario una vez)).
 
-
+       
 
         //Propiedades
 
@@ -24,8 +24,11 @@ namespace FrmProyectoIO.Properties
 
         public double ProbabilidadSistemaVacio()
         {
-            if (!((Servidores * TasaServicio) > TasaLlegada))
+
+
+            if (((Servidores * TasaServicio) < TasaLlegada))
                 throw new ArgumentException("Parame");
+
 
             double suma1 = 0;
 
@@ -33,10 +36,10 @@ namespace FrmProyectoIO.Properties
             {
                 suma1 += Math.Pow(UtilizacionPromedioSistema, n) / Factorial(n);
             }
-            double suma2 = Math.Pow(UtilizacionPromedioSistema, Servidores) / Factorial(Servidores) * 
-                (Servidores*TasaServicio)/ (Servidores * TasaServicio - TasaLlegada);
+            double suma2 = Math.Pow(UtilizacionPromedioSistema, Servidores) / Factorial(Servidores) *
+                (Servidores * TasaServicio) / (Servidores * TasaServicio - TasaLlegada);
 
-            return 1/(suma1 + suma2);
+            return 1 / (suma1 + suma2);
 
         }
 
@@ -51,10 +54,11 @@ namespace FrmProyectoIO.Properties
         {
             get
             {
+
                 double primera = (TasaLlegada * TasaServicio * Math.Pow(UtilizacionPromedioSistema, Servidores)) /
                     (Factorial(Servidores - 1) * Math.Pow(Servidores * TasaServicio - TasaLlegada, 2));
 
-                return (primera * ProbabilidadClientesSistema) + UtilizacionPromedioSistema;
+                return (primera * ProbabilidadSistemaVacio()) + UtilizacionPromedioSistema;
             }
         }   //double
 
@@ -66,13 +70,10 @@ namespace FrmProyectoIO.Properties
         {
             get
             {
-                if (TiempoPromedioEnFila > 0)
-                {
-                    return TiempoPromedioEnFila / TasaLlegada;
-                }
+
 
                 double primera = (TasaServicio * Math.Pow(UtilizacionPromedioSistema, Servidores)) / (Factorial(Servidores - 1) * Math.Pow(Servidores * TasaServicio - TasaLlegada, 2));
-                return (primera * ProbabilidadClientesSistema) + (1 / TasaServicio);
+                return (primera * ProbabilidadSistemaVacio()) + (1 / TasaServicio);
             }
         }
 
@@ -81,7 +82,8 @@ namespace FrmProyectoIO.Properties
         {
             get
             {
-                return TiempoPromedioEnServicio - UtilizacionPromedioSistema;
+
+                return NumeroPromedioEnServicio - UtilizacionPromedioSistema;
             }
         }
 
@@ -91,10 +93,7 @@ namespace FrmProyectoIO.Properties
         {
             get
             {
-                if (NumeroPromedioEnFila > 0)
-                {
-                    return NumeroPromedioEnFila / TasaLlegada;
-                }
+
 
                 return TiempoPromedioEnServicio - (1 / TasaServicio);
             }
@@ -104,6 +103,9 @@ namespace FrmProyectoIO.Properties
 
         public int Factorial(int num)
         {
+            if (num < 0)
+                throw new ArgumentException("Ingresa números positivos");
+
             int n = 1;
 
             for (int i = 1; i <= num; i++)

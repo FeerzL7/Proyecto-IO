@@ -32,7 +32,7 @@ namespace FrmProyectoIO
         {
             get { return (decimal)(DemandaXunidadTiempo / CantidadDeLoteEconomico) * CostoPorColocarOrden; }
         }
-        public decimal CostoAnualXAlmacenar
+        public override decimal CostoAnualXAlmacenar
         {
             get
             {

@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace FrmProyectoIO
 {
+    public enum TipoEjercicio
+    {
+        EOQ,
+        EPQ
+    }
     public enum Dificultad
     {
         Facil, Dificil
     }
     public class Inventario
     {
+        public virtual TipoEjercicio Tipo => TipoEjercicio.EOQ;
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string Titulo { get; set; } = "";
         public string Texto { get; set; } = "";
         public ushort DemandaXunidadTiempo { get; set; }
         public decimal CostoPorColocarOrden { get; set; }
@@ -33,7 +41,7 @@ namespace FrmProyectoIO
         {
             get { return ((decimal)CantidadDeLoteEconomico / 2) * CostoPorAlmacenar; }
         }
-        public decimal CostoAnualXAlmacenar
+        public virtual decimal CostoAnualXAlmacenar
         {
             get { return (DemandaXunidadTiempo / (decimal)CantidadDeLoteEconomico) * CostoPorColocarOrden; }
         }
