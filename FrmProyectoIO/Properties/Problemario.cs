@@ -87,7 +87,7 @@ namespace FrmProyectoIO.Properties
 
             if (Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == titulo.ToUpper())) //si el problema a agregar ya existe
             {
-                throw new ArgumentException("");
+                throw new ArgumentException("Este problema ya existe en el sistema");
             }
             Reactivo[dificultad].Add(new ModeloMultiplesServidores
             {
@@ -193,6 +193,44 @@ namespace FrmProyectoIO.Properties
             SeActualizoLista?.Invoke();
         }
 
+        //Mostrar Problemas guardados   
+        public ModeloMultiplesServidores GetProblemaResolver(Dificultad dificultad, ModeloMultiplesServidores Problema)
+        {
+            if (!Reactivo.ContainsKey(dificultad))
+            {
+                throw new ArgumentException("No existen problemas con esa dificultad");
+            }
+            if (string.IsNullOrWhiteSpace(titulo))
+            {
+                throw new ArgumentException("Ingrese el titulo del problema");
+            }
+            if (!Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper()))
+            {
+                throw new ArgumentException("No existe un problema con ese titulo en la dificultad seleccionada");
+            }
+
+            var Problema = Reactivo[dificultad].FirstOrDefault(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper()) as ModeloMultiplesServidores;
+            return Problema;
+        }
+
+        public ModeloUnSoloServidor GetProblemaResolver(Dificultad dificultad, ModeloUnSoloServidor Problema)
+        {
+            if (!Reactivo.ContainsKey(dificultad))
+            {
+                throw new ArgumentException("No existen problemas con esa dificultad");
+            }
+            if (string.IsNullOrWhiteSpace(titulo))
+            {
+                throw new ArgumentException("Ingrese el titulo del problema");
+            }
+            if (!Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper()))
+            {
+                throw new ArgumentException("No existe un problema con ese titulo en la dificultad seleccionada");
+            }
+
+            var Problema = Reactivo[dificultad].FirstOrDefault(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper());
+            return Problema;
+        }
         public void GuardarDatos()
         {
             var opt = new JsonSerializerOptions() { WriteIndented = true };
@@ -201,8 +239,7 @@ namespace FrmProyectoIO.Properties
             File.WriteAllText("Lista de problemas.json", json);
 
         }
-
-
+      
         public void CargarDatos()
         {
             if (File.Exists("Lista de problemas.json"))
