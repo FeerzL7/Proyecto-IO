@@ -50,7 +50,7 @@
             txtTitulo = new TextBox();
             txtEnunciado = new TextBox();
             tableLayoutPanel5 = new TableLayoutPanel();
-            btnConsultar = new Button();
+            btnGenerarExamen = new Button();
             btnLimpiar = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).BeginInit();
@@ -411,7 +411,7 @@
             tableLayoutPanel5.Size = new Size(532, 98);
             tableLayoutPanel5.TabIndex = 16;
             // 
-            // btnConsultar
+            // btnGenerarExamen
             // 
             btnConsultar.BackColor = Color.FromArgb(28, 46, 74);
             btnConsultar.Dock = DockStyle.Fill;
@@ -484,7 +484,7 @@
         private TextBox txtTitulo;
         private TextBox txtEnunciado;
         private TableLayoutPanel tableLayoutPanel5;
-        private Button btnConsultar;
+        private Button btnGenerarExamen;
         private Button btnLimpiar;
         private TableLayoutPanel tableLayoutPanel6;
         private Button btnRegresar;

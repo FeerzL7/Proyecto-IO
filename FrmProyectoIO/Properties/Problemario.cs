@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace FrmProyectoIO.Properties
@@ -50,6 +51,7 @@ namespace FrmProyectoIO.Properties
                 Enunciado = enunciado,
                 TasaLlegada = tasallegada,
                 TasaServicio = tasaservicio
+                
             });
             SeActualizoLista?.Invoke();
 
@@ -191,6 +193,26 @@ namespace FrmProyectoIO.Properties
             SeActualizoLista?.Invoke();
         }
 
+        public void GuardarDatos()
+        {
+            var opt = new JsonSerializerOptions() { WriteIndented = true };
+
+            string json = JsonSerializer.Serialize(Reactivo, opt);
+            File.WriteAllText("Lista de problemas.json", json);
+
+        }
+
+
+        public void CargarDatos()
+        {
+            if (File.Exists("Lista de problemas.json"))
+            {
+                string json = File.ReadAllText("Lista de problemas.json");
+
+                Reactivo = JsonSerializer.Deserialize<Dictionary<Dificultad, List<ModeloUnSoloServidor>>>(json) ?? new Dictionary<Dificultad, List<ModeloUnSoloServidor>>();
+                SeActualizoLista?.Invoke();
+            }
+        }
     }
 }
 
