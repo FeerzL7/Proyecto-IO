@@ -50,6 +50,7 @@ namespace FrmProyectoIO
             }
             else if (tscmbModelo.Text == "MUCHAS")
             {
+
                 FrmRegistrarMultiplesServidoresUnaFila modelo2 = new();
                 modelo2.referenciaRegistarMultiples = problema;
                 modelo2.ShowDialog();
