@@ -398,7 +398,7 @@
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 19F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 234F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 19F));
-            tableLayoutPanel5.Controls.Add(btnConsultar, 1, 1);
+            tableLayoutPanel5.Controls.Add(btnGenerarExamen, 1, 1);
             tableLayoutPanel5.Controls.Add(btnLimpiar, 3, 1);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(3, 324);
@@ -413,17 +413,18 @@
             // 
             // btnGenerarExamen
             // 
-            btnConsultar.BackColor = Color.FromArgb(28, 46, 74);
-            btnConsultar.Dock = DockStyle.Fill;
-            btnConsultar.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnConsultar.ForeColor = SystemColors.ButtonHighlight;
-            btnConsultar.Location = new Point(21, 13);
-            btnConsultar.Margin = new Padding(3, 2, 3, 2);
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(235, 67);
-            btnConsultar.TabIndex = 0;
-            btnConsultar.Text = "Consultar";
-            btnConsultar.UseVisualStyleBackColor = false;
+            btnGenerarExamen.BackColor = Color.FromArgb(28, 46, 74);
+            btnGenerarExamen.Dock = DockStyle.Fill;
+            btnGenerarExamen.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGenerarExamen.ForeColor = SystemColors.ButtonHighlight;
+            btnGenerarExamen.Location = new Point(21, 13);
+            btnGenerarExamen.Margin = new Padding(3, 2, 3, 2);
+            btnGenerarExamen.Name = "btnGenerarExamen";
+            btnGenerarExamen.Size = new Size(235, 67);
+            btnGenerarExamen.TabIndex = 0;
+            btnGenerarExamen.Text = "Generar examen";
+            btnGenerarExamen.UseVisualStyleBackColor = false;
+            btnGenerarExamen.Click += btnGenerarExamen_Click;
             // 
             // btnLimpiar
             // 

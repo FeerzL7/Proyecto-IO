@@ -16,7 +16,7 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        Almacenamiento Rprincipal { get; set; }
+        public Almacenamiento Rprincipal { get; set; }
         private void btnGenerar_Click(object sender, EventArgs e)
         {
             try

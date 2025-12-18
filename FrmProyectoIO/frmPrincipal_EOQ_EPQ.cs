@@ -37,5 +37,18 @@ namespace FrmProyectoIO
         {
 
         }
+
+        private void btnGenerarExamen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmGenerarExamen FrmExam = new();
+                FrmExam.Rprincipal = principal;
+                FrmExam.ShowDialog();
+            }catch(ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

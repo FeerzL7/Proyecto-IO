@@ -222,13 +222,13 @@
             // 
             // guna2ControlBox3
             // 
-            guna2ControlBox3.CustomizableEdges = customizableEdges9;
+            //guna2ControlBox3.CustomizableEdges = customizableEdges9;
             guna2ControlBox3.Dock = DockStyle.Fill;
             guna2ControlBox3.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox3.IconColor = Color.White;
             guna2ControlBox3.Location = new Point(112, 3);
             guna2ControlBox3.Name = "guna2ControlBox3";
-            guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            //guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2ControlBox3.Size = new Size(50, 24);
             guna2ControlBox3.TabIndex = 2;
             // 
