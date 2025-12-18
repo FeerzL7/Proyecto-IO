@@ -74,7 +74,7 @@ namespace FrmProyectoIO.Properties
         {
             get
             {
-                return 1 - p;
+                return 1 - UtilizacionPromedioSistema;
             }
         }
 

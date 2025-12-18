@@ -557,8 +557,8 @@
             label19.AutoSize = true;
             label19.BackColor = Color.FromArgb(28, 46, 74);
             label19.Dock = DockStyle.Fill;
-            label19.Font = new Font("Cooper Black", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label19.Location = new Point(3, 100);
+            label19.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label19.Location = new Point(3, 75);
             label19.Name = "label19";
             label19.Size = new Size(380, 64);
             label19.TabIndex = 16;
@@ -643,9 +643,9 @@
             btnModificar.BackgroundImageLayout = ImageLayout.Stretch;
             btnModificar.Dock = DockStyle.Fill;
             btnModificar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnModificar.Location = new Point(295, 834);
+            btnModificar.Location = new Point(-21, 399);
             btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(273, 209);
+            btnModificar.Size = new Size(238, 155);
             btnModificar.TabIndex = 8;
             btnModificar.UseVisualStyleBackColor = false;
             btnModificar.Click += btnModificar_Click;
@@ -658,13 +658,13 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 179F));
             tableLayoutPanel4.Controls.Add(btnRegresar, 1, 0);
             tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(956, 834);
+            tableLayoutPanel4.Location = new Point(557, 399);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 2;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel4.Size = new Size(692, 209);
+            tableLayoutPanel4.Size = new Size(605, 155);
             tableLayoutPanel4.TabIndex = 11;
             // 
             // btnRegresar
@@ -673,10 +673,10 @@
             btnRegresar.BackgroundImageLayout = ImageLayout.Stretch;
             btnRegresar.Dock = DockStyle.Fill;
             btnRegresar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnRegresar.Location = new Point(250, 3);
+            btnRegresar.Location = new Point(163, 3);
             btnRegresar.Name = "btnRegresar";
             tableLayoutPanel4.SetRowSpan(btnRegresar, 2);
-            btnRegresar.Size = new Size(260, 203);
+            btnRegresar.Size = new Size(260, 149);
             btnRegresar.TabIndex = 9;
             btnRegresar.UseVisualStyleBackColor = true;
             btnRegresar.Click += btnRegresar_Click;
@@ -686,11 +686,11 @@
             tableLayoutPanel1.SetColumnSpan(txtEnunciado, 3);
             txtEnunciado.Dock = DockStyle.Fill;
             txtEnunciado.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEnunciado.Location = new Point(12, 472);
+            txtEnunciado.Location = new Point(-269, 127);
             txtEnunciado.Multiline = true;
             txtEnunciado.Name = "txtEnunciado";
             txtEnunciado.ReadOnly = true;
-            txtEnunciado.Size = new Size(922, 347);
+            txtEnunciado.Size = new Size(806, 259);
             txtEnunciado.TabIndex = 12;
             // 
             // label8
@@ -699,10 +699,10 @@
             label8.BackColor = Color.FromArgb(28, 46, 74);
             tableLayoutPanel1.SetColumnSpan(label8, 3);
             label8.Dock = DockStyle.Fill;
-            label8.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(12, 401);
+            label8.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(-269, 74);
             label8.Name = "label8";
-            label8.Size = new Size(922, 54);
+            label8.Size = new Size(806, 40);
             label8.TabIndex = 6;
             label8.Text = "Enunciado: ";
             label8.TextAlign = ContentAlignment.MiddleCenter;
