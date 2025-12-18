@@ -95,7 +95,7 @@
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             tableLayoutPanel6 = new TableLayoutPanel();
             txtWq = new Guna.UI2.WinForms.Guna2TextBox();
-            txtLq8 = new Guna.UI2.WinForms.Guna2TextBox();
+            txtLq = new Guna.UI2.WinForms.Guna2TextBox();
             txtLs = new Guna.UI2.WinForms.Guna2TextBox();
             txtP = new Guna.UI2.WinForms.Guna2TextBox();
             txtWs = new Guna.UI2.WinForms.Guna2TextBox();
@@ -708,7 +708,7 @@
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
             tableLayoutPanel6.Controls.Add(txtWq, 1, 5);
-            tableLayoutPanel6.Controls.Add(txtLq8, 1, 3);
+            tableLayoutPanel6.Controls.Add(txtLq, 1, 3);
             tableLayoutPanel6.Controls.Add(txtLs, 1, 2);
             tableLayoutPanel6.Controls.Add(txtP, 1, 0);
             tableLayoutPanel6.Controls.Add(txtWs, 1, 4);
@@ -760,31 +760,31 @@
             txtWq.TabIndex = 20;
             txtWq.TextAlign = HorizontalAlignment.Center;
             // 
-            // txtLq8
+            // txtLq
             // 
-            txtLq8.BorderRadius = 8;
-            txtLq8.CustomizableEdges = customizableEdges59;
-            txtLq8.DefaultText = "";
-            txtLq8.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtLq8.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtLq8.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtLq8.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtLq8.Dock = DockStyle.Fill;
-            txtLq8.FillColor = Color.FromArgb(28, 46, 74);
-            txtLq8.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLq8.Font = new Font("Segoe UI", 9F);
-            txtLq8.ForeColor = Color.Gainsboro;
-            txtLq8.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLq8.Location = new Point(78, 217);
-            txtLq8.Margin = new Padding(10);
-            txtLq8.Name = "txtLq8";
-            txtLq8.PlaceholderText = "";
-            txtLq8.ReadOnly = true;
-            txtLq8.SelectedText = "";
-            txtLq8.ShadowDecoration.CustomizableEdges = customizableEdges60;
-            txtLq8.Size = new Size(253, 49);
-            txtLq8.TabIndex = 19;
-            txtLq8.TextAlign = HorizontalAlignment.Center;
+            txtLq.BorderRadius = 8;
+            txtLq.CustomizableEdges = customizableEdges59;
+            txtLq.DefaultText = "";
+            txtLq.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtLq.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtLq.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtLq.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtLq.Dock = DockStyle.Fill;
+            txtLq.FillColor = Color.FromArgb(28, 46, 74);
+            txtLq.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtLq.Font = new Font("Segoe UI", 9F);
+            txtLq.ForeColor = Color.Gainsboro;
+            txtLq.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtLq.Location = new Point(78, 217);
+            txtLq.Margin = new Padding(10);
+            txtLq.Name = "txtLq";
+            txtLq.PlaceholderText = "";
+            txtLq.ReadOnly = true;
+            txtLq.SelectedText = "";
+            txtLq.ShadowDecoration.CustomizableEdges = customizableEdges60;
+            txtLq.Size = new Size(253, 49);
+            txtLq.TabIndex = 19;
+            txtLq.TextAlign = HorizontalAlignment.Center;
             // 
             // txtLs
             // 
@@ -1046,7 +1046,7 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private TableLayoutPanel tableLayoutPanel6;
         private Guna.UI2.WinForms.Guna2TextBox txtWq;
-        private Guna.UI2.WinForms.Guna2TextBox txtLq8;
+        private Guna.UI2.WinForms.Guna2TextBox txtLq;
         private Guna.UI2.WinForms.Guna2TextBox txtLs;
         private Guna.UI2.WinForms.Guna2TextBox txtP;
         private Guna.UI2.WinForms.Guna2TextBox txtWs;

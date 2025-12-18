@@ -17,7 +17,7 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        public Problemario ReferenciaModicar { get; set; } = new Problemario();
+        public Problemario ReferenciaModificar { get; set; } = new Problemario();
         public ModeloUnSoloServidor ModeloMM1Anterior { get; set; } = new ModeloUnSoloServidor();
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -35,10 +35,10 @@ namespace FrmProyectoIO
                 //NivelDificultad = (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem
             };
 
-            ReferenciaModicar.ModificarProblema(modelo, (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem);
+            ReferenciaModificar.ModificarProblema(modelo, (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem);
             //Eliminar el problema antiguo por si cambio su nivel de dificultad
-            var elim = ReferenciaModicar.Reactivo.SelectMany(x => x.Value).Where(x => x.Titulo == modelo.Titulo);
-            ReferenciaModicar.Eliminar(elim.First());
+            var elim = ReferenciaModificar.Reactivo.SelectMany(x => x.Value).Where(x => x.Titulo == modelo.Titulo);
+            ReferenciaModificar.Eliminar(elim.First());
         }
 
         private void cmbNivelDificultad_SelectedIndexChanged(object sender, EventArgs e)
@@ -53,7 +53,18 @@ namespace FrmProyectoIO
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
+            ModeloUnSoloServidor modeloUnaFila = new()
+            {
+                TasaLlegada = double.Parse(txtLambda.Text),
+                TasaServicio = double.Parse(txtMew.Text),
+            };
 
+            txtP.Text = modeloUnaFila.UtilizacionPromedioSistema.ToString();// P
+            txtPn.Text = modeloUnaFila.ProbabilidadClientesSistema.ToString(); //P(n)
+            txtLs.Text = modeloUnaFila.NumeroPromedioEnServicio.ToString(); //LS
+            txtWs.Text = modeloUnaFila.TiempoPromedioEnServicio.ToString();//Ws
+            txtWq.Text = modeloUnaFila.TiempoPromedioEnFila.ToString(); //Wq
+            txtLq.Text = modeloUnaFila.NumeroPromedioEnFila.ToString(); //Lq
         }
 
         private void FrmModificarModeloServidorUnaSolaFila_Load(object sender, EventArgs e)

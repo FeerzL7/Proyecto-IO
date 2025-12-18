@@ -28,6 +28,13 @@ namespace FrmProyectoIO
 
             txtTitulo.Text = ModeloMMSVer.Titulo;
             txtEnunciado.Text = ModeloMMSVer.Enunciado;
+
+            //Los procesos matematicos
+            txtPo.Text = ModeloMMSVer.ProbabilidadSistemaVacio().ToString();
+            txtLs.Text = ModeloMMSVer.NumeroPromedioEnServicio.ToString();
+            txtWs.Text = ModeloMMSVer.TiempoPromedioEnServicio.ToString();
+            txtLq.Text = ModeloMMSVer.NumeroPromedioEnFila.ToString();
+            txtWq.Text = ModeloMMSVer.TiempoPromedioEnFila.ToString();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)

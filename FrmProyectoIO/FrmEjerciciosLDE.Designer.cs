@@ -407,6 +407,8 @@
             dgvEjercicios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEjercicios.Size = new Size(806, 419);
             dgvEjercicios.TabIndex = 9;
+            dgvEjercicios.CellContentClick += dgvEjercicios_CellContentClick;
+            dgvEjercicios.DoubleClick += dgvEjercicios_DoubleClick;
             // 
             // Titulo
             // 

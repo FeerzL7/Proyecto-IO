@@ -71,7 +71,7 @@ namespace FrmProyectoIO
             this.Close();
         }
 
-      
+
         private void btnConsultas_Click(object sender, EventArgs e)
         {
             var listaEjercicios = problema.Reactivo.SelectMany(x => x.Value);
@@ -113,6 +113,28 @@ namespace FrmProyectoIO
             }
         }
 
-    
+        private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && dgvEjercicios.SelectedRows.Count == 1)
+            {
+                if (dgvEjercicios.Columns[e.ColumnIndex].HeaderText == "Ver mas")
+                {
+                    var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
+                    FrmVerEjercicioModeloServidorUnaSolaFila verEjercicio = new();
+                    verEjercicio.ModeloVer = ejercicioSeleccionado;
+                    verEjercicio.ShowDialog();
+                }
+            }
+        }
+
+        private void dgvEjercicios_DoubleClick(object sender, EventArgs e)
+        {
+            //Agarrar el objeto seleccionado al hacer doble click
+            var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
+            FrmModificarModeloServidorUnaSolaFila modificarEjercicio = new();
+            modificarEjercicio.ReferenciaModificar = problema;
+            modificarEjercicio.ModeloMM1Anterior = ejercicioSeleccionado;
+            modificarEjercicio.ShowDialog();
+        }
     }
 }
