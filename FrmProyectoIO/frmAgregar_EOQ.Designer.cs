@@ -52,14 +52,13 @@
             txtValorCo = new TextBox();
             label3 = new Label();
             label6 = new Label();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            cmbNivelDificultad = new ComboBox();
             tableLayoutPanel3 = new TableLayoutPanel();
-            label5 = new Label();
             lblPntReorden = new Label();
             lblCLE = new Label();
             lblLe = new Label();
-            lblCAA = new Label();
             lblt0 = new Label();
-            lblCT = new Label();
             label9 = new Label();
             label11 = new Label();
             label8 = new Label();
@@ -71,14 +70,15 @@
             lblCAO = new Label();
             tableLayoutPanel6 = new TableLayoutPanel();
             btnCalcular = new Button();
-            tableLayoutPanel5 = new TableLayoutPanel();
-            cmbNivelDificultad = new ComboBox();
+            label5 = new Label();
+            lblCAA = new Label();
+            lblCT = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
-            tableLayoutPanel5.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -444,6 +444,36 @@
             label6.Text = "Co\r\n(Costo x ordenar)\r\n";
             label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // tableLayoutPanel5
+            // 
+            tableLayoutPanel5.ColumnCount = 2;
+            tableLayoutPanel1.SetColumnSpan(tableLayoutPanel5, 2);
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.Controls.Add(cmbNivelDificultad, 0, 1);
+            tableLayoutPanel5.Dock = DockStyle.Fill;
+            tableLayoutPanel5.Location = new Point(288, 63);
+            tableLayoutPanel5.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 3;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.7662354F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 66.2337646F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel5.Size = new Size(539, 86);
+            tableLayoutPanel5.TabIndex = 36;
+            // 
+            // cmbNivelDificultad
+            // 
+            tableLayoutPanel5.SetColumnSpan(cmbNivelDificultad, 2);
+            cmbNivelDificultad.Dock = DockStyle.Fill;
+            cmbNivelDificultad.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbNivelDificultad.FormattingEnabled = true;
+            cmbNivelDificultad.Location = new Point(2, 20);
+            cmbNivelDificultad.Margin = new Padding(2, 3, 2, 3);
+            cmbNivelDificultad.Name = "cmbNivelDificultad";
+            cmbNivelDificultad.Size = new Size(535, 48);
+            cmbNivelDificultad.TabIndex = 3;
+            // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 4;
@@ -495,20 +525,6 @@
             tableLayoutPanel3.Size = new Size(561, 803);
             tableLayoutPanel3.TabIndex = 34;
             // 
-            // label5
-            // 
-            label5.BackColor = Color.FromArgb(28, 46, 74);
-            label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.ButtonHighlight;
-            label5.Location = new Point(2, 0);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(255, 72);
-            label5.TabIndex = 18;
-            label5.Text = "CAO(costo por ordenar):";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // lblPntReorden
             // 
             lblPntReorden.BackColor = SystemColors.ButtonHighlight;
@@ -551,20 +567,6 @@
             lblLe.Text = "0";
             lblLe.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // lblCAA
-            // 
-            lblCAA.BackColor = SystemColors.ButtonHighlight;
-            lblCAA.Dock = DockStyle.Fill;
-            lblCAA.Font = new Font("Verdana", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCAA.ForeColor = SystemColors.ActiveCaptionText;
-            lblCAA.Location = new Point(267, 232);
-            lblCAA.Margin = new Padding(2, 0, 2, 0);
-            lblCAA.Name = "lblCAA";
-            lblCAA.Size = new Size(283, 87);
-            lblCAA.TabIndex = 26;
-            lblCAA.Text = "0";
-            lblCAA.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // lblt0
             // 
             lblt0.BackColor = SystemColors.ButtonHighlight;
@@ -578,20 +580,6 @@
             lblt0.TabIndex = 25;
             lblt0.Text = "0";
             lblt0.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // lblCT
-            // 
-            lblCT.BackColor = SystemColors.ButtonHighlight;
-            lblCT.Dock = DockStyle.Fill;
-            lblCT.Font = new Font("Verdana", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblCT.ForeColor = SystemColors.ActiveCaptionText;
-            lblCT.Location = new Point(267, 152);
-            lblCT.Margin = new Padding(2, 0, 2, 0);
-            lblCT.Name = "lblCT";
-            lblCT.Size = new Size(283, 75);
-            lblCT.TabIndex = 27;
-            lblCT.Text = "0";
-            lblCT.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label9
             // 
@@ -752,35 +740,47 @@
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = false;
             // 
-            // tableLayoutPanel5
+            // label5
             // 
-            tableLayoutPanel5.ColumnCount = 2;
-            tableLayoutPanel1.SetColumnSpan(tableLayoutPanel5, 2);
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel5.Controls.Add(cmbNivelDificultad, 0, 1);
-            tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(288, 63);
-            tableLayoutPanel5.Margin = new Padding(3, 4, 3, 4);
-            tableLayoutPanel5.Name = "tableLayoutPanel5";
-            tableLayoutPanel5.RowCount = 3;
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.7662354F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 66.2337646F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
-            tableLayoutPanel5.Size = new Size(539, 86);
-            tableLayoutPanel5.TabIndex = 36;
+            label5.BackColor = Color.FromArgb(28, 46, 74);
+            label5.Dock = DockStyle.Fill;
+            label5.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(2, 0);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(255, 72);
+            label5.TabIndex = 18;
+            label5.Text = "CAO(costo por ordenar):";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // cmbNivelDificultad
+            // lblCAA
             // 
-            tableLayoutPanel5.SetColumnSpan(cmbNivelDificultad, 2);
-            cmbNivelDificultad.Dock = DockStyle.Fill;
-            cmbNivelDificultad.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbNivelDificultad.FormattingEnabled = true;
-            cmbNivelDificultad.Location = new Point(2, 20);
-            cmbNivelDificultad.Margin = new Padding(2, 3, 2, 3);
-            cmbNivelDificultad.Name = "cmbNivelDificultad";
-            cmbNivelDificultad.Size = new Size(535, 48);
-            cmbNivelDificultad.TabIndex = 3;
+            lblCAA.BackColor = SystemColors.ButtonHighlight;
+            lblCAA.Dock = DockStyle.Fill;
+            lblCAA.Font = new Font("Verdana", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCAA.ForeColor = SystemColors.ActiveCaptionText;
+            lblCAA.Location = new Point(267, 232);
+            lblCAA.Margin = new Padding(2, 0, 2, 0);
+            lblCAA.Name = "lblCAA";
+            lblCAA.Size = new Size(283, 87);
+            lblCAA.TabIndex = 26;
+            lblCAA.Text = "0";
+            lblCAA.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblCT
+            // 
+            lblCT.BackColor = SystemColors.ButtonHighlight;
+            lblCT.Dock = DockStyle.Fill;
+            lblCT.Font = new Font("Verdana", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblCT.ForeColor = SystemColors.ActiveCaptionText;
+            lblCT.Location = new Point(267, 152);
+            lblCT.Margin = new Padding(2, 0, 2, 0);
+            lblCT.Name = "lblCT";
+            lblCT.Size = new Size(283, 75);
+            lblCT.TabIndex = 27;
+            lblCT.Text = "0";
+            lblCT.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frmAgregar_EOQ
             // 
@@ -797,9 +797,9 @@
             tableLayoutPanel4.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel5.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel6.ResumeLayout(false);
-            tableLayoutPanel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
