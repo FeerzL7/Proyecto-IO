@@ -16,5 +16,28 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
+        Almacenamiento Rprincipal { get; set; }
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SaveFileDialog Guardar = new();
+                Guardar.Filter = "PDF (*.pdf)|*.pdf";
+                Guardar.FileName = "examen " + DateTime.Now.ToString("D");
+                if (Guardar.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    Rprincipal.GenerarExamenPDF(Guardar.FileName, int.Parse(txtDBaja.Text), int.Parse(txtDAlta.Text));
+                    MessageBox.Show("Examen generado correctamente");
+                }
+            }catch(ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Ingrese los datos en formato numerico");
+            }
+        }
     }
 }
