@@ -63,6 +63,16 @@ namespace FrmProyectoIO.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Calcular {
+            get {
+                object obj = ResourceManager.GetObject("Calcular", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Captura_de_pantalla_2025_12_05_224003 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2025-12-05 224003", resourceCulture);
@@ -76,6 +86,46 @@ namespace FrmProyectoIO.Properties {
         internal static System.Drawing.Bitmap Captura_de_pantalla_2025_12_06_112436 {
             get {
                 object obj = ResourceManager.GetObject("Captura de pantalla 2025-12-06 112436", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Modificar {
+            get {
+                object obj = ResourceManager.GetObject("Modificar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Modificar1 {
+            get {
+                object obj = ResourceManager.GetObject("Modificar1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Regresar {
+            get {
+                object obj = ResourceManager.GetObject("Regresar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Regresar1 {
+            get {
+                object obj = ResourceManager.GetObject("Regresar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
