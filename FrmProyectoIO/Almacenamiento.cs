@@ -131,7 +131,7 @@ namespace FrmProyectoIO
         {
             List<Inventario> Dificiles = Ejercicios[Dificultad.Dificil];
             List<Inventario> faciles = Ejercicios[Dificultad.Facil];
-            //validaciones
+            //validaciones de los datos
             if (NumeroFaciles > Ejercicios[Dificultad.Facil].Count)
                 throw new ArgumentException("no puede asignar mas problemas faciles de los que cuenta el problemario.");
             if (NumeroDificiles > Ejercicios[Dificultad.Dificil].Count)
