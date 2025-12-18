@@ -35,8 +35,8 @@
             button2 = new Button();
             tableLayoutPanel4 = new TableLayoutPanel();
             label7 = new Label();
-            textBox6 = new TextBox();
-            button3 = new Button();
+            txtEnunciado = new TextBox();
+            btnAgregar = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
             label5 = new Label();
             label25 = new Label();
@@ -56,18 +56,18 @@
             label13 = new Label();
             tableLayoutPanel5 = new TableLayoutPanel();
             cmbNivelDificultad = new ComboBox();
-            textBox1 = new TextBox();
+            txtTitulo = new TextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             textBox10 = new TextBox();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox3 = new TextBox();
+            txtValorD = new TextBox();
+            txtValorDemDiaria = new TextBox();
+            txtValorp = new TextBox();
+            txtValorCh = new TextBox();
             label21 = new Label();
             label20 = new Label();
             label19 = new Label();
             label4 = new Label();
-            textBox4 = new TextBox();
+            txtValorCoCs = new TextBox();
             label3 = new Label();
             label6 = new Label();
             label26 = new Label();
@@ -98,10 +98,10 @@
             tableLayoutPanel1.Controls.Add(label2, 2, 3);
             tableLayoutPanel1.Controls.Add(button2, 9, 15);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel4, 2, 11);
-            tableLayoutPanel1.Controls.Add(button3, 4, 15);
+            tableLayoutPanel1.Controls.Add(btnAgregar, 4, 15);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 7, 2);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel5, 4, 3);
-            tableLayoutPanel1.Controls.Add(textBox1, 4, 1);
+            tableLayoutPanel1.Controls.Add(txtTitulo, 4, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 2, 8);
             tableLayoutPanel1.Controls.Add(label26, 2, 6);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -181,7 +181,7 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.Controls.Add(label7, 0, 0);
-            tableLayoutPanel4.Controls.Add(textBox6, 0, 2);
+            tableLayoutPanel4.Controls.Add(txtEnunciado, 0, 2);
             tableLayoutPanel4.Dock = DockStyle.Fill;
             tableLayoutPanel4.Location = new Point(20, 390);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -207,30 +207,30 @@
             label7.Text = "Enunciado:";
             label7.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox6
+            // txtEnunciado
             // 
-            tableLayoutPanel4.SetColumnSpan(textBox6, 2);
-            textBox6.Dock = DockStyle.Fill;
-            textBox6.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(2, 56);
-            textBox6.Margin = new Padding(2);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(819, 319);
-            textBox6.TabIndex = 13;
+            tableLayoutPanel4.SetColumnSpan(txtEnunciado, 2);
+            txtEnunciado.Dock = DockStyle.Fill;
+            txtEnunciado.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEnunciado.Location = new Point(2, 56);
+            txtEnunciado.Margin = new Padding(2);
+            txtEnunciado.Multiline = true;
+            txtEnunciado.Name = "txtEnunciado";
+            txtEnunciado.Size = new Size(819, 319);
+            txtEnunciado.TabIndex = 13;
             // 
-            // button3
+            // btnAgregar
             // 
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.Dock = DockStyle.Fill;
-            button3.Font = new Font("Times New Roman", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(292, 790);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(235, 186);
-            button3.TabIndex = 16;
-            button3.UseVisualStyleBackColor = true;
+            btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
+            btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAgregar.Dock = DockStyle.Fill;
+            btnAgregar.Font = new Font("Times New Roman", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAgregar.Location = new Point(292, 790);
+            btnAgregar.Margin = new Padding(2);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(235, 186);
+            btnAgregar.TabIndex = 16;
+            btnAgregar.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
@@ -533,16 +533,16 @@
             cmbNivelDificultad.Size = new Size(546, 48);
             cmbNivelDificultad.TabIndex = 3;
             // 
-            // textBox1
+            // txtTitulo
             // 
-            tableLayoutPanel1.SetColumnSpan(textBox1, 2);
-            textBox1.Dock = DockStyle.Fill;
-            textBox1.Font = new Font("Verdana", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(292, 11);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(552, 44);
-            textBox1.TabIndex = 37;
+            tableLayoutPanel1.SetColumnSpan(txtTitulo, 2);
+            txtTitulo.Dock = DockStyle.Fill;
+            txtTitulo.Font = new Font("Verdana", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTitulo.Location = new Point(292, 11);
+            txtTitulo.Margin = new Padding(2);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(552, 44);
+            txtTitulo.TabIndex = 37;
             // 
             // tableLayoutPanel2
             // 
@@ -555,15 +555,15 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 134F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 152F));
             tableLayoutPanel2.Controls.Add(textBox10, 1, 1);
-            tableLayoutPanel2.Controls.Add(textBox9, 0, 1);
-            tableLayoutPanel2.Controls.Add(textBox8, 5, 1);
-            tableLayoutPanel2.Controls.Add(textBox7, 4, 1);
-            tableLayoutPanel2.Controls.Add(textBox3, 3, 1);
+            tableLayoutPanel2.Controls.Add(txtValorD, 0, 1);
+            tableLayoutPanel2.Controls.Add(txtValorDemDiaria, 5, 1);
+            tableLayoutPanel2.Controls.Add(txtValorp, 4, 1);
+            tableLayoutPanel2.Controls.Add(txtValorCh, 3, 1);
             tableLayoutPanel2.Controls.Add(label21, 5, 0);
             tableLayoutPanel2.Controls.Add(label20, 4, 0);
             tableLayoutPanel2.Controls.Add(label19, 3, 0);
             tableLayoutPanel2.Controls.Add(label4, 1, 0);
-            tableLayoutPanel2.Controls.Add(textBox4, 2, 1);
+            tableLayoutPanel2.Controls.Add(txtValorCoCs, 2, 1);
             tableLayoutPanel2.Controls.Add(label3, 0, 0);
             tableLayoutPanel2.Controls.Add(label6, 2, 0);
             tableLayoutPanel2.Location = new Point(19, 209);
@@ -587,49 +587,49 @@
             textBox10.TabIndex = 18;
             textBox10.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox9
+            // txtValorD
             // 
-            textBox9.Dock = DockStyle.Fill;
-            textBox9.Location = new Point(2, 100);
-            textBox9.Margin = new Padding(2);
-            textBox9.Multiline = true;
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(132, 53);
-            textBox9.TabIndex = 17;
-            textBox9.TextAlign = HorizontalAlignment.Center;
+            txtValorD.Dock = DockStyle.Fill;
+            txtValorD.Location = new Point(2, 100);
+            txtValorD.Margin = new Padding(2);
+            txtValorD.Multiline = true;
+            txtValorD.Name = "txtValorD";
+            txtValorD.Size = new Size(132, 53);
+            txtValorD.TabIndex = 17;
+            txtValorD.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox8
+            // txtValorDemDiaria
             // 
-            textBox8.Dock = DockStyle.Fill;
-            textBox8.Location = new Point(668, 100);
-            textBox8.Margin = new Padding(2);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(150, 53);
-            textBox8.TabIndex = 16;
-            textBox8.TextAlign = HorizontalAlignment.Center;
+            txtValorDemDiaria.Dock = DockStyle.Fill;
+            txtValorDemDiaria.Location = new Point(668, 100);
+            txtValorDemDiaria.Margin = new Padding(2);
+            txtValorDemDiaria.Multiline = true;
+            txtValorDemDiaria.Name = "txtValorDemDiaria";
+            txtValorDemDiaria.Size = new Size(150, 53);
+            txtValorDemDiaria.TabIndex = 16;
+            txtValorDemDiaria.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox7
+            // txtValorp
             // 
-            textBox7.Dock = DockStyle.Fill;
-            textBox7.Location = new Point(534, 100);
-            textBox7.Margin = new Padding(2);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(130, 53);
-            textBox7.TabIndex = 15;
-            textBox7.TextAlign = HorizontalAlignment.Center;
+            txtValorp.Dock = DockStyle.Fill;
+            txtValorp.Location = new Point(534, 100);
+            txtValorp.Margin = new Padding(2);
+            txtValorp.Multiline = true;
+            txtValorp.Name = "txtValorp";
+            txtValorp.Size = new Size(130, 53);
+            txtValorp.TabIndex = 15;
+            txtValorp.TextAlign = HorizontalAlignment.Center;
             // 
-            // textBox3
+            // txtValorCh
             // 
-            textBox3.Dock = DockStyle.Fill;
-            textBox3.Location = new Point(399, 100);
-            textBox3.Margin = new Padding(2);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(131, 53);
-            textBox3.TabIndex = 14;
-            textBox3.TextAlign = HorizontalAlignment.Center;
+            txtValorCh.Dock = DockStyle.Fill;
+            txtValorCh.Location = new Point(399, 100);
+            txtValorCh.Margin = new Padding(2);
+            txtValorCh.Multiline = true;
+            txtValorCh.Name = "txtValorCh";
+            txtValorCh.Size = new Size(131, 53);
+            txtValorCh.TabIndex = 14;
+            txtValorCh.TextAlign = HorizontalAlignment.Center;
             // 
             // label21
             // 
@@ -687,16 +687,16 @@
             label4.Text = "Costo Unitario";
             label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // textBox4
+            // txtValorCoCs
             // 
-            textBox4.Dock = DockStyle.Fill;
-            textBox4.Location = new Point(276, 100);
-            textBox4.Margin = new Padding(2);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(119, 53);
-            textBox4.TabIndex = 6;
-            textBox4.TextAlign = HorizontalAlignment.Center;
+            txtValorCoCs.Dock = DockStyle.Fill;
+            txtValorCoCs.Location = new Point(276, 100);
+            txtValorCoCs.Margin = new Padding(2);
+            txtValorCoCs.Multiline = true;
+            txtValorCoCs.Name = "txtValorCoCs";
+            txtValorCoCs.Size = new Size(119, 53);
+            txtValorCoCs.TabIndex = 6;
+            txtValorCoCs.TextAlign = HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -769,8 +769,8 @@
         private Button button2;
         private TableLayoutPanel tableLayoutPanel4;
         private Label label7;
-        private TextBox textBox6;
-        private Button button3;
+        private TextBox txtEnunciado;
+        private Button btnAgregar;
         private TableLayoutPanel tableLayoutPanel3;
         private Label label5;
         private Label label25;
@@ -790,18 +790,18 @@
         private Label label13;
         private TableLayoutPanel tableLayoutPanel5;
         private ComboBox cmbNivelDificultad;
-        private TextBox textBox1;
+        private TextBox txtTitulo;
         private TableLayoutPanel tableLayoutPanel2;
         private TextBox textBox10;
-        private TextBox textBox9;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox3;
+        private TextBox txtValorD;
+        private TextBox txtValorDemDiaria;
+        private TextBox txtValorp;
+        private TextBox txtValorCh;
         private Label label21;
         private Label label20;
         private Label label19;
         private Label label4;
-        private TextBox textBox4;
+        private TextBox txtValorCoCs;
         private Label label3;
         private Label label6;
         private Label label26;

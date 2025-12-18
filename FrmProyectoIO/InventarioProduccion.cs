@@ -10,6 +10,7 @@ namespace FrmProyectoIO
 
 
     {
+        public string Titulo { get; set; }
         public ushort TasaDeProduccion { get; set; }
 
         public override double CantidadDeLoteEconomico

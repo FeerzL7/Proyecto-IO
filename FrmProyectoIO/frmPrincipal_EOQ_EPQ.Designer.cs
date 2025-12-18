@@ -216,6 +216,7 @@
             button3.Size = new Size(236, 188);
             button3.TabIndex = 7;
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // cmbDificultad
             // 
