@@ -71,15 +71,15 @@
             // 
             tableLayoutPanel1.BackColor = Color.LightSteelBlue;
             tableLayoutPanel1.ColumnCount = 9;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 13F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 15F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.6435337F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.6435337F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 56F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 64F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.5636463F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.7350445F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 7F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 8F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.4142456F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 19F));
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 1, 2);
             tableLayoutPanel1.Controls.Add(groupBox1, 7, 4);
@@ -89,7 +89,7 @@
             tableLayoutPanel1.Margin = new Padding(1);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 10;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 1.42468774F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 15.8897772F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 1.42208076F));
@@ -98,8 +98,8 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 17.2743359F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 17.09625F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 7.88794947F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 7F));
-            tableLayoutPanel1.Size = new Size(888, 449);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 9F));
+            tableLayoutPanel1.Size = new Size(1015, 599);
             tableLayoutPanel1.TabIndex = 5;
             // 
             // label1
@@ -115,7 +115,7 @@
             label1.Location = new Point(1, 0);
             label1.Margin = new Padding(1, 0, 1, 0);
             label1.Name = "label1";
-            label1.Size = new Size(886, 48);
+            label1.Size = new Size(1013, 64);
             label1.TabIndex = 0;
             label1.Text = "Líneas de Espera";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -127,9 +127,9 @@
             tableLayoutPanel1.SetColumnSpan(tableLayoutPanel3, 7);
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85.55133F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.4486694F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 185F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 339F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 72F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 211F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 387F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 83F));
             tableLayoutPanel3.Controls.Add(menuStrip1, 0, 0);
             tableLayoutPanel3.Controls.Add(pictureBox1, 1, 0);
             tableLayoutPanel3.Controls.Add(pictureBox2, 1, 1);
@@ -138,13 +138,12 @@
             tableLayoutPanel3.Controls.Add(tableLayoutPanel4, 3, 0);
             tableLayoutPanel3.Controls.Add(btnConsultas, 4, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(16, 55);
-            tableLayoutPanel3.Margin = new Padding(3, 2, 3, 2);
+            tableLayoutPanel3.Location = new Point(18, 74);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Size = new Size(852, 58);
+            tableLayoutPanel3.Size = new Size(972, 77);
             tableLayoutPanel3.TabIndex = 10;
             // 
             // menuStrip1
@@ -156,9 +155,9 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { buscadorToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(6, 1, 0, 1);
+            menuStrip1.Padding = new Padding(7, 1, 0, 1);
             tableLayoutPanel3.SetRowSpan(menuStrip1, 2);
-            menuStrip1.Size = new Size(219, 58);
+            menuStrip1.Size = new Size(248, 77);
             menuStrip1.TabIndex = 8;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -169,7 +168,7 @@
             buscadorToolStripMenuItem.ForeColor = Color.FromArgb(28, 46, 74);
             buscadorToolStripMenuItem.Image = (Image)resources.GetObject("buscadorToolStripMenuItem.Image");
             buscadorToolStripMenuItem.Name = "buscadorToolStripMenuItem";
-            buscadorToolStripMenuItem.Size = new Size(127, 56);
+            buscadorToolStripMenuItem.Size = new Size(153, 75);
             buscadorToolStripMenuItem.Text = "Filtros";
             // 
             // tsmiDificultad
@@ -178,13 +177,13 @@
             tsmiDificultad.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tsmiDificultad.Image = (Image)resources.GetObject("tsmiDificultad.Image");
             tsmiDificultad.Name = "tsmiDificultad";
-            tsmiDificultad.Size = new Size(262, 26);
+            tsmiDificultad.Size = new Size(317, 30);
             tsmiDificultad.Text = "Nivel de dificultad";
             // 
             // tscmbDificultad
             // 
             tscmbDificultad.Name = "tscmbDificultad";
-            tscmbDificultad.Size = new Size(121, 23);
+            tscmbDificultad.Size = new Size(121, 28);
             // 
             // tsmiModelo
             // 
@@ -192,25 +191,23 @@
             tsmiModelo.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tsmiModelo.Image = (Image)resources.GetObject("tsmiModelo.Image");
             tsmiModelo.Name = "tsmiModelo";
-            tsmiModelo.Size = new Size(262, 26);
+            tsmiModelo.Size = new Size(317, 30);
             tsmiModelo.Text = "Modelo ";
             // 
             // tscmbModelo
             // 
             tscmbModelo.Items.AddRange(new object[] { "UNA", "MUCHAS" });
             tscmbModelo.Name = "tscmbModelo";
-            tscmbModelo.Size = new Size(121, 23);
-            tscmbModelo.Click += tscmbModelo_Click;
+            tscmbModelo.Size = new Size(121, 28);
             // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Location = new Point(222, 2);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(251, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(30, 25);
+            pictureBox1.Size = new Size(36, 32);
             pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
@@ -220,10 +217,9 @@
             pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Location = new Point(222, 31);
-            pictureBox2.Margin = new Padding(3, 2, 3, 2);
+            pictureBox2.Location = new Point(251, 41);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(30, 25);
+            pictureBox2.Size = new Size(36, 33);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox2.TabIndex = 10;
             pictureBox2.TabStop = false;
@@ -234,9 +230,9 @@
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(28, 46, 74);
-            label2.Location = new Point(258, 0);
+            label2.Location = new Point(293, 0);
             label2.Name = "label2";
-            label2.Size = new Size(179, 29);
+            label2.Size = new Size(205, 38);
             label2.TabIndex = 11;
             label2.Text = "Título del ejercicio:";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -247,9 +243,9 @@
             label3.Dock = DockStyle.Fill;
             label3.Font = new Font("Verdana", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(28, 46, 78);
-            label3.Location = new Point(258, 29);
+            label3.Location = new Point(293, 38);
             label3.Name = "label3";
-            label3.Size = new Size(179, 29);
+            label3.Size = new Size(205, 39);
             label3.TabIndex = 12;
             label3.Text = "Palabra clave:";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -262,36 +258,33 @@
             tableLayoutPanel4.Controls.Add(txtTitulo, 0, 0);
             tableLayoutPanel4.Controls.Add(txtEnunciado, 0, 1);
             tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(443, 2);
-            tableLayoutPanel4.Margin = new Padding(3, 2, 3, 2);
+            tableLayoutPanel4.Location = new Point(504, 3);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 2;
             tableLayoutPanel3.SetRowSpan(tableLayoutPanel4, 2);
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Size = new Size(333, 54);
+            tableLayoutPanel4.Size = new Size(381, 71);
             tableLayoutPanel4.TabIndex = 13;
             // 
             // txtTitulo
             // 
             txtTitulo.BackColor = Color.LightSteelBlue;
             txtTitulo.Dock = DockStyle.Fill;
-            txtTitulo.Location = new Point(3, 2);
-            txtTitulo.Margin = new Padding(3, 2, 3, 2);
+            txtTitulo.Location = new Point(3, 3);
             txtTitulo.Multiline = true;
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(327, 23);
+            txtTitulo.Size = new Size(375, 29);
             txtTitulo.TabIndex = 0;
             // 
             // txtEnunciado
             // 
             txtEnunciado.BackColor = Color.LightSteelBlue;
             txtEnunciado.Dock = DockStyle.Fill;
-            txtEnunciado.Location = new Point(3, 29);
-            txtEnunciado.Margin = new Padding(3, 2, 3, 2);
+            txtEnunciado.Location = new Point(3, 38);
             txtEnunciado.Multiline = true;
             txtEnunciado.Name = "txtEnunciado";
-            txtEnunciado.Size = new Size(327, 23);
+            txtEnunciado.Size = new Size(375, 30);
             txtEnunciado.TabIndex = 1;
             // 
             // btnConsultas
@@ -300,11 +293,10 @@
             btnConsultas.BackgroundImage = (Image)resources.GetObject("btnConsultas.BackgroundImage");
             btnConsultas.BackgroundImageLayout = ImageLayout.Zoom;
             btnConsultas.Dock = DockStyle.Fill;
-            btnConsultas.Location = new Point(782, 2);
-            btnConsultas.Margin = new Padding(3, 2, 3, 2);
+            btnConsultas.Location = new Point(891, 3);
             btnConsultas.Name = "btnConsultas";
             tableLayoutPanel3.SetRowSpan(btnConsultas, 2);
-            btnConsultas.Size = new Size(67, 54);
+            btnConsultas.Size = new Size(78, 71);
             btnConsultas.TabIndex = 14;
             btnConsultas.UseVisualStyleBackColor = false;
             btnConsultas.Click += btnConsultas_Click;
@@ -314,12 +306,10 @@
             groupBox1.Controls.Add(tableLayoutPanel2);
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBox1.Location = new Point(736, 122);
-            groupBox1.Margin = new Padding(3, 2, 3, 2);
+            groupBox1.Location = new Point(838, 164);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(3, 2, 3, 2);
             tableLayoutPanel1.SetRowSpan(groupBox1, 5);
-            groupBox1.Size = new Size(132, 315);
+            groupBox1.Size = new Size(152, 419);
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Opciones:";
@@ -332,14 +322,13 @@
             tableLayoutPanel2.Controls.Add(btnEliminar, 0, 1);
             tableLayoutPanel2.Controls.Add(btnRegresar, 0, 2);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(3, 21);
-            tableLayoutPanel2.Margin = new Padding(3, 2, 3, 2);
+            tableLayoutPanel2.Location = new Point(3, 26);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 3;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel2.Size = new Size(126, 292);
+            tableLayoutPanel2.Size = new Size(146, 390);
             tableLayoutPanel2.TabIndex = 10;
             // 
             // btnAgregar
@@ -348,10 +337,9 @@
             btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
             btnAgregar.BackgroundImageLayout = ImageLayout.Zoom;
             btnAgregar.Dock = DockStyle.Fill;
-            btnAgregar.Location = new Point(3, 2);
-            btnAgregar.Margin = new Padding(3, 2, 3, 2);
+            btnAgregar.Location = new Point(3, 3);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(120, 93);
+            btnAgregar.Size = new Size(140, 123);
             btnAgregar.TabIndex = 0;
             btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
@@ -362,10 +350,9 @@
             btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
             btnEliminar.BackgroundImageLayout = ImageLayout.Zoom;
             btnEliminar.Dock = DockStyle.Fill;
-            btnEliminar.Location = new Point(3, 99);
-            btnEliminar.Margin = new Padding(3, 2, 3, 2);
+            btnEliminar.Location = new Point(3, 132);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(120, 93);
+            btnEliminar.Size = new Size(140, 123);
             btnEliminar.TabIndex = 1;
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
@@ -376,10 +363,9 @@
             btnRegresar.BackgroundImage = (Image)resources.GetObject("btnRegresar.BackgroundImage");
             btnRegresar.BackgroundImageLayout = ImageLayout.Zoom;
             btnRegresar.Dock = DockStyle.Fill;
-            btnRegresar.Location = new Point(3, 196);
-            btnRegresar.Margin = new Padding(3, 2, 3, 2);
+            btnRegresar.Location = new Point(3, 261);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(120, 94);
+            btnRegresar.Size = new Size(140, 126);
             btnRegresar.TabIndex = 2;
             btnRegresar.UseVisualStyleBackColor = false;
             btnRegresar.Click += btnRegresar_Click;
@@ -407,8 +393,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvEjercicios.DefaultCellStyle = dataGridViewCellStyle2;
             dgvEjercicios.Dock = DockStyle.Fill;
-            dgvEjercicios.Location = new Point(16, 122);
-            dgvEjercicios.Margin = new Padding(3, 2, 3, 2);
+            dgvEjercicios.Location = new Point(18, 164);
             dgvEjercicios.Name = "dgvEjercicios";
             dgvEjercicios.RowHeadersVisible = false;
             dgvEjercicios.RowHeadersWidth = 51;
@@ -420,7 +405,7 @@
             dgvEjercicios.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.LightSteelBlue;
             dgvEjercicios.RowTemplate.DefaultCellStyle.SelectionForeColor = Color.FromArgb(24, 46, 74);
             dgvEjercicios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEjercicios.Size = new Size(707, 315);
+            dgvEjercicios.Size = new Size(806, 419);
             dgvEjercicios.TabIndex = 9;
             // 
             // Titulo
@@ -437,15 +422,14 @@
             Detalles.HeaderText = "Ver más";
             Detalles.MinimumWidth = 6;
             Detalles.Name = "Detalles";
-            Detalles.Width = 102;
+            Detalles.Width = 122;
             // 
             // FrmEjerciciosLDE
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(888, 449);
+            ClientSize = new Size(1015, 599);
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "FrmEjerciciosLDE";
             Text = "FrmEjerciciosLDE";
             FormClosed += FrmEjerciciosLDE_FormClosed;

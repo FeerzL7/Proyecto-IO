@@ -17,7 +17,7 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        public Problemario referenciaRegistarMultiples = new();
+        public Problemario referenciaRegistarMultiples { get; set; } = new();
 
 
         private void FrmRegistrarMultiplesServidoresUnaFila_Load(object sender, EventArgs e)

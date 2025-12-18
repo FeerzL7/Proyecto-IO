@@ -71,11 +71,7 @@ namespace FrmProyectoIO
             this.Close();
         }
 
-        private void tscmbModelo_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void btnConsultas_Click(object sender, EventArgs e)
         {
             var listaEjercicios = problema.Reactivo.SelectMany(x => x.Value);
@@ -116,5 +112,7 @@ namespace FrmProyectoIO
                 problema.Eliminar(ejercicioSeleccionado);
             }
         }
+
+    
     }
 }

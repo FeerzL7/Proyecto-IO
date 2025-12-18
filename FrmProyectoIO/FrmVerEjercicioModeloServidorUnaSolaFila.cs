@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FrmProyectoIO.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace FrmProyectoIO
         public FrmVerEjercicioModeloServidorUnaSolaFila()
         {
             InitializeComponent();
+        }
+        
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmVerEjercicioModeloUnaSolaFiala_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,13 +33,13 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label5 = new Label();
             label6 = new Label();
-            txtDAlta = new TextBox();
-            txtDBaja = new TextBox();
-            label9 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             btnGenerar = new Button();
+            txtDAlta = new TextBox();
+            label5 = new Label();
+            label9 = new Label();
+            txtDBaja = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -141,21 +141,6 @@
             label3.Text = "Dificultad Alta:";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.FromArgb(28, 46, 74);
-            tableLayoutPanel1.SetColumnSpan(label5, 3);
-            label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.ForeColor = SystemColors.ControlLightLight;
-            label5.Location = new Point(761, 180);
-            label5.Name = "label5";
-            label5.Size = new Size(674, 83);
-            label5.TabIndex = 4;
-            label5.Text = "Dificultad Baja:";
-            label5.TextAlign = ContentAlignment.MiddleCenter;
-            // 
             // label6
             // 
             label6.AutoSize = true;
@@ -169,46 +154,6 @@
             label6.TabIndex = 5;
             label6.Text = "Cantidad:";
             label6.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // txtDAlta
-            // 
-            tableLayoutPanel1.SetColumnSpan(txtDAlta, 2);
-            txtDAlta.Dock = DockStyle.Fill;
-            txtDAlta.Font = new Font("Verdana", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDAlta.Location = new Point(261, 281);
-            txtDAlta.Multiline = true;
-            txtDAlta.Name = "txtDAlta";
-            txtDAlta.Size = new Size(478, 63);
-            txtDAlta.TabIndex = 6;
-            txtDAlta.Text = "0";
-            txtDAlta.TextAlign = HorizontalAlignment.Center;
-            // 
-            // txtDBaja
-            // 
-            tableLayoutPanel1.SetColumnSpan(txtDBaja, 2);
-            txtDBaja.Dock = DockStyle.Fill;
-            txtDBaja.Font = new Font("Verdana", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDBaja.Location = new Point(977, 281);
-            txtDBaja.Multiline = true;
-            txtDBaja.Name = "txtDBaja";
-            txtDBaja.Size = new Size(458, 63);
-            txtDBaja.TabIndex = 8;
-            txtDBaja.Text = "0";
-            txtDBaja.TextAlign = HorizontalAlignment.Center;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.BackColor = Color.FromArgb(28, 46, 74);
-            label9.Dock = DockStyle.Fill;
-            label9.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.ForeColor = SystemColors.ControlLightLight;
-            label9.Location = new Point(761, 278);
-            label9.Name = "label9";
-            label9.Size = new Size(210, 69);
-            label9.TabIndex = 11;
-            label9.Text = "Cantidad:";
-            label9.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
             // 
@@ -240,6 +185,62 @@
             btnGenerar.TabIndex = 0;
             btnGenerar.Text = "Generar";
             btnGenerar.UseVisualStyleBackColor = false;
+            btnGenerar.Click += btnGenerar_Click;
+            // 
+            // txtDAlta
+            // 
+            tableLayoutPanel1.SetColumnSpan(txtDAlta, 2);
+            txtDAlta.Dock = DockStyle.Fill;
+            txtDAlta.Font = new Font("Verdana", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDAlta.Location = new Point(261, 281);
+            txtDAlta.Multiline = true;
+            txtDAlta.Name = "txtDAlta";
+            txtDAlta.Size = new Size(478, 63);
+            txtDAlta.TabIndex = 6;
+            txtDAlta.Text = "0";
+            txtDAlta.TextAlign = HorizontalAlignment.Center;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(28, 46, 74);
+            tableLayoutPanel1.SetColumnSpan(label5, 3);
+            label5.Dock = DockStyle.Fill;
+            label5.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ControlLightLight;
+            label5.Location = new Point(761, 180);
+            label5.Name = "label5";
+            label5.Size = new Size(674, 83);
+            label5.TabIndex = 4;
+            label5.Text = "Dificultad Baja:";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.FromArgb(28, 46, 74);
+            label9.Dock = DockStyle.Fill;
+            label9.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.ControlLightLight;
+            label9.Location = new Point(761, 278);
+            label9.Name = "label9";
+            label9.Size = new Size(210, 69);
+            label9.TabIndex = 11;
+            label9.Text = "Cantidad:";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // txtDBaja
+            // 
+            tableLayoutPanel1.SetColumnSpan(txtDBaja, 2);
+            txtDBaja.Dock = DockStyle.Fill;
+            txtDBaja.Font = new Font("Verdana", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDBaja.Location = new Point(977, 281);
+            txtDBaja.Multiline = true;
+            txtDBaja.Name = "txtDBaja";
+            txtDBaja.Size = new Size(458, 63);
+            txtDBaja.TabIndex = 8;
+            txtDBaja.Text = "0";
+            txtDBaja.TextAlign = HorizontalAlignment.Center;
             // 
             // frmGenerarExamen
             // 

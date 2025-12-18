@@ -124,7 +124,7 @@ namespace FrmProyectoIO.Properties
             }
 
             //busca el problema que seleccionaron
-            var ProblemaModificar = Reactivo[dificultad].FirstOrDefault(x => x.Titulo == problema.Titulo);
+            var ProblemaModificar = Reactivo.Values.SelectMany(x => x).FirstOrDefault(x => x.Titulo == problema.Titulo);
             if (ProblemaModificar != null) //si este no es nulo actualiza los valores 
             {
                 ProblemaModificar.Titulo = problema.Titulo;
@@ -133,6 +133,8 @@ namespace FrmProyectoIO.Properties
                 ProblemaModificar.TasaServicio = problema.TasaServicio;
 
             }
+            //Por si se cambia de dificulad
+            Reactivo[dificultad].Add(ProblemaModificar);
             SeActualizoLista?.Invoke();
         }
 
@@ -158,7 +160,7 @@ namespace FrmProyectoIO.Properties
             }
 
             //guardalo como un ModeloMultiplesServidores
-            ModeloMultiplesServidores? ProblemaModificar = Reactivo[dificultad].FirstOrDefault(x => x.Titulo == problema.Titulo) as ModeloMultiplesServidores;
+            ModeloMultiplesServidores? ProblemaModificar = Reactivo.Values.SelectMany(x => x).FirstOrDefault(x => x.Titulo == problema.Titulo) as ModeloMultiplesServidores;
             if (ProblemaModificar != null)
             {
                 ProblemaModificar.Titulo = problema.Titulo;
@@ -168,6 +170,7 @@ namespace FrmProyectoIO.Properties
                 ProblemaModificar.Servidores = problema.Servidores;
 
             }
+            Reactivo[dificultad].Add(ProblemaModificar);
             SeActualizoLista?.Invoke();
         }
 

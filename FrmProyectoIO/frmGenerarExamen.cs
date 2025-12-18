@@ -16,5 +16,10 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

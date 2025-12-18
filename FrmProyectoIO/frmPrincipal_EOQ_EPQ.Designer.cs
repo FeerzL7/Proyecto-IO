@@ -41,6 +41,8 @@
             cmbNivelDificultad = new ComboBox();
             tableLayoutPanel3 = new TableLayoutPanel();
             btnEliminar = new Button();
+            tableLayoutPanel6 = new TableLayoutPanel();
+            btnRegresar = new Button();
             tableLayoutPanel4 = new TableLayoutPanel();
             label4 = new Label();
             label3 = new Label();
@@ -50,15 +52,13 @@
             tableLayoutPanel5 = new TableLayoutPanel();
             btnConsultar = new Button();
             btnLimpiar = new Button();
-            tableLayoutPanel6 = new TableLayoutPanel();
-            btnRegresar = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).BeginInit();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
-            tableLayoutPanel6.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -123,6 +123,7 @@
             tableLayoutPanel1.SetRowSpan(dgvEjercicios, 5);
             dgvEjercicios.Size = new Size(949, 496);
             dgvEjercicios.TabIndex = 1;
+            dgvEjercicios.CellContentClick += dgvEjercicios_CellContentClick;
             // 
             // Ejercicios
             // 
@@ -257,6 +258,38 @@
             btnEliminar.Size = new Size(232, 183);
             btnEliminar.TabIndex = 9;
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // tableLayoutPanel6
+            // 
+            tableLayoutPanel6.ColumnCount = 3;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.78341F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.21659F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
+            tableLayoutPanel6.Controls.Add(btnRegresar, 1, 1);
+            tableLayoutPanel6.Dock = DockStyle.Fill;
+            tableLayoutPanel6.Location = new Point(1017, 695);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 3;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 4.347826F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 95.6521759F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel6.Size = new Size(542, 209);
+            tableLayoutPanel6.TabIndex = 19;
+            // 
+            // btnRegresar
+            // 
+            btnRegresar.BackgroundImage = (Image)resources.GetObject("btnRegresar.BackgroundImage");
+            btnRegresar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnRegresar.Dock = DockStyle.Fill;
+            btnRegresar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegresar.Location = new Point(175, 10);
+            btnRegresar.Margin = new Padding(2);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(248, 188);
+            btnRegresar.TabIndex = 8;
+            btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // tableLayoutPanel4
             // 
@@ -402,36 +435,6 @@
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
             // 
-            // tableLayoutPanel6
-            // 
-            tableLayoutPanel6.ColumnCount = 3;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.78341F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.21659F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
-            tableLayoutPanel6.Controls.Add(btnRegresar, 1, 1);
-            tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(1017, 695);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 3;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 4.347826F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 95.6521759F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
-            tableLayoutPanel6.Size = new Size(542, 209);
-            tableLayoutPanel6.TabIndex = 19;
-            // 
-            // btnRegresar
-            // 
-            btnRegresar.BackgroundImage = (Image)resources.GetObject("btnRegresar.BackgroundImage");
-            btnRegresar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnRegresar.Dock = DockStyle.Fill;
-            btnRegresar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegresar.Location = new Point(175, 10);
-            btnRegresar.Margin = new Padding(2);
-            btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(248, 188);
-            btnRegresar.TabIndex = 8;
-            btnRegresar.UseVisualStyleBackColor = true;
-            // 
             // frmPrincipal_EOQ_EPQ
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -448,10 +451,10 @@
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel6.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
             tableLayoutPanel5.ResumeLayout(false);
-            tableLayoutPanel6.ResumeLayout(false);
             ResumeLayout(false);
         }
 
