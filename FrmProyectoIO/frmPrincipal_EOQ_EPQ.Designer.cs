@@ -41,6 +41,8 @@
             cmbNivelDificultad = new ComboBox();
             tableLayoutPanel3 = new TableLayoutPanel();
             btnEliminar = new Button();
+            tableLayoutPanel6 = new TableLayoutPanel();
+            btnRegresar = new Button();
             tableLayoutPanel4 = new TableLayoutPanel();
             label4 = new Label();
             label3 = new Label();
@@ -48,17 +50,15 @@
             txtTitulo = new TextBox();
             txtEnunciado = new TextBox();
             tableLayoutPanel5 = new TableLayoutPanel();
-            btnConsultar = new Button();
+            btnGenerarExamen = new Button();
             btnLimpiar = new Button();
-            tableLayoutPanel6 = new TableLayoutPanel();
-            btnRegresar = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).BeginInit();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
-            tableLayoutPanel6.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -258,6 +258,36 @@
             btnEliminar.TabIndex = 9;
             btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel6
+            // 
+            tableLayoutPanel6.ColumnCount = 3;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.78341F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.21659F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
+            tableLayoutPanel6.Controls.Add(btnRegresar, 1, 1);
+            tableLayoutPanel6.Dock = DockStyle.Fill;
+            tableLayoutPanel6.Location = new Point(1017, 695);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 3;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 4.347826F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 95.6521759F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel6.Size = new Size(542, 209);
+            tableLayoutPanel6.TabIndex = 19;
+            // 
+            // btnRegresar
+            // 
+            btnRegresar.BackgroundImage = (Image)resources.GetObject("btnRegresar.BackgroundImage");
+            btnRegresar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnRegresar.Dock = DockStyle.Fill;
+            btnRegresar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegresar.Location = new Point(175, 10);
+            btnRegresar.Margin = new Padding(2);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(248, 188);
+            btnRegresar.TabIndex = 8;
+            btnRegresar.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel4
             // 
             tableLayoutPanel4.BackColor = Color.Transparent;
@@ -364,7 +394,7 @@
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 22F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 267F));
             tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 22F));
-            tableLayoutPanel5.Controls.Add(btnConsultar, 1, 1);
+            tableLayoutPanel5.Controls.Add(btnGenerarExamen, 1, 1);
             tableLayoutPanel5.Controls.Add(btnLimpiar, 3, 1);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(3, 432);
@@ -376,18 +406,18 @@
             tableLayoutPanel5.Size = new Size(609, 130);
             tableLayoutPanel5.TabIndex = 16;
             // 
-            // btnConsultar
+            // btnGenerarExamen
             // 
-            btnConsultar.BackColor = Color.FromArgb(28, 46, 74);
-            btnConsultar.Dock = DockStyle.Fill;
-            btnConsultar.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnConsultar.ForeColor = SystemColors.ButtonHighlight;
-            btnConsultar.Location = new Point(23, 18);
-            btnConsultar.Name = "btnConsultar";
-            btnConsultar.Size = new Size(271, 89);
-            btnConsultar.TabIndex = 0;
-            btnConsultar.Text = "Consultar";
-            btnConsultar.UseVisualStyleBackColor = false;
+            btnGenerarExamen.BackColor = Color.FromArgb(28, 46, 74);
+            btnGenerarExamen.Dock = DockStyle.Fill;
+            btnGenerarExamen.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGenerarExamen.ForeColor = SystemColors.ButtonHighlight;
+            btnGenerarExamen.Location = new Point(23, 18);
+            btnGenerarExamen.Name = "btnGenerarExamen";
+            btnGenerarExamen.Size = new Size(271, 89);
+            btnGenerarExamen.TabIndex = 0;
+            btnGenerarExamen.Text = "Generar Examen";
+            btnGenerarExamen.UseVisualStyleBackColor = false;
             // 
             // btnLimpiar
             // 
@@ -401,36 +431,6 @@
             btnLimpiar.TabIndex = 1;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel6
-            // 
-            tableLayoutPanel6.ColumnCount = 3;
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.78341F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.21659F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
-            tableLayoutPanel6.Controls.Add(btnRegresar, 1, 1);
-            tableLayoutPanel6.Dock = DockStyle.Fill;
-            tableLayoutPanel6.Location = new Point(1017, 695);
-            tableLayoutPanel6.Name = "tableLayoutPanel6";
-            tableLayoutPanel6.RowCount = 3;
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 4.347826F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 95.6521759F));
-            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
-            tableLayoutPanel6.Size = new Size(542, 209);
-            tableLayoutPanel6.TabIndex = 19;
-            // 
-            // btnRegresar
-            // 
-            btnRegresar.BackgroundImage = (Image)resources.GetObject("btnRegresar.BackgroundImage");
-            btnRegresar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnRegresar.Dock = DockStyle.Fill;
-            btnRegresar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegresar.Location = new Point(175, 10);
-            btnRegresar.Margin = new Padding(2);
-            btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(248, 188);
-            btnRegresar.TabIndex = 8;
-            btnRegresar.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal_EOQ_EPQ
             // 
@@ -448,10 +448,10 @@
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).EndInit();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel6.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
             tableLayoutPanel5.ResumeLayout(false);
-            tableLayoutPanel6.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -476,7 +476,7 @@
         private TextBox txtTitulo;
         private TextBox txtEnunciado;
         private TableLayoutPanel tableLayoutPanel5;
-        private Button btnConsultar;
+        private Button btnGenerarExamen;
         private Button btnLimpiar;
         private TableLayoutPanel tableLayoutPanel6;
         private Button btnRegresar;
