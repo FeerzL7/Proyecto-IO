@@ -44,7 +44,6 @@ namespace FrmProyectoIO
 
             if (tscmbModelo.Text == "UNA")
             {
-
                 FrmModeloServidorUnaSolaFila modelo1 = new();
                 modelo1.referenciaAgregar = problema;
                 modelo1.ShowDialog();
