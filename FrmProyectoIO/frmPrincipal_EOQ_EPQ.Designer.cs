@@ -204,30 +204,31 @@
             tableLayoutPanel2.Size = new Size(484, 209);
             tableLayoutPanel2.TabIndex = 15;
             // 
-            // btnAgregar
+            // button3
             // 
-            btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
-            btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnAgregar.Dock = DockStyle.Fill;
-            btnAgregar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.Location = new Point(109, 10);
-            btnAgregar.Margin = new Padding(2);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(256, 188);
-            btnAgregar.TabIndex = 7;
-            btnAgregar.UseVisualStyleBackColor = true;
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.Dock = DockStyle.Fill;
+            button3.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button3.Location = new Point(101, 10);
+            button3.Margin = new Padding(2);
+            button3.Name = "button3";
+            button3.Size = new Size(236, 188);
+            button3.TabIndex = 7;
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
-            // cmbNivelDificultad
+            // cmbDificultad
             // 
-            tableLayoutPanel1.SetColumnSpan(cmbNivelDificultad, 3);
-            cmbNivelDificultad.Dock = DockStyle.Fill;
-            cmbNivelDificultad.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            cmbNivelDificultad.FormattingEnabled = true;
-            cmbNivelDificultad.Location = new Point(513, 13);
-            cmbNivelDificultad.Margin = new Padding(2);
-            cmbNivelDificultad.Name = "cmbNivelDificultad";
-            cmbNivelDificultad.Size = new Size(454, 37);
-            cmbNivelDificultad.TabIndex = 3;
+            tableLayoutPanel1.SetColumnSpan(cmbDificultad, 3);
+            cmbDificultad.Dock = DockStyle.Fill;
+            cmbDificultad.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbDificultad.FormattingEnabled = true;
+            cmbDificultad.Location = new Point(502, 13);
+            cmbDificultad.Margin = new Padding(2);
+            cmbDificultad.Name = "cmbDificultad";
+            cmbDificultad.Size = new Size(474, 37);
+            cmbDificultad.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
