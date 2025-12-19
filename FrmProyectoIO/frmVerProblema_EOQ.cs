@@ -48,7 +48,7 @@ namespace FrmProyectoIO
 
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
-            txtValorp.Text = Ejercicio.TasaDeProduccion.ToString();
+     
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

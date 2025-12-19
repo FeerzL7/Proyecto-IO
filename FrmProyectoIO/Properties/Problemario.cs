@@ -249,12 +249,12 @@ namespace FrmProyectoIO.Properties
         {
             if (File.Exists("Lista de problemasMM1.json"))
             {
-                string json = File.ReadAllText("Lista de problemas.json");
+                string json = File.ReadAllText("Lista de problemasMM1.json");
 
                 ReactivosMM1 = JsonSerializer.Deserialize<Dictionary<Dificultad, List<ModeloUnSoloServidor>>>(json) ?? new Dictionary<Dificultad, List<ModeloUnSoloServidor>>();
                 
             }
-            if (File.Exists("Lista de ProblemasMMS.json"))
+            if (File.Exists("Lista de problemasMMS.json"))
             {
                 string json = File.ReadAllText("Lista de problemasMMS.json");
 
