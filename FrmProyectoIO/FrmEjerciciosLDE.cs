@@ -18,7 +18,7 @@ namespace FrmProyectoIO
             InitializeComponent();
         }
 
-        public Problemario problema = new();
+        public Problemario problema { get; set; } = new();
         private void FrmEjerciciosLDE_Load(object sender, EventArgs e)
         {
             dgvEjercicios.AutoGenerateColumns = false;
@@ -40,24 +40,34 @@ namespace FrmProyectoIO
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
-
-            if (tscmbModelo.Text == "UNA")
+            try
             {
-                FrmModeloServidorUnaSolaFila modelo1 = new();
-                modelo1.referenciaAgregar = problema;
-                modelo1.ShowDialog();
+
+                if (tscmbModelo.Text == "UNA")
+                {
+                    FrmModeloServidorUnaSolaFila modelo1 = new();
+                    modelo1.referenciaAgregar = problema;
+                    modelo1.ShowDialog();
+                }
+                else if (tscmbModelo.Text == "MUCHAS")
+                {
+                    FrmRegistrarMultiplesServidoresUnaFila modelo2 = new();
+                    modelo2.referenciaRegistarMultiples = problema;
+                    modelo2.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione uno de los 2");
+
+                }
             }
-            else if (tscmbModelo.Text == "MUCHAS")
+            catch (ArgumentException ex)
             {
-                FrmRegistrarMultiplesServidoresUnaFila modelo2 = new();
-                modelo2.referenciaRegistarMultiples = problema;
-                modelo2.ShowDialog();
+                MessageBox.Show(ex.Message);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Seleccione uno de los 2");
-
+                MessageBox.Show(ex.Message);
             }
         }
 

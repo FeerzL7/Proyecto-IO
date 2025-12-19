@@ -42,7 +42,7 @@ namespace FrmProyectoIO.Properties
             //Que no se repita el titulo
             if (Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == titulo.ToUpper()))
             {
-                throw new ArgumentException("");
+                throw new ArgumentException("No puede repetir titulo del ejercicio");
             }
 
             Reactivo[dificultad].Add(new ModeloUnSoloServidor

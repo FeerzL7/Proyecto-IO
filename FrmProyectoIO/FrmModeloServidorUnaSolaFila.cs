@@ -31,6 +31,10 @@ namespace FrmProyectoIO
                 referenciaAgregar.AgregarProblema(txtTitulo.Text, txtEnunciado.Text, double.Parse(txtLambda.Text),
                     double.Parse(txtMew.Text), (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem);
             }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);

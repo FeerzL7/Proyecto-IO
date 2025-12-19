@@ -10,6 +10,7 @@ namespace FrmProyectoIO
         }
 
         public Problemario problemario = new();
+        public Almacenamiento almacenamiento = new();
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -26,6 +27,13 @@ namespace FrmProyectoIO
             FrmEjerciciosLDE lineas = new();
             lineas.problema = problemario;
             lineas.ShowDialog();
+        }
+
+        private void guna2ImageBtnEOQ_Click(object sender, EventArgs e)
+        {
+            frmPrincipal_EOQ_EPQ alma = new();
+            alma.principal = almacenamiento;
+            alma.ShowDialog();
         }
     }
 }

@@ -16,7 +16,7 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        Almacenamiento principal = new Almacenamiento();
+         public Almacenamiento principal { get; set; } = new Almacenamiento();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {
             principal.Leer();
