@@ -13,9 +13,8 @@ namespace FrmProyectoIO
     public partial class frmVerProblema_EPQ : Form
     {
 
-        public InventarioProduccion ReferenciaEPQ { get; internal set; }
-        public Inventario EjercicioModificado { get; internal set; }
-        public Inventario Ejercicio { get; internal set; }
+
+        public InventarioProduccion Ejercicio { get; internal set; }
         public Almacenamiento ReferenciaAlmacenamiento { get; internal set; }
 
         public frmVerProblema_EPQ()
@@ -28,52 +27,60 @@ namespace FrmProyectoIO
 
         }
 
+
         private void frmVerProblema_EPQ_Load(object sender, EventArgs e)
         {
+            if (Ejercicio == null) return;
 
+            txtTitulo.Text = Ejercicio.Titulo;
+            txtEnunciado.Text = Ejercicio.Texto;
+            txtValorp.Text = Ejercicio.TasaDeProduccion.ToString();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
             {
-                //ENTRADAS
-                ReferenciaEPQ.Texto = txtEnunciado.Text;
-                ReferenciaEPQ.DemandaXunidadTiempo = ushort.Parse(txtValorD.Text);
-                ReferenciaEPQ.DemandaDiaria = ushort.Parse(txtValordd.Text);
-                ReferenciaEPQ.TasaDeProduccion = ushort.Parse(txtValorp.Text);
-                ReferenciaEPQ.CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text);
-                ReferenciaEPQ.CostoPorAlmacenar = decimal.Parse(txtValorCh.Text);
+                InventarioProduccion modificado = new InventarioProduccion
+                {
 
-                //SALIDAS
-                //N2, N0 y C son formatos de salida
-                lblValorQ.Text = ReferenciaEPQ.CantidadDeLoteEconomico.ToString("N2");
+                    Id = Ejercicio.Id,
 
-                lblValorImax.Text = ReferenciaEPQ.InventarioMaximo.ToString("N0") + " unidades";
-                lblValorIprom.Text = ReferenciaEPQ.InventarioPromedio.ToString("N0") + " unidades";
+                    // Texto
+                    Titulo = txtTitulo.Text,
+                    Texto = txtEnunciado.Text,
 
-                lblValorCalm.Text = ReferenciaEPQ.CostoAnualXAlmacenar.ToString("C");
+                    // Demanda
+                    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
+                    DemandaDiaria = ushort.Parse(txtValordd.Text),
 
-                lblNumCorridxAño.Text = ReferenciaEPQ.NumeroDeLotes.ToString("N2");
+                    // Costos
+                    CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
+                    CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
 
-                lblValort.Text = ReferenciaEPQ.TiempoDelCiclo.ToString("N2");
+                    // Tiempos
 
-                lblValort0.Text = ReferenciaEPQ.DuracionDelCiclo.ToString("N2");
+                    DiasLaboradosAño = ushort.Parse(txtValorN.Text),
 
-                lblValorCprep.Text = ReferenciaEPQ.CostoAnualXPreparacion.ToString("C");
+                    // EPQ
+                    TasaDeProduccion = ushort.Parse(txtValorp.Text)
+                };
 
-                lblValorCT.Text = ReferenciaEPQ.CostoTotalXUnidadTiempo.ToString("C");
 
-                // falta crear tp en la clase de InventarioProduccion
+                ReferenciaAlmacenamiento.Modificar(Dificultad.Dificil, modificado);
 
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (Exception ex)
             {
-                {
-                    MessageBox.Show(ex.Message, "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                MessageBox.Show(ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
