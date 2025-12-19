@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
+using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace FrmProyectoIO
 {
@@ -126,6 +130,7 @@ namespace FrmProyectoIO
             AlCambiar?.Invoke();
         }
 
+        
         public void Guardar()
         {
             string json = JsonSerializer.Serialize(Ejercicios, new JsonSerializerOptions() { WriteIndented = true });
