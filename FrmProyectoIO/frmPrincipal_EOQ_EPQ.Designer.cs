@@ -145,7 +145,7 @@
             radioButton1.AutoSize = true;
             radioButton1.BackColor = Color.FromArgb(28, 46, 74);
             radioButton1.Dock = DockStyle.Fill;
-            radioButton1.Font = new Font("Microsoft Sans Serif", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton1.Font = new Font("Cooper Black", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             radioButton1.ForeColor = SystemColors.ButtonHighlight;
             radioButton1.Location = new Point(12, 91);
             radioButton1.Margin = new Padding(2, 3, 2, 3);
@@ -163,7 +163,7 @@
             radioButton2.BackColor = Color.FromArgb(28, 46, 74);
             tableLayoutPanel1.SetColumnSpan(radioButton2, 2);
             radioButton2.Dock = DockStyle.Fill;
-            radioButton2.Font = new Font("Microsoft Sans Serif", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            radioButton2.Font = new Font("Cooper Black", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             radioButton2.ForeColor = SystemColors.ButtonHighlight;
             radioButton2.Location = new Point(479, 91);
             radioButton2.Margin = new Padding(2, 3, 2, 3);
@@ -179,7 +179,7 @@
             // 
             label1.BackColor = Color.FromArgb(28, 46, 74);
             label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Microsoft Sans Serif", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Cooper Black", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(12, 28);
             label1.Margin = new Padding(2, 0, 2, 0);
@@ -188,6 +188,7 @@
             label1.TabIndex = 2;
             label1.Text = "Nivel de Dificultad:";
             label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // cmbNivelDificultad
             // 
@@ -284,7 +285,7 @@
             label3.BackColor = Color.FromArgb(28, 46, 74);
             tableLayoutPanel4.SetColumnSpan(label3, 2);
             label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Microsoft Sans Serif", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Cooper Black", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(2, 99);
             label3.Margin = new Padding(2, 0, 2, 0);
@@ -298,7 +299,7 @@
             // 
             label2.BackColor = Color.FromArgb(28, 46, 74);
             label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Microsoft Sans Serif", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Cooper Black", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
             label2.Location = new Point(2, 51);
             label2.Margin = new Padding(2, 0, 2, 0);
@@ -355,7 +356,7 @@
             // 
             btnGenerarExamen.BackColor = Color.FromArgb(28, 46, 74);
             btnGenerarExamen.Dock = DockStyle.Fill;
-            btnGenerarExamen.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnGenerarExamen.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGenerarExamen.ForeColor = SystemColors.ButtonHighlight;
             btnGenerarExamen.Location = new Point(23, 18);
             btnGenerarExamen.Name = "btnGenerarExamen";
@@ -369,7 +370,7 @@
             // 
             btnLimpiar.BackColor = Color.FromArgb(28, 46, 74);
             btnLimpiar.Dock = DockStyle.Fill;
-            btnLimpiar.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnLimpiar.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLimpiar.ForeColor = SystemColors.ButtonHighlight;
             btnLimpiar.Location = new Point(322, 18);
             btnLimpiar.Name = "btnLimpiar";
@@ -452,7 +453,7 @@
             // 
             btnImprimir.BackColor = Color.FromArgb(28, 46, 74);
             btnImprimir.Dock = DockStyle.Fill;
-            btnImprimir.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnImprimir.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnImprimir.ForeColor = SystemColors.ButtonHighlight;
             btnImprimir.Location = new Point(232, 20);
             btnImprimir.Margin = new Padding(3, 4, 3, 4);
@@ -467,7 +468,7 @@
             // 
             btnAgg.BackColor = Color.FromArgb(28, 46, 74);
             btnAgg.Dock = DockStyle.Fill;
-            btnAgg.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAgg.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnAgg.ForeColor = SystemColors.ButtonHighlight;
             btnAgg.Location = new Point(12, 20);
             btnAgg.Margin = new Padding(3, 4, 3, 4);
