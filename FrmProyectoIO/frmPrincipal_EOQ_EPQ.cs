@@ -93,7 +93,7 @@ namespace FrmProyectoIO
             {
                 principal.CrearPdf(Guardar.FileName, ejercicios);
                 MessageBox.Show("PDF creado correctamente");
-                ejercicios = new();
+                ejercicios=new();
             }
         }
     }
