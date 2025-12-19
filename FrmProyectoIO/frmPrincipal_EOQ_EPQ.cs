@@ -91,8 +91,9 @@ namespace FrmProyectoIO
             Guardar.FileName = Nombre;
             if (Guardar.ShowDialog() == DialogResult.OK)
             {
-                a.CrearPdf(Guardar.FileName, ejercicios);
+                principal.CrearPdf(Guardar.FileName, ejercicios);
                 MessageBox.Show("PDF creado correctamente");
+                ejercicios = new();
             }
         }
     }

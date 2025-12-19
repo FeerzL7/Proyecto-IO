@@ -194,13 +194,13 @@ namespace FrmProyectoIO.Properties
         }
 
         //Mostrar Problemas guardados   
-        public ModeloMultiplesServidores GetProblemaResolver(Dificultad dificultad, ModeloMultiplesServidores Problema)
+        public ModeloMultiplesServidores GetProblemaResolver(Dificultad dificultad, ModeloMultiplesServidores Problema)//revisado pro OVMD
         {
             if (!Reactivo.ContainsKey(dificultad))
             {
                 throw new ArgumentException("No existen problemas con esa dificultad");
             }
-            if (string.IsNullOrWhiteSpace(titulo))
+            if (string.IsNullOrWhiteSpace(Problema.Titulo))
             {
                 throw new ArgumentException("Ingrese el titulo del problema");
             }
@@ -209,8 +209,8 @@ namespace FrmProyectoIO.Properties
                 throw new ArgumentException("No existe un problema con ese titulo en la dificultad seleccionada");
             }
 
-            var Problema = Reactivo[dificultad].FirstOrDefault(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper()) as ModeloMultiplesServidores;
-            return Problema;
+            var problema = Reactivo[dificultad].FirstOrDefault(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper()) as ModeloMultiplesServidores;
+            return problema;
         }
 
         public ModeloUnSoloServidor GetProblemaResolver(Dificultad dificultad, ModeloUnSoloServidor Problema)
@@ -219,7 +219,7 @@ namespace FrmProyectoIO.Properties
             {
                 throw new ArgumentException("No existen problemas con esa dificultad");
             }
-            if (string.IsNullOrWhiteSpace(titulo))
+            if (string.IsNullOrWhiteSpace(Problema.Titulo))
             {
                 throw new ArgumentException("Ingrese el titulo del problema");
             }
@@ -228,8 +228,8 @@ namespace FrmProyectoIO.Properties
                 throw new ArgumentException("No existe un problema con ese titulo en la dificultad seleccionada");
             }
 
-            var Problema = Reactivo[dificultad].FirstOrDefault(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper());
-            return Problema;
+            var problema = Reactivo[dificultad].FirstOrDefault(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper());
+            return problema;
         }
         public void GuardarDatos()
         {
