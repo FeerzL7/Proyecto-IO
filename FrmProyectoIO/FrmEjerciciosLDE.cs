@@ -24,18 +24,32 @@ namespace FrmProyectoIO
             dgvEjercicios.AutoGenerateColumns = false;
             problema.SeActualizoLista += Problema_SeActualizoLista1;
             problema.CargarDatos();
-            dgvEjercicios.DataSource = problema.Reactivo.SelectMany(x => x.Value).ToList();
+            dgvEjercicios.DataSource = problema.ReactivosMM1.SelectMany(x => x.Value).ToList();
 
 
         }
 
         private void Problema_SeActualizoLista1()
         {
-
             dgvEjercicios.DataSource = null;
-            dgvEjercicios.DataSource = problema.Reactivo.SelectMany(x => x.Value).ToList();
+            if (tscmbModelo.Text == "MUCHAS")
+            {
 
-            
+                dgvEjercicios.DataSource = problema.ReactivosMMS.SelectMany(x => x.Value).ToList();
+                // Primero, limpiar los items existentes
+                tscmbDificultad.Items.Clear();
+                // Agregar las keys del diccionario como objetos (convertir a array, porque solo acepta arrays la sobrecarga de AddRange) 
+                tscmbDificultad.Items.AddRange(problema.ReactivosMMS.Keys.Cast<object>().ToArray());
+            }
+
+
+            dgvEjercicios.DataSource = problema.ReactivosMM1.SelectMany(x => x.Value).ToList();
+
+            tscmbDificultad.Items.Clear();
+            tscmbDificultad.Items.AddRange(problema.ReactivosMM1.Keys.Cast<object>().ToArray());
+            if (tscmbDificultad.Items.Count >= 1) {
+                tscmbDificultad.SelectedIndex = 0; 
+            }
         }
 
 
@@ -45,23 +59,25 @@ namespace FrmProyectoIO
             try
             {
 
-                if (tscmbModelo.Text == "UNA"){
+                if (tscmbModelo.Text == "UNA")
+                {
                     FrmModeloServidorUnaSolaFila modelo1 = new();
                     modelo1.referenciaAgregar = problema;
                     modelo1.ShowDialog();
-                    
+
                 }
-                else if (tscmbModelo.Text == "MUCHAS"){
+                else if (tscmbModelo.Text == "MUCHAS")
+                {
                     FrmRegistrarMultiplesServidoresUnaFila modelo2 = new();
                     modelo2.referenciaRegistarMultiples = problema;
                     modelo2.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione 1 de los 2 modelos matematicos", "Advertencia" , MessageBoxButtons.OK);
+                    MessageBox.Show("Seleccione 1 de los 2 modelos matematicos", "Advertencia", MessageBoxButtons.OK);
 
                 }
-               
+
             }
             catch (ArgumentException ex)
             {
@@ -86,7 +102,7 @@ namespace FrmProyectoIO
 
         private void btnConsultas_Click(object sender, EventArgs e)
         {
-            var listaEjercicios = problema.Reactivo.SelectMany(x => x.Value);
+            var listaEjercicios = problema.ReactivosMM1.SelectMany(x => x.Value);
 
             string titulo = txtTitulo.Text.Trim().ToUpper();
             string enunciado = txtEnunciado.Text.Trim().ToUpper();
@@ -111,17 +127,32 @@ namespace FrmProyectoIO
                 MessageBox.Show("Seleccione un problema");
                 return;
             }
-
-            var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
-
-            if (ejercicioSeleccionado == null)
-                return;
-
-            var confirmar = MessageBox.Show("¿Deseas eliminar este ejercicio?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (confirmar == DialogResult.Yes)
+            if (tscmbModelo.Text == "MUCHAS")
             {
-                problema.Eliminar(ejercicioSeleccionado);
+               
+                ModeloMultiplesServidores? ejercicioSeleccionado = dgvEjercicios.CurrentRow.DataBoundItem as ModeloMultiplesServidores;
+                if (ejercicioSeleccionado == null)
+                    return;
+                var confirmar = MessageBox.Show("¿Deseas eliminar este ejercicio?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmar == DialogResult.Yes)
+                {
+                    problema.Eliminar(ejercicioSeleccionado);
+                }
+                return;
+            }
+            else if (tscmbModelo.Text == "UNA")
+            {
+                var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
+
+                if (ejercicioSeleccionado == null)
+                    return;
+
+                var confirmar = MessageBox.Show("¿Deseas eliminar este ejercicio?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (confirmar == DialogResult.Yes)
+                {
+                    problema.Eliminar(ejercicioSeleccionado);
+                }
             }
         }
 
@@ -129,36 +160,92 @@ namespace FrmProyectoIO
         {
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && dgvEjercicios.SelectedRows.Count == 1)
             {
-                if (dgvEjercicios.Columns[e.ColumnIndex].HeaderText == "Ver mas")
+                if (dgvEjercicios.Columns[e.ColumnIndex].HeaderText == "Ver más")
                 {
-                    var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
-                    FrmVerEjercicioModeloServidorUnaSolaFila verEjercicio = new();
-                    verEjercicio.ModeloVer = ejercicioSeleccionado;
-                    verEjercicio.ShowDialog();
+                    if (tscmbModelo.Text == "MUCHAS")
+                    {
+                        ModeloMultiplesServidores? ejercicioSeleccionado = dgvEjercicios.CurrentRow.DataBoundItem as ModeloMultiplesServidores;
+                        FrmVerEjercicioModeloMultiplesServidoresUnaSolaFila verEjercicio = new();
+                        verEjercicio.ModeloMMSVer = ejercicioSeleccionado;
+                        verEjercicio.ShowDialog();
+
+                    }
+                    else
+                    {
+                        var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
+                        FrmVerEjercicioModeloServidorUnaSolaFila verEjercicio = new();
+                        verEjercicio.ModeloVer = ejercicioSeleccionado;
+                        verEjercicio.ShowDialog();
+                    }
                 }
             }
         }
 
         private void dgvEjercicios_DoubleClick(object sender, EventArgs e)
         {
-            //if (dgvEjercicios.CurrentRow.DataBoundItem is ModeloMultiplesServidores) {
-                //Agarrar el objeto seleccionado al hacer doble click
+            if(tscmbModelo.Text == "MUCHAS")
+            {
                 ModeloMultiplesServidores? ejercicioSeleccionado = dgvEjercicios.CurrentRow.DataBoundItem as ModeloMultiplesServidores;
-                FrmModificarModeloMultiplesServidoresUnaSolaFila modificarEjercicio = new();
-                
-                modificarEjercicio.ReferenciaModificar = problema;
-                modificarEjercicio.ModeloMMSAnterior = ejercicioSeleccionado;
-                modificarEjercicio.ShowDialog();
-            //}
-            //else 
-            //{
-            //    var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
-            //    FrmModificarModeloServidorUnaSolaFila modificarEjercicio = new(); 
-            //    modificarEjercicio.ReferenciaModificar = problema;
-            //    modificarEjercicio.ModeloMM1Anterior = ejercicioSeleccionado;
-            //    modificarEjercicio.ShowDialog();
+                FrmVerEjercicioModeloMultiplesServidoresUnaSolaFila verEjercicio = new();
+                verEjercicio.ModeloMMSVer = ejercicioSeleccionado;
+                verEjercicio.ShowDialog();
+            }
+            else
+            {
+                var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
+                FrmVerEjercicioModeloServidorUnaSolaFila verEjercicio = new();
+                verEjercicio.ModeloVer = ejercicioSeleccionado;
+                verEjercicio.ShowDialog();
+            }
+        }
 
-            //}
+        private void tsmiModelo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tscmbModelo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tscmbModelo_TextChanged(object sender, EventArgs e)
+        {
+
+            if (tscmbModelo.Text == "UNA")
+            {
+                dgvEjercicios.DataSource = problema.ReactivosMM1.SelectMany(x => x.Value).ToList();
+            }
+            else if (tscmbModelo.Text == "MUCHAS")
+            {
+                dgvEjercicios.DataSource = problema.ReactivosMMS.SelectMany(x => x.Value).ToList();
+            }
+
+
+        }
+
+        private void tsmiDificultad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tscmbDificultad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tscmbDificultad.SelectedItem != null)
+            {
+
+                if (tscmbModelo.Text == "UNA")
+                {
+                    dgvEjercicios.DataSource = null;
+                    dgvEjercicios.DataSource = problema.GetReactivosMM1ByDificultad((Properties.Dificultad)tscmbDificultad.SelectedItem);
+                }
+                else if (tscmbModelo.Text == "MUCHAS")
+                {
+                    dgvEjercicios.DataSource = null;
+                    dgvEjercicios.DataSource = problema.GetReactivosMMSByDificultad((Properties.Dificultad)tscmbDificultad.SelectedItem);
+
+                }
+            }
         }
     }
 }

@@ -179,11 +179,14 @@
             tsmiDificultad.Name = "tsmiDificultad";
             tsmiDificultad.Size = new Size(317, 30);
             tsmiDificultad.Text = "Nivel de dificultad";
+            tsmiDificultad.Click += tsmiDificultad_Click;
             // 
             // tscmbDificultad
             // 
+            tscmbDificultad.Items.AddRange(new object[] { "Facil", "Medio", "Dificil" });
             tscmbDificultad.Name = "tscmbDificultad";
             tscmbDificultad.Size = new Size(121, 28);
+            tscmbDificultad.SelectedIndexChanged += tscmbDificultad_SelectedIndexChanged;
             // 
             // tsmiModelo
             // 
@@ -193,12 +196,16 @@
             tsmiModelo.Name = "tsmiModelo";
             tsmiModelo.Size = new Size(317, 30);
             tsmiModelo.Text = "Modelo ";
+            tsmiModelo.Click += tsmiModelo_Click;
             // 
             // tscmbModelo
             // 
             tscmbModelo.Items.AddRange(new object[] { "UNA", "MUCHAS" });
             tscmbModelo.Name = "tscmbModelo";
             tscmbModelo.Size = new Size(121, 28);
+            tscmbModelo.Text = "UNA";
+            tscmbModelo.Click += tscmbModelo_Click;
+            tscmbModelo.TextChanged += tscmbModelo_TextChanged;
             // 
             // pictureBox1
             // 
@@ -424,6 +431,9 @@
             Detalles.HeaderText = "Ver más";
             Detalles.MinimumWidth = 6;
             Detalles.Name = "Detalles";
+            Detalles.Text = "Ver mas";
+            Detalles.ToolTipText = "Ver mas";
+            Detalles.UseColumnTextForLinkValue = true;
             Detalles.Width = 122;
             // 
             // FrmEjerciciosLDE

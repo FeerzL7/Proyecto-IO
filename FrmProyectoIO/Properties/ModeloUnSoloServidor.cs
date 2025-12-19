@@ -14,7 +14,7 @@ namespace FrmProyectoIO.Properties
         public Dificultad NivelDificultad { get; set; } = Dificultad.Facil; //nivel de dificultad
         public string Titulo { get; set; } = "Sin titulo"; //titulo del reactivo
         public string Enunciado { get; set; } = "Sin enunciado"; 
-        public DateOnly FechaCreacion { get; set; } = DateOnly.FromDateTime(DateTime.Now); //fecha en que se agrega el reactivo
+        
 
         public double TasaServicio { get; set; } = 0;  //niu
         public double TasaLlegada { get; set; } = 0;    //lambda

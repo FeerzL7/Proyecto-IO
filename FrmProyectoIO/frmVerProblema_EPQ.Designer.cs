@@ -385,6 +385,7 @@
             btnRegresar.Size = new Size(262, 199);
             btnRegresar.TabIndex = 9;
             btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click_1;
             // 
             // txtEnunciado
             // 

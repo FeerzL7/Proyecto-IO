@@ -29,7 +29,8 @@ namespace FrmProyectoIO
             try
             {
                 referenciaAgregar.AgregarProblema(txtTitulo.Text, txtEnunciado.Text, double.Parse(txtLambda.Text),
-                    double.Parse(txtMew.Text), (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem);
+                    double.Parse(txtMew.Text), (Properties.Dificultad)cmbNivelDificultad.SelectedItem);
+               
                 this.Close();
             }
             catch (ArgumentException ex)

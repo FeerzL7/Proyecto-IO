@@ -791,6 +791,7 @@
             Controls.Add(tableLayoutPanel1);
             Name = "frmAgregar_EOQ";
             Text = "frmAgregar_EOQ";
+            Load += frmAgregar_EOQ_Load_1;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel4.ResumeLayout(false);

@@ -13,7 +13,7 @@ namespace FrmProyectoIO
 {
     public partial class FrmVerEjercicioModeloMultiplesServidoresUnaSolaFila : Form
     {
-        public Problemario ReferenciaVer { get; set; } = new Problemario();
+       
         public ModeloMultiplesServidores ModeloMMSVer { get; set; } = new ModeloMultiplesServidores();
         public FrmVerEjercicioModeloMultiplesServidoresUnaSolaFila()
         {
@@ -25,9 +25,12 @@ namespace FrmProyectoIO
             txtMew.Text = ModeloMMSVer.TasaServicio.ToString();
             txtLambda.Text = ModeloMMSVer.TasaLlegada.ToString();
             txtM.Text = ModeloMMSVer.Servidores.ToString();
-
+            
             txtTitulo.Text = ModeloMMSVer.Titulo;
             txtEnunciado.Text = ModeloMMSVer.Enunciado;
+
+            string dificultad = ModeloMMSVer.NivelDificultad == Properties.Dificultad.Dificil ? "Dificil" : ModeloMMSVer.NivelDificultad == Properties.Dificultad.Medio ? "Medio" : "Facil";
+            txtNivelDeDificultad.Text = dificultad;
 
             //Los procesos matematicos
             txtPo.Text = ModeloMMSVer.ProbabilidadSistemaVacio().ToString();

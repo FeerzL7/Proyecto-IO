@@ -167,7 +167,7 @@
             tableLayoutPanel2.Controls.Add(txtTitulo, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(31, 63);
-            tableLayoutPanel2.Margin = new Padding(7, 7, 7, 7);
+            tableLayoutPanel2.Margin = new Padding(7);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -223,7 +223,7 @@
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
             tableLayoutPanel1.Location = new Point(31, 120);
-            tableLayoutPanel1.Margin = new Padding(7, 7, 7, 7);
+            tableLayoutPanel1.Margin = new Padding(7);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -278,7 +278,7 @@
             tableLayoutPanel3.Controls.Add(txtMew, 1, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(31, 190);
-            tableLayoutPanel3.Margin = new Padding(7, 7, 7, 7);
+            tableLayoutPanel3.Margin = new Padding(7);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
             tlpPrincipal.SetRowSpan(tableLayoutPanel3, 2);
@@ -495,7 +495,7 @@
             tableLayoutPanel5.Controls.Add(btnRegistrar, 0, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(31, 532);
-            tableLayoutPanel5.Margin = new Padding(7, 7, 7, 7);
+            tableLayoutPanel5.Margin = new Padding(7);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -749,7 +749,7 @@
             txtWq.ForeColor = Color.Gainsboro;
             txtWq.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtWq.Location = new Point(80, 344);
-            txtWq.Margin = new Padding(9, 9, 9, 9);
+            txtWq.Margin = new Padding(9);
             txtWq.Name = "txtWq";
             txtWq.PlaceholderText = "";
             txtWq.ReadOnly = true;
@@ -775,7 +775,7 @@
             txtLq.ForeColor = Color.Gainsboro;
             txtLq.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtLq.Location = new Point(80, 210);
-            txtLq.Margin = new Padding(9, 9, 9, 9);
+            txtLq.Margin = new Padding(9);
             txtLq.Name = "txtLq";
             txtLq.PlaceholderText = "";
             txtLq.ReadOnly = true;
@@ -801,7 +801,7 @@
             txtLs.ForeColor = Color.Gainsboro;
             txtLs.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtLs.Location = new Point(80, 143);
-            txtLs.Margin = new Padding(9, 9, 9, 9);
+            txtLs.Margin = new Padding(9);
             txtLs.Name = "txtLs";
             txtLs.PlaceholderText = "";
             txtLs.ReadOnly = true;
@@ -827,7 +827,7 @@
             txtP.ForeColor = Color.Gainsboro;
             txtP.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtP.Location = new Point(80, 9);
-            txtP.Margin = new Padding(9, 9, 9, 9);
+            txtP.Margin = new Padding(9);
             txtP.Name = "txtP";
             txtP.PlaceholderText = "";
             txtP.ReadOnly = true;
@@ -853,7 +853,7 @@
             txtWs.ForeColor = Color.Gainsboro;
             txtWs.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtWs.Location = new Point(80, 277);
-            txtWs.Margin = new Padding(9, 9, 9, 9);
+            txtWs.Margin = new Padding(9);
             txtWs.Name = "txtWs";
             txtWs.PlaceholderText = "";
             txtWs.ReadOnly = true;
@@ -879,7 +879,7 @@
             txtPn.ForeColor = Color.Gainsboro;
             txtPn.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
             txtPn.Location = new Point(80, 76);
-            txtPn.Margin = new Padding(9, 9, 9, 9);
+            txtPn.Margin = new Padding(9);
             txtPn.Name = "txtPn";
             txtPn.PlaceholderText = "";
             txtPn.ReadOnly = true;
@@ -895,7 +895,7 @@
             label7.Dock = DockStyle.Fill;
             label7.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.Location = new Point(7, 7);
-            label7.Margin = new Padding(7, 7, 7, 7);
+            label7.Margin = new Padding(7);
             label7.Name = "label7";
             label7.Size = new Size(57, 53);
             label7.TabIndex = 0;

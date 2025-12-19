@@ -12,9 +12,9 @@ namespace FrmProyectoIO
 {
     public partial class frmVerProblema_EPQ : Form
     {
-        
+
         public InventarioProduccion ReferenciaEPQ { get; internal set; }
-       
+
         public frmVerProblema_EPQ()
         {
             InitializeComponent();
@@ -36,12 +36,12 @@ namespace FrmProyectoIO
             {
                 //ENTRADAS
                 ReferenciaEPQ.Texto = txtEnunciado.Text;
-               ReferenciaEPQ.DemandaXunidadTiempo = ushort.Parse(txtValorD.Text);
+                ReferenciaEPQ.DemandaXunidadTiempo = ushort.Parse(txtValorD.Text);
                 ReferenciaEPQ.DemandaDiaria = ushort.Parse(txtValordd.Text);
                 ReferenciaEPQ.TasaDeProduccion = ushort.Parse(txtValorp.Text);
                 ReferenciaEPQ.CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text);
                 ReferenciaEPQ.CostoPorAlmacenar = decimal.Parse(txtValorCh.Text);
-               
+
                 //SALIDAS
                 //N2, N0 y C son formatos de salida
                 lblValorQ.Text = ReferenciaEPQ.CantidadDeLoteEconomico.ToString("N2");
@@ -75,6 +75,11 @@ namespace FrmProyectoIO
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnRegresar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -37,7 +37,7 @@ namespace FrmProyectoIO
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)

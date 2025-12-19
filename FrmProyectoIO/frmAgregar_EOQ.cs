@@ -18,12 +18,6 @@ namespace FrmProyectoIO
         }
         public Almacenamiento referenciaAlmacenamiento { get; set; } = new Almacenamiento();
 
-        private void frmAgregar_EOQ_Load(object sender, EventArgs e)
-        {
-            cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
-
-        }
-
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             try
@@ -60,12 +54,17 @@ namespace FrmProyectoIO
                 CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
                 TiempoDeEntrega = ushort.Parse(txtValorL.Text),
                 DiasLaboradosAño = ushort.Parse(txtValorY.Text),
-            }; 
+            };
             lblCLE.Text = reactivo.CantidadDeLoteEconomico.ToString();
             lblLe.Text = reactivo.CostoAnualXOrdenar.ToString();// este esta raro, dice que es CAO, pero el nombre del label es lblLe
             lblPntReorden.Text = reactivo.PuntoDeReorden.ToString();
-            lblDurCicloPedido .Text = reactivo.DuracionDelCiclo.ToString(); //
+            lblDurCicloPedido.Text = reactivo.DuracionDelCiclo.ToString(); //
 
+        }
+
+        private void frmAgregar_EOQ_Load_1(object sender, EventArgs e)
+        {
+            cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
         }
     }
 }

@@ -38,7 +38,7 @@ namespace FrmProyectoIO
 
             ReferenciaModificar.ModificarProblema(modelo, (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem);
             //Eliminar el problema antiguo por si cambio su nivel de dificultad
-            var elim = ReferenciaModificar.Reactivo.SelectMany(x => x.Value).Where(x => x.Titulo == modelo.Titulo).First();
+            var elim = ReferenciaModificar.ReactivosMM1.SelectMany(x => x.Value).Where(x => x.Titulo == modelo.Titulo).First();
             ReferenciaModificar.Eliminar(elim);
         }
 

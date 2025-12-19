@@ -31,6 +31,8 @@ namespace FrmProyectoIO
             txtMew.Text = ModeloVer.TasaServicio.ToString();
             txtLambda.Text = ModeloVer.TasaLlegada.ToString();
 
+            string dificultad = ModeloVer.NivelDificultad == Properties.Dificultad.Dificil ? "Dificil" : ModeloVer.NivelDificultad == Properties.Dificultad.Medio ? "Medio" : "Facil";
+            txtNivelDeDificultad.Text = dificultad;
 
             //Procesos matematicos
             txtP.Text = ModeloVer.UtilizacionPromedioSistema.ToString();// P

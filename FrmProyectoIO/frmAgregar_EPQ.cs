@@ -15,26 +15,7 @@
         {
             cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
         }
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                InventarioProduccion produccion = new InventarioProduccion()
-                {
-                    Texto = txtEnunciado.Text,
-                    Titulo = txtTitulo.Text,
-                    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
-                    CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
-                    CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
-                    TasaDeProduccion = ushort.Parse(txtValorp.Text),
-                    DiasLaboradosAño = ushort.Parse(txtValorDemDiaria.Text)
-                };
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+       
 
         private void btnCalcular_Click_1(object sender, EventArgs e)
         {
@@ -59,7 +40,25 @@
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-
+            try
+            {
+                InventarioProduccion produccion = new InventarioProduccion()
+                {
+                    Texto = txtEnunciado.Text,
+                    Titulo = txtTitulo.Text,
+                    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
+                    CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
+                    CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
+                    TasaDeProduccion = ushort.Parse(txtValorp.Text),
+                    DiasLaboradosAño = ushort.Parse(txtValorDemDiaria.Text)
+                };
+                referenciaAlmacenamiento.Registrar((Dificultad)cmbNivelDificultad.SelectedItem, produccion);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
