@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FrmProyectoIO
 {
@@ -16,7 +17,8 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        Almacenamiento principal = new Almacenamiento();
+        public Almacenamiento principal = new Almacenamiento();
+        List<Inventario> ejercicios=new List<Inventario>();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {
             principal.Leer();
@@ -45,9 +47,52 @@ namespace FrmProyectoIO
                 frmGenerarExamen FrmExam = new();
                 FrmExam.Rprincipal = principal;
                 FrmExam.ShowDialog();
-            }catch(ArgumentException ex)
+            }
+            catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnAgg_Click(object sender, EventArgs e)
+        {
+            foreach (var inv in principal.Ejercicios)
+            {
+                foreach (var ej in inv.Value)
+                {
+
+                    if (ej.Titulo == txtTitulo.Text)
+                    {
+
+                        if (ejercicios.Contains(ej))
+                        {
+                            MessageBox.Show("Ese ejercicio ya se encuentra registrado...", "Duplicado en la seleccion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            ejercicios.Add(ej);
+                        }
+                        return;
+                    }
+                }
+            }
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            if (ejercicios.Count == 0)
+            {
+                MessageBox.Show("No hay ejercicios para imprimir");
+                return;
+            }
+            SaveFileDialog Guardar = new();
+            string Nombre = DateTime.Now.ToString("yyyy-MM-dd_HH-mm");
+            Guardar.Filter = "PDF (.pdf)|.pdf";
+            Guardar.FileName = Nombre;
+            if (Guardar.ShowDialog() == DialogResult.OK)
+            {
+                a.CrearPdf(Guardar.FileName, ejercicios);
+                MessageBox.Show("PDF creado correctamente");
             }
         }
     }
