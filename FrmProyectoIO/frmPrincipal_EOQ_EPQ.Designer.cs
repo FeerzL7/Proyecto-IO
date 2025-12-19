@@ -36,13 +36,7 @@
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             label1 = new Label();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            btnEliminar = new Button();
-            btnAgregar = new Button();
             cmbNivelDificultad = new ComboBox();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            btnImprimir = new Button();
-            btnAgg = new Button();
             tableLayoutPanel6 = new TableLayoutPanel();
             btnRegresar = new Button();
             tableLayoutPanel4 = new TableLayoutPanel();
@@ -54,13 +48,19 @@
             tableLayoutPanel5 = new TableLayoutPanel();
             btnGenerarExamen = new Button();
             btnLimpiar = new Button();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            btnEliminar = new Button();
+            btnAgregar = new Button();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            btnImprimir = new Button();
+            btnAgg = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).BeginInit();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -189,53 +189,6 @@
             label1.Text = "Nivel de Dificultad:";
             label1.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 5;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.10447741F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 95.89552F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 9F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 230F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 198F));
-            tableLayoutPanel2.Controls.Add(btnEliminar, 4, 1);
-            tableLayoutPanel2.Controls.Add(btnAgregar, 3, 1);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(13, 733);
-            tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 3;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 8.225108F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 91.7748947F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 21F));
-            tableLayoutPanel2.Size = new Size(453, 253);
-            tableLayoutPanel2.TabIndex = 15;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
-            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.Dock = DockStyle.Fill;
-            btnEliminar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.Location = new Point(256, 22);
-            btnEliminar.Margin = new Padding(2, 3, 2, 3);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(195, 206);
-            btnEliminar.TabIndex = 9;
-            btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
-            btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnAgregar.Dock = DockStyle.Fill;
-            btnAgregar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.Location = new Point(26, 22);
-            btnAgregar.Margin = new Padding(2, 3, 2, 3);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(226, 206);
-            btnAgregar.TabIndex = 7;
-            btnAgregar.UseVisualStyleBackColor = true;
-            // 
             // cmbNivelDificultad
             // 
             tableLayoutPanel1.SetColumnSpan(cmbNivelDificultad, 3);
@@ -247,59 +200,6 @@
             cmbNivelDificultad.Name = "cmbNivelDificultad";
             cmbNivelDificultad.Size = new Size(411, 37);
             cmbNivelDificultad.TabIndex = 3;
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 5;
-            tableLayoutPanel1.SetColumnSpan(tableLayoutPanel3, 4);
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.28134537F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 95.71865F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 8F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 182F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Controls.Add(btnImprimir, 3, 1);
-            tableLayoutPanel3.Controls.Add(btnAgg, 1, 1);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(480, 733);
-            tableLayoutPanel3.Margin = new Padding(3, 4, 3, 4);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 3;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 6.837607F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 93.16239F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 18F));
-            tableLayoutPanel3.Size = new Size(422, 253);
-            tableLayoutPanel3.TabIndex = 18;
-            // 
-            // btnImprimir
-            // 
-            btnImprimir.BackColor = Color.FromArgb(28, 46, 74);
-            btnImprimir.Dock = DockStyle.Fill;
-            btnImprimir.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnImprimir.ForeColor = SystemColors.ButtonHighlight;
-            btnImprimir.Location = new Point(232, 20);
-            btnImprimir.Margin = new Padding(3, 4, 3, 4);
-            btnImprimir.Name = "btnImprimir";
-            btnImprimir.Size = new Size(176, 210);
-            btnImprimir.TabIndex = 2;
-            btnImprimir.Text = "Imprimir Ejercicios";
-            btnImprimir.UseVisualStyleBackColor = false;
-            btnImprimir.Click += btnImprimir_Click;
-            // 
-            // btnAgg
-            // 
-            btnAgg.BackColor = Color.FromArgb(28, 46, 74);
-            btnAgg.Dock = DockStyle.Fill;
-            btnAgg.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAgg.ForeColor = SystemColors.ButtonHighlight;
-            btnAgg.Location = new Point(12, 20);
-            btnAgg.Margin = new Padding(3, 4, 3, 4);
-            btnAgg.Name = "btnAgg";
-            btnAgg.Size = new Size(206, 210);
-            btnAgg.TabIndex = 2;
-            btnAgg.Text = "Añadir a Impresion";
-            btnAgg.UseVisualStyleBackColor = false;
-            btnAgg.Click += btnAgg_Click;
             // 
             // tableLayoutPanel6
             // 
@@ -369,7 +269,7 @@
             label4.BackColor = Color.FromArgb(28, 46, 74);
             tableLayoutPanel4.SetColumnSpan(label4, 2);
             label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Microsoft Sans Serif", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Cooper Black", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(2, 0);
             label4.Margin = new Padding(2, 0, 2, 0);
@@ -478,6 +378,106 @@
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
             // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 5;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.10447741F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 95.89552F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 9F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 230F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 198F));
+            tableLayoutPanel2.Controls.Add(btnEliminar, 4, 1);
+            tableLayoutPanel2.Controls.Add(btnAgregar, 3, 1);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(13, 733);
+            tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 8.225108F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 91.7748947F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 21F));
+            tableLayoutPanel2.Size = new Size(453, 253);
+            tableLayoutPanel2.TabIndex = 15;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
+            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEliminar.Dock = DockStyle.Fill;
+            btnEliminar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.Location = new Point(256, 22);
+            btnEliminar.Margin = new Padding(2, 3, 2, 3);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(195, 206);
+            btnEliminar.TabIndex = 9;
+            btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
+            btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAgregar.Dock = DockStyle.Fill;
+            btnAgregar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregar.Location = new Point(26, 22);
+            btnAgregar.Margin = new Padding(2, 3, 2, 3);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(226, 206);
+            btnAgregar.TabIndex = 7;
+            btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 5;
+            tableLayoutPanel1.SetColumnSpan(tableLayoutPanel3, 4);
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.28134537F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 95.71865F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 182F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Controls.Add(btnImprimir, 3, 1);
+            tableLayoutPanel3.Controls.Add(btnAgg, 1, 1);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Location = new Point(480, 733);
+            tableLayoutPanel3.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 3;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 6.837607F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 93.16239F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 18F));
+            tableLayoutPanel3.Size = new Size(422, 253);
+            tableLayoutPanel3.TabIndex = 18;
+            // 
+            // btnImprimir
+            // 
+            btnImprimir.BackColor = Color.FromArgb(28, 46, 74);
+            btnImprimir.Dock = DockStyle.Fill;
+            btnImprimir.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnImprimir.ForeColor = SystemColors.ButtonHighlight;
+            btnImprimir.Location = new Point(232, 20);
+            btnImprimir.Margin = new Padding(3, 4, 3, 4);
+            btnImprimir.Name = "btnImprimir";
+            btnImprimir.Size = new Size(176, 210);
+            btnImprimir.TabIndex = 2;
+            btnImprimir.Text = "Imprimir Ejercicios";
+            btnImprimir.UseVisualStyleBackColor = false;
+            btnImprimir.Click += btnImprimir_Click;
+            // 
+            // btnAgg
+            // 
+            btnAgg.BackColor = Color.FromArgb(28, 46, 74);
+            btnAgg.Dock = DockStyle.Fill;
+            btnAgg.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAgg.ForeColor = SystemColors.ButtonHighlight;
+            btnAgg.Location = new Point(12, 20);
+            btnAgg.Margin = new Padding(3, 4, 3, 4);
+            btnAgg.Name = "btnAgg";
+            btnAgg.Size = new Size(206, 210);
+            btnAgg.TabIndex = 2;
+            btnAgg.Text = "Añadir a Impresion";
+            btnAgg.UseVisualStyleBackColor = false;
+            btnAgg.Click += btnAgg_Click;
+            // 
             // frmPrincipal_EOQ_EPQ
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -492,12 +492,12 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).EndInit();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel6.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
             tableLayoutPanel5.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
