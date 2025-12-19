@@ -20,7 +20,7 @@ namespace FrmProyectoIO
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {
             principal.Leer();
-            cmbDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
+            cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
         }
 
         private void frmPrincipal_EOQ_EPQ_FormClosing(object sender, FormClosingEventArgs e)
@@ -31,6 +31,24 @@ namespace FrmProyectoIO
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGenerarExamen_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                frmGenerarExamen FrmExam = new();
+                FrmExam.Rprincipal = principal;
+                FrmExam.ShowDialog();
+            }catch(ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
