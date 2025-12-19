@@ -52,14 +52,13 @@
             txtValorCo = new TextBox();
             label3 = new Label();
             label6 = new Label();
+            tableLayoutPanel5 = new TableLayoutPanel();
+            cmbNivelDificultad = new ComboBox();
             tableLayoutPanel3 = new TableLayoutPanel();
-            label5 = new Label();
             lblPntReorden = new Label();
             lblCLE = new Label();
             lblLe = new Label();
-            lblCAA = new Label();
             lblt0 = new Label();
-            lblCT = new Label();
             label9 = new Label();
             label11 = new Label();
             label8 = new Label();
@@ -71,14 +70,15 @@
             lblCAO = new Label();
             tableLayoutPanel6 = new TableLayoutPanel();
             btnCalcular = new Button();
-            tableLayoutPanel5 = new TableLayoutPanel();
-            cmbNivelDificultad = new ComboBox();
+            label5 = new Label();
+            lblCAA = new Label();
+            lblCT = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel5.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
-            tableLayoutPanel5.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -105,8 +105,8 @@
             tableLayoutPanel1.Controls.Add(btnAgregar, 4, 15);
             tableLayoutPanel1.Controls.Add(label26, 2, 6);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 2, 8);
-            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 7, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel5, 4, 3);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 7, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Margin = new Padding(2, 3, 2, 3);
@@ -151,7 +151,7 @@
             label1.BackColor = Color.FromArgb(28, 46, 74);
             tableLayoutPanel1.SetColumnSpan(label1, 2);
             label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Location = new Point(17, 8);
             label1.Margin = new Padding(2, 0, 2, 0);
@@ -335,7 +335,7 @@
             // 
             label21.BackColor = Color.FromArgb(28, 46, 74);
             label21.Dock = DockStyle.Fill;
-            label21.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label21.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label21.ForeColor = SystemColors.ButtonHighlight;
             label21.Location = new Point(587, 0);
             label21.Margin = new Padding(2, 0, 2, 0);
@@ -349,7 +349,7 @@
             // 
             label20.BackColor = Color.FromArgb(28, 46, 74);
             label20.Dock = DockStyle.Fill;
-            label20.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label20.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label20.ForeColor = SystemColors.ButtonHighlight;
             label20.Location = new Point(457, 0);
             label20.Margin = new Padding(2, 0, 2, 0);
@@ -363,7 +363,7 @@
             // 
             label19.BackColor = Color.FromArgb(28, 46, 74);
             label19.Dock = DockStyle.Fill;
-            label19.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label19.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label19.ForeColor = SystemColors.ButtonHighlight;
             label19.Location = new Point(342, 0);
             label19.Margin = new Padding(2, 0, 2, 0);
@@ -377,7 +377,7 @@
             // 
             label4.BackColor = Color.FromArgb(28, 46, 74);
             label4.Dock = DockStyle.Fill;
-            label4.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonHighlight;
             label4.Location = new Point(118, 0);
             label4.Margin = new Padding(2, 0, 2, 0);
@@ -422,7 +422,7 @@
             // 
             label3.BackColor = Color.FromArgb(28, 46, 74);
             label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ButtonHighlight;
             label3.Location = new Point(2, 0);
             label3.Margin = new Padding(2, 0, 2, 0);
@@ -436,7 +436,7 @@
             // 
             label6.BackColor = Color.FromArgb(28, 46, 74);
             label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.ButtonHighlight;
             label6.Location = new Point(236, 0);
             label6.Margin = new Padding(2, 0, 2, 0);
@@ -445,6 +445,36 @@
             label6.TabIndex = 10;
             label6.Text = "Co\r\n(Costo x ordenar)\r\n";
             label6.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel5
+            // 
+            tableLayoutPanel5.ColumnCount = 2;
+            tableLayoutPanel1.SetColumnSpan(tableLayoutPanel5, 2);
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel5.Controls.Add(cmbNivelDificultad, 0, 1);
+            tableLayoutPanel5.Dock = DockStyle.Fill;
+            tableLayoutPanel5.Location = new Point(288, 63);
+            tableLayoutPanel5.Margin = new Padding(3, 4, 3, 4);
+            tableLayoutPanel5.Name = "tableLayoutPanel5";
+            tableLayoutPanel5.RowCount = 3;
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 33.7662354F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 66.2337646F));
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel5.Size = new Size(539, 86);
+            tableLayoutPanel5.TabIndex = 36;
+            // 
+            // cmbNivelDificultad
+            // 
+            tableLayoutPanel5.SetColumnSpan(cmbNivelDificultad, 2);
+            cmbNivelDificultad.Dock = DockStyle.Fill;
+            cmbNivelDificultad.Font = new Font("Verdana", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            cmbNivelDificultad.FormattingEnabled = true;
+            cmbNivelDificultad.Location = new Point(2, 20);
+            cmbNivelDificultad.Margin = new Padding(2, 3, 2, 3);
+            cmbNivelDificultad.Name = "cmbNivelDificultad";
+            cmbNivelDificultad.Size = new Size(535, 48);
+            cmbNivelDificultad.TabIndex = 3;
             // 
             // tableLayoutPanel3
             // 
@@ -458,9 +488,7 @@
             tableLayoutPanel3.Controls.Add(lblPntReorden, 2, 12);
             tableLayoutPanel3.Controls.Add(lblCLE, 2, 10);
             tableLayoutPanel3.Controls.Add(lblLe, 2, 8);
-            tableLayoutPanel3.Controls.Add(lblCAA, 2, 6);
             tableLayoutPanel3.Controls.Add(lblt0, 2, 2);
-            tableLayoutPanel3.Controls.Add(lblCT, 2, 4);
             tableLayoutPanel3.Controls.Add(label9, 0, 4);
             tableLayoutPanel3.Controls.Add(label11, 0, 6);
             tableLayoutPanel3.Controls.Add(label8, 0, 8);
@@ -596,7 +624,7 @@
             // 
             label9.BackColor = Color.FromArgb(28, 46, 74);
             label9.Dock = DockStyle.Fill;
-            label9.Font = new Font("Microsoft Sans Serif", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ButtonHighlight;
             label9.Location = new Point(2, -147);
             label9.Margin = new Padding(2, 0, 2, 0);
@@ -610,7 +638,7 @@
             // 
             label11.BackColor = Color.FromArgb(28, 46, 74);
             label11.Dock = DockStyle.Fill;
-            label11.Font = new Font("Microsoft Sans Serif", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.ForeColor = SystemColors.ButtonHighlight;
             label11.Location = new Point(2, -67);
             label11.Margin = new Padding(2, 0, 2, 0);
@@ -624,7 +652,7 @@
             // 
             label8.BackColor = Color.FromArgb(28, 46, 74);
             label8.Dock = DockStyle.Fill;
-            label8.Font = new Font("Microsoft Sans Serif", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.ForeColor = SystemColors.ButtonHighlight;
             label8.Location = new Point(2, 25);
             label8.Margin = new Padding(2, 0, 2, 0);
@@ -638,7 +666,7 @@
             // 
             label10.BackColor = Color.FromArgb(28, 46, 74);
             label10.Dock = DockStyle.Fill;
-            label10.Font = new Font("Microsoft Sans Serif", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.ForeColor = SystemColors.ButtonHighlight;
             label10.Location = new Point(2, -220);
             label10.Margin = new Padding(2, 0, 2, 0);
@@ -652,7 +680,7 @@
             // 
             label12.BackColor = Color.FromArgb(28, 46, 74);
             label12.Dock = DockStyle.Fill;
-            label12.Font = new Font("Microsoft Sans Serif", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.ForeColor = SystemColors.ButtonHighlight;
             label12.Location = new Point(2, 109);
             label12.Margin = new Padding(2, 0, 2, 0);
@@ -666,7 +694,7 @@
             // 
             label22.BackColor = Color.FromArgb(28, 46, 74);
             label22.Dock = DockStyle.Fill;
-            label22.Font = new Font("Microsoft Sans Serif", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label22.ForeColor = SystemColors.ButtonHighlight;
             label22.Location = new Point(2, 191);
             label22.Margin = new Padding(2, 0, 2, 0);
@@ -680,7 +708,7 @@
             // 
             label23.BackColor = Color.FromArgb(28, 46, 74);
             label23.Dock = DockStyle.Fill;
-            label23.Font = new Font("Microsoft Sans Serif", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label23.Font = new Font("Cooper Black", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label23.ForeColor = SystemColors.ButtonHighlight;
             label23.Location = new Point(2, 271);
             label23.Margin = new Padding(2, 0, 2, 0);
@@ -741,7 +769,7 @@
             btnCalcular.BackColor = Color.FromArgb(28, 46, 74);
             btnCalcular.BackgroundImageLayout = ImageLayout.Stretch;
             btnCalcular.Dock = DockStyle.Fill;
-            btnCalcular.Font = new Font("Microsoft Sans Serif", 25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCalcular.Font = new Font("Cooper Black", 25.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnCalcular.ForeColor = SystemColors.ControlLightLight;
             btnCalcular.Location = new Point(36, 12);
             btnCalcular.Margin = new Padding(2, 3, 2, 3);
@@ -752,7 +780,7 @@
             btnCalcular.UseVisualStyleBackColor = false;
             btnCalcular.Click += btnCalcular_Click;
             // 
-            // tableLayoutPanel5
+            // label5
             // 
             tableLayoutPanel5.ColumnCount = 2;
             tableLayoutPanel1.SetColumnSpan(tableLayoutPanel5, 2);
@@ -770,7 +798,7 @@
             tableLayoutPanel5.Size = new Size(496, 65);
             tableLayoutPanel5.TabIndex = 36;
             // 
-            // cmbNivelDificultad
+            // lblCAA
             // 
             tableLayoutPanel5.SetColumnSpan(cmbNivelDificultad, 2);
             cmbNivelDificultad.Dock = DockStyle.Fill;
@@ -798,9 +826,9 @@
             tableLayoutPanel4.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel5.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel6.ResumeLayout(false);
-            tableLayoutPanel5.ResumeLayout(false);
             ResumeLayout(false);
         }
 

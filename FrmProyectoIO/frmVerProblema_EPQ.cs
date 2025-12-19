@@ -26,6 +26,7 @@ namespace FrmProyectoIO
 
         }
 
+
         private void frmVerProblema_EPQ_Load(object sender, EventArgs e)
         {
             if (Ejercicio == null) return;
@@ -71,14 +72,18 @@ namespace FrmProyectoIO
                 DialogResult = DialogResult.OK;
                 Close();
 
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (Exception ex)
             {
-                {
-                    MessageBox.Show(ex.Message, "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                MessageBox.Show(ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -88,6 +93,11 @@ namespace FrmProyectoIO
         private void btnRegresar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnModificar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

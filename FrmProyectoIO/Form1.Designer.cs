@@ -71,7 +71,7 @@
             tableLayoutPanel1.Controls.Add(tableLayoutPanel7, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(2);
+          tableLayoutPanel1.Margin = new Padding(2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
@@ -165,8 +165,8 @@
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Gainsboro;
-            label1.Location = new Point(2, 0);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(1, 0);
+            label1.Margin = new Padding(1, 0, 1, 0);
             label1.Name = "label1";
             tableLayoutPanel7.SetRowSpan(label1, 3);
             label1.Size = new Size(744, 64);

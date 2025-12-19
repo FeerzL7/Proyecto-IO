@@ -6,6 +6,9 @@ using System.Reflection.Metadata;
 using System.Text;
 using System.IO;
 using System.Text.Json;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.IO;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
@@ -129,6 +132,41 @@ namespace FrmProyectoIO
 
             AlCambiar?.Invoke();
         }
+        public void CrearPdf(string RutaDeAcceso, List<Inventario> ejercicios)
+        {
+            Document doc = new Document(PageSize.A4, 25, 25, 25, 25);
+            PdfWriter.GetInstance(doc, new FileStream(RutaDeAcceso, FileMode.Create));
+            doc.Open();
+            PdfPCell Header(string texto)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(texto));
+                cell.BackgroundColor = BaseColor.YELLOW;
+                cell.HorizontalAlignment = Element.ALIGN_CENTER;
+                cell.VerticalAlignment = Element.ALIGN_MIDDLE;
+                cell.Padding = 5;
+                return cell;
+            }
+            Paragraph Header2(string texto)
+            {
+                iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14);
+                Paragraph p = new Paragraph(texto, font);
+                p.Alignment = Element.ALIGN_CENTER;
+                p.SpacingAfter = 10;
+                return p;
+            }
+            foreach (Inventario inv in ejercicios)
+            {
+                if (inv is InventarioProduccion epq)
+                {
+                    doc.Add(new Paragraph(Header2("EPQ")));
+                    doc.Add(new Paragraph(Header2(inv.Titulo)));
+                    doc.Add(new Paragraph(inv.Texto));
+                    doc.Add(new Paragraph($"Demanda anual: {inv.DemandaXunidadTiempo}" + $"Costo por colocar orden: {inv.CostoPorColocarOrden:F2}"));
+                    doc.Add(new Paragraph($"Costo por almacenar: {inv.CostoPorAlmacenar:F2}" + $"Demanda diaria: {inv.DemandaDiaria:F2}"));
+                    doc.Add(new Paragraph($"Producción diaria: {epq.TasaDeProduccion}"));
+                    doc.Add(new Paragraph(" "));
+                    PdfPTable tabla = new PdfPTable(8);
+                    tabla.WidthPercentage = 100;
 
         
         public void Guardar()

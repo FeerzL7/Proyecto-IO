@@ -243,8 +243,7 @@ namespace FrmProyectoIO.Properties
             File.WriteAllText("Lista de ProblemasMMS.json", json2);
 
         }
-
-
+      
         public void CargarDatos()
         {
             if (File.Exists("Lista de problemasMM1.json"))

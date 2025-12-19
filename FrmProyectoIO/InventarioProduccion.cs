@@ -10,8 +10,7 @@ namespace FrmProyectoIO
 
 
     {
-        public override TipoEjercicio Tipo => TipoEjercicio.EPQ;
-
+        public string Titulo { get; set; }
         public ushort TasaDeProduccion { get; set; }
 
         public override double CantidadDeLoteEconomico

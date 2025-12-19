@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using static Guna.UI2.Native.WinApi;
+
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+
 namespace FrmProyectoIO
 {
     public partial class frmPrincipal_EOQ_EPQ : Form
