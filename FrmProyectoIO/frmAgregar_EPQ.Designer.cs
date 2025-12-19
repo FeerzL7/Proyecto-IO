@@ -178,6 +178,7 @@
             btnRegresar.Size = new Size(241, 198);
             btnRegresar.TabIndex = 15;
             btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // tableLayoutPanel4
             // 
@@ -807,6 +808,7 @@
             btnCalcular.TabIndex = 16;
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = false;
+            btnCalcular.Click += btnCalcular_Click_1;
             // 
             // frmAgregar_EPQ
             // 
@@ -817,6 +819,7 @@
             Controls.Add(tableLayoutPanel1);
             Name = "frmAgregar_EPQ";
             Text = "frmAgregar_EPQ";
+            Load += frmAgregar_EPQ_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel4.ResumeLayout(false);

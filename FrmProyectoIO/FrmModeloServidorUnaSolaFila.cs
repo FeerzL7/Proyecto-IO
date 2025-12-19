@@ -17,7 +17,7 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        public Problemario referenciaAgregar = new Problemario();
+        public Problemario referenciaAgregar { get; set; } = new Problemario();
 
         private void FrmModeloServidorUnaSolaFila_Load(object sender, EventArgs e)
         {
@@ -30,6 +30,7 @@ namespace FrmProyectoIO
             {
                 referenciaAgregar.AgregarProblema(txtTitulo.Text, txtEnunciado.Text, double.Parse(txtLambda.Text),
                     double.Parse(txtMew.Text), (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem);
+                this.Close();
             }
             catch (ArgumentException ex)
             {

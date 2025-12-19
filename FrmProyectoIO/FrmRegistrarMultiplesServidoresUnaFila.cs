@@ -31,6 +31,7 @@ namespace FrmProyectoIO
             {
                 referenciaRegistarMultiples.AgregarProblema(txtTitulo.Text, txtEnunciado.Text,
                     double.Parse(txtLambda.Text), double.Parse(txtMew.Text), int.Parse(txtM.Text), (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem);
+                this.Close();
             }
             catch (Exception ex)
             {

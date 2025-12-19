@@ -16,12 +16,6 @@ namespace FrmProyectoIO.Properties
 
         public double ProbabilidadSistemaVacio()
         {
-
-
-            if (((Servidores * TasaServicio) < TasaLlegada))
-                throw new ArgumentException("Parame");
-
-
             double suma1 = 0;
 
             for (int n = 0; n < Servidores; n++)

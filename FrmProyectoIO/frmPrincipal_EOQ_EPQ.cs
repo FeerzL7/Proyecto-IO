@@ -16,7 +16,7 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-         public Almacenamiento principal { get; set; } = new Almacenamiento();
+        public Almacenamiento principal { get; set; } = new Almacenamiento();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {
             principal.Leer();
@@ -43,6 +43,28 @@ namespace FrmProyectoIO
         private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (rdbEOQ.Checked)
+            {
+                frmAgregar_EOQ registrarEOQ = new frmAgregar_EOQ();
+                registrarEOQ.referenciaAlmacenamiento = principal;
+                registrarEOQ.ShowDialog();
+            }
+            else if (rdbEPQ.Checked)
+            {
+                frmAgregar_EPQ registrarEPQ = new frmAgregar_EPQ();
+                registrarEPQ.referenciaAlmacenamiento = principal;
+                registrarEPQ.ShowDialog();
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtEnunciado.Clear();
+            txtTitulo.Clear();
         }
     }
 }

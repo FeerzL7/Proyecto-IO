@@ -34,16 +34,19 @@ namespace FrmProyectoIO.Properties
             {
                 throw new ArgumentException("la tasa de servicio debe ser mayor que 0");
             }
-
             if (!Reactivo.ContainsKey(dificultad))
             {
                 Reactivo.Add(dificultad, new List<ModeloUnSoloServidor>());
             }
-            //Que no se repita el titulo
-            if (Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == titulo.ToUpper()))
-            {
-                throw new ArgumentException("No puede repetir titulo del ejercicio");
+            if(tasallegada > tasaservicio) { 
+                throw new ArgumentException("Los datos son incongruentes. \nLa tasa de llegada no puede ser mayor a la tasa de servicio");
             }
+            //Que no se repita el titulo
+            if (Reactivo.Values.SelectMany(X => X).Any(x => string.Equals(x.Titulo.Trim(), titulo.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                throw new ArgumentException("No puede repetir el título del ejercicio");
+            }
+
 
             Reactivo[dificultad].Add(new ModeloUnSoloServidor
             {
@@ -51,7 +54,7 @@ namespace FrmProyectoIO.Properties
                 Enunciado = enunciado,
                 TasaLlegada = tasallegada,
                 TasaServicio = tasaservicio
-                
+
             });
             SeActualizoLista?.Invoke();
 
@@ -74,33 +77,39 @@ namespace FrmProyectoIO.Properties
             if (tasaservicio <= 0)
             {
                 throw new ArgumentException("la tasa de servicio debe ser mayor que 0");
-
-                if (servidores <= 0)
-                {
-                    throw new ArgumentException("el numero de servidores debe ser mayor que 0");
-                }
-
-                if (!Reactivo.ContainsKey(dificultad))//si no existe la llave todavia la crea
-                {
-                    Reactivo.Add(dificultad, new List<ModeloUnSoloServidor>());
-                }
-
-                if (Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == titulo.ToUpper())) //si el problema a agregar ya existe
-                {
-                    throw new ArgumentException("No puede agregar dos problemas con el mismo titulo");
-                }
-                Reactivo[dificultad].Add(new ModeloMultiplesServidores
-                {
-                    Titulo = titulo,
-                    Enunciado = enunciado,
-                    TasaLlegada = tasallegada,
-                    TasaServicio = tasaservicio,
-                    Servidores = servidores,
-                    NivelDificultad = dificultad
-                });
-                SeActualizoLista?.Invoke();
-
             }
+            if (servidores <= 0)
+            {
+                throw new ArgumentException("el numero de servidores debe ser mayor que 0");
+            }
+
+            if (!Reactivo.ContainsKey(dificultad))//si no existe la llave todavia la crea
+            {
+                Reactivo.Add(dificultad, new List<ModeloUnSoloServidor>());
+            }
+
+            if (tasallegada > (tasaservicio* servidores))
+            {
+                throw new ArgumentException("Los datos son incongruentes. \nLa tasa de llegada no puede ser mayor a la tasa de servicio");
+            }
+            //Que no se repita el titulo
+            if (Reactivo.Values.SelectMany(x => x).Any(x => string.Equals(x.Titulo.Trim(), titulo.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                throw new ArgumentException("No puede repetir el título del ejercicio");
+            }
+        
+            Reactivo[dificultad].Add(new ModeloMultiplesServidores
+            {
+                Titulo = titulo,
+                Enunciado = enunciado,
+                TasaLlegada = tasallegada,
+                TasaServicio = tasaservicio,
+                Servidores = servidores,
+                NivelDificultad = dificultad
+            });
+            SeActualizoLista?.Invoke();
+
+
         }
 
 
@@ -123,19 +132,22 @@ namespace FrmProyectoIO.Properties
             {
                 throw new ArgumentException("la tasa de llegada y la tasa de servicio debe ser mayor que 0");
             }
+            if(!Reactivo[dificultad].Any(x => x.Titulo == problema.Titulo)) {
+                throw new ArgumentException(" No existe un reactivo con ese titulo");
+            }
 
             //busca el problema que seleccionaron
-            var ProblemaModificar = Reactivo.Values.SelectMany(x => x).FirstOrDefault(x => x.Titulo == problema.Titulo);
+            var ProblemaModificar = Reactivo[dificultad].FirstOrDefault(x => x.Titulo == problema.Titulo);
             if (ProblemaModificar != null) //si este no es nulo actualiza los valores 
             {
-                ProblemaModificar.Titulo = problema.Titulo;
+                //Cambia todo menos el titulo - porque eso es como nuestra SKU
                 ProblemaModificar.Enunciado = problema.Enunciado;
                 ProblemaModificar.TasaLlegada = problema.TasaLlegada;
                 ProblemaModificar.TasaServicio = problema.TasaServicio;
 
             }
             //Por si se cambia de dificulad
-            Reactivo[dificultad].Add(ProblemaModificar);
+            
             SeActualizoLista?.Invoke();
         }
 

@@ -27,10 +27,6 @@ namespace FrmProyectoIO.Properties
         {
             get
             {
-                if (TasaLlegada > TasaServicio)
-                {
-                    throw new ArgumentException("La tasa de llegada supera a la tasa de servicio, el modelo es inestable");
-                }
                 return TasaLlegada / TasaServicio;
             }
         }

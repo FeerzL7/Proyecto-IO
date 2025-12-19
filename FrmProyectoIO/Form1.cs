@@ -24,9 +24,14 @@ namespace FrmProyectoIO
 
         private void guna2ImageButton1_Click(object sender, EventArgs e)
         {
-            FrmEjerciciosLDE lineas = new();
-            lineas.problema = problemario;
-            lineas.ShowDialog();
+            try{
+                FrmEjerciciosLDE lineas = new();
+                lineas.problema = problemario;
+                lineas.ShowDialog();
+            }
+            catch (ArgumentException ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void guna2ImageBtnEOQ_Click(object sender, EventArgs e)

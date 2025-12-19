@@ -34,6 +34,8 @@ namespace FrmProyectoIO
 
             dgvEjercicios.DataSource = null;
             dgvEjercicios.DataSource = problema.Reactivo.SelectMany(x => x.Value).ToList();
+
+            
         }
 
 
@@ -43,23 +45,23 @@ namespace FrmProyectoIO
             try
             {
 
-                if (tscmbModelo.Text == "UNA")
-                {
+                if (tscmbModelo.Text == "UNA"){
                     FrmModeloServidorUnaSolaFila modelo1 = new();
                     modelo1.referenciaAgregar = problema;
                     modelo1.ShowDialog();
+                    
                 }
-                else if (tscmbModelo.Text == "MUCHAS")
-                {
+                else if (tscmbModelo.Text == "MUCHAS"){
                     FrmRegistrarMultiplesServidoresUnaFila modelo2 = new();
                     modelo2.referenciaRegistarMultiples = problema;
                     modelo2.ShowDialog();
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione 1 de los 2 modelos matematicos");
+                    MessageBox.Show("Seleccione 1 de los 2 modelos matematicos", "Advertencia" , MessageBoxButtons.OK);
 
                 }
+               
             }
             catch (ArgumentException ex)
             {
@@ -139,12 +141,24 @@ namespace FrmProyectoIO
 
         private void dgvEjercicios_DoubleClick(object sender, EventArgs e)
         {
-            //Agarrar el objeto seleccionado al hacer doble click
-            var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
-            FrmModificarModeloServidorUnaSolaFila modificarEjercicio = new();
-            modificarEjercicio.ReferenciaModificar = problema;
-            modificarEjercicio.ModeloMM1Anterior = ejercicioSeleccionado;
-            modificarEjercicio.ShowDialog();
+            //if (dgvEjercicios.CurrentRow.DataBoundItem is ModeloMultiplesServidores) {
+                //Agarrar el objeto seleccionado al hacer doble click
+                ModeloMultiplesServidores? ejercicioSeleccionado = dgvEjercicios.CurrentRow.DataBoundItem as ModeloMultiplesServidores;
+                FrmModificarModeloMultiplesServidoresUnaSolaFila modificarEjercicio = new();
+                
+                modificarEjercicio.ReferenciaModificar = problema;
+                modificarEjercicio.ModeloMMSAnterior = ejercicioSeleccionado;
+                modificarEjercicio.ShowDialog();
+            //}
+            //else 
+            //{
+            //    var ejercicioSeleccionado = (ModeloUnSoloServidor)dgvEjercicios.CurrentRow.DataBoundItem;
+            //    FrmModificarModeloServidorUnaSolaFila modificarEjercicio = new(); 
+            //    modificarEjercicio.ReferenciaModificar = problema;
+            //    modificarEjercicio.ModeloMM1Anterior = ejercicioSeleccionado;
+            //    modificarEjercicio.ShowDialog();
+
+            //}
         }
     }
 }

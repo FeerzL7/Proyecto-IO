@@ -33,8 +33,8 @@
             dgvEjercicios = new DataGridView();
             Ejercicios = new DataGridViewTextBoxColumn();
             VER = new DataGridViewTextBoxColumn();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            rdbEOQ = new RadioButton();
+            rdbEPQ = new RadioButton();
             label1 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             btnAgregar = new Button();
@@ -79,8 +79,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 16F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 24F));
             tableLayoutPanel1.Controls.Add(dgvEjercicios, 1, 5);
-            tableLayoutPanel1.Controls.Add(radioButton1, 1, 3);
-            tableLayoutPanel1.Controls.Add(radioButton2, 3, 3);
+            tableLayoutPanel1.Controls.Add(rdbEOQ, 1, 3);
+            tableLayoutPanel1.Controls.Add(rdbEPQ, 3, 3);
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 11);
             tableLayoutPanel1.Controls.Add(cmbNivelDificultad, 3, 1);
@@ -139,40 +139,40 @@
             VER.Name = "VER";
             VER.Width = 200;
             // 
-            // radioButton1
+            // rdbEOQ
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.BackColor = Color.FromArgb(28, 46, 74);
-            radioButton1.Dock = DockStyle.Fill;
-            radioButton1.Font = new Font("Cooper Black", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton1.ForeColor = SystemColors.ButtonHighlight;
-            radioButton1.Location = new Point(13, 110);
-            radioButton1.Margin = new Padding(2);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(486, 70);
-            radioButton1.TabIndex = 4;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "EOQ";
-            radioButton1.TextAlign = ContentAlignment.MiddleCenter;
-            radioButton1.UseVisualStyleBackColor = false;
+            rdbEOQ.AutoSize = true;
+            rdbEOQ.BackColor = Color.FromArgb(28, 46, 74);
+            rdbEOQ.Dock = DockStyle.Fill;
+            rdbEOQ.Font = new Font("Cooper Black", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rdbEOQ.ForeColor = SystemColors.ButtonHighlight;
+            rdbEOQ.Location = new Point(13, 110);
+            rdbEOQ.Margin = new Padding(2);
+            rdbEOQ.Name = "rdbEOQ";
+            rdbEOQ.Size = new Size(486, 70);
+            rdbEOQ.TabIndex = 4;
+            rdbEOQ.TabStop = true;
+            rdbEOQ.Text = "EOQ";
+            rdbEOQ.TextAlign = ContentAlignment.MiddleCenter;
+            rdbEOQ.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // rdbEPQ
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.BackColor = Color.FromArgb(28, 46, 74);
-            tableLayoutPanel1.SetColumnSpan(radioButton2, 2);
-            radioButton2.Dock = DockStyle.Fill;
-            radioButton2.Font = new Font("Cooper Black", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton2.ForeColor = SystemColors.ButtonHighlight;
-            radioButton2.Location = new Point(513, 110);
-            radioButton2.Margin = new Padding(2);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(449, 70);
-            radioButton2.TabIndex = 5;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "EPQ";
-            radioButton2.TextAlign = ContentAlignment.MiddleCenter;
-            radioButton2.UseVisualStyleBackColor = false;
+            rdbEPQ.AutoSize = true;
+            rdbEPQ.BackColor = Color.FromArgb(28, 46, 74);
+            tableLayoutPanel1.SetColumnSpan(rdbEPQ, 2);
+            rdbEPQ.Dock = DockStyle.Fill;
+            rdbEPQ.Font = new Font("Cooper Black", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rdbEPQ.ForeColor = SystemColors.ButtonHighlight;
+            rdbEPQ.Location = new Point(513, 110);
+            rdbEPQ.Margin = new Padding(2);
+            rdbEPQ.Name = "rdbEPQ";
+            rdbEPQ.Size = new Size(449, 70);
+            rdbEPQ.TabIndex = 5;
+            rdbEPQ.TabStop = true;
+            rdbEPQ.Text = "EPQ";
+            rdbEPQ.TextAlign = ContentAlignment.MiddleCenter;
+            rdbEPQ.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -217,6 +217,7 @@
             btnAgregar.Size = new Size(256, 188);
             btnAgregar.TabIndex = 7;
             btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // cmbNivelDificultad
             // 
@@ -434,6 +435,7 @@
             btnLimpiar.TabIndex = 1;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // frmPrincipal_EOQ_EPQ
             // 
@@ -464,8 +466,8 @@
         private DataGridView dgvEjercicios;
         private DataGridViewTextBoxColumn Ejercicios;
         private DataGridViewTextBoxColumn VER;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton rdbEOQ;
+        private RadioButton rdbEPQ;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel2;
         private Button btnAgregar;

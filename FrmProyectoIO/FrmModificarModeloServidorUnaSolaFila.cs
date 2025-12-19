@@ -26,19 +26,24 @@ namespace FrmProyectoIO
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            ModeloUnSoloServidor modelo = new ModeloUnSoloServidor
+            try
             {
-                TasaLlegada = double.Parse(txtLambda.Text),
-                TasaServicio = double.Parse(txtMew.Text),
-                Titulo = txtTitulo.Text,
-                Enunciado = txtEnunciado.Text,
-                //NivelDificultad = (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem
-            };
+                ModeloUnSoloServidor modelo = new ModeloUnSoloServidor
+                {
+                    TasaLlegada = double.Parse(txtLambda.Text),
+                    TasaServicio = double.Parse(txtMew.Text),
+                    Titulo = txtTitulo.Text,
+                    Enunciado = txtEnunciado.Text,
+                    //NivelDificultad = (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem
+                };
 
-            ReferenciaModificar.ModificarProblema(modelo, (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem);
-            //Eliminar el problema antiguo por si cambio su nivel de dificultad
-            var elim = ReferenciaModificar.Reactivo.SelectMany(x => x.Value).Where(x => x.Titulo == modelo.Titulo);
-            ReferenciaModificar.Eliminar(elim.First());
+                ReferenciaModificar.ModificarProblema(modelo, (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem);
+                
+            }
+            catch (Exception ex)            
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void cmbNivelDificultad_SelectedIndexChanged(object sender, EventArgs e)
