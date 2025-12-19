@@ -14,6 +14,9 @@ namespace FrmProyectoIO
     {
 
         public InventarioProduccion ReferenciaEPQ { get; internal set; }
+        public Inventario EjercicioModificado { get; internal set; }
+        public Inventario Ejercicio { get; internal set; }
+        public Almacenamiento ReferenciaAlmacenamiento { get; internal set; }
 
         public frmVerProblema_EPQ()
         {
