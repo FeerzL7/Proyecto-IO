@@ -95,7 +95,7 @@
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             tableLayoutPanel6 = new TableLayoutPanel();
             txtWq = new Guna.UI2.WinForms.Guna2TextBox();
-            txtLq8 = new Guna.UI2.WinForms.Guna2TextBox();
+            txtLq = new Guna.UI2.WinForms.Guna2TextBox();
             txtLs = new Guna.UI2.WinForms.Guna2TextBox();
             txtP = new Guna.UI2.WinForms.Guna2TextBox();
             txtWs = new Guna.UI2.WinForms.Guna2TextBox();
@@ -127,10 +127,10 @@
             tlpPrincipal.AutoSize = true;
             tlpPrincipal.BackColor = Color.LightSteelBlue;
             tlpPrincipal.ColumnCount = 4;
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 30F));
+            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 24F));
             tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
             tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
-            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 30F));
+            tlpPrincipal.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 25F));
             tlpPrincipal.Controls.Add(tableLayoutPanel2, 1, 1);
             tlpPrincipal.Controls.Add(tableLayoutPanel1, 1, 2);
             tlpPrincipal.Controls.Add(tableLayoutPanel3, 1, 3);
@@ -141,6 +141,7 @@
             tlpPrincipal.Controls.Add(guna2ShadowPanel1, 2, 1);
             tlpPrincipal.Dock = DockStyle.Fill;
             tlpPrincipal.Location = new Point(0, 0);
+            tlpPrincipal.Margin = new Padding(2);
             tlpPrincipal.Name = "tlpPrincipal";
             tlpPrincipal.RowCount = 10;
             tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 11.11111F));
@@ -153,8 +154,8 @@
             tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
             tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
             tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Percent, 11.1111107F));
-            tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tlpPrincipal.Size = new Size(1141, 754);
+            tlpPrincipal.RowStyles.Add(new RowStyle(SizeType.Absolute, 16F));
+            tlpPrincipal.Size = new Size(913, 603);
             tlpPrincipal.TabIndex = 5;
             // 
             // tableLayoutPanel2
@@ -165,12 +166,12 @@
             tableLayoutPanel2.Controls.Add(label2, 0, 0);
             tableLayoutPanel2.Controls.Add(txtTitulo, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(38, 83);
-            tableLayoutPanel2.Margin = new Padding(8);
+            tableLayoutPanel2.Location = new Point(30, 65);
+            tableLayoutPanel2.Margin = new Padding(6);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Size = new Size(632, 59);
+            tableLayoutPanel2.Size = new Size(506, 47);
             tableLayoutPanel2.TabIndex = 1;
             // 
             // label2
@@ -178,9 +179,10 @@
             label2.AutoSize = true;
             label2.Dock = DockStyle.Fill;
             label2.Font = new Font("Verdana", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(3, 0);
+            label2.Location = new Point(2, 0);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(152, 59);
+            label2.Size = new Size(122, 47);
             label2.TabIndex = 0;
             label2.Text = "Titulo:";
             label2.TextAlign = ContentAlignment.MiddleLeft;
@@ -197,16 +199,17 @@
             txtTitulo.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             txtTitulo.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtTitulo.Dock = DockStyle.Fill;
+            txtTitulo.Enabled = false;
             txtTitulo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTitulo.Font = new Font("Verdana", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtTitulo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTitulo.Location = new Point(172, 10);
-            txtTitulo.Margin = new Padding(14, 10, 14, 10);
+            txtTitulo.Location = new Point(137, 8);
+            txtTitulo.Margin = new Padding(11, 8, 11, 8);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.PlaceholderText = "";
             txtTitulo.SelectedText = "";
             txtTitulo.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtTitulo.Size = new Size(446, 39);
+            txtTitulo.Size = new Size(358, 31);
             txtTitulo.TabIndex = 1;
             // 
             // tableLayoutPanel1
@@ -220,12 +223,12 @@
             tableLayoutPanel1.Controls.Add(cmbNivelDificultad, 1, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
-            tableLayoutPanel1.Location = new Point(38, 158);
-            tableLayoutPanel1.Margin = new Padding(8);
+            tableLayoutPanel1.Location = new Point(30, 124);
+            tableLayoutPanel1.Margin = new Padding(6);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(632, 56);
+            tableLayoutPanel1.Size = new Size(506, 56);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // label3
@@ -234,9 +237,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(0, 0);
-            label3.Margin = new Padding(0, 0, 5, 0);
+            label3.Margin = new Padding(0, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(319, 56);
+            label3.Size = new Size(269, 56);
             label3.TabIndex = 0;
             label3.Text = "Nivel de Dificultad:";
             label3.TextAlign = ContentAlignment.MiddleLeft;
@@ -249,18 +252,20 @@
             cmbNivelDificultad.CustomizableEdges = customizableEdges3;
             cmbNivelDificultad.DrawMode = DrawMode.OwnerDrawFixed;
             cmbNivelDificultad.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbNivelDificultad.Enabled = false;
             cmbNivelDificultad.FillColor = Color.WhiteSmoke;
             cmbNivelDificultad.FocusedColor = Color.FromArgb(94, 148, 255);
             cmbNivelDificultad.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             cmbNivelDificultad.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbNivelDificultad.ForeColor = Color.FromArgb(68, 88, 112);
             cmbNivelDificultad.ItemHeight = 50;
-            cmbNivelDificultad.Location = new Point(324, 0);
+            cmbNivelDificultad.Location = new Point(273, 0);
             cmbNivelDificultad.Margin = new Padding(0);
             cmbNivelDificultad.Name = "cmbNivelDificultad";
             cmbNivelDificultad.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            cmbNivelDificultad.Size = new Size(308, 56);
+            cmbNivelDificultad.Size = new Size(233, 56);
             cmbNivelDificultad.TabIndex = 1;
+            cmbNivelDificultad.SelectedIndexChanged += cmbNivelDificultad_SelectedIndexChanged;
             // 
             // tableLayoutPanel3
             // 
@@ -268,21 +273,21 @@
             tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 16F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 16F));
             tableLayoutPanel3.Controls.Add(txtLambda, 0, 1);
             tableLayoutPanel3.Controls.Add(txtMew, 1, 1);
             tableLayoutPanel3.Controls.Add(tableLayoutPanel9, 0, 0);
             tableLayoutPanel3.Controls.Add(tableLayoutPanel10, 1, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(38, 230);
-            tableLayoutPanel3.Margin = new Padding(8);
+            tableLayoutPanel3.Location = new Point(30, 192);
+            tableLayoutPanel3.Margin = new Padding(6);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
             tlpPrincipal.SetRowSpan(tableLayoutPanel3, 2);
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Size = new Size(632, 134);
+            tableLayoutPanel3.Size = new Size(506, 106);
             tableLayoutPanel3.TabIndex = 3;
             // 
             // txtLambda
@@ -300,13 +305,13 @@
             txtLambda.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtLambda.Font = new Font("Verdana", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtLambda.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLambda.Location = new Point(7, 74);
-            txtLambda.Margin = new Padding(7);
+            txtLambda.Location = new Point(6, 59);
+            txtLambda.Margin = new Padding(6);
             txtLambda.Name = "txtLambda";
             txtLambda.PlaceholderText = "";
             txtLambda.SelectedText = "";
             txtLambda.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            txtLambda.Size = new Size(302, 53);
+            txtLambda.Size = new Size(241, 41);
             txtLambda.TabIndex = 2;
             txtLambda.TextAlign = HorizontalAlignment.Center;
             // 
@@ -325,13 +330,13 @@
             txtMew.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMew.Font = new Font("Verdana", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtMew.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMew.Location = new Point(323, 74);
-            txtMew.Margin = new Padding(7);
+            txtMew.Location = new Point(259, 59);
+            txtMew.Margin = new Padding(6);
             txtMew.Name = "txtMew";
             txtMew.PlaceholderText = "";
             txtMew.SelectedText = "";
             txtMew.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtMew.Size = new Size(302, 53);
+            txtMew.Size = new Size(241, 41);
             txtMew.TabIndex = 3;
             txtMew.TextAlign = HorizontalAlignment.Center;
             // 
@@ -344,12 +349,13 @@
             tableLayoutPanel9.Controls.Add(label4, 0, 0);
             tableLayoutPanel9.Controls.Add(label8, 0, 1);
             tableLayoutPanel9.Dock = DockStyle.Fill;
-            tableLayoutPanel9.Location = new Point(3, 3);
+            tableLayoutPanel9.Location = new Point(2, 2);
+            tableLayoutPanel9.Margin = new Padding(2);
             tableLayoutPanel9.Name = "tableLayoutPanel9";
             tableLayoutPanel9.RowCount = 2;
             tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel9.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel9.Size = new Size(310, 61);
+            tableLayoutPanel9.Size = new Size(249, 49);
             tableLayoutPanel9.TabIndex = 4;
             // 
             // label4
@@ -358,9 +364,10 @@
             tableLayoutPanel9.SetColumnSpan(label4, 2);
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(3, 0);
+            label4.Location = new Point(2, 0);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(304, 30);
+            label4.Size = new Size(245, 24);
             label4.TabIndex = 0;
             label4.Text = "λ";
             label4.TextAlign = ContentAlignment.BottomCenter;
@@ -371,9 +378,10 @@
             tableLayoutPanel9.SetColumnSpan(label8, 2);
             label8.Dock = DockStyle.Fill;
             label8.Font = new Font("Verdana", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(3, 30);
+            label8.Location = new Point(2, 24);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(304, 31);
+            label8.Size = new Size(245, 25);
             label8.TabIndex = 1;
             label8.Text = "(Tasa de llegada)";
             label8.TextAlign = ContentAlignment.MiddleCenter;
@@ -387,12 +395,13 @@
             tableLayoutPanel10.Controls.Add(label5, 0, 0);
             tableLayoutPanel10.Controls.Add(label10, 0, 1);
             tableLayoutPanel10.Dock = DockStyle.Fill;
-            tableLayoutPanel10.Location = new Point(319, 3);
+            tableLayoutPanel10.Location = new Point(255, 2);
+            tableLayoutPanel10.Margin = new Padding(2);
             tableLayoutPanel10.Name = "tableLayoutPanel10";
             tableLayoutPanel10.RowCount = 2;
             tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel10.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel10.Size = new Size(310, 61);
+            tableLayoutPanel10.Size = new Size(249, 49);
             tableLayoutPanel10.TabIndex = 5;
             // 
             // label5
@@ -401,9 +410,10 @@
             tableLayoutPanel10.SetColumnSpan(label5, 2);
             label5.Dock = DockStyle.Fill;
             label5.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(3, 0);
+            label5.Location = new Point(2, 0);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(304, 30);
+            label5.Size = new Size(245, 24);
             label5.TabIndex = 2;
             label5.Text = "μ";
             label5.TextAlign = ContentAlignment.BottomCenter;
@@ -414,9 +424,10 @@
             tableLayoutPanel10.SetColumnSpan(label10, 2);
             label10.Dock = DockStyle.Fill;
             label10.Font = new Font("Verdana", 13F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(3, 30);
+            label10.Location = new Point(2, 24);
+            label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
-            label10.Size = new Size(304, 31);
+            label10.Size = new Size(245, 25);
             label10.TabIndex = 3;
             label10.Text = "(Tasa de Servicio)";
             label10.TextAlign = ContentAlignment.MiddleCenter;
@@ -429,14 +440,15 @@
             tableLayoutPanel4.Controls.Add(label6, 0, 0);
             tableLayoutPanel4.Controls.Add(txtEnunciado, 0, 1);
             tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(33, 375);
+            tableLayoutPanel4.Location = new Point(26, 306);
+            tableLayoutPanel4.Margin = new Padding(2);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 3;
             tlpPrincipal.SetRowSpan(tableLayoutPanel4, 4);
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Size = new Size(642, 294);
+            tableLayoutPanel4.Size = new Size(514, 232);
             tableLayoutPanel4.TabIndex = 4;
             // 
             // label6
@@ -444,9 +456,10 @@
             label6.AutoSize = true;
             label6.Dock = DockStyle.Fill;
             label6.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(3, 0);
+            label6.Location = new Point(2, 0);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(315, 50);
+            label6.Size = new Size(253, 40);
             label6.TabIndex = 0;
             label6.Text = "Enunciado:";
             label6.TextAlign = ContentAlignment.MiddleLeft;
@@ -465,15 +478,15 @@
             txtEnunciado.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtEnunciado.Font = new Font("Segoe UI", 9F);
             txtEnunciado.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtEnunciado.Location = new Point(4, 55);
-            txtEnunciado.Margin = new Padding(4, 5, 4, 5);
+            txtEnunciado.Location = new Point(3, 44);
+            txtEnunciado.Margin = new Padding(3, 4, 3, 4);
             txtEnunciado.Multiline = true;
             txtEnunciado.Name = "txtEnunciado";
             txtEnunciado.PlaceholderText = "";
             tableLayoutPanel4.SetRowSpan(txtEnunciado, 2);
             txtEnunciado.SelectedText = "";
             txtEnunciado.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            txtEnunciado.Size = new Size(634, 234);
+            txtEnunciado.Size = new Size(508, 184);
             txtEnunciado.TabIndex = 1;
             // 
             // tableLayoutPanel5
@@ -484,13 +497,13 @@
             tableLayoutPanel5.Controls.Add(btnCancelar, 1, 0);
             tableLayoutPanel5.Controls.Add(btnRegistrar, 0, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
-            tableLayoutPanel5.Location = new Point(38, 680);
-            tableLayoutPanel5.Margin = new Padding(8);
+            tableLayoutPanel5.Location = new Point(30, 546);
+            tableLayoutPanel5.Margin = new Padding(6);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel5.Size = new Size(632, 66);
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 53F));
+            tableLayoutPanel5.Size = new Size(506, 51);
             tableLayoutPanel5.TabIndex = 5;
             // 
             // btnCancelar
@@ -506,12 +519,14 @@
             btnCancelar.FillColor = Color.FromArgb(47, 76, 110);
             btnCancelar.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancelar.ForeColor = Color.Gainsboro;
-            btnCancelar.Location = new Point(319, 3);
+            btnCancelar.Location = new Point(255, 2);
+            btnCancelar.Margin = new Padding(2);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnCancelar.Size = new Size(310, 60);
+            btnCancelar.Size = new Size(249, 47);
             btnCancelar.TabIndex = 1;
             btnCancelar.Text = "Cancelar";
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnRegistrar
             // 
@@ -526,12 +541,14 @@
             btnRegistrar.FillColor = Color.FromArgb(47, 76, 110);
             btnRegistrar.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRegistrar.ForeColor = Color.Gainsboro;
-            btnRegistrar.Location = new Point(3, 3);
+            btnRegistrar.Location = new Point(2, 2);
+            btnRegistrar.Margin = new Padding(2);
             btnRegistrar.Name = "btnRegistrar";
             btnRegistrar.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            btnRegistrar.Size = new Size(310, 60);
+            btnRegistrar.Size = new Size(249, 47);
             btnRegistrar.TabIndex = 2;
             btnRegistrar.Text = "Modificar";
+            btnRegistrar.Click += btnRegistrar_Click;
             // 
             // tableLayoutPanel7
             // 
@@ -569,7 +586,7 @@
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel7.Size = new Size(1141, 75);
+            tableLayoutPanel7.Size = new Size(913, 59);
             tableLayoutPanel7.TabIndex = 9;
             // 
             // label1
@@ -579,10 +596,11 @@
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Gainsboro;
-            label1.Location = new Point(3, 0);
+            label1.Location = new Point(2, 0);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             tableLayoutPanel7.SetRowSpan(label1, 3);
-            label1.Size = new Size(963, 75);
+            label1.Size = new Size(761, 59);
             label1.TabIndex = 0;
             label1.Text = "Modificar Ejercicio";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -598,13 +616,14 @@
             tableLayoutPanel8.Controls.Add(guna2ControlBox2, 1, 0);
             tableLayoutPanel8.Controls.Add(guna2ControlBox3, 2, 0);
             tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(972, 3);
+            tableLayoutPanel8.Location = new Point(767, 2);
+            tableLayoutPanel8.Margin = new Padding(2);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
             tableLayoutPanel8.RowCount = 2;
             tableLayoutPanel7.SetRowSpan(tableLayoutPanel8, 3);
             tableLayoutPanel8.RowStyles.Add(new RowStyle());
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel8.Size = new Size(166, 69);
+            tableLayoutPanel8.Size = new Size(144, 55);
             tableLayoutPanel8.TabIndex = 1;
             // 
             // guna2ControlBox1
@@ -614,10 +633,11 @@
             guna2ControlBox1.Dock = DockStyle.Fill;
             guna2ControlBox1.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox1.IconColor = Color.White;
-            guna2ControlBox1.Location = new Point(3, 3);
+            guna2ControlBox1.Location = new Point(2, 2);
+            guna2ControlBox1.Margin = new Padding(2);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            guna2ControlBox1.Size = new Size(49, 24);
+            guna2ControlBox1.Size = new Size(43, 19);
             guna2ControlBox1.TabIndex = 0;
             // 
             // guna2ControlBox2
@@ -627,10 +647,11 @@
             guna2ControlBox2.Dock = DockStyle.Fill;
             guna2ControlBox2.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox2.IconColor = Color.White;
-            guna2ControlBox2.Location = new Point(58, 3);
+            guna2ControlBox2.Location = new Point(49, 2);
+            guna2ControlBox2.Margin = new Padding(2);
             guna2ControlBox2.Name = "guna2ControlBox2";
             guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            guna2ControlBox2.Size = new Size(49, 24);
+            guna2ControlBox2.Size = new Size(44, 19);
             guna2ControlBox2.TabIndex = 1;
             // 
             // guna2ControlBox3
@@ -639,10 +660,11 @@
             guna2ControlBox3.Dock = DockStyle.Fill;
             guna2ControlBox3.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox3.IconColor = Color.White;
-            guna2ControlBox3.Location = new Point(113, 3);
+            guna2ControlBox3.Location = new Point(97, 2);
+            guna2ControlBox3.Margin = new Padding(2);
             guna2ControlBox3.Name = "guna2ControlBox3";
             guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2ControlBox3.Size = new Size(50, 24);
+            guna2ControlBox3.Size = new Size(45, 19);
             guna2ControlBox3.TabIndex = 2;
             // 
             // btnConsultar
@@ -657,12 +679,14 @@
             btnConsultar.FillColor = Color.FromArgb(47, 76, 110);
             btnConsultar.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConsultar.ForeColor = Color.Gainsboro;
-            btnConsultar.Location = new Point(681, 600);
+            btnConsultar.Location = new Point(544, 483);
+            btnConsultar.Margin = new Padding(2);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            btnConsultar.Size = new Size(426, 69);
+            btnConsultar.Size = new Size(341, 55);
             btnConsultar.TabIndex = 10;
             btnConsultar.Text = "Consultar";
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // guna2ShadowPanel1
             // 
@@ -670,12 +694,13 @@
             guna2ShadowPanel1.Controls.Add(tableLayoutPanel6);
             guna2ShadowPanel1.Dock = DockStyle.Fill;
             guna2ShadowPanel1.FillColor = Color.FromArgb(28, 46, 74);
-            guna2ShadowPanel1.Location = new Point(681, 78);
+            guna2ShadowPanel1.Location = new Point(544, 61);
+            guna2ShadowPanel1.Margin = new Padding(2);
             guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             guna2ShadowPanel1.Radius = 8;
             tlpPrincipal.SetRowSpan(guna2ShadowPanel1, 7);
             guna2ShadowPanel1.ShadowColor = Color.Black;
-            guna2ShadowPanel1.Size = new Size(426, 516);
+            guna2ShadowPanel1.Size = new Size(341, 418);
             guna2ShadowPanel1.TabIndex = 11;
             // 
             // tableLayoutPanel6
@@ -685,7 +710,7 @@
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 80F));
             tableLayoutPanel6.Controls.Add(txtWq, 1, 5);
-            tableLayoutPanel6.Controls.Add(txtLq8, 1, 3);
+            tableLayoutPanel6.Controls.Add(txtLq, 1, 3);
             tableLayoutPanel6.Controls.Add(txtLs, 1, 2);
             tableLayoutPanel6.Controls.Add(txtP, 1, 0);
             tableLayoutPanel6.Controls.Add(txtWs, 1, 4);
@@ -699,6 +724,7 @@
             tableLayoutPanel6.Dock = DockStyle.Fill;
             tableLayoutPanel6.ForeColor = Color.Gainsboro;
             tableLayoutPanel6.Location = new Point(0, 0);
+            tableLayoutPanel6.Margin = new Padding(2);
             tableLayoutPanel6.Name = "tableLayoutPanel6";
             tableLayoutPanel6.RowCount = 6;
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
@@ -707,7 +733,7 @@
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666641F));
-            tableLayoutPanel6.Size = new Size(426, 516);
+            tableLayoutPanel6.Size = new Size(341, 418);
             tableLayoutPanel6.TabIndex = 8;
             // 
             // txtWq
@@ -725,42 +751,42 @@
             txtWq.Font = new Font("Segoe UI", 9F);
             txtWq.ForeColor = Color.Gainsboro;
             txtWq.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtWq.Location = new Point(97, 442);
-            txtWq.Margin = new Padding(12);
+            txtWq.Location = new Point(78, 355);
+            txtWq.Margin = new Padding(10);
             txtWq.Name = "txtWq";
             txtWq.PlaceholderText = "";
             txtWq.ReadOnly = true;
             txtWq.SelectedText = "";
             txtWq.ShadowDecoration.CustomizableEdges = customizableEdges24;
-            txtWq.Size = new Size(317, 62);
+            txtWq.Size = new Size(253, 53);
             txtWq.TabIndex = 20;
             txtWq.TextAlign = HorizontalAlignment.Center;
             // 
-            // txtLq8
+            // txtLq
             // 
-            txtLq8.BorderRadius = 8;
-            txtLq8.CustomizableEdges = customizableEdges25;
-            txtLq8.DefaultText = "";
-            txtLq8.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtLq8.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtLq8.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtLq8.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtLq8.Dock = DockStyle.Fill;
-            txtLq8.FillColor = Color.FromArgb(28, 46, 74);
-            txtLq8.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLq8.Font = new Font("Segoe UI", 9F);
-            txtLq8.ForeColor = Color.Gainsboro;
-            txtLq8.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLq8.Location = new Point(97, 270);
-            txtLq8.Margin = new Padding(12);
-            txtLq8.Name = "txtLq8";
-            txtLq8.PlaceholderText = "";
-            txtLq8.ReadOnly = true;
-            txtLq8.SelectedText = "";
-            txtLq8.ShadowDecoration.CustomizableEdges = customizableEdges26;
-            txtLq8.Size = new Size(317, 62);
-            txtLq8.TabIndex = 19;
-            txtLq8.TextAlign = HorizontalAlignment.Center;
+            txtLq.BorderRadius = 8;
+            txtLq.CustomizableEdges = customizableEdges25;
+            txtLq.DefaultText = "";
+            txtLq.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtLq.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtLq.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtLq.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtLq.Dock = DockStyle.Fill;
+            txtLq.FillColor = Color.FromArgb(28, 46, 74);
+            txtLq.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtLq.Font = new Font("Segoe UI", 9F);
+            txtLq.ForeColor = Color.Gainsboro;
+            txtLq.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtLq.Location = new Point(78, 217);
+            txtLq.Margin = new Padding(10);
+            txtLq.Name = "txtLq";
+            txtLq.PlaceholderText = "";
+            txtLq.ReadOnly = true;
+            txtLq.SelectedText = "";
+            txtLq.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            txtLq.Size = new Size(253, 49);
+            txtLq.TabIndex = 19;
+            txtLq.TextAlign = HorizontalAlignment.Center;
             // 
             // txtLs
             // 
@@ -777,14 +803,14 @@
             txtLs.Font = new Font("Segoe UI", 9F);
             txtLs.ForeColor = Color.Gainsboro;
             txtLs.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtLs.Location = new Point(97, 184);
-            txtLs.Margin = new Padding(12);
+            txtLs.Location = new Point(78, 148);
+            txtLs.Margin = new Padding(10);
             txtLs.Name = "txtLs";
             txtLs.PlaceholderText = "";
             txtLs.ReadOnly = true;
             txtLs.SelectedText = "";
             txtLs.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            txtLs.Size = new Size(317, 62);
+            txtLs.Size = new Size(253, 49);
             txtLs.TabIndex = 18;
             txtLs.TextAlign = HorizontalAlignment.Center;
             // 
@@ -803,14 +829,14 @@
             txtP.Font = new Font("Segoe UI", 9F);
             txtP.ForeColor = Color.Gainsboro;
             txtP.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtP.Location = new Point(97, 12);
-            txtP.Margin = new Padding(12);
+            txtP.Location = new Point(78, 10);
+            txtP.Margin = new Padding(10);
             txtP.Name = "txtP";
             txtP.PlaceholderText = "";
             txtP.ReadOnly = true;
             txtP.SelectedText = "";
             txtP.ShadowDecoration.CustomizableEdges = customizableEdges30;
-            txtP.Size = new Size(317, 62);
+            txtP.Size = new Size(253, 49);
             txtP.TabIndex = 17;
             txtP.TextAlign = HorizontalAlignment.Center;
             // 
@@ -829,14 +855,14 @@
             txtWs.Font = new Font("Segoe UI", 9F);
             txtWs.ForeColor = Color.Gainsboro;
             txtWs.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtWs.Location = new Point(97, 356);
-            txtWs.Margin = new Padding(12);
+            txtWs.Location = new Point(78, 286);
+            txtWs.Margin = new Padding(10);
             txtWs.Name = "txtWs";
             txtWs.PlaceholderText = "";
             txtWs.ReadOnly = true;
             txtWs.SelectedText = "";
             txtWs.ShadowDecoration.CustomizableEdges = customizableEdges32;
-            txtWs.Size = new Size(317, 62);
+            txtWs.Size = new Size(253, 49);
             txtWs.TabIndex = 16;
             txtWs.TextAlign = HorizontalAlignment.Center;
             // 
@@ -855,26 +881,27 @@
             txtPn.Font = new Font("Segoe UI", 9F);
             txtPn.ForeColor = Color.Gainsboro;
             txtPn.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtPn.Location = new Point(97, 98);
-            txtPn.Margin = new Padding(12);
+            txtPn.Location = new Point(78, 79);
+            txtPn.Margin = new Padding(10);
             txtPn.Name = "txtPn";
             txtPn.PlaceholderText = "";
             txtPn.ReadOnly = true;
             txtPn.SelectedText = "";
             txtPn.ShadowDecoration.CustomizableEdges = customizableEdges34;
-            txtPn.Size = new Size(317, 62);
+            txtPn.Size = new Size(253, 49);
             txtPn.TabIndex = 13;
             txtPn.TextAlign = HorizontalAlignment.Center;
+            txtPn.TextChanged += txtPn_TextChanged;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Dock = DockStyle.Fill;
             label7.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(8, 8);
-            label7.Margin = new Padding(8);
+            label7.Location = new Point(6, 6);
+            label7.Margin = new Padding(6);
             label7.Name = "label7";
-            label7.Size = new Size(69, 70);
+            label7.Size = new Size(56, 57);
             label7.TabIndex = 0;
             label7.Text = "P:";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -884,10 +911,10 @@
             label9.AutoSize = true;
             label9.Dock = DockStyle.Fill;
             label9.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(5, 91);
-            label9.Margin = new Padding(5);
+            label9.Location = new Point(4, 73);
+            label9.Margin = new Padding(4);
             label9.Name = "label9";
-            label9.Size = new Size(75, 76);
+            label9.Size = new Size(60, 61);
             label9.TabIndex = 2;
             label9.Text = "P(𝑛):";
             label9.TextAlign = ContentAlignment.MiddleCenter;
@@ -897,10 +924,10 @@
             label15.AutoSize = true;
             label15.Dock = DockStyle.Fill;
             label15.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(5, 177);
-            label15.Margin = new Padding(5);
+            label15.Location = new Point(4, 142);
+            label15.Margin = new Padding(4);
             label15.Name = "label15";
-            label15.Size = new Size(75, 76);
+            label15.Size = new Size(60, 61);
             label15.TabIndex = 8;
             label15.Text = "Ls:";
             label15.TextAlign = ContentAlignment.MiddleCenter;
@@ -910,10 +937,10 @@
             label16.AutoSize = true;
             label16.Dock = DockStyle.Fill;
             label16.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label16.Location = new Point(5, 263);
-            label16.Margin = new Padding(5);
+            label16.Location = new Point(4, 211);
+            label16.Margin = new Padding(4);
             label16.Name = "label16";
-            label16.Size = new Size(75, 76);
+            label16.Size = new Size(60, 61);
             label16.TabIndex = 9;
             label16.Text = "Lq:";
             label16.TextAlign = ContentAlignment.MiddleCenter;
@@ -923,10 +950,10 @@
             label17.AutoSize = true;
             label17.Dock = DockStyle.Fill;
             label17.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(5, 349);
-            label17.Margin = new Padding(5);
+            label17.Location = new Point(4, 280);
+            label17.Margin = new Padding(4);
             label17.Name = "label17";
-            label17.Size = new Size(75, 76);
+            label17.Size = new Size(60, 61);
             label17.TabIndex = 10;
             label17.Text = "Ws:";
             label17.TextAlign = ContentAlignment.MiddleCenter;
@@ -936,10 +963,10 @@
             label18.AutoSize = true;
             label18.Dock = DockStyle.Fill;
             label18.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.Location = new Point(5, 435);
-            label18.Margin = new Padding(5);
+            label18.Location = new Point(4, 349);
+            label18.Margin = new Padding(4);
             label18.Name = "label18";
-            label18.Size = new Size(75, 76);
+            label18.Size = new Size(60, 65);
             label18.TabIndex = 11;
             label18.Text = "Wq:";
             label18.TextAlign = ContentAlignment.MiddleCenter;
@@ -958,13 +985,15 @@
             // 
             // FrmModificarModeloServidorUnaSolaFila
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1141, 754);
+            ClientSize = new Size(913, 603);
             Controls.Add(tlpPrincipal);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(2);
             Name = "FrmModificarModeloServidorUnaSolaFila";
             Text = "FrmModificarModeloServidorUnaSolaFila";
+            Load += FrmModificarModeloServidorUnaSolaFila_Load;
             tlpPrincipal.ResumeLayout(false);
             tlpPrincipal.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
@@ -1019,7 +1048,7 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private TableLayoutPanel tableLayoutPanel6;
         private Guna.UI2.WinForms.Guna2TextBox txtWq;
-        private Guna.UI2.WinForms.Guna2TextBox txtLq8;
+        private Guna.UI2.WinForms.Guna2TextBox txtLq;
         private Guna.UI2.WinForms.Guna2TextBox txtLs;
         private Guna.UI2.WinForms.Guna2TextBox txtP;
         private Guna.UI2.WinForms.Guna2TextBox txtWs;

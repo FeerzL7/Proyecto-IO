@@ -21,30 +21,11 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        public Almacenamiento principal = new Almacenamiento();
-        List<Inventario> ejercicios = new List<Inventario>();
+        public Almacenamiento principal { get; set; } = new Almacenamiento();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {
             principal.Leer();
             cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
-            dgvEjercicios.DataSource = principal.Ejercicios;
-            CargarGrid();
-            principal.AlCambiar += Principal_AlCambiar;
-        }
-        private void CargarGrid()
-        {
-            Dificultad dif = (Dificultad)cmbNivelDificultad.SelectedItem;
-
-            dgvEjercicios.DataSource = null;
-
-            if (principal.Ejercicios.ContainsKey(dif))
-                dgvEjercicios.DataSource = principal.Ejercicios[dif];
-        }
-
-        private void Principal_AlCambiar()
-        {
-            CargarGrid();
-
         }
 
         private void frmPrincipal_EOQ_EPQ_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,104 +33,43 @@ namespace FrmProyectoIO
             principal.Guardar();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+
+
+        private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            
         }
-
-        private void btnGenerarExamen_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                frmGenerarExamen FrmExam = new();
-                FrmExam.Rprincipal = principal;
-                FrmExam.ShowDialog();
-            }
-            catch (ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
 
         private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0 || e.ColumnIndex < 0)
-                return;
 
-            if (dgvEjercicios.Columns[e.ColumnIndex].Name != "Modificar")
-                return;
+        }
 
-            Inventario ejercicio =
-                (Inventario)dgvEjercicios.Rows[e.RowIndex].DataBoundItem;
-
-            if (ejercicio is InventarioProduccion epq)
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            if (rdbEOQ.Checked)
             {
-                frmVerProblema_EPQ frm = new frmVerProblema_EPQ();
-                frm.Ejercicio = epq;
-                frm.ReferenciaAlmacenamiento = principal;
-                frm.ShowDialog();
+                frmAgregar_EOQ registrarEOQ = new frmAgregar_EOQ();
+                registrarEOQ.referenciaAlmacenamiento = principal;
+                registrarEOQ.ShowDialog();
             }
-            else
+            else if (rdbEPQ.Checked)
             {
-                frmVerProblema_EOQ frm = new frmVerProblema_EOQ();
-                frm.Ejercicio = ejercicio;
-                frm.ReferenciaAlmacenamiento = principal;
-                frm.ShowDialog();
+                frmAgregar_EPQ registrarEPQ = new frmAgregar_EPQ();
+                registrarEPQ.referenciaAlmacenamiento = principal;
+                registrarEPQ.ShowDialog();
             }
         }
 
-        private void btnAgg_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            foreach (var inv in principal.Ejercicios)
-            {
-                foreach (var ej in inv.Value)
-                {
-
-                    if (ej.Titulo == txtTitulo.Text)
-                    {
-
-                        if (ejercicios.Contains(ej))
-                        {
-                            MessageBox.Show("Ese ejercicio ya se encuentra registrado...", "Duplicado en la seleccion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            ejercicios.Add(ej);
-                        }
-                        return;
-                    }
-                }
-            }
-        }
-
-        private void btnImprimir_Click(object sender, EventArgs e)
-        {
-            if (ejercicios.Count == 0)
-            {
-                MessageBox.Show("No hay ejercicios para imprimir");
-                return;
-            }
-            SaveFileDialog Guardar = new();
-            string Nombre = DateTime.Now.ToString("yyyy-MM-dd_HH-mm");
-            Guardar.Filter = "PDF (.pdf)|.pdf";
-            Guardar.FileName = Nombre;
-            if (Guardar.ShowDialog() == DialogResult.OK)
-            {
-                principal.CrearPdf(Guardar.FileName, ejercicios);
-                MessageBox.Show("PDF creado correctamente");
-                ejercicios = new();
-            }
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            txtEnunciado.Clear();
+            txtTitulo.Clear();
         }
     }
 }

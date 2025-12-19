@@ -17,7 +17,7 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        public Problemario referenciaAgregar = new Problemario();
+        public Problemario referenciaAgregar { get; set; } = new Problemario();
 
         private void FrmModeloServidorUnaSolaFila_Load(object sender, EventArgs e)
         {
@@ -28,8 +28,14 @@ namespace FrmProyectoIO
         {
             try
             {
-                referenciaAgregar.AgregarProblema(txtTitulo.Text, txtEnunciado.Text, double.Parse(txtLambda.Text), 
-                    double.Parse(txtMew.Text), (FrmProyectoIO.Properties.Dificultad)cmbNivelDificultad.SelectedItem);
+                referenciaAgregar.AgregarProblema(txtTitulo.Text, txtEnunciado.Text, double.Parse(txtLambda.Text),
+                    double.Parse(txtMew.Text), (Properties.Dificultad)cmbNivelDificultad.SelectedItem);
+               
+                this.Close();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             catch (Exception ex)
             {
@@ -40,6 +46,22 @@ namespace FrmProyectoIO
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            ModeloUnSoloServidor modeloUnaFila = new()
+            {
+                TasaLlegada = double.Parse(txtLambda.Text),
+                TasaServicio = double.Parse(txtMew.Text),
+            };
+
+            txtP.Text = modeloUnaFila.UtilizacionPromedioSistema.ToString();// P
+            txtPn.Text = modeloUnaFila.ProbabilidadClientesSistema.ToString(); //P(n)
+            txtLs.Text = modeloUnaFila.NumeroPromedioEnServicio.ToString(); //LS
+            txtWs.Text = modeloUnaFila.TiempoPromedioEnServicio.ToString();//Ws
+            txtWq.Text = modeloUnaFila.TiempoPromedioEnFila.ToString(); //Wq
+            txtLq.Text = modeloUnaFila.NumeroPromedioEnFila.ToString(); //Lq
         }
     }
 }

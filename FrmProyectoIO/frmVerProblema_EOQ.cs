@@ -12,14 +12,15 @@ namespace FrmProyectoIO
 {
     public partial class frmVerProblema_EOQ : Form
     {
-
-        public Inventario Ejercicio { get; internal set; }
-        public Almacenamiento ReferenciaAlmacenamiento { get; internal set; }
-
+        
         public frmVerProblema_EOQ()
         {
             InitializeComponent();
+
         }
+        public Inventario Ejercicio { get; internal set; } = new();
+        public InventarioProduccion ReferenciaInv { get; internal set; } = new();
+        public Almacenamiento ReferenciaAlmacenamiento { get; internal set; } = new();
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -43,11 +44,11 @@ namespace FrmProyectoIO
 
         private void frmVerProblema_EOQ_Load(object sender, EventArgs e)
         {
-
             if (Ejercicio == null) return;
 
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
+     
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

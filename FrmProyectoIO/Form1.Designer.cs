@@ -59,26 +59,26 @@
             // 
             tableLayoutPanel1.BackColor = Color.LightSteelBlue;
             tableLayoutPanel1.ColumnCount = 7;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 21F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 24F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 56F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 64F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 29F));
             tableLayoutPanel1.Controls.Add(guna2ImageButton1, 4, 2);
             tableLayoutPanel1.Controls.Add(guna2ImageBtnEOQ, 2, 2);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel7, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(1, 1, 1, 1);
+          tableLayoutPanel1.Margin = new Padding(2);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new Size(774, 434);
+            tableLayoutPanel1.Size = new Size(885, 578);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // guna2ImageButton1
@@ -91,12 +91,12 @@
             guna2ImageButton1.ImageOffset = new Point(0, 0);
             guna2ImageButton1.ImageRotate = 0F;
             guna2ImageButton1.ImageSize = new Size(240, 125);
-            guna2ImageButton1.Location = new Point(414, 177);
-            guna2ImageButton1.Margin = new Padding(1, 1, 1, 1);
+            guna2ImageButton1.Location = new Point(474, 237);
+            guna2ImageButton1.Margin = new Padding(2);
             guna2ImageButton1.Name = "guna2ImageButton1";
             guna2ImageButton1.PressedState.ImageSize = new Size(64, 64);
             guna2ImageButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2ImageButton1.Size = new Size(166, 126);
+            guna2ImageButton1.Size = new Size(188, 167);
             guna2ImageButton1.TabIndex = 1;
             guna2ImageButton1.Click += guna2ImageButton1_Click;
             // 
@@ -110,12 +110,12 @@
             guna2ImageBtnEOQ.ImageOffset = new Point(0, 0);
             guna2ImageBtnEOQ.ImageRotate = 0F;
             guna2ImageBtnEOQ.ImageSize = new Size(240, 125);
-            guna2ImageBtnEOQ.Location = new Point(190, 177);
-            guna2ImageBtnEOQ.Margin = new Padding(1, 1, 1, 1);
+            guna2ImageBtnEOQ.Location = new Point(218, 237);
+            guna2ImageBtnEOQ.Margin = new Padding(2);
             guna2ImageBtnEOQ.Name = "guna2ImageBtnEOQ";
             guna2ImageBtnEOQ.PressedState.ImageSize = new Size(64, 64);
             guna2ImageBtnEOQ.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2ImageBtnEOQ.Size = new Size(166, 126);
+            guna2ImageBtnEOQ.Size = new Size(188, 167);
             guna2ImageBtnEOQ.TabIndex = 2;
             guna2ImageBtnEOQ.Click += guna2ImageBtnEOQ_Click;
             // 
@@ -155,7 +155,7 @@
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel7.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel7.Size = new Size(774, 48);
+            tableLayoutPanel7.Size = new Size(885, 64);
             tableLayoutPanel7.TabIndex = 10;
             // 
             // label1
@@ -169,7 +169,7 @@
             label1.Margin = new Padding(1, 0, 1, 0);
             label1.Name = "label1";
             tableLayoutPanel7.SetRowSpan(label1, 3);
-            label1.Size = new Size(644, 48);
+            label1.Size = new Size(744, 64);
             label1.TabIndex = 0;
             label1.Text = "Investigación De Operaciones";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -186,14 +186,14 @@
             tableLayoutPanel8.Controls.Add(guna2ControlBox2, 1, 0);
             tableLayoutPanel8.Controls.Add(guna2ControlBox3, 2, 0);
             tableLayoutPanel8.Dock = DockStyle.Fill;
-            tableLayoutPanel8.Location = new Point(648, 2);
+            tableLayoutPanel8.Location = new Point(750, 2);
             tableLayoutPanel8.Margin = new Padding(2, 2, 2, 2);
             tableLayoutPanel8.Name = "tableLayoutPanel8";
             tableLayoutPanel8.RowCount = 2;
             tableLayoutPanel7.SetRowSpan(tableLayoutPanel8, 3);
             tableLayoutPanel8.RowStyles.Add(new RowStyle());
             tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel8.Size = new Size(124, 44);
+            tableLayoutPanel8.Size = new Size(133, 60);
             tableLayoutPanel8.TabIndex = 1;
             // 
             // guna2ControlBox1
@@ -207,7 +207,7 @@
             guna2ControlBox1.Margin = new Padding(2, 2, 2, 2);
             guna2ControlBox1.Name = "guna2ControlBox1";
             guna2ControlBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ControlBox1.Size = new Size(37, 14);
+            guna2ControlBox1.Size = new Size(40, 19);
             guna2ControlBox1.TabIndex = 0;
             // 
             // guna2ControlBox2
@@ -217,11 +217,11 @@
             guna2ControlBox2.Dock = DockStyle.Fill;
             guna2ControlBox2.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox2.IconColor = Color.White;
-            guna2ControlBox2.Location = new Point(43, 2);
+            guna2ControlBox2.Location = new Point(46, 2);
             guna2ControlBox2.Margin = new Padding(2, 2, 2, 2);
             guna2ControlBox2.Name = "guna2ControlBox2";
             guna2ControlBox2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2ControlBox2.Size = new Size(37, 14);
+            guna2ControlBox2.Size = new Size(40, 19);
             guna2ControlBox2.TabIndex = 1;
             // 
             // guna2ControlBox3
@@ -230,11 +230,11 @@
             guna2ControlBox3.Dock = DockStyle.Fill;
             guna2ControlBox3.FillColor = Color.FromArgb(139, 152, 166);
             guna2ControlBox3.IconColor = Color.White;
-            guna2ControlBox3.Location = new Point(84, 2);
+            guna2ControlBox3.Location = new Point(90, 2);
             guna2ControlBox3.Margin = new Padding(2, 2, 2, 2);
             guna2ControlBox3.Name = "guna2ControlBox3";
             guna2ControlBox3.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2ControlBox3.Size = new Size(38, 14);
+            guna2ControlBox3.Size = new Size(41, 19);
             guna2ControlBox3.TabIndex = 2;
             // 
             // guna2BorderlessForm1
@@ -257,12 +257,12 @@
             // 
             // FrmInicio
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(774, 434);
+            ClientSize = new Size(885, 578);
             Controls.Add(tableLayoutPanel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(1, 1, 1, 1);
+            Margin = new Padding(2);
             Name = "FrmInicio";
             Text = "Inicio";
             Load += FrmInicio_Load;

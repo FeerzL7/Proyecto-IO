@@ -13,15 +13,14 @@ namespace FrmProyectoIO
     public partial class frmVerProblema_EPQ : Form
     {
 
-
-        public InventarioProduccion Ejercicio { get; internal set; }
+        public InventarioProduccion ReferenciaEPQ { get; internal set; } = new();
         public Almacenamiento ReferenciaAlmacenamiento { get; internal set; }
 
         public frmVerProblema_EPQ()
         {
             InitializeComponent();
         }
-
+        public Inventario Ejercicio { get; internal set; }
         private void label13_Click(object sender, EventArgs e)
         {
 
@@ -34,13 +33,14 @@ namespace FrmProyectoIO
 
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
-            txtValorp.Text = Ejercicio.TasaDeProduccion.ToString();
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
             {
+
                 InventarioProduccion modificado = new InventarioProduccion
                 {
 
@@ -71,6 +71,9 @@ namespace FrmProyectoIO
 
                 DialogResult = DialogResult.OK;
                 Close();
+
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (Exception ex)
             {
@@ -83,6 +86,11 @@ namespace FrmProyectoIO
 
 
         private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnRegresar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
