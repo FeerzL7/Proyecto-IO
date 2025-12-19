@@ -57,7 +57,7 @@ namespace FrmProyectoIO
                 }
                 else
                 {
-                    MessageBox.Show("Seleccione 1 de los 2");
+                    MessageBox.Show("Seleccione 1 de los 2 modelos matematicos");
 
                 }
             }
