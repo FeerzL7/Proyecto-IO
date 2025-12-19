@@ -27,5 +27,13 @@ namespace FrmProyectoIO
             lineas.problema = problemario;
             lineas.ShowDialog();
         }
+
+        private void guna2ImageBtnEOQ_Click(object sender, EventArgs e)
+        {
+            frmPrincipal_EOQ_EPQ frm = new frmPrincipal_EOQ_EPQ();
+            this.Hide();
+            frm.ShowDialog();
+            this.Show();
+        }
     }
 }
