@@ -74,32 +74,33 @@ namespace FrmProyectoIO.Properties
             if (tasaservicio <= 0)
             {
                 throw new ArgumentException("la tasa de servicio debe ser mayor que 0");
-            }
-            if (servidores <= 0)
-            {
-                throw new ArgumentException("el numero de servidores debe ser mayor que 0");
-            }
 
-            if (!Reactivo.ContainsKey(dificultad))//si no existe la llave todavia la crea
-            {
-                Reactivo.Add(dificultad, new List<ModeloUnSoloServidor>());
-            }
+                if (servidores <= 0)
+                {
+                    throw new ArgumentException("el numero de servidores debe ser mayor que 0");
+                }
 
-            if (Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == titulo.ToUpper())) //si el problema a agregar ya existe
-            {
-                throw new ArgumentException("");
-            }
-            Reactivo[dificultad].Add(new ModeloMultiplesServidores
-            {
-                Titulo = titulo,
-                Enunciado = enunciado,
-                TasaLlegada = tasallegada,
-                TasaServicio = tasaservicio,
-                Servidores = servidores,
-                NivelDificultad = dificultad
-            });
-            SeActualizoLista?.Invoke();
+                if (!Reactivo.ContainsKey(dificultad))//si no existe la llave todavia la crea
+                {
+                    Reactivo.Add(dificultad, new List<ModeloUnSoloServidor>());
+                }
 
+                if (Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == titulo.ToUpper())) //si el problema a agregar ya existe
+                {
+                    throw new ArgumentException("No puede agregar dos problemas con el mismo titulo");
+                }
+                Reactivo[dificultad].Add(new ModeloMultiplesServidores
+                {
+                    Titulo = titulo,
+                    Enunciado = enunciado,
+                    TasaLlegada = tasallegada,
+                    TasaServicio = tasaservicio,
+                    Servidores = servidores,
+                    NivelDificultad = dificultad
+                });
+                SeActualizoLista?.Invoke();
+
+            }
         }
 
 
