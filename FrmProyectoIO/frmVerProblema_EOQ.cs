@@ -12,7 +12,10 @@ namespace FrmProyectoIO
 {
     public partial class frmVerProblema_EOQ : Form
     {
-        public Inventario ReferenciaInv { get; internal set; }
+
+        public Inventario Ejercicio { get; internal set; }
+        public Almacenamiento ReferenciaAlmacenamiento { get; internal set; }
+
         public frmVerProblema_EOQ()
         {
             InitializeComponent();
@@ -41,44 +44,44 @@ namespace FrmProyectoIO
         private void frmVerProblema_EOQ_Load(object sender, EventArgs e)
         {
 
+            if (Ejercicio == null) return;
+
+            txtTitulo.Text = Ejercicio.Titulo;
+            txtEnunciado.Text = Ejercicio.Texto;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
             {
-                //ENTRADAS
-                ReferenciaInv.Texto = txtEnunciado.Text;
-                ReferenciaInv.DemandaXunidadTiempo = ushort.Parse(txtValorD.Text);
-                ReferenciaInv.CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text);
-                ReferenciaInv.CostoPorAlmacenar = decimal.Parse(txtValorCh.Text);
-                ReferenciaInv.TiempoDeEntrega = ushort.Parse(txtValorL.Text);
-                ReferenciaInv.DiasLaboradosAño = ushort.Parse(txtValorY.Text);
-                //txtValorp.Text - p no es de EOQ?
+                // Se crea el objeto modificado mismo Id
+                Inventario modificado = new Inventario
+                {
+                    Id = Ejercicio.Id,
 
-                //SALIDAs
-                //N2, N0 y C son formatos de salida
-                lblValorCLE.Text = ReferenciaInv.CantidadDeLoteEconomico.ToString("N2");
+                    Titulo = txtTitulo.Text,
+                    Texto = txtEnunciado.Text,
 
-                lblValorCAO.Text = ReferenciaInv.CostoAnualXOrdenar.ToString("C");
-                lblValorCAA.Text = ReferenciaInv.CostoAnualXAlmacenar.ToString("C");
+                    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
+                    CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
+                    CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
+                    TiempoDeEntrega = ushort.Parse(txtValorL.Text),
 
-                lblValorCT.Text = ReferenciaInv.CostoTotalXUnidadTiempo.ToString("C");
+                };
 
-                lblDuracionCiclPedido.Text = ReferenciaInv.DuracionDelCiclo.ToString("N2") + " días";
 
-                lblPuntoDeReorden.Text = ReferenciaInv.PuntoDeReorden.ToString("N0") + " unidades";
 
-                lblValorLe.Text = ReferenciaInv.TiempoEfectivo.ToString("N2") + " días";
+                ReferenciaAlmacenamiento.Modificar(Dificultad.Facil, modificado);
 
-                lblValort0.Text = ReferenciaInv.CantidadPromInventario.ToString("N0") + " unidades";
+                DialogResult = DialogResult.OK;
+                Close();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Excepción encontrada",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message);
             }
         }
+
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {

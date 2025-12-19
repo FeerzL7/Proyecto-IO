@@ -7,7 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using static Guna.UI2.Native.WinApi;
+
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace FrmProyectoIO
 {
@@ -18,11 +22,29 @@ namespace FrmProyectoIO
             InitializeComponent();
         }
         public Almacenamiento principal = new Almacenamiento();
-        List<Inventario> ejercicios=new List<Inventario>();
+        List<Inventario> ejercicios = new List<Inventario>();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {
             principal.Leer();
             cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
+            dgvEjercicios.DataSource = principal.Ejercicios;
+            CargarGrid();
+            principal.AlCambiar += Principal_AlCambiar;
+        }
+        private void CargarGrid()
+        {
+            Dificultad dif = (Dificultad)cmbNivelDificultad.SelectedItem;
+
+            dgvEjercicios.DataSource = null;
+
+            if (principal.Ejercicios.ContainsKey(dif))
+                dgvEjercicios.DataSource = principal.Ejercicios[dif];
+        }
+
+        private void Principal_AlCambiar()
+        {
+            CargarGrid();
+
         }
 
         private void frmPrincipal_EOQ_EPQ_FormClosing(object sender, FormClosingEventArgs e)
@@ -51,6 +73,34 @@ namespace FrmProyectoIO
             catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+
+        private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0 || e.ColumnIndex < 0)
+                return;
+
+            if (dgvEjercicios.Columns[e.ColumnIndex].Name != "Modificar")
+                return;
+
+            Inventario ejercicio =
+                (Inventario)dgvEjercicios.Rows[e.RowIndex].DataBoundItem;
+
+            if (ejercicio is InventarioProduccion epq)
+            {
+                frmVerProblema_EPQ frm = new frmVerProblema_EPQ();
+                frm.Ejercicio = epq;
+                frm.ReferenciaAlmacenamiento = principal;
+                frm.ShowDialog();
+            }
+            else
+            {
+                frmVerProblema_EOQ frm = new frmVerProblema_EOQ();
+                frm.Ejercicio = ejercicio;
+                frm.ReferenciaAlmacenamiento = principal;
+                frm.ShowDialog();
             }
         }
 
@@ -96,5 +146,6 @@ namespace FrmProyectoIO
                 ejercicios = new();
             }
         }
+
     }
 }
