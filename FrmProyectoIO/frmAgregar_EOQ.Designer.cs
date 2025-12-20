@@ -495,10 +495,10 @@
             tableLayoutPanel3.Controls.Add(label23, 0, 14);
             tableLayoutPanel3.Controls.Add(lblDurCicloPedido, 2, 14);
             tableLayoutPanel3.Controls.Add(lblCAO, 2, 0);
-            tableLayoutPanel3.Controls.Add(tableLayoutPanel6, 0, 16);
             tableLayoutPanel3.Controls.Add(label5, 0, 0);
             tableLayoutPanel3.Controls.Add(lblCAA, 2, 6);
             tableLayoutPanel3.Controls.Add(lblCT, 2, 4);
+            tableLayoutPanel3.Controls.Add(tableLayoutPanel6, 0, 16);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(856, 13);
             tableLayoutPanel3.Margin = new Padding(2, 3, 2, 3);
