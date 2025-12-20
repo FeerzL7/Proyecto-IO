@@ -121,7 +121,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 215F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(1695, 1055);
+            tableLayoutPanel1.Size = new Size(1370, 749);
             tableLayoutPanel1.TabIndex = 2;
             // 
             // tableLayoutPanel2
@@ -147,7 +147,7 @@
             tableLayoutPanel2.Controls.Add(txtValorD, 0, 1);
             tableLayoutPanel2.Controls.Add(txtValorp, 3, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(15, 245);
+            tableLayoutPanel2.Location = new Point(-308, -59);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 66.14173F));
@@ -171,7 +171,7 @@
             label12.AutoSize = true;
             label12.BackColor = Color.FromArgb(28, 46, 74);
             label12.Dock = DockStyle.Fill;
-            label12.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label12.Location = new Point(770, 0);
             label12.Name = "label12";
             label12.Size = new Size(149, 97);
@@ -195,7 +195,7 @@
             label11.AutoSize = true;
             label11.BackColor = Color.FromArgb(28, 46, 74);
             label11.Dock = DockStyle.Fill;
-            label11.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label11.Location = new Point(617, 0);
             label11.Name = "label11";
             label11.Size = new Size(147, 97);
@@ -208,7 +208,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.FromArgb(28, 46, 74);
             label7.Dock = DockStyle.Fill;
-            label7.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label7.Location = new Point(467, 0);
             label7.Name = "label7";
             label7.Size = new Size(144, 97);
@@ -243,7 +243,7 @@
             label6.AutoSize = true;
             label6.BackColor = Color.FromArgb(28, 46, 74);
             label6.Dock = DockStyle.Fill;
-            label6.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.Location = new Point(309, 0);
             label6.Name = "label6";
             label6.Size = new Size(152, 97);
@@ -256,7 +256,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.FromArgb(28, 46, 74);
             label5.Dock = DockStyle.Fill;
-            label5.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(153, 0);
             label5.Name = "label5";
             label5.Size = new Size(150, 97);
@@ -305,8 +305,8 @@
             label3.BackColor = Color.FromArgb(28, 46, 74);
             tableLayoutPanel1.SetColumnSpan(label3, 3);
             label3.Dock = DockStyle.Fill;
-            label3.Font = new Font("Cooper Black", 19.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(15, 177);
+            label3.Font = new Font("Microsoft Sans Serif", 19F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.Location = new Point(-308, -127);
             label3.Name = "label3";
             label3.Size = new Size(922, 57);
             label3.TabIndex = 4;
@@ -318,8 +318,8 @@
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(28, 46, 74);
             label1.Dock = DockStyle.Fill;
-            label1.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(15, 11);
+            label1.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(-308, -293);
             label1.Name = "label1";
             label1.Size = new Size(277, 68);
             label1.TabIndex = 0;
@@ -331,7 +331,7 @@
             tableLayoutPanel1.SetColumnSpan(txtTitulo, 2);
             txtTitulo.Dock = DockStyle.Fill;
             txtTitulo.Font = new Font("Verdana", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTitulo.Location = new Point(298, 14);
+            txtTitulo.Location = new Point(-25, -290);
             txtTitulo.Multiline = true;
             txtTitulo.Name = "txtTitulo";
             txtTitulo.ReadOnly = true;
@@ -343,8 +343,8 @@
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(28, 46, 74);
             label2.Dock = DockStyle.Fill;
-            label2.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(15, 91);
+            label2.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(-308, -213);
             label2.Name = "label2";
             label2.Size = new Size(277, 75);
             label2.TabIndex = 2;
@@ -358,7 +358,7 @@
             cmbDificultad.Enabled = false;
             cmbDificultad.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbDificultad.FormattingEnabled = true;
-            cmbDificultad.Location = new Point(298, 94);
+            cmbDificultad.Location = new Point(-25, -210);
             cmbDificultad.Name = "cmbDificultad";
             cmbDificultad.Size = new Size(639, 48);
             cmbDificultad.TabIndex = 3;
@@ -385,7 +385,7 @@
             tableLayoutPanel3.Controls.Add(lblPuntoDeReorden, 1, 12);
             tableLayoutPanel3.Controls.Add(lblDuracionCiclPedido, 1, 14);
             tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(959, 14);
+            tableLayoutPanel3.Location = new Point(636, -290);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 16;
             tableLayoutPanel1.SetRowSpan(tableLayoutPanel3, 11);
@@ -468,7 +468,7 @@
             label13.AutoSize = true;
             label13.BackColor = Color.FromArgb(28, 46, 74);
             label13.Dock = DockStyle.Fill;
-            label13.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label13.Location = new Point(3, 200);
             label13.Name = "label13";
             label13.Size = new Size(435, 85);
@@ -481,7 +481,7 @@
             label15.AutoSize = true;
             label15.BackColor = Color.FromArgb(28, 46, 74);
             label15.Dock = DockStyle.Fill;
-            label15.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label15.Location = new Point(3, 300);
             label15.Name = "label15";
             label15.Size = new Size(435, 85);
@@ -494,7 +494,7 @@
             label16.AutoSize = true;
             label16.BackColor = Color.FromArgb(28, 46, 74);
             label16.Dock = DockStyle.Fill;
-            label16.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label16.Location = new Point(3, 400);
             label16.Name = "label16";
             label16.Size = new Size(435, 85);
@@ -507,7 +507,7 @@
             label17.AutoSize = true;
             label17.BackColor = Color.FromArgb(28, 46, 74);
             label17.Dock = DockStyle.Fill;
-            label17.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label17.Location = new Point(3, 500);
             label17.Name = "label17";
             label17.Size = new Size(435, 85);
@@ -520,7 +520,7 @@
             label18.AutoSize = true;
             label18.BackColor = Color.FromArgb(28, 46, 74);
             label18.Dock = DockStyle.Fill;
-            label18.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label18.Location = new Point(3, 600);
             label18.Name = "label18";
             label18.Size = new Size(435, 85);
@@ -533,7 +533,7 @@
             label10.AutoSize = true;
             label10.BackColor = Color.FromArgb(28, 46, 74);
             label10.Dock = DockStyle.Fill;
-            label10.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label10.Location = new Point(3, 700);
             label10.Name = "label10";
             label10.Size = new Size(435, 85);
@@ -546,7 +546,7 @@
             label19.AutoSize = true;
             label19.BackColor = Color.FromArgb(28, 46, 74);
             label19.Dock = DockStyle.Fill;
-            label19.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label19.Font = new Font("Microsoft Sans Serif", 13F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label19.Location = new Point(3, 100);
             label19.Name = "label19";
             label19.Size = new Size(435, 85);
@@ -632,7 +632,7 @@
             btnModificar.BackgroundImageLayout = ImageLayout.Stretch;
             btnModificar.Dock = DockStyle.Fill;
             btnModificar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnModificar.Location = new Point(298, 835);
+            btnModificar.Location = new Point(-25, 531);
             btnModificar.Margin = new Padding(3, 4, 3, 4);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(273, 207);
@@ -648,7 +648,7 @@
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 205F));
             tableLayoutPanel4.Controls.Add(btnRegresar, 1, 0);
             tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(959, 835);
+            tableLayoutPanel4.Location = new Point(636, 531);
             tableLayoutPanel4.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 2;
@@ -678,7 +678,7 @@
             tableLayoutPanel1.SetColumnSpan(txtEnunciado, 3);
             txtEnunciado.Dock = DockStyle.Fill;
             txtEnunciado.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtEnunciado.Location = new Point(15, 473);
+            txtEnunciado.Location = new Point(-308, 169);
             txtEnunciado.Margin = new Padding(3, 4, 3, 4);
             txtEnunciado.Multiline = true;
             txtEnunciado.Name = "txtEnunciado";
@@ -692,8 +692,8 @@
             label8.BackColor = Color.FromArgb(28, 46, 74);
             tableLayoutPanel1.SetColumnSpan(label8, 3);
             label8.Dock = DockStyle.Fill;
-            label8.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(15, 403);
+            label8.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.Location = new Point(-308, 99);
             label8.Name = "label8";
             label8.Size = new Size(922, 53);
             label8.TabIndex = 6;
@@ -705,7 +705,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 46, 74);
-            ClientSize = new Size(1695, 1055);
+            ClientSize = new Size(1370, 749);
             Controls.Add(tableLayoutPanel1);
             Margin = new Padding(2, 3, 2, 3);
             Name = "frmVerProblema_EOQ";

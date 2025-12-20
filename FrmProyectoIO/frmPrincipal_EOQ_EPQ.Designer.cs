@@ -32,11 +32,13 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             dgvEjercicios = new DataGridView();
             Ejercicios = new DataGridViewTextBoxColumn();
-            VER = new DataGridViewLinkColumn();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            VER = new DataGridViewTextBoxColumn();
+            rdbEOQ = new RadioButton();
+            rdbEPQ = new RadioButton();
             label1 = new Label();
             cmbNivelDificultad = new ComboBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            btnEliminar = new Button();
             tableLayoutPanel6 = new TableLayoutPanel();
             btnRegresar = new Button();
             tableLayoutPanel4 = new TableLayoutPanel();
@@ -48,19 +50,13 @@
             tableLayoutPanel5 = new TableLayoutPanel();
             btnGenerarExamen = new Button();
             btnLimpiar = new Button();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            btnEliminar = new Button();
-            btnAgregar = new Button();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            btnImprimir = new Button();
-            btnAgg = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).BeginInit();
+            tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel6.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -79,8 +75,8 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 626F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 18F));
             tableLayoutPanel1.Controls.Add(dgvEjercicios, 1, 5);
-            tableLayoutPanel1.Controls.Add(radioButton1, 1, 3);
-            tableLayoutPanel1.Controls.Add(radioButton2, 3, 3);
+            tableLayoutPanel1.Controls.Add(rdbEOQ, 1, 3);
+            tableLayoutPanel1.Controls.Add(rdbEPQ, 3, 3);
             tableLayoutPanel1.Controls.Add(label1, 1, 1);
             tableLayoutPanel1.Controls.Add(cmbNivelDificultad, 3, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel6, 9, 11);
@@ -123,6 +119,7 @@
             tableLayoutPanel1.SetRowSpan(dgvEjercicios, 5);
             dgvEjercicios.Size = new Size(872, 551);
             dgvEjercicios.TabIndex = 1;
+            dgvEjercicios.CellContentClick += dgvEjercicios_CellContentClick;
             // 
             // Ejercicios
             // 
@@ -140,40 +137,40 @@
             VER.SortMode = DataGridViewColumnSortMode.Automatic;
             VER.Width = 200;
             // 
-            // radioButton1
+            // rdbEOQ
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.BackColor = Color.FromArgb(28, 46, 74);
-            radioButton1.Dock = DockStyle.Fill;
-            radioButton1.Font = new Font("Cooper Black", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton1.ForeColor = SystemColors.ButtonHighlight;
-            radioButton1.Location = new Point(12, 91);
-            radioButton1.Margin = new Padding(2, 3, 2, 3);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(455, 52);
-            radioButton1.TabIndex = 4;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "EOQ";
-            radioButton1.TextAlign = ContentAlignment.MiddleCenter;
-            radioButton1.UseVisualStyleBackColor = false;
+            rdbEOQ.AutoSize = true;
+            rdbEOQ.BackColor = Color.FromArgb(28, 46, 74);
+            rdbEOQ.Dock = DockStyle.Fill;
+            rdbEOQ.Font = new Font("Cooper Black", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rdbEOQ.ForeColor = SystemColors.ButtonHighlight;
+            rdbEOQ.Location = new Point(13, 110);
+            rdbEOQ.Margin = new Padding(2);
+            rdbEOQ.Name = "rdbEOQ";
+            rdbEOQ.Size = new Size(486, 70);
+            rdbEOQ.TabIndex = 4;
+            rdbEOQ.TabStop = true;
+            rdbEOQ.Text = "EOQ";
+            rdbEOQ.TextAlign = ContentAlignment.MiddleCenter;
+            rdbEOQ.UseVisualStyleBackColor = false;
             // 
-            // radioButton2
+            // rdbEPQ
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.BackColor = Color.FromArgb(28, 46, 74);
-            tableLayoutPanel1.SetColumnSpan(radioButton2, 2);
-            radioButton2.Dock = DockStyle.Fill;
-            radioButton2.Font = new Font("Cooper Black", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton2.ForeColor = SystemColors.ButtonHighlight;
-            radioButton2.Location = new Point(479, 91);
-            radioButton2.Margin = new Padding(2, 3, 2, 3);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(405, 52);
-            radioButton2.TabIndex = 5;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "EPQ";
-            radioButton2.TextAlign = ContentAlignment.MiddleCenter;
-            radioButton2.UseVisualStyleBackColor = false;
+            rdbEPQ.AutoSize = true;
+            rdbEPQ.BackColor = Color.FromArgb(28, 46, 74);
+            tableLayoutPanel1.SetColumnSpan(rdbEPQ, 2);
+            rdbEPQ.Dock = DockStyle.Fill;
+            rdbEPQ.Font = new Font("Cooper Black", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rdbEPQ.ForeColor = SystemColors.ButtonHighlight;
+            rdbEPQ.Location = new Point(513, 110);
+            rdbEPQ.Margin = new Padding(2);
+            rdbEPQ.Name = "rdbEPQ";
+            rdbEPQ.Size = new Size(449, 70);
+            rdbEPQ.TabIndex = 5;
+            rdbEPQ.TabStop = true;
+            rdbEPQ.Text = "EPQ";
+            rdbEPQ.TextAlign = ContentAlignment.MiddleCenter;
+            rdbEPQ.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -188,7 +185,37 @@
             label1.TabIndex = 2;
             label1.Text = "Nivel de Dificultad:";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 3;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.1545181F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.84548F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
+            tableLayoutPanel2.Controls.Add(btnAgregar, 1, 1);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(14, 695);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 4.16666651F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 95.8333359F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel2.Size = new Size(484, 209);
+            tableLayoutPanel2.TabIndex = 15;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
+            btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnAgregar.Dock = DockStyle.Fill;
+            btnAgregar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAgregar.Location = new Point(109, 10);
+            btnAgregar.Margin = new Padding(2);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(256, 188);
+            btnAgregar.TabIndex = 7;
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // cmbNivelDificultad
             // 
@@ -222,16 +249,47 @@
             // 
             // btnRegresar
             // 
+            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
+            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEliminar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.Location = new Point(113, 11);
+            btnEliminar.Margin = new Padding(2);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(232, 183);
+            btnEliminar.TabIndex = 9;
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // tableLayoutPanel6
+            // 
+            tableLayoutPanel6.ColumnCount = 3;
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.78341F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.21659F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 116F));
+            tableLayoutPanel6.Controls.Add(btnRegresar, 1, 1);
+            tableLayoutPanel6.Dock = DockStyle.Fill;
+            tableLayoutPanel6.Location = new Point(1017, 695);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 3;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 4.347826F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 95.6521759F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel6.Size = new Size(542, 209);
+            tableLayoutPanel6.TabIndex = 19;
+            // 
+            // btnRegresar
+            // 
             btnRegresar.BackgroundImage = (Image)resources.GetObject("btnRegresar.BackgroundImage");
             btnRegresar.BackgroundImageLayout = ImageLayout.Stretch;
             btnRegresar.Dock = DockStyle.Fill;
             btnRegresar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRegresar.Location = new Point(215, 11);
-            btnRegresar.Margin = new Padding(2, 3, 2, 3);
+            btnRegresar.Location = new Point(175, 10);
+            btnRegresar.Margin = new Padding(2);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(259, 230);
+            btnRegresar.Size = new Size(248, 188);
             btnRegresar.TabIndex = 8;
             btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // tableLayoutPanel4
             // 
@@ -378,106 +436,7 @@
             btnLimpiar.TabIndex = 1;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
-            // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 5;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.10447741F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 95.89552F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 9F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 230F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 198F));
-            tableLayoutPanel2.Controls.Add(btnEliminar, 4, 1);
-            tableLayoutPanel2.Controls.Add(btnAgregar, 3, 1);
-            tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(13, 733);
-            tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 3;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 8.225108F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 91.7748947F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 21F));
-            tableLayoutPanel2.Size = new Size(453, 253);
-            tableLayoutPanel2.TabIndex = 15;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
-            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.Dock = DockStyle.Fill;
-            btnEliminar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.Location = new Point(256, 22);
-            btnEliminar.Margin = new Padding(2, 3, 2, 3);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(195, 206);
-            btnEliminar.TabIndex = 9;
-            btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.BackgroundImage = (Image)resources.GetObject("btnAgregar.BackgroundImage");
-            btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnAgregar.Dock = DockStyle.Fill;
-            btnAgregar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAgregar.Location = new Point(26, 22);
-            btnAgregar.Margin = new Padding(2, 3, 2, 3);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(226, 206);
-            btnAgregar.TabIndex = 7;
-            btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 5;
-            tableLayoutPanel1.SetColumnSpan(tableLayoutPanel3, 4);
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 4.28134537F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 95.71865F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 8F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 182F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Controls.Add(btnImprimir, 3, 1);
-            tableLayoutPanel3.Controls.Add(btnAgg, 1, 1);
-            tableLayoutPanel3.Dock = DockStyle.Fill;
-            tableLayoutPanel3.Location = new Point(480, 733);
-            tableLayoutPanel3.Margin = new Padding(3, 4, 3, 4);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 3;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 6.837607F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 93.16239F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 18F));
-            tableLayoutPanel3.Size = new Size(422, 253);
-            tableLayoutPanel3.TabIndex = 18;
-            // 
-            // btnImprimir
-            // 
-            btnImprimir.BackColor = Color.FromArgb(28, 46, 74);
-            btnImprimir.Dock = DockStyle.Fill;
-            btnImprimir.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnImprimir.ForeColor = SystemColors.ButtonHighlight;
-            btnImprimir.Location = new Point(232, 20);
-            btnImprimir.Margin = new Padding(3, 4, 3, 4);
-            btnImprimir.Name = "btnImprimir";
-            btnImprimir.Size = new Size(176, 210);
-            btnImprimir.TabIndex = 2;
-            btnImprimir.Text = "Imprimir Ejercicios";
-            btnImprimir.UseVisualStyleBackColor = false;
-            btnImprimir.Click += btnImprimir_Click;
-            // 
-            // btnAgg
-            // 
-            btnAgg.BackColor = Color.FromArgb(28, 46, 74);
-            btnAgg.Dock = DockStyle.Fill;
-            btnAgg.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnAgg.ForeColor = SystemColors.ButtonHighlight;
-            btnAgg.Location = new Point(12, 20);
-            btnAgg.Margin = new Padding(3, 4, 3, 4);
-            btnAgg.Name = "btnAgg";
-            btnAgg.Size = new Size(206, 210);
-            btnAgg.TabIndex = 2;
-            btnAgg.Text = "Añadir a Impresion";
-            btnAgg.UseVisualStyleBackColor = false;
-            btnAgg.Click += btnAgg_Click;
+            btnLimpiar.Click += btnLimpiar_Click;
             // 
             // frmPrincipal_EOQ_EPQ
             // 
@@ -493,12 +452,12 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).EndInit();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel6.ResumeLayout(false);
             tableLayoutPanel4.ResumeLayout(false);
             tableLayoutPanel4.PerformLayout();
             tableLayoutPanel5.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -506,8 +465,10 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dgvEjercicios;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private DataGridViewTextBoxColumn Ejercicios;
+        private DataGridViewTextBoxColumn VER;
+        private RadioButton rdbEOQ;
+        private RadioButton rdbEPQ;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel2;
         private Button btnAgregar;

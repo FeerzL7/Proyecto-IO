@@ -176,6 +176,7 @@
             btnRegresar.Size = new Size(209, 172);
             btnRegresar.TabIndex = 15;
             btnRegresar.UseVisualStyleBackColor = true;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // tableLayoutPanel4
             // 
@@ -234,6 +235,512 @@
             btnAgregar.Size = new Size(236, 198);
             btnAgregar.TabIndex = 16;
             btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel1.SetColumnSpan(tableLayoutPanel3, 4);
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 97.693924F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 2.30607963F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 287F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 7F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 63.8121529F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 36.1878471F));
+            tableLayoutPanel3.Controls.Add(label25, 2, 12);
+            tableLayoutPanel3.Controls.Add(label14, 2, 2);
+            tableLayoutPanel3.Controls.Add(label11, 0, 6);
+            tableLayoutPanel3.Controls.Add(label12, 0, 10);
+            tableLayoutPanel3.Controls.Add(label22, 0, 12);
+            tableLayoutPanel3.Controls.Add(label23, 0, 14);
+            tableLayoutPanel3.Controls.Add(label24, 2, 14);
+            tableLayoutPanel3.Controls.Add(lblValort, 1, 0);
+            tableLayoutPanel3.Controls.Add(label9, 0, 0);
+            tableLayoutPanel3.Controls.Add(lblNumCorridxAño, 1, 2);
+            tableLayoutPanel3.Controls.Add(lblValorImax, 1, 4);
+            tableLayoutPanel3.Controls.Add(label13, 0, 4);
+            tableLayoutPanel3.Controls.Add(label15, 0, 6);
+            tableLayoutPanel3.Controls.Add(label16, 0, 8);
+            tableLayoutPanel3.Controls.Add(label17, 0, 10);
+            tableLayoutPanel3.Controls.Add(label18, 0, 12);
+            tableLayoutPanel3.Controls.Add(label10, 0, 14);
+            tableLayoutPanel3.Controls.Add(label5, 0, 2);
+            tableLayoutPanel3.Controls.Add(label8, 0, 16);
+            tableLayoutPanel3.Controls.Add(lblValorIprom, 1, 6);
+            tableLayoutPanel3.Controls.Add(lblValorCalm, 1, 8);
+            tableLayoutPanel3.Controls.Add(lblValorCprep, 1, 10);
+            tableLayoutPanel3.Controls.Add(lblValorCT, 1, 12);
+            tableLayoutPanel3.Controls.Add(lblValorQ, 1, 14);
+            tableLayoutPanel3.Controls.Add(lblValort0, 1, 16);
+            tableLayoutPanel3.Controls.Add(lblValortp, 1, 18);
+            tableLayoutPanel3.Controls.Add(tableLayoutPanel6, 0, 20);
+            tableLayoutPanel3.Dock = DockStyle.Fill;
+            tableLayoutPanel3.Font = new Font("Segoe UI", 10F);
+            tableLayoutPanel3.ForeColor = SystemColors.ControlLightLight;
+            tableLayoutPanel3.Location = new Point(900, 13);
+            tableLayoutPanel3.Margin = new Padding(2);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 21;
+            tableLayoutPanel1.SetRowSpan(tableLayoutPanel3, 11);
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 94.4055939F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 5.59440565F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 82F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 92F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 90F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 74F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 6F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 86F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 6F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 87F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 6F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 82F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.03402F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 9F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 13F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 9.863942F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 9.863942F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 123F));
+            tableLayoutPanel3.Size = new Size(552, 808);
+            tableLayoutPanel3.TabIndex = 39;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(28, 46, 74);
+            label5.Dock = DockStyle.Fill;
+            label5.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(2, 119);
+            label5.Margin = new Padding(2, 0, 2, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(535, 82);
+            label5.TabIndex = 16;
+            label5.Text = "Numero de Corridas de Produccion al Año: ";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label25
+            // 
+            label25.BackColor = SystemColors.ButtonHighlight;
+            label25.Dock = DockStyle.Fill;
+            label25.Font = new Font("Verdana", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label25.ForeColor = SystemColors.ActiveCaptionText;
+            label25.Location = new Point(541, 657);
+            label25.Margin = new Padding(2, 0, 2, 0);
+            label25.Name = "label25";
+            label25.Size = new Size(9, 6);
+            label25.TabIndex = 33;
+            label25.Text = "0";
+            label25.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.BackColor = Color.FromArgb(28, 46, 74);
+            label18.Dock = DockStyle.Fill;
+            label18.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label18.ForeColor = SystemColors.ActiveCaptionText;
+            label18.Location = new Point(541, 570);
+            label18.Margin = new Padding(2, 0, 2, 0);
+            label18.Name = "label18";
+            label18.Size = new Size(9, 87);
+            label18.TabIndex = 15;
+            label18.Text = "CT (Costo Anual del Inventario):";
+            label18.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.BackColor = Color.FromArgb(28, 46, 74);
+            label17.Dock = DockStyle.Fill;
+            label17.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label17.ForeColor = SystemColors.ActiveCaptionText;
+            label17.Location = new Point(541, 478);
+            label17.Margin = new Padding(2, 0, 2, 0);
+            label17.Name = "label17";
+            label17.Size = new Size(9, 86);
+            label17.TabIndex = 14;
+            label17.Text = "Cprep (Costo Anual por Preparacion):";
+            label17.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(28, 46, 74);
+            label15.Dock = DockStyle.Fill;
+            label15.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label15.ForeColor = SystemColors.ActiveCaptionText;
+            label15.Location = new Point(2, 303);
+            label15.Margin = new Padding(2, 0, 2, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(535, 90);
+            label15.TabIndex = 12;
+            label15.Text = "Iprom (Inventario Promedio):";
+            label15.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            label14.BackColor = SystemColors.ButtonHighlight;
+            label14.Dock = DockStyle.Fill;
+            label14.Font = new Font("Verdana", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label14.ForeColor = SystemColors.ActiveCaptionText;
+            label14.Location = new Point(2, 201);
+            label14.Margin = new Padding(2, 0, 2, 0);
+            label14.Name = "label14";
+            label14.Size = new Size(535, 5);
+            label14.TabIndex = 25;
+            label14.Text = "0";
+            label14.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.BackColor = Color.FromArgb(28, 46, 74);
+            label16.Dock = DockStyle.Fill;
+            label16.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label16.ForeColor = SystemColors.ActiveCaptionText;
+            label16.Location = new Point(2, 398);
+            label16.Margin = new Padding(2, 0, 2, 0);
+            label16.Name = "label16";
+            label16.Size = new Size(535, 74);
+            label16.TabIndex = 13;
+            label16.Text = "Calm (Costo Anual por Almacenar):";
+            label16.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.FromArgb(28, 46, 74);
+            label9.Dock = DockStyle.Fill;
+            label9.Font = new Font("Cooper Black", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label9.ForeColor = SystemColors.ButtonHighlight;
+            label9.Location = new Point(2, 0);
+            label9.Margin = new Padding(2, 0, 2, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(535, 113);
+            label9.TabIndex = 1;
+            label9.Text = "t (Duracion del Ciclo de Produccion):";
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            label11.BackColor = Color.FromArgb(28, 46, 74);
+            label11.Dock = DockStyle.Fill;
+            label11.Font = new Font("Cooper Black", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.ForeColor = SystemColors.ButtonHighlight;
+            label11.Location = new Point(541, 303);
+            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(9, 90);
+            label11.TabIndex = 37;
+            label11.Text = "CAA(Costo Anual por Almacenar):";
+            label11.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.FromArgb(28, 46, 74);
+            label8.Dock = DockStyle.Fill;
+            label8.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = SystemColors.ButtonHighlight;
+            label8.Location = new Point(2, 757);
+            label8.Margin = new Padding(2, 0, 2, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(535, 8);
+            label8.TabIndex = 17;
+            label8.Text = "t0 (Duracion del Ciclo Optimo):";
+            label8.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.FromArgb(28, 46, 74);
+            label10.Dock = DockStyle.Fill;
+            label10.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label10.ForeColor = SystemColors.ButtonHighlight;
+            label10.Location = new Point(541, 663);
+            label10.Margin = new Padding(2, 0, 2, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(9, 82);
+            label10.TabIndex = 8;
+            label10.Text = "Q* (Cantidad Optima de Produccion):";
+            label10.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label12
+            // 
+            label12.BackColor = Color.FromArgb(28, 46, 74);
+            label12.Dock = DockStyle.Fill;
+            label12.Font = new Font("Cooper Black", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label12.ForeColor = SystemColors.ButtonHighlight;
+            label12.Location = new Point(2, 478);
+            label12.Margin = new Padding(2, 0, 2, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(535, 86);
+            label12.TabIndex = 38;
+            label12.Text = "CLE/Q*(Cantidad de Lote Economico):";
+            label12.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label22
+            // 
+            label22.BackColor = Color.FromArgb(28, 46, 74);
+            label22.Dock = DockStyle.Fill;
+            label22.Font = new Font("Cooper Black", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label22.ForeColor = SystemColors.ButtonHighlight;
+            label22.Location = new Point(2, 570);
+            label22.Margin = new Padding(2, 0, 2, 0);
+            label22.Name = "label22";
+            label22.Size = new Size(535, 87);
+            label22.TabIndex = 39;
+            label22.Text = "Punto de Reorden:";
+            label22.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label23
+            // 
+            label23.BackColor = Color.FromArgb(28, 46, 74);
+            label23.Dock = DockStyle.Fill;
+            label23.Font = new Font("Cooper Black", 13.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label23.ForeColor = SystemColors.ButtonHighlight;
+            label23.Location = new Point(2, 663);
+            label23.Margin = new Padding(2, 0, 2, 0);
+            label23.Name = "label23";
+            label23.Size = new Size(535, 82);
+            label23.TabIndex = 40;
+            label23.Text = "to*(Duracion del Ciclo de Pedido):";
+            label23.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label24
+            // 
+            label24.BackColor = SystemColors.ButtonHighlight;
+            label24.Dock = DockStyle.Fill;
+            label24.Font = new Font("Verdana", 19.875F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label24.ForeColor = SystemColors.ActiveCaptionText;
+            label24.Location = new Point(541, 745);
+            label24.Margin = new Padding(2, 0, 2, 0);
+            label24.Name = "label24";
+            label24.Size = new Size(9, 12);
+            label24.TabIndex = 32;
+            label24.Text = "0";
+            label24.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.FromArgb(28, 46, 74);
+            label13.Dock = DockStyle.Fill;
+            label13.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = SystemColors.ActiveCaptionText;
+            label13.Location = new Point(2, 206);
+            label13.Margin = new Padding(2, 0, 2, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(535, 92);
+            label13.TabIndex = 11;
+            label13.Text = "Imax (Nivel Maximo de Inventario):";
+            label13.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblValort
+            // 
+            lblValort.AutoSize = true;
+            lblValort.BackColor = Color.WhiteSmoke;
+            lblValort.Dock = DockStyle.Fill;
+            lblValort.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValort.ForeColor = SystemColors.ControlText;
+            lblValort.Location = new Point(542, 0);
+            lblValort.Name = "lblValort";
+            lblValort.Size = new Size(7, 113);
+            lblValort.TabIndex = 7;
+            lblValort.Text = "0";
+            lblValort.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblNumCorridxAño
+            // 
+            lblNumCorridxAño.AutoSize = true;
+            lblNumCorridxAño.BackColor = Color.WhiteSmoke;
+            lblNumCorridxAño.Dock = DockStyle.Fill;
+            lblNumCorridxAño.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblNumCorridxAño.ForeColor = SystemColors.ControlText;
+            lblNumCorridxAño.Location = new Point(542, 119);
+            lblNumCorridxAño.Name = "lblNumCorridxAño";
+            lblNumCorridxAño.Size = new Size(7, 82);
+            lblNumCorridxAño.TabIndex = 9;
+            lblNumCorridxAño.Text = "0";
+            lblNumCorridxAño.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblValorImax
+            // 
+            lblValorImax.AutoSize = true;
+            lblValorImax.BackColor = Color.WhiteSmoke;
+            lblValorImax.Dock = DockStyle.Fill;
+            lblValorImax.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorImax.ForeColor = SystemColors.ControlText;
+            lblValorImax.Location = new Point(542, 206);
+            lblValorImax.Name = "lblValorImax";
+            lblValorImax.Size = new Size(7, 92);
+            lblValorImax.TabIndex = 10;
+            lblValorImax.Text = "0";
+            lblValorImax.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.BackColor = Color.FromArgb(28, 46, 74);
+            label21.Dock = DockStyle.Fill;
+            label21.Font = new Font("Cooper Black", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label21.ForeColor = SystemColors.ButtonHighlight;
+            label21.Location = new Point(2, 91);
+            label21.Margin = new Padding(2, 0, 2, 0);
+            label21.Name = "label21";
+            label21.Size = new Size(177, 53);
+            label21.TabIndex = 18;
+            label21.Text = "tp (Tiempo de Produccion en el Ciclo):";
+            label21.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblValorIprom
+            // 
+            lblValorIprom.AutoSize = true;
+            lblValorIprom.BackColor = Color.WhiteSmoke;
+            lblValorIprom.Dock = DockStyle.Fill;
+            lblValorIprom.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorIprom.ForeColor = SystemColors.ControlText;
+            lblValorIprom.Location = new Point(3, 393);
+            lblValorIprom.Name = "lblValorIprom";
+            lblValorIprom.Size = new Size(533, 5);
+            lblValorIprom.TabIndex = 19;
+            lblValorIprom.Text = "0";
+            lblValorIprom.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblValorCalm
+            // 
+            lblValorCalm.AutoSize = true;
+            lblValorCalm.BackColor = Color.WhiteSmoke;
+            lblValorCalm.Dock = DockStyle.Fill;
+            lblValorCalm.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorCalm.ForeColor = SystemColors.ControlText;
+            lblValorCalm.Location = new Point(542, 398);
+            lblValorCalm.Name = "lblValorCalm";
+            lblValorCalm.Size = new Size(7, 74);
+            lblValorCalm.TabIndex = 20;
+            lblValorCalm.Text = "0";
+            lblValorCalm.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblValorCprep
+            // 
+            lblValorCprep.AutoSize = true;
+            lblValorCprep.BackColor = Color.WhiteSmoke;
+            lblValorCprep.Dock = DockStyle.Fill;
+            lblValorCprep.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorCprep.ForeColor = SystemColors.ControlText;
+            lblValorCprep.Location = new Point(3, 564);
+            lblValorCprep.Name = "lblValorCprep";
+            lblValorCprep.Size = new Size(533, 6);
+            lblValorCprep.TabIndex = 21;
+            lblValorCprep.Text = "0";
+            lblValorCprep.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblValorCT
+            // 
+            lblValorCT.AutoSize = true;
+            lblValorCT.BackColor = Color.WhiteSmoke;
+            lblValorCT.Dock = DockStyle.Fill;
+            lblValorCT.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorCT.ForeColor = SystemColors.ControlText;
+            lblValorCT.Location = new Point(3, 657);
+            lblValorCT.Name = "lblValorCT";
+            lblValorCT.Size = new Size(533, 6);
+            lblValorCT.TabIndex = 22;
+            lblValorCT.Text = "0";
+            lblValorCT.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblValorQ
+            // 
+            lblValorQ.AutoSize = true;
+            lblValorQ.BackColor = Color.WhiteSmoke;
+            lblValorQ.Dock = DockStyle.Fill;
+            lblValorQ.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValorQ.ForeColor = SystemColors.ControlText;
+            lblValorQ.Location = new Point(3, 745);
+            lblValorQ.Name = "lblValorQ";
+            lblValorQ.Size = new Size(533, 12);
+            lblValorQ.TabIndex = 23;
+            lblValorQ.Text = "0";
+            lblValorQ.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblValort0
+            // 
+            lblValort0.AutoSize = true;
+            lblValort0.BackColor = Color.WhiteSmoke;
+            lblValort0.Dock = DockStyle.Fill;
+            lblValort0.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValort0.ForeColor = SystemColors.ControlText;
+            lblValort0.Location = new Point(542, 757);
+            lblValort0.Name = "lblValort0";
+            lblValort0.Size = new Size(7, 8);
+            lblValort0.TabIndex = 25;
+            lblValort0.Text = "0";
+            lblValort0.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblValortp
+            // 
+            lblValortp.AutoSize = true;
+            lblValortp.BackColor = Color.WhiteSmoke;
+            lblValortp.Dock = DockStyle.Fill;
+            lblValortp.Font = new Font("Segoe UI", 13F, FontStyle.Bold);
+            lblValortp.ForeColor = SystemColors.ControlText;
+            lblValortp.Location = new Point(542, 777);
+            lblValortp.Name = "lblValortp";
+            lblValortp.Size = new Size(7, 9);
+            lblValortp.TabIndex = 24;
+            lblValortp.Text = "0";
+            lblValortp.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // tableLayoutPanel6
+            // 
+            tableLayoutPanel6.ColumnCount = 3;
+            tableLayoutPanel3.SetColumnSpan(tableLayoutPanel6, 2);
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7.0745697F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 92.92543F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel6.Controls.Add(btnCalcular, 1, 1);
+            tableLayoutPanel6.Dock = DockStyle.Fill;
+            tableLayoutPanel6.Location = new Point(3, 801);
+            tableLayoutPanel6.Name = "tableLayoutPanel6";
+            tableLayoutPanel6.RowCount = 3;
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 7.84313726F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 92.15686F));
+            tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Absolute, 8F));
+            tableLayoutPanel6.Size = new Size(546, 4);
+            tableLayoutPanel6.TabIndex = 26;
+            // 
+            // btnCalcular
+            // 
+            btnCalcular.BackColor = Color.FromArgb(28, 46, 74);
+            btnCalcular.BackgroundImageLayout = ImageLayout.Stretch;
+            btnCalcular.Dock = DockStyle.Fill;
+            btnCalcular.Font = new Font("Cooper Black", 25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnCalcular.ForeColor = SystemColors.ControlLightLight;
+            btnCalcular.Location = new Point(38, 2);
+            btnCalcular.Margin = new Padding(2);
+            btnCalcular.Name = "btnCalcular";
+            btnCalcular.Size = new Size(470, 1);
+            btnCalcular.TabIndex = 16;
+            btnCalcular.Text = "Calcular";
+            btnCalcular.UseVisualStyleBackColor = false;
+            btnCalcular.Click += btnCalcular_Click_1;
             // 
             // tableLayoutPanel5
             // 
@@ -775,6 +1282,7 @@
             Controls.Add(tableLayoutPanel1);
             Name = "frmAgregar_EPQ";
             Text = "frmAgregar_EPQ";
+            Load += frmAgregar_EPQ_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel4.ResumeLayout(false);

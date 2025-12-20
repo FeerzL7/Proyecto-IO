@@ -162,17 +162,16 @@
             tableLayoutPanel1.SetColumnSpan(tableLayoutPanel2, 4);
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.1782475F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 88.8217545F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 38F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 42F));
             tableLayoutPanel2.Controls.Add(btnGenerar, 1, 1);
             tableLayoutPanel2.Dock = DockStyle.Fill;
-            tableLayoutPanel2.Location = new Point(364, 268);
-            tableLayoutPanel2.Margin = new Padding(3, 2, 3, 2);
+            tableLayoutPanel2.Location = new Point(494, 358);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 3;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 90F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 14F));
-            tableLayoutPanel2.Size = new Size(417, 166);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 19F));
+            tableLayoutPanel2.Size = new Size(477, 220);
             tableLayoutPanel2.TabIndex = 12;
             // 
             // btnGenerar
@@ -181,10 +180,9 @@
             btnGenerar.Dock = DockStyle.Fill;
             btnGenerar.Font = new Font("Cooper Black", 25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnGenerar.ForeColor = SystemColors.ControlLightLight;
-            btnGenerar.Location = new Point(45, 17);
-            btnGenerar.Margin = new Padding(3, 2, 3, 2);
+            btnGenerar.Location = new Point(51, 23);
             btnGenerar.Name = "btnGenerar";
-            btnGenerar.Size = new Size(330, 132);
+            btnGenerar.Size = new Size(380, 174);
             btnGenerar.TabIndex = 0;
             btnGenerar.Text = "Generar";
             btnGenerar.UseVisualStyleBackColor = false;
@@ -195,11 +193,10 @@
             tableLayoutPanel1.SetColumnSpan(txtDAlta, 2);
             txtDAlta.Dock = DockStyle.Fill;
             txtDAlta.Font = new Font("Verdana", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDAlta.Location = new Point(160, 210);
-            txtDAlta.Margin = new Padding(3, 2, 3, 2);
+            txtDAlta.Location = new Point(261, 281);
             txtDAlta.Multiline = true;
             txtDAlta.Name = "txtDAlta";
-            txtDAlta.Size = new Size(418, 48);
+            txtDAlta.Size = new Size(478, 63);
             txtDAlta.TabIndex = 6;
             txtDAlta.Text = "0";
             txtDAlta.TextAlign = HorizontalAlignment.Center;
@@ -212,9 +209,9 @@
             label5.Dock = DockStyle.Fill;
             label5.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.ForeColor = SystemColors.ControlLightLight;
-            label5.Location = new Point(598, 135);
+            label5.Location = new Point(761, 180);
             label5.Name = "label5";
-            label5.Size = new Size(589, 62);
+            label5.Size = new Size(674, 83);
             label5.TabIndex = 4;
             label5.Text = "Dificultad Baja:";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -226,9 +223,9 @@
             label9.Dock = DockStyle.Fill;
             label9.Font = new Font("Cooper Black", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ControlLightLight;
-            label9.Location = new Point(598, 208);
+            label9.Location = new Point(761, 278);
             label9.Name = "label9";
-            label9.Size = new Size(183, 52);
+            label9.Size = new Size(210, 69);
             label9.TabIndex = 11;
             label9.Text = "Cantidad:";
             label9.TextAlign = ContentAlignment.MiddleCenter;
@@ -238,11 +235,10 @@
             tableLayoutPanel1.SetColumnSpan(txtDBaja, 2);
             txtDBaja.Dock = DockStyle.Fill;
             txtDBaja.Font = new Font("Verdana", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDBaja.Location = new Point(787, 210);
-            txtDBaja.Margin = new Padding(3, 2, 3, 2);
+            txtDBaja.Location = new Point(977, 281);
             txtDBaja.Multiline = true;
             txtDBaja.Name = "txtDBaja";
-            txtDBaja.Size = new Size(400, 48);
+            txtDBaja.Size = new Size(458, 63);
             txtDBaja.TabIndex = 8;
             txtDBaja.Text = "0";
             txtDBaja.TextAlign = HorizontalAlignment.Center;
