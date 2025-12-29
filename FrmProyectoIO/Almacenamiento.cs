@@ -134,7 +134,11 @@ namespace FrmProyectoIO
         }
         public void CrearPdf(string RutaDeAcceso, List<Inventario> ejercicios)
         {
-            Document doc = new Document(PageSize.A4, 25, 25, 25, 25);
+
+            //IMPORTANTE: INSTALAR LA LIBRERIA "iTextSharp"
+            //IMPORTANTE: INSTALAR LA LIBRERIA "iTextSharp"
+
+          iTextSharp.text. Document doc = new iTextSharp.text.Document(PageSize.A4, 25, 25, 25, 25);
             PdfWriter.GetInstance(doc, new FileStream(RutaDeAcceso, FileMode.Create));
             doc.Open();
             PdfPCell Header(string texto)
@@ -167,8 +171,9 @@ namespace FrmProyectoIO
                     doc.Add(new Paragraph(" "));
                     PdfPTable tabla = new PdfPTable(8);
                     tabla.WidthPercentage = 100;
-
-        
+                }
+            }
+        }
         public void Guardar()
         {
             string json = JsonSerializer.Serialize(Ejercicios, new JsonSerializerOptions() { WriteIndented = true });
