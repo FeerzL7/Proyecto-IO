@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using static Guna.UI2.Native.WinApi;
+
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
+
 namespace FrmProyectoIO
 {
     public partial class frmPrincipal_EOQ_EPQ : Form
@@ -16,7 +21,7 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        Almacenamiento principal = new Almacenamiento();
+        public Almacenamiento principal { get; set; } = new Almacenamiento();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {
             principal.Leer();
@@ -28,27 +33,43 @@ namespace FrmProyectoIO
             principal.Guardar();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+
+
+        private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        private void btnGenerarExamen_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-            try
+            if (rdbEOQ.Checked)
             {
-                frmGenerarExamen FrmExam = new();
-                FrmExam.Rprincipal = principal;
-                FrmExam.ShowDialog();
-            }catch(ArgumentException ex)
-            {
-                MessageBox.Show(ex.Message);
+                frmAgregar_EOQ registrarEOQ = new frmAgregar_EOQ();
+                registrarEOQ.referenciaAlmacenamiento = principal;
+                registrarEOQ.ShowDialog();
             }
+            else if (rdbEPQ.Checked)
+            {
+                frmAgregar_EPQ registrarEPQ = new frmAgregar_EPQ();
+                registrarEPQ.referenciaAlmacenamiento = principal;
+                registrarEPQ.ShowDialog();
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtEnunciado.Clear();
+            txtTitulo.Clear();
         }
     }
 }

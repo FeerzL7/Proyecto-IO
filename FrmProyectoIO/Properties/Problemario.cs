@@ -10,7 +10,8 @@ namespace FrmProyectoIO.Properties
 {
     public class Problemario
     {
-        public Dictionary<Dificultad, List<ModeloUnSoloServidor>> Reactivo { get; set; } = new();
+        public Dictionary<Dificultad, List<ModeloUnSoloServidor>> ReactivosMM1 { get; set; } = new();
+        public Dictionary<Dificultad, List<ModeloMultiplesServidores>> ReactivosMMS { get; set; } = new();
 
         public delegate void ProblemarioHandler();
         public event ProblemarioHandler? SeActualizoLista;
@@ -34,25 +35,31 @@ namespace FrmProyectoIO.Properties
             {
                 throw new ArgumentException("la tasa de servicio debe ser mayor que 0");
             }
-
-            if (!Reactivo.ContainsKey(dificultad))
+            if (!ReactivosMM1.ContainsKey(dificultad))
             {
-                Reactivo.Add(dificultad, new List<ModeloUnSoloServidor>());
+                ReactivosMM1.Add(dificultad, new List<ModeloUnSoloServidor>());
+            }
+            if (tasallegada > tasaservicio) {
+                throw new ArgumentException("Los datos son incongruentes. \nLa tasa de llegada no puede ser mayor a la tasa de servicio");
             }
             //Que no se repita el titulo
-            if (Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == titulo.ToUpper()))
+            if (ReactivosMM1.Values.SelectMany(X => X).Any(x => string.Equals(x.Titulo.Trim(), titulo.Trim(), StringComparison.OrdinalIgnoreCase)))
             {
-                throw new ArgumentException("");
+                throw new ArgumentException("No puede repetir el título del ejercicio");
             }
 
-            Reactivo[dificultad].Add(new ModeloUnSoloServidor
+
+            ReactivosMM1[dificultad].Add(new ModeloUnSoloServidor
             {
                 Titulo = titulo,
                 Enunciado = enunciado,
                 TasaLlegada = tasallegada,
-                TasaServicio = tasaservicio
+                TasaServicio = tasaservicio,
                 
+
+
             });
+            
             SeActualizoLista?.Invoke();
 
         }
@@ -80,25 +87,34 @@ namespace FrmProyectoIO.Properties
                 throw new ArgumentException("el numero de servidores debe ser mayor que 0");
             }
 
-            if (!Reactivo.ContainsKey(dificultad))//si no existe la llave todavia la crea
+            if (!ReactivosMMS.ContainsKey(dificultad))//si no existe la llave todavia la crea
             {
-                Reactivo.Add(dificultad, new List<ModeloUnSoloServidor>());
+                ReactivosMMS.Add(dificultad, new List<ModeloMultiplesServidores>());
             }
 
-            if (Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == titulo.ToUpper())) //si el problema a agregar ya existe
+            if (tasallegada > (tasaservicio * servidores))
             {
-                throw new ArgumentException("Este problema ya existe en el sistema");
+                throw new ArgumentException("Los datos son incongruentes. \nLa tasa de llegada no puede ser mayor a la tasa de servicio");
             }
-            Reactivo[dificultad].Add(new ModeloMultiplesServidores
+            //Que no se repita el titulo
+            if (ReactivosMMS.Values.SelectMany(x => x).Any(x => string.Equals(x.Titulo.Trim(), titulo.Trim(), StringComparison.OrdinalIgnoreCase)))
+            {
+                throw new ArgumentException("No puede repetir el título del ejercicio");
+            }
+
+            ReactivosMMS[dificultad].Add(new ModeloMultiplesServidores
             {
                 Titulo = titulo,
                 Enunciado = enunciado,
                 TasaLlegada = tasallegada,
                 TasaServicio = tasaservicio,
                 Servidores = servidores,
-                NivelDificultad = dificultad
+                NivelDificultad = dificultad,
+                
             });
+            
             SeActualizoLista?.Invoke();
+
 
         }
 
@@ -122,17 +138,22 @@ namespace FrmProyectoIO.Properties
             {
                 throw new ArgumentException("la tasa de llegada y la tasa de servicio debe ser mayor que 0");
             }
+            if (!ReactivosMM1[dificultad].Any(x => x.Titulo == problema.Titulo)) {
+                throw new ArgumentException(" No existe un reactivo con ese titulo");
+            }
 
             //busca el problema que seleccionaron
-            var ProblemaModificar = Reactivo[dificultad].FirstOrDefault(x => x.Titulo == problema.Titulo);
+            var ProblemaModificar = ReactivosMM1[dificultad].FirstOrDefault(x => x.Titulo == problema.Titulo);
             if (ProblemaModificar != null) //si este no es nulo actualiza los valores 
             {
-                ProblemaModificar.Titulo = problema.Titulo;
+                //Cambia todo menos el titulo - porque eso es como nuestra SKU
                 ProblemaModificar.Enunciado = problema.Enunciado;
                 ProblemaModificar.TasaLlegada = problema.TasaLlegada;
                 ProblemaModificar.TasaServicio = problema.TasaServicio;
 
             }
+            //Por si se cambia de dificulad
+
             SeActualizoLista?.Invoke();
         }
 
@@ -158,7 +179,7 @@ namespace FrmProyectoIO.Properties
             }
 
             //guardalo como un ModeloMultiplesServidores
-            ModeloMultiplesServidores? ProblemaModificar = Reactivo[dificultad].FirstOrDefault(x => x.Titulo == problema.Titulo) as ModeloMultiplesServidores;
+            ModeloMultiplesServidores? ProblemaModificar = ReactivosMMS.Values.SelectMany(x => x).FirstOrDefault(x => x.Titulo == problema.Titulo) as ModeloMultiplesServidores;
             if (ProblemaModificar != null)
             {
                 ProblemaModificar.Titulo = problema.Titulo;
@@ -168,6 +189,7 @@ namespace FrmProyectoIO.Properties
                 ProblemaModificar.Servidores = problema.Servidores;
 
             }
+            ReactivosMMS[dificultad].Add(ProblemaModificar);
             SeActualizoLista?.Invoke();
         }
 
@@ -179,7 +201,11 @@ namespace FrmProyectoIO.Properties
                 throw new ArgumentException("no se puede eliminar un problema inexistente");
             }
 
-            Reactivo[problema.NivelDificultad].Remove(problema);
+            ReactivosMM1[problema.NivelDificultad].Remove(problema);
+            if (ReactivosMM1[problema.NivelDificultad].Count == 0)
+            {
+                ReactivosMM1.Remove(problema.NivelDificultad);
+            }
             SeActualizoLista?.Invoke();
         }
         public void Eliminar(ModeloMultiplesServidores problema)
@@ -189,66 +215,52 @@ namespace FrmProyectoIO.Properties
                 throw new ArgumentException("no se puede eliminar un problema inexistente");
             }
 
-            Reactivo[problema.NivelDificultad].Remove(problema);
+            ReactivosMMS[problema.NivelDificultad].Remove(problema);
+            if (ReactivosMMS[problema.NivelDificultad].Count == 0)
+            {
+                ReactivosMMS.Remove(problema.NivelDificultad);
+            }
             SeActualizoLista?.Invoke();
-        }
 
-        //Mostrar Problemas guardados   
-        public ModeloMultiplesServidores GetProblemaResolver(Dificultad dificultad, ModeloMultiplesServidores Problema)
+        }
+        public List<ModeloUnSoloServidor> GetReactivosMM1ByDificultad(Dificultad dificultad) 
         {
-            if (!Reactivo.ContainsKey(dificultad))
-            {
-                throw new ArgumentException("No existen problemas con esa dificultad");
-            }
-            if (string.IsNullOrWhiteSpace(titulo))
-            {
-                throw new ArgumentException("Ingrese el titulo del problema");
-            }
-            if (!Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper()))
-            {
-                throw new ArgumentException("No existe un problema con ese titulo en la dificultad seleccionada");
-            }
-
-            var Problema = Reactivo[dificultad].FirstOrDefault(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper()) as ModeloMultiplesServidores;
-            return Problema;
+            return ReactivosMM1[dificultad].ToList();
         }
-
-        public ModeloUnSoloServidor GetProblemaResolver(Dificultad dificultad, ModeloUnSoloServidor Problema)
+        public List<ModeloMultiplesServidores> GetReactivosMMSByDificultad(Dificultad dificultad)
         {
-            if (!Reactivo.ContainsKey(dificultad))
-            {
-                throw new ArgumentException("No existen problemas con esa dificultad");
-            }
-            if (string.IsNullOrWhiteSpace(titulo))
-            {
-                throw new ArgumentException("Ingrese el titulo del problema");
-            }
-            if (!Reactivo[dificultad].Any(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper()))
-            {
-                throw new ArgumentException("No existe un problema con ese titulo en la dificultad seleccionada");
-            }
-
-            var Problema = Reactivo[dificultad].FirstOrDefault(x => x.Titulo.ToUpper() == Problema.Titulo.ToUpper());
-            return Problema;
+            return ReactivosMMS[dificultad].ToList();
         }
+
+       
         public void GuardarDatos()
         {
             var opt = new JsonSerializerOptions() { WriteIndented = true };
 
-            string json = JsonSerializer.Serialize(Reactivo, opt);
-            File.WriteAllText("Lista de problemas.json", json);
+            string json = JsonSerializer.Serialize(ReactivosMM1, opt);
+            File.WriteAllText("Lista de problemasMM1.json", json);
+            string json2 = JsonSerializer.Serialize(ReactivosMMS, opt);
+            File.WriteAllText("Lista de ProblemasMMS.json", json2);
 
         }
       
         public void CargarDatos()
         {
-            if (File.Exists("Lista de problemas.json"))
+            if (File.Exists("Lista de problemasMM1.json"))
             {
-                string json = File.ReadAllText("Lista de problemas.json");
+                string json = File.ReadAllText("Lista de problemasMM1.json");
 
-                Reactivo = JsonSerializer.Deserialize<Dictionary<Dificultad, List<ModeloUnSoloServidor>>>(json) ?? new Dictionary<Dificultad, List<ModeloUnSoloServidor>>();
-                SeActualizoLista?.Invoke();
+                ReactivosMM1 = JsonSerializer.Deserialize<Dictionary<Dificultad, List<ModeloUnSoloServidor>>>(json) ?? new Dictionary<Dificultad, List<ModeloUnSoloServidor>>();
+                
             }
+            if (File.Exists("Lista de problemasMMS.json"))
+            {
+                string json = File.ReadAllText("Lista de problemasMMS.json");
+
+                ReactivosMMS = JsonSerializer.Deserialize<Dictionary<Dificultad, List<ModeloMultiplesServidores>>>(json) ?? new Dictionary<Dificultad, List<ModeloMultiplesServidores>>();
+                
+            }
+            SeActualizoLista?.Invoke();
         }
     }
 }

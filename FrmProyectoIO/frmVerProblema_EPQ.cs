@@ -13,66 +13,84 @@ namespace FrmProyectoIO
     public partial class frmVerProblema_EPQ : Form
     {
 
-        public InventarioProduccion ReferenciaEPQ { get; internal set; }
+        public InventarioProduccion ReferenciaEPQ { get; internal set; } = new();
+        public Almacenamiento ReferenciaAlmacenamiento { get; internal set; }
 
         public frmVerProblema_EPQ()
         {
             InitializeComponent();
         }
-
+        public Inventario Ejercicio { get; internal set; }
         private void label13_Click(object sender, EventArgs e)
         {
 
         }
 
+
         private void frmVerProblema_EPQ_Load(object sender, EventArgs e)
         {
+            if (Ejercicio == null) return;
 
+            txtTitulo.Text = Ejercicio.Titulo;
+            txtEnunciado.Text = Ejercicio.Texto;
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             try
             {
-                //ENTRADAS
-                ReferenciaEPQ.Texto = txtEnunciado.Text;
-                ReferenciaEPQ.DemandaXunidadTiempo = ushort.Parse(txtValorD.Text);
-                ReferenciaEPQ.DemandaDiaria = ushort.Parse(txtValordd.Text);
-                ReferenciaEPQ.TasaDeProduccion = ushort.Parse(txtValorp.Text);
-                ReferenciaEPQ.CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text);
-                ReferenciaEPQ.CostoPorAlmacenar = decimal.Parse(txtValorCh.Text);
 
-                //SALIDAS
-                //N2, N0 y C son formatos de salida
-                lblValorQ.Text = ReferenciaEPQ.CantidadDeLoteEconomico.ToString("N2");
+                InventarioProduccion modificado = new InventarioProduccion
+                {
 
-                lblValorImax.Text = ReferenciaEPQ.InventarioMaximo.ToString("N0") + " unidades";
-                lblValorIprom.Text = ReferenciaEPQ.InventarioPromedio.ToString("N0") + " unidades";
+                    Id = Ejercicio.Id,
 
-                lblValorCalm.Text = ReferenciaEPQ.CostoAnualXAlmacenar.ToString("C");
+                    // Texto
+                    Titulo = txtTitulo.Text,
+                    Texto = txtEnunciado.Text,
 
-                lblNumCorridxAño.Text = ReferenciaEPQ.NumeroDeLotes.ToString("N2");
+                    // Demanda
+                    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
+                    DemandaDiaria = ushort.Parse(txtValordd.Text),
 
-                lblValort.Text = ReferenciaEPQ.TiempoDelCiclo.ToString("N2");
+                    // Costos
+                    CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
+                    CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
 
-                lblValort0.Text = ReferenciaEPQ.DuracionDelCiclo.ToString("N2");
+                    // Tiempos
 
-                lblValorCprep.Text = ReferenciaEPQ.CostoAnualXPreparacion.ToString("C");
+                    DiasLaboradosAño = ushort.Parse(txtValorN.Text),
 
-                lblValorCT.Text = ReferenciaEPQ.CostoTotalXUnidadTiempo.ToString("C");
+                    // EPQ
+                    TasaDeProduccion = ushort.Parse(txtValorp.Text)
+                };
 
-                // falta crear tp en la clase de InventarioProduccion
 
+                ReferenciaAlmacenamiento.Modificar(Dificultad.Dificil, modificado);
+
+                DialogResult = DialogResult.OK;
+                Close();
+
+                DialogResult = DialogResult.OK;
+                Close();
             }
             catch (Exception ex)
             {
-                {
-                    MessageBox.Show(ex.Message, "Excepción encontrada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+                MessageBox.Show(ex.Message, "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
+
+
+
         private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnRegresar_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
