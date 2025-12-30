@@ -202,7 +202,7 @@
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 126F));
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.78341F));
             tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.21659F));
-            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 102F));
+            tableLayoutPanel6.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 191F));
             tableLayoutPanel6.Controls.Add(btnRegresar, 1, 1);
             tableLayoutPanel6.Dock = DockStyle.Fill;
             tableLayoutPanel6.Location = new Point(636, 364);
@@ -238,7 +238,7 @@
             tableLayoutPanel1.SetColumnSpan(tableLayoutPanel4, 4);
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 18F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 33F));
             tableLayoutPanel4.Controls.Add(label4, 0, 0);
             tableLayoutPanel4.Controls.Add(label3, 0, 4);
             tableLayoutPanel4.Controls.Add(label2, 0, 2);
@@ -251,13 +251,9 @@
             tableLayoutPanel1.SetRowSpan(tableLayoutPanel4, 6);
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 80.4347839F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 19.565218F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 6F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 33F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 7F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 189F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 7F));
-            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 101F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 13F));
+            tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 70F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
             tableLayoutPanel4.Size = new Size(538, 412);
             tableLayoutPanel4.TabIndex = 17;
@@ -269,8 +265,8 @@
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Microsoft Sans Serif", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.ForeColor = SystemColors.ButtonHighlight;
-            label4.Location = new Point(2, 0);
-            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Location = new Point(4, 0);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(534, 31);
             label4.TabIndex = 15;
@@ -287,7 +283,7 @@
             label3.Location = new Point(2, 74);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(534, 33);
+            label3.Size = new Size(959, 70);
             label3.TabIndex = 8;
             label3.Text = "Enunciado:";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -301,7 +297,7 @@
             label2.Location = new Point(2, 38);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(265, 30);
+            label2.Size = new Size(475, 64);
             label2.TabIndex = 7;
             label2.Text = "Titulo:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -314,7 +310,7 @@
             txtTitulo.Margin = new Padding(2, 2, 2, 2);
             txtTitulo.Multiline = true;
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(265, 26);
+            txtTitulo.Size = new Size(476, 56);
             txtTitulo.TabIndex = 13;
             // 
             // txtEnunciado
@@ -325,7 +321,7 @@
             txtEnunciado.Margin = new Padding(2, 2, 2, 2);
             txtEnunciado.Multiline = true;
             txtEnunciado.Name = "txtEnunciado";
-            txtEnunciado.Size = new Size(534, 185);
+            txtEnunciado.Size = new Size(959, 395);
             txtEnunciado.TabIndex = 14;
             // 
             // tableLayoutPanel5
@@ -346,8 +342,8 @@
             tableLayoutPanel5.RowCount = 3;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 13.636364F));
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 86.36364F));
-            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 15F));
-            tableLayoutPanel5.Size = new Size(532, 98);
+            tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Absolute, 32F));
+            tableLayoutPanel5.Size = new Size(955, 208);
             tableLayoutPanel5.TabIndex = 16;
             // 
             // btnGenerarExamen
@@ -359,7 +355,7 @@
             btnGenerarExamen.Location = new Point(20, 13);
             btnGenerarExamen.Margin = new Padding(3, 2, 3, 2);
             btnGenerarExamen.Name = "btnGenerarExamen";
-            btnGenerarExamen.Size = new Size(235, 67);
+            btnGenerarExamen.Size = new Size(406, 144);
             btnGenerarExamen.TabIndex = 0;
             btnGenerarExamen.Text = "Generar examen";
             btnGenerarExamen.UseVisualStyleBackColor = false;
@@ -373,7 +369,7 @@
             btnLimpiar.Location = new Point(280, 13);
             btnLimpiar.Margin = new Padding(3, 2, 3, 2);
             btnLimpiar.Name = "btnLimpiar";
-            btnLimpiar.Size = new Size(228, 67);
+            btnLimpiar.Size = new Size(423, 144);
             btnLimpiar.TabIndex = 1;
             btnLimpiar.Text = "Limpiar";
             btnLimpiar.UseVisualStyleBackColor = false;
@@ -401,14 +397,53 @@
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(28, 46, 74);
+            label5.Dock = DockStyle.Fill;
+            label5.Font = new Font("Cooper Black", 24F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.ForeColor = SystemColors.ButtonHighlight;
+            label5.Location = new Point(16, 27);
+            label5.Name = "label5";
+            label5.Size = new Size(578, 98);
+            label5.TabIndex = 20;
+            label5.Text = "Clasificacion:";
+            // 
+            // btnImprimir
+            // 
+            btnImprimir.BackColor = Color.FromArgb(28, 46, 74);
+            btnImprimir.Dock = DockStyle.Fill;
+            btnImprimir.Font = new Font("Cooper Black", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnImprimir.ForeColor = SystemColors.ButtonHighlight;
+            btnImprimir.Location = new Point(3, 19);
+            btnImprimir.Name = "btnImprimir";
+            btnImprimir.Size = new Size(275, 300);
+            btnImprimir.TabIndex = 10;
+            btnImprimir.Text = "Imprimir \r\nEjercicios";
+            btnImprimir.UseVisualStyleBackColor = false;
+            // 
+            // btnAgg
+            // 
+            this.btnAgg.BackColor = Color.FromArgb(28, 46, 74);
+            this.btnAgg.Dock = DockStyle.Fill;
+            this.btnAgg.Font = new Font("Cooper Black", 16.125F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            this.btnAgg.ForeColor = SystemColors.ButtonHighlight;
+            this.btnAgg.Location = new Point(315, 16);
+            this.btnAgg.Name = "btnAgg";
+            this.btnAgg.Size = new Size(254, 302);
+            this.btnAgg.TabIndex = 8;
+            this.btnAgg.Text = "Añadir a \r\nImpresion";
+            this.btnAgg.UseVisualStyleBackColor = false;
+            // 
             // frmPrincipal_EOQ_EPQ
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
-            ClientSize = new Size(1199, 562);
+            ClientSize = new Size(2227, 1199);
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(3, 2, 3, 2);
+            Margin = new Padding(6, 4, 6, 4);
             Name = "frmPrincipal_EOQ_EPQ";
             Text = "frmPrincipal_EOQ_EPQ";
             FormClosing += frmPrincipal_EOQ_EPQ_FormClosing;
