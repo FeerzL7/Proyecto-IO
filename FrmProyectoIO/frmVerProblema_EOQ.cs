@@ -21,6 +21,7 @@ namespace FrmProyectoIO
         public Inventario Ejercicio { get; internal set; } = new();
         public InventarioProduccion ReferenciaInv { get; internal set; } = new();
         public Almacenamiento ReferenciaAlmacenamiento { get; internal set; } = new();
+        public Almacenamiento referenciaAlmacenamiento { get; internal set; }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {

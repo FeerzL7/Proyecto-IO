@@ -22,6 +22,7 @@ namespace FrmProyectoIO
             InitializeComponent();
         }
         public Almacenamiento principal { get; set; } = new Almacenamiento();
+        List<Inventario> ejercicios = new List<Inventario>();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {
             principal.Leer();
@@ -40,9 +41,10 @@ namespace FrmProyectoIO
             this.Close();
         }
 
+        //ESTE BOTON NO EXISTE ↓↓
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -51,6 +53,47 @@ namespace FrmProyectoIO
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // BOTON DE FORMULARIO ( LIMPIAR ), TRABAJAR AQUI: ↓↓↓
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtEnunciado.Clear();
+            txtTitulo.Clear();
+        }
+
+        private void btnGenerarExamen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // BOTON DE FORMULARIO (ELIMINAR), TRABAJAR AQUI: ↓↓↓
+        private void button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+  
+
+
+        // BOTON DE FORMULARIO (GENERAR EXAMEN), TRABAJAR AQUI: ↓↓↓
+        private void btnGenerarExamen_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                frmGenerarExamen FrmExam = new();
+                FrmExam.Rprincipal = principal;
+                FrmExam.ShowDialog();
+            }
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        // BOTON DE FORMULARIO (AGREGAR), TRABAJAR AQUI: ↓↓↓
+        private void btnAgregarEjercicio_Click(object sender, EventArgs e)
         {
             if (rdbEOQ.Checked)
             {
@@ -65,11 +108,48 @@ namespace FrmProyectoIO
                 registrarEPQ.ShowDialog();
             }
         }
-
-        private void btnLimpiar_Click(object sender, EventArgs e)
+        // BOTON DE FORMULARIO (AÑADIR A IMPRESION), TRABAJAR AQUI: ↓↓↓
+        private void btnAñadirImpresion_Click(object sender, EventArgs e)
         {
-            txtEnunciado.Clear();
-            txtTitulo.Clear();
+            foreach (var inv in principal.Ejercicios)
+            {
+                foreach (var ej in inv.Value)
+                {
+
+                    if (ej.Titulo == txtTitulo.Text)
+                    {
+
+                        if (ejercicios.Contains(ej))
+                        {
+                            MessageBox.Show("Ese ejercicio ya se encuentra registrado...", "Duplicado en la seleccion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            ejercicios.Add(ej);
+                        }
+                        return;
+                    }
+                }
+            }
+        }
+        // BOTON DE FORMULARIO (IMPRIMIR EJERCICIOS), TRABAJAR AQUI: ↓↓↓
+        private void btnImprimirEjercicios_Click(object sender, EventArgs e)
+        {
+            if (ejercicios.Count == 0)
+            {
+                MessageBox.Show("No hay ejercicios para imprimir");
+                return;
+            }
+            SaveFileDialog Guardar = new();
+            string Nombre = DateTime.Now.ToString("yyyy-MM-dd_HH-mm");
+            Guardar.Filter = "PDF (.pdf)|.pdf";
+            Guardar.FileName = Nombre;
+            if (Guardar.ShowDialog() == DialogResult.OK)
+            {
+                principal.CrearPdf(Guardar.FileName, ejercicios);
+                MessageBox.Show("PDF creado correctamente");
+                ejercicios = new();
+            }
         }
     }
 }

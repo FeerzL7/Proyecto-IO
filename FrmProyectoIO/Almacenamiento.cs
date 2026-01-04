@@ -174,6 +174,42 @@ namespace FrmProyectoIO
                 }
             }
         }
+        public void GenerarExamenPDF(string RutaDeAcceso, int NumeroFaciles, int NumeroDificiles)
+        {
+            List<Inventario> Dificiles = Ejercicios[Dificultad.Dificil];
+            List<Inventario> faciles = Ejercicios[Dificultad.Facil];
+            //validaciones de los datos
+            if (NumeroFaciles > Ejercicios[Dificultad.Facil].Count)
+                throw new ArgumentException("no puede asignar mas problemas faciles de los que cuenta el problemario.");
+            if (NumeroDificiles > Ejercicios[Dificultad.Dificil].Count)
+                throw new ArgumentException("no puede asignar mas problemas Dificiles de los que cuenta el problemario.");
+            if (NumeroFaciles < 0 || NumeroDificiles < 0)
+                throw new ArgumentException("no puede asignar numeros negativos a los problemas de los que cuenta el problemario.");
+            if (NumeroFaciles == 0 && NumeroDificiles == 0)
+                throw new ArgumentException("No puede asignar 0 a los dos valores.");
+            List<Inventario> Seleccion = new();
+            Random azar = new Random();
+            int i = 0;
+            while (i < NumeroFaciles)// selecciona los problemas faciles para agregarlos a la lista
+            {
+                int seleccionado = azar.Next(faciles.Count);
+                if (!Seleccion.Contains(faciles[seleccionado]))
+                {
+                    Seleccion.Add(faciles[seleccionado]);
+                    i++;
+                }
+            }
+            i = 0;
+            while (i < NumeroDificiles)// selecciona los problemas dificiles 
+            {
+                int seleccionado = azar.Next(Dificiles.Count);
+                if (!Seleccion.Contains(Dificiles[seleccionado]))
+                {
+                    Seleccion.Add(Dificiles[seleccionado]);
+                    i++;
+                }
+            }
+        }
         public void Guardar()
         {
             string json = JsonSerializer.Serialize(Ejercicios, new JsonSerializerOptions() { WriteIndented = true });

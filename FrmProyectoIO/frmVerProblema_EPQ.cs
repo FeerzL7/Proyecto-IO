@@ -21,6 +21,8 @@ namespace FrmProyectoIO
             InitializeComponent();
         }
         public Inventario Ejercicio { get; internal set; }
+        public Almacenamiento referenciaAlmacenamiento { get; internal set; }
+
         private void label13_Click(object sender, EventArgs e)
         {
 
