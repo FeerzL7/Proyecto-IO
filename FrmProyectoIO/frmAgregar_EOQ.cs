@@ -28,7 +28,7 @@ namespace FrmProyectoIO
                     Titulo = txtTitulo.Text,
                     DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
                     CostoPorColocarOrden = decimal.Parse(txtValorCo.Text),
-                    CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
+                    CostoPorAlmacenar = decimal.Parse(txtValorCo.Text),
                     TiempoDeEntrega = ushort.Parse(txtValorL.Text),
                     DiasLaboradosAño = ushort.Parse(txtValorY.Text),
                 };
@@ -42,29 +42,92 @@ namespace FrmProyectoIO
 
         private void btnRegresar_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            //this.Close();
         }
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {
-            Inventario reactivo = new Inventario()
-            {
-                DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
-                CostoPorColocarOrden = decimal.Parse(txtValorCo.Text),
-                CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
-                TiempoDeEntrega = ushort.Parse(txtValorL.Text),
-                DiasLaboradosAño = ushort.Parse(txtValorY.Text),
-            };
-            lblCLE.Text = reactivo.CantidadDeLoteEconomico.ToString();
-            lblLe.Text = reactivo.CostoAnualXOrdenar.ToString();// este esta raro, dice que es CAO, pero el nombre del label es lblLe
-            lblPntReorden.Text = reactivo.PuntoDeReorden.ToString();
-            lblDurCicloPedido.Text = reactivo.DuracionDelCiclo.ToString(); //
+            //Inventario reactivo = new Inventario()
+            //{
+            //    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
+
+            //    CostoPorColocarOrden = decimal.Parse(txtValorCo.Text),
+            //    CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
+            //    TiempoDeEntrega = ushort.Parse(txtValorL.Text),
+            //    DiasLaboradosAño = ushort.Parse(txtValorY.Text),
+            //};
+            //lblValorCLE.Text = reactivo.CantidadDeLoteEconomico.ToString();
+            //lblValorLe.Text = reactivo.CostoAnualXOrdenar.ToString();// este esta raro, dice que es CAO, pero el nombre del label es lblLe
+            //lblPuntoDeReorden.Text = reactivo.PuntoDeReorden.ToString();
+            //lblDuracionCiclPedido.Text = reactivo.DuracionDelCiclo.ToString(); //
 
         }
 
         private void frmAgregar_EOQ_Load_1(object sender, EventArgs e)
         {
             cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        //BOTON PARA SALIR: ↓↓↓
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //BOTON AGREGAR: ↓↓↓
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Inventario Reactivo = new Inventario()
+                {
+                    Texto = txtEnunciado.Text,
+                    Titulo = txtTitulo.Text,
+                    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
+                    CostoPorColocarOrden = decimal.Parse(txtValorCo.Text),
+                    CostoPorAlmacenar = decimal.Parse(txtValorCo.Text),
+                    TiempoDeEntrega = ushort.Parse(txtValorL.Text),
+                    DiasLaboradosAño = ushort.Parse(txtValorY.Text),
+                };
+                referenciaAlmacenamiento.Registrar((Dificultad)cmbNivelDificultad.SelectedItem, Reactivo);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        //Boton Calcular: ↓↓↓
+        private void btnCalcular_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                Inventario reactivo = new Inventario()
+                {
+                    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
+
+                    CostoPorColocarOrden = decimal.Parse(txtValorCo.Text),
+                    CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
+                    TiempoDeEntrega = ushort.Parse(txtValorL.Text),
+                    DiasLaboradosAño = ushort.Parse(txtValorY.Text),
+                };
+                lblValorCAO.Text = reactivo.CostoAnualXOrdenar.ToString();
+                lblValort0.Text = reactivo.DuracionDelCiclo.ToString();
+                lblValorCT.Text = reactivo.CostoTotalXUnidadTiempo.ToString();
+                lblValorCAA.Text = reactivo.CostoAnualXAlmacenar.ToString();
+                lblValorCLE.Text = reactivo.CantidadDeLoteEconomico.ToString();
+                lblValorLe.Text = reactivo.CostoAnualXOrdenar.ToString();// este esta raro, dice que es CAO, pero el nombre del label es lblLe
+                lblPuntoDeReorden.Text = reactivo.PuntoDeReorden.ToString();
+                lblDuracionCiclPedido.Text = reactivo.DuracionDelCiclo.ToString(); //
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
