@@ -167,7 +167,7 @@
             tableLayoutPanel2.Controls.Add(txtTitulo, 1, 0);
             tableLayoutPanel2.Dock = DockStyle.Fill;
             tableLayoutPanel2.Location = new Point(39, 81);
-            tableLayoutPanel2.Margin = new Padding(9, 9, 9, 9);
+            tableLayoutPanel2.Margin = new Padding(9);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -223,7 +223,7 @@
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.GrowStyle = TableLayoutPanelGrowStyle.FixedSize;
             tableLayoutPanel1.Location = new Point(39, 153);
-            tableLayoutPanel1.Margin = new Padding(9, 9, 9, 9);
+            tableLayoutPanel1.Margin = new Padding(9);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -278,7 +278,7 @@
             tableLayoutPanel3.Controls.Add(txtMew, 1, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(39, 227);
-            tableLayoutPanel3.Margin = new Padding(9, 9, 9, 9);
+            tableLayoutPanel3.Margin = new Padding(9);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
             tlpPrincipal.SetRowSpan(tableLayoutPanel3, 2);
@@ -463,6 +463,7 @@
             // 
             // txtEnunciado
             // 
+            txtEnunciado.BorderColor = Color.WhiteSmoke;
             txtEnunciado.BorderRadius = 10;
             tableLayoutPanel4.SetColumnSpan(txtEnunciado, 2);
             txtEnunciado.CustomizableEdges = customizableEdges9;
@@ -495,7 +496,7 @@
             tableLayoutPanel5.Controls.Add(btnRegistrar, 0, 0);
             tableLayoutPanel5.Dock = DockStyle.Fill;
             tableLayoutPanel5.Location = new Point(39, 659);
-            tableLayoutPanel5.Margin = new Padding(9, 9, 9, 9);
+            tableLayoutPanel5.Margin = new Padding(9);
             tableLayoutPanel5.Name = "tableLayoutPanel5";
             tableLayoutPanel5.RowCount = 1;
             tableLayoutPanel5.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -895,7 +896,7 @@
             label7.Dock = DockStyle.Fill;
             label7.Font = new Font("Verdana", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.Location = new Point(9, 9);
-            label7.Margin = new Padding(9, 9, 9, 9);
+            label7.Margin = new Padding(9);
             label7.Name = "label7";
             label7.Size = new Size(72, 65);
             label7.TabIndex = 0;
