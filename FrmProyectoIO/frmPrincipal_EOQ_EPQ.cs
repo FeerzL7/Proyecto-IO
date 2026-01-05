@@ -21,7 +21,7 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        /* 
+        /*  
          * NOMBRE DEL DATA GRID VIEW: dgvEjercicios
          * NOMBRE DEL ENUNCIADO: txtEnunciado
          */
