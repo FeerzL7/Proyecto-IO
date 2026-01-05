@@ -40,48 +40,50 @@ namespace FrmProyectoIO
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //FORMULARIO DE VER, NO MODIFICAR
 
-                InventarioProduccion modificado = new InventarioProduccion
-                {
+            //try
+            //{
 
-                    Id = Ejercicio.Id,
+            //    InventarioProduccion modificado = new InventarioProduccion
+            //    {
 
-                    // Texto
-                    Titulo = txtTitulo.Text,
-                    Texto = txtEnunciado.Text,
+            //        Id = Ejercicio.Id,
 
-                    // Demanda
-                    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
-                    DemandaDiaria = ushort.Parse(txtValordd.Text),
+            //        // Texto
+            //        Titulo = txtTitulo.Text,
+            //        Texto = txtEnunciado.Text,
 
-                    // Costos
-                    CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
-                    CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
+            //        // Demanda
+            //        DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
+            //        DemandaDiaria = ushort.Parse(txtValordd.Text),
 
-                    // Tiempos
+            //        // Costos
+            //        CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
+            //        CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
 
-                    DiasLaboradosAño = ushort.Parse(txtValorN.Text),
+            //        // Tiempos
 
-                    // EPQ
-                    TasaDeProduccion = ushort.Parse(txtValorp.Text)
-                };
+            //        DiasLaboradosAño = ushort.Parse(txtValorN.Text),
+
+            //        // EPQ
+            //        TasaDeProduccion = ushort.Parse(txtValorp.Text)
+            //    };
 
 
-                ReferenciaAlmacenamiento.Modificar(Dificultad.Dificil, modificado);
+            //    ReferenciaAlmacenamiento.Modificar(Dificultad.Dificil, modificado);
 
-                DialogResult = DialogResult.OK;
-                Close();
+            //    DialogResult = DialogResult.OK;
+            //    Close();
 
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //    DialogResult = DialogResult.OK;
+            //    Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Error",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
 

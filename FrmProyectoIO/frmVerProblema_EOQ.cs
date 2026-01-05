@@ -54,34 +54,36 @@ namespace FrmProyectoIO
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Se crea el objeto modificado mismo Id
-                Inventario modificado = new Inventario
-                {
-                    Id = Ejercicio.Id,
+            //FORMULARIO DE VER, NO MODIFICAR
 
-                    Titulo = txtTitulo.Text,
-                    Texto = txtEnunciado.Text,
+            //try
+            //{
+            //    // Se crea el objeto modificado mismo Id
+            //    Inventario modificado = new Inventario
+            //    {
+            //        Id = Ejercicio.Id,
 
-                    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
-                    CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
-                    CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
-                    TiempoDeEntrega = ushort.Parse(txtValorL.Text),
+            //        Titulo = txtTitulo.Text,
+            //        Texto = txtEnunciado.Text,
 
-                };
+            //        DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
+            //        CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
+            //        CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
+            //        TiempoDeEntrega = ushort.Parse(txtValorL.Text),
+
+            //    };
 
 
 
-                ReferenciaAlmacenamiento.Modificar(Dificultad.Facil, modificado);
+            //    ReferenciaAlmacenamiento.Modificar(Dificultad.Facil, modificado);
 
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //    DialogResult = DialogResult.OK;
+            //    Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
 
