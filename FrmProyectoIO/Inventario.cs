@@ -16,7 +16,7 @@ namespace FrmProyectoIO
     }
     public enum Dificultad
     {
-        Facil, Dificil
+        Facil, Medio, Dificil
     }
     //system.text.json no maneja herencia, se debe usar el siguiente codigo para evitar errores a la hora de guardar
     //      ↓↓↓
