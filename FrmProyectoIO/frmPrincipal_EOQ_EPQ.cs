@@ -139,8 +139,19 @@ namespace FrmProyectoIO
            
             else if (dgvEjercicios.Columns[e.ColumnIndex].Name == "Modificar")
             {
-               //frmMODIFICAR
-                
+                if (rdbEOQ.Checked)
+                {
+                    frmMod_Eje_EOQ frm = new frmMod_Eje_EOQ();
+                    frm.Ejercicio = ejercicio;
+                    frm.ShowDialog();
+                }
+                else if (rdbEPQ.Checked)
+                {
+                    frmMod_Eje_EPQ frm = new frmMod_Eje_EPQ();
+                    frm.Ejercicio = ejercicio;
+                    frm.ShowDialog();
+                }
+
                 RefrescarGrid();
             }
         }
