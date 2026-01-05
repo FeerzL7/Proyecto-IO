@@ -21,16 +21,79 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
+        /*
+         * NOMBRE DEL DATA GRID VIEW: dgvEjercicios
+         * NOMBRE DEL ENUNCIADO: txtEnunciado
+         */
         public Almacenamiento principal { get; set; } = new Almacenamiento();
         List<Inventario> ejercicios = new List<Inventario>();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {
             principal.Leer();
+
             cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
+
+            dgvEjercicios.AutoGenerateColumns = false;
+            rdbEOQ.Checked = true;
+            principal.AlCambiar += RefrescarGrid;
+            RefrescarGrid();
+
+
+        }
+        private void cmbNivelDificultad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefrescarGrid();
+        }
+
+        private void RefrescarGrid()
+        {
+            dgvEjercicios.DataSource = null;
+
+            var dificultad = (Dificultad)cmbNivelDificultad.SelectedItem;
+
+            if (!principal.Ejercicios.ContainsKey(dificultad))
+                return;
+
+            if (rdbEOQ.Checked)
+            {
+                dgvEjercicios.DataSource = principal.Ejercicios[dificultad]
+                    .Where(e => e.Tipo == TipoEjercicio.EOQ)
+                    .ToList();
+
+            }
+            else if (rdbEPQ.Checked)
+            {
+                dgvEjercicios.DataSource = principal.Ejercicios[dificultad]
+                    .Where(e => e.Tipo == TipoEjercicio.EPQ)
+                    .ToList();
+
+            }
+        }
+        private void dgvEjercicios_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvEjercicios.CurrentRow == null)
+                return;
+
+            if (dgvEjercicios.CurrentRow.DataBoundItem is not Inventario ej)
+                return;
+
+            txtTitulo.Text = ej.Titulo;
+            txtEnunciado.Text = ej.Texto;
+        }
+        private void dgvEjercicios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            if (dgvEjercicios.Rows[e.RowIndex].DataBoundItem is Inventario ej)
+            {
+                txtTitulo.Text = ej.Titulo;
+                txtEnunciado.Text = ej.Texto;
+            }
         }
 
         private void frmPrincipal_EOQ_EPQ_FormClosing(object sender, FormClosingEventArgs e)
         {
+            principal.AlCambiar -= RefrescarGrid;
             principal.Guardar();
         }
 
@@ -72,10 +135,28 @@ namespace FrmProyectoIO
         // BOTON DE FORMULARIO (ELIMINAR), TRABAJAR AQUI: ↓↓↓
         private void button_Click(object sender, EventArgs e)
         {
+            if (dgvEjercicios.CurrentRow == null)
+            {
+                MessageBox.Show("Selecciona un ejercicio primero");
+                return;
+            }
 
+            if (dgvEjercicios.CurrentRow.DataBoundItem is not Inventario ej)
+                return;
+
+            var dificultad = (Dificultad)cmbNivelDificultad.SelectedItem;
+
+            principal.Ejercicios[dificultad].Remove(ej);
+
+            principal.Guardar();
+
+            RefrescarGrid();
+
+            txtTitulo.Clear();
+            txtEnunciado.Clear();
         }
 
-  
+
 
 
         // BOTON DE FORMULARIO (GENERAR EXAMEN), TRABAJAR AQUI: ↓↓↓
@@ -95,17 +176,23 @@ namespace FrmProyectoIO
         // BOTON DE FORMULARIO (AGREGAR), TRABAJAR AQUI: ↓↓↓
         private void btnAgregarEjercicio_Click(object sender, EventArgs e)
         {
+            var dificultadActual = (Dificultad)cmbNivelDificultad.SelectedItem;
+
             if (rdbEOQ.Checked)
             {
                 frmAgregar_EOQ registrarEOQ = new frmAgregar_EOQ();
                 registrarEOQ.referenciaAlmacenamiento = principal;
+                registrarEOQ.DificultadSeleccionada = dificultadActual;
                 registrarEOQ.ShowDialog();
+
             }
             else if (rdbEPQ.Checked)
             {
                 frmAgregar_EPQ registrarEPQ = new frmAgregar_EPQ();
                 registrarEPQ.referenciaAlmacenamiento = principal;
+                registrarEPQ.DificultadSeleccionada = dificultadActual;
                 registrarEPQ.ShowDialog();
+
             }
         }
         // BOTON DE FORMULARIO (AÑADIR A IMPRESION), TRABAJAR AQUI: ↓↓↓
@@ -150,6 +237,16 @@ namespace FrmProyectoIO
                 MessageBox.Show("PDF creado correctamente");
                 ejercicios = new();
             }
+        }
+
+        private void rdbEOQ_CheckedChanged(object sender, EventArgs e)
+        {
+            RefrescarGrid();
+        }
+
+        private void rdbEPQ_CheckedChanged(object sender, EventArgs e)
+        {
+            RefrescarGrid();
         }
     }
 }

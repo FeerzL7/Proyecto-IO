@@ -766,6 +766,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmAgregar_EPQ";
             Text = "frmAgregar_EPQ";
+            Load += frmAgregar_EPQ_Load_1;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);

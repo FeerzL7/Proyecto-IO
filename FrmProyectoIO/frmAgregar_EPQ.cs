@@ -6,14 +6,14 @@
         {
             InitializeComponent();
         }
-        public Almacenamiento referenciaAlmacenamiento { get; set; } = new Almacenamiento();
+        public Almacenamiento referenciaAlmacenamiento { get; set; }
+        public Dificultad DificultadSeleccionada { get; set; }
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         private void frmAgregar_EPQ_Load(object sender, EventArgs e)
         {
-            cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
         }
 
 
@@ -106,28 +106,49 @@
                 lblValort0.Text = produccion.TiempoDelCiclo.ToString();
                 lblValortp.Text = produccion.TiempoEfectivo.ToString();
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-         }
+        }
 
         private void btnAgregar_Click_2(object sender, EventArgs e)
         {
             try
             {
+                if (referenciaAlmacenamiento == null)
+                {
+                    MessageBox.Show("Error interno: almacenamiento no inicializado");
+                    return;
+                }
+
+                if (cmbNivelDificultad.SelectedItem == null)
+                {
+                    MessageBox.Show("Selecciona una dificultad");
+                    return;
+                }
+
                 InventarioProduccion produccion = new InventarioProduccion()
                 {
-                    Texto = txtEnunciado.Text,
                     Titulo = txtTitulo.Text,
+                    Texto = txtEnunciado.Text,
+
                     DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
+                    DemandaDiaria = ushort.Parse(txtValordd.Text),
                     CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
                     CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
                     TasaDeProduccion = ushort.Parse(txtValorp.Text),
-                    DiasLaboradosAño = ushort.Parse(txtValordd.Text)
+
                 };
-                referenciaAlmacenamiento.Registrar((Dificultad)cmbNivelDificultad.SelectedItem, produccion);
+
+                referenciaAlmacenamiento.Registrar(DificultadSeleccionada, produccion);
+
+                MessageBox.Show("Ejercicio EPQ agregado correctamente");
                 this.Close();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Verifica los valores numéricos");
             }
             catch (Exception ex)
             {
@@ -138,6 +159,13 @@
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmAgregar_EPQ_Load_1(object sender, EventArgs e)
+        {
+            cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
+            cmbNivelDificultad.SelectedItem = DificultadSeleccionada;
+            cmbNivelDificultad.Enabled = false;
         }
     }
 }

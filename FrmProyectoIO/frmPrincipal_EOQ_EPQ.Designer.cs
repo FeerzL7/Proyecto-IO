@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal_EOQ_EPQ));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             btnEliminar = new Button();
             btnBorrarEjercicio = new Button();
             btnAgregarEjercicio = new Button();
@@ -47,13 +50,14 @@
             rdbEPQ = new RadioButton();
             rdbEOQ = new RadioButton();
             dgvEjercicios = new DataGridView();
-            Ejercicios = new DataGridViewTextBoxColumn();
-            VER = new DataGridViewTextBoxColumn();
             tableLayoutPanel1 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel3 = new TableLayoutPanel();
             btnImprimirEjercicios = new Button();
             btnAñadirImpresion = new Button();
+            Ejericios = new DataGridViewTextBoxColumn();
+            Ver = new DataGridViewLinkColumn();
+            Modificar = new DataGridViewLinkColumn();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEjercicios).BeginInit();
@@ -280,6 +284,7 @@
             cmbNivelDificultad.Name = "cmbNivelDificultad";
             cmbNivelDificultad.Size = new Size(307, 33);
             cmbNivelDificultad.TabIndex = 3;
+            cmbNivelDificultad.SelectedIndexChanged += cmbNivelDificultad_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -312,6 +317,7 @@
             rdbEPQ.Text = "EPQ";
             rdbEPQ.TextAlign = ContentAlignment.MiddleCenter;
             rdbEPQ.UseVisualStyleBackColor = false;
+            rdbEPQ.CheckedChanged += rdbEPQ_CheckedChanged;
             // 
             // rdbEOQ
             // 
@@ -329,38 +335,41 @@
             rdbEOQ.Text = "EOQ";
             rdbEOQ.TextAlign = ContentAlignment.MiddleCenter;
             rdbEOQ.UseVisualStyleBackColor = false;
+            rdbEOQ.CheckedChanged += rdbEOQ_CheckedChanged;
             // 
             // dgvEjercicios
             // 
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(192, 192, 255);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dgvEjercicios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvEjercicios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvEjercicios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvEjercicios.BackgroundColor = Color.FromArgb(28, 46, 74);
             dgvEjercicios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEjercicios.Columns.AddRange(new DataGridViewColumn[] { Ejercicios, VER });
+            dgvEjercicios.Columns.AddRange(new DataGridViewColumn[] { Ejericios, Ver, Modificar });
             tableLayoutPanel1.SetColumnSpan(dgvEjercicios, 4);
             dgvEjercicios.Dock = DockStyle.Fill;
             dgvEjercicios.Location = new Point(6, 76);
             dgvEjercicios.Margin = new Padding(1);
             dgvEjercicios.Name = "dgvEjercicios";
+            dgvEjercicios.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvEjercicios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvEjercicios.RowHeadersVisible = false;
             dgvEjercicios.RowHeadersWidth = 82;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvEjercicios.RowsDefaultCellStyle = dataGridViewCellStyle3;
             tableLayoutPanel1.SetRowSpan(dgvEjercicios, 5);
             dgvEjercicios.Size = new Size(558, 258);
             dgvEjercicios.TabIndex = 1;
             dgvEjercicios.CellContentClick += dgvEjercicios_CellContentClick;
-            // 
-            // Ejercicios
-            // 
-            Ejercicios.HeaderText = "Ejercicios";
-            Ejercicios.MinimumWidth = 10;
-            Ejercicios.Name = "Ejercicios";
-            Ejercicios.Width = 200;
-            // 
-            // VER
-            // 
-            VER.HeaderText = "VER";
-            VER.MinimumWidth = 10;
-            VER.Name = "VER";
-            VER.Resizable = DataGridViewTriState.True;
-            VER.Width = 200;
+            dgvEjercicios.SelectionChanged += dgvEjercicios_SelectionChanged;
             // 
             // tableLayoutPanel1
             // 
@@ -475,6 +484,28 @@
             btnAñadirImpresion.UseVisualStyleBackColor = false;
             btnAñadirImpresion.Click += btnAñadirImpresion_Click;
             // 
+            // Ejericios
+            // 
+            Ejericios.DataPropertyName = "Titulo";
+            Ejericios.HeaderText = "Ejercicios";
+            Ejericios.Name = "Ejericios";
+            // 
+            // Ver
+            // 
+            Ver.DataPropertyName = "Ver";
+            Ver.HeaderText = "Ver";
+            Ver.Name = "Ver";
+            Ver.Resizable = DataGridViewTriState.True;
+            Ver.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
+            // Modificar
+            // 
+            Modificar.DataPropertyName = "Modificar";
+            Modificar.HeaderText = "Modificar";
+            Modificar.Name = "Modificar";
+            Modificar.Resizable = DataGridViewTriState.True;
+            Modificar.SortMode = DataGridViewColumnSortMode.Automatic;
+            // 
             // frmPrincipal_EOQ_EPQ
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -511,8 +542,6 @@
         private TableLayoutPanel tableLayoutPanel4;
         private TableLayoutPanel tableLayoutPanel1;
         private DataGridView dgvEjercicios;
-        private DataGridViewTextBoxColumn Ejercicios;
-        private DataGridViewTextBoxColumn VER;
         private RadioButton rdbEOQ;
         private RadioButton rdbEPQ;
         private Label label1;
@@ -529,5 +558,8 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Button btnImprimirEjercicios;
         private Button btnAñadirImpresion;
+        private DataGridViewTextBoxColumn Ejericios;
+        private DataGridViewLinkColumn Ver;
+        private DataGridViewLinkColumn Modificar;
     }
 }
