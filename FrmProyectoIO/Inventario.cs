@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.Json.Serialization;
+
 
 namespace FrmProyectoIO
 {
+    
     public enum TipoEjercicio
     {
         EOQ,
@@ -15,6 +18,11 @@ namespace FrmProyectoIO
     {
         Facil, Dificil
     }
+    //system.text.json no maneja herencia, se debe usar el siguiente codigo para evitar errores a la hora de guardar
+    //      ↓↓↓
+    [JsonPolymorphic(TypeDiscriminatorPropertyName = "$tipo")]
+    [JsonDerivedType(typeof(Inventario), "EOQ")]
+    [JsonDerivedType(typeof(InventarioProduccion), "EPQ")]
     public class Inventario
     {
         public virtual TipoEjercicio Tipo => TipoEjercicio.EOQ;

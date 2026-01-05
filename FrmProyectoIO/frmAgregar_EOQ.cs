@@ -17,6 +17,7 @@ namespace FrmProyectoIO
             InitializeComponent();
         }
         public Almacenamiento referenciaAlmacenamiento { get; set; } = new Almacenamiento();
+        public Dificultad DificultadSeleccionada { get; set; }
 
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
@@ -66,6 +67,7 @@ namespace FrmProyectoIO
         private void frmAgregar_EOQ_Load_1(object sender, EventArgs e)
         {
             cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
+            cmbNivelDificultad.SelectedItem = DificultadSeleccionada;
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -84,21 +86,63 @@ namespace FrmProyectoIO
         {
             try
             {
-                Inventario Reactivo = new Inventario()
+                // VALIDACIONES
+                if (!ushort.TryParse(txtValorD.Text, out var demanda))
                 {
-                    Texto = txtEnunciado.Text,
+                    MessageBox.Show("La demanda debe ser numérica");
+                    return;
+                }
+
+                if (!decimal.TryParse(txtValorCo.Text, out var costoOrden))
+                {
+                    MessageBox.Show("El costo por ordenar debe ser numérico");
+                    return;
+                }
+
+                if (!decimal.TryParse(txtValorCh.Text, out var costoAlmac))
+                {
+                    MessageBox.Show("El costo por almacenar debe ser numérico");
+                    return;
+                }
+
+                if (!ushort.TryParse(txtValorY.Text, out var dias))
+                {
+                    MessageBox.Show("Los días laborados deben ser numéricos");
+                    return;
+                }
+
+                if (!ushort.TryParse(txtValorL.Text, out var tiempoEntrega))
+                {
+                    MessageBox.Show("El tiempo de entrega debe ser numérico");
+                    return;
+                }
+
+                
+
+                // CREAR MODELO EOQ
+                Inventario inventario = new Inventario
+                {
                     Titulo = txtTitulo.Text,
-                    DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
-                    CostoPorColocarOrden = decimal.Parse(txtValorCo.Text),
-                    CostoPorAlmacenar = decimal.Parse(txtValorCo.Text),
-                    TiempoDeEntrega = ushort.Parse(txtValorL.Text),
-                    DiasLaboradosAño = ushort.Parse(txtValorY.Text),
+                    Texto = txtEnunciado.Text,
+                    DemandaXunidadTiempo = demanda,
+                    CostoPorColocarOrden = costoOrden,
+                    CostoPorAlmacenar = costoAlmac,
+                    DiasLaboradosAño = dias,
+                    TiempoDeEntrega = tiempoEntrega,
+                    
                 };
-                referenciaAlmacenamiento.Registrar((Dificultad)cmbNivelDificultad.SelectedItem, Reactivo);
+
+                // GUARDAR
+                referenciaAlmacenamiento.Registrar(DificultadSeleccionada,inventario);
+
+                referenciaAlmacenamiento.Guardar();
+
+                MessageBox.Show("Ejercicio EOQ guardado correctamente");
+                this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
         //Boton Calcular: ↓↓↓
