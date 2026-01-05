@@ -97,7 +97,7 @@
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.ForeColor = SystemColors.ControlLightLight;
             tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
+            tableLayoutPanel1.Margin = new Padding(4, 3, 4, 3);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 11;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 8.979457F));
@@ -356,7 +356,8 @@
             label4.BackColor = Color.FromArgb(28, 46, 74);
             label4.Dock = DockStyle.Fill;
             label4.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(3, 0);
+            label4.Location = new Point(4, 0);
+            label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(106, 85);
             label4.TabIndex = 6;
@@ -470,19 +471,19 @@
             tableLayoutPanel3.RowCount = 16;
             tableLayoutPanel1.SetRowSpan(tableLayoutPanel3, 11);
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.03402F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 18F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 18F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 18F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 18F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 18F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 18F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 18F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 10.0340137F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 11F));
             tableLayoutPanel3.Size = new Size(611, 501);
@@ -508,7 +509,8 @@
             label9.BackColor = Color.FromArgb(28, 46, 74);
             label9.Dock = DockStyle.Fill;
             label9.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(3, 0);
+            label9.Location = new Point(4, 0);
+            label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
             label9.Size = new Size(383, 51);
             label9.TabIndex = 1;
@@ -706,12 +708,11 @@
             // 
             // frmVerProblema_EOQ
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(28, 46, 74);
             ClientSize = new Size(1301, 505);
             Controls.Add(tableLayoutPanel1);
-            Margin = new Padding(2);
             Name = "frmVerProblema_EOQ";
             Text = "frmVerProblema_1Serv1Fila";
             Load += frmVerProblema_EOQ_Load;
