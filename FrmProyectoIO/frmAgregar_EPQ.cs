@@ -143,9 +143,9 @@
 
                 referenciaAlmacenamiento.Registrar(DificultadSeleccionada, produccion);
 
-                MessageBox.Show("Ejercicio EPQ agregado correctamente");
-                this.Close();
-            }
+               MessageBox.Show("Ejercicio EPQ agregado correctamente");
+               this.Close();
+                 }
             catch (FormatException)
             {
                 MessageBox.Show("Verifica los valores numéricos");
@@ -165,7 +165,6 @@
         {
             cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
             cmbNivelDificultad.SelectedItem = DificultadSeleccionada;
-            cmbNivelDificultad.Enabled = false;
         }
     }
 }

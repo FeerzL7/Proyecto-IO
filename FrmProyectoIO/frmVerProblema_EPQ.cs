@@ -28,14 +28,15 @@ namespace FrmProyectoIO
 
         }
 
-
+        //LOAD ACTIVO, TRABAJAR AQUI ↓↓↓
+        //AL CARGAR DEBE MOSTRAR LOS DATOS GUARDADOS DEL PROBLEMA SELECCIONADO DEL → DataGridView ←
         private void frmVerProblema_EPQ_Load(object sender, EventArgs e)
         {
             if (Ejercicio == null) return;
 
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
-            
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -91,7 +92,7 @@ namespace FrmProyectoIO
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnRegresar_Click_1(object sender, EventArgs e)
@@ -102,6 +103,17 @@ namespace FrmProyectoIO
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        //BOTON DE FORMULARIO ACTIVO ↓↓↓
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

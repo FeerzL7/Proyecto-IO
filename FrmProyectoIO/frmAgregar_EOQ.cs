@@ -116,8 +116,12 @@ namespace FrmProyectoIO
                     MessageBox.Show("El tiempo de entrega debe ser numérico");
                     return;
                 }
+                if (!ushort.TryParse(txtValorDemandaDiaria.Text, out var demandadiaria))
+                {
+                    MessageBox.Show("La demanda diaria debe ser numerica");
+                    return;
+                }
 
-                
 
                 // CREAR MODELO EOQ
                 Inventario inventario = new Inventario
@@ -129,6 +133,7 @@ namespace FrmProyectoIO
                     CostoPorAlmacenar = costoAlmac,
                     DiasLaboradosAño = dias,
                     TiempoDeEntrega = tiempoEntrega,
+                    DemandaDiaria = demandadiaria
                     
                 };
 
@@ -158,6 +163,7 @@ namespace FrmProyectoIO
                     CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
                     TiempoDeEntrega = ushort.Parse(txtValorL.Text),
                     DiasLaboradosAño = ushort.Parse(txtValorY.Text),
+                    DemandaDiaria = ushort.Parse(txtValorDemandaDiaria.Text),
                 };
                 lblValorCAO.Text = reactivo.CostoAnualXOrdenar.ToString();
                 lblValort0.Text = reactivo.DuracionDelCiclo.ToString();
