@@ -12,7 +12,7 @@ namespace FrmProyectoIO
 {
     public partial class frmVerProblema_EOQ : Form
     {
-        
+
         public frmVerProblema_EOQ()
         {
             InitializeComponent();
@@ -43,13 +43,14 @@ namespace FrmProyectoIO
 
         }
 
+        //LOAD DEL FORMULARIO, HACER AQUI LAS FUNCIONES DE VER EJERCICIO ↓↓↓
         private void frmVerProblema_EOQ_Load(object sender, EventArgs e)
         {
             if (Ejercicio == null) return;
 
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
-     
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -88,6 +89,11 @@ namespace FrmProyectoIO
 
 
         private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
         }
