@@ -113,6 +113,36 @@ namespace FrmProyectoIO
         private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+            //VER Y MODIFICAR EJERCICIOS ↓↓↓
+
+            if (e.RowIndex < 0) return;
+
+            var ejercicio = dgvEjercicios.Rows[e.RowIndex].DataBoundItem as Inventario;
+            if (ejercicio == null) return;
+
+           
+            if (dgvEjercicios.Columns[e.ColumnIndex].Name == "Ver")
+            {
+                if (rdbEOQ.Checked)
+                {
+                    frmVerProblema_EOQ frm = new frmVerProblema_EOQ();
+                    frm.Ejercicio = ejercicio;
+                    frm.ShowDialog();
+                }else if (rdbEPQ.Checked)
+                {
+                    frmVerProblema_EPQ frm = new frmVerProblema_EPQ();
+                    frm.Ejercicio = ejercicio;
+                    frm.ShowDialog();
+                }
+            }
+
+           
+            else if (dgvEjercicios.Columns[e.ColumnIndex].Name == "Modificar")
+            {
+               //frmMODIFICAR
+                
+                RefrescarGrid();
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
