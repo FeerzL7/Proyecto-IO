@@ -130,9 +130,12 @@ namespace FrmProyectoIO
                     frm.ShowDialog();
                 }else if (rdbEPQ.Checked)
                 {
-                    frmVerProblema_EPQ frm = new frmVerProblema_EPQ();
-                    frm.Ejercicio = ejercicio;
-                    frm.ShowDialog();
+                    if (ejercicio is InventarioProduccion epq)
+                    {
+                        frmMod_Eje_EPQ frm = new frmMod_Eje_EPQ();
+                        frm.Ejercicio = epq;
+                        frm.ShowDialog();
+                    }
                 }
             }
 
@@ -147,9 +150,14 @@ namespace FrmProyectoIO
                 }
                 else if (rdbEPQ.Checked)
                 {
-                    frmMod_Eje_EPQ frm = new frmMod_Eje_EPQ();
-                    frm.Ejercicio = ejercicio;
-                    frm.ShowDialog();
+                    if (ejercicio is InventarioProduccion epq)
+                    {
+                        frmMod_Eje_EPQ frm = new frmMod_Eje_EPQ();
+                        frm.Ejercicio = epq;
+                        frm.ShowDialog();
+                    }
+
+                    
                 }
 
                 RefrescarGrid();

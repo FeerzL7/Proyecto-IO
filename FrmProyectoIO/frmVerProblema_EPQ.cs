@@ -20,8 +20,10 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-        public Inventario Ejercicio { get; internal set; }
+        
         public Almacenamiento referenciaAlmacenamiento { get; internal set; }
+        public InventarioProduccion Ejercicio { get;  set; }
+
 
         private void label13_Click(object sender, EventArgs e)
         {
@@ -37,6 +39,16 @@ namespace FrmProyectoIO
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
 
+            txtValorD.Text = Ejercicio.DemandaXunidadTiempo.ToString();
+            txtValorCh.Text = Ejercicio.CostoPorAlmacenar.ToString();
+            txtValorCoCs.Text = Ejercicio.CostoAnualXPreparacion.ToString();
+            txtValorp.Text = Ejercicio.TasaDeProduccion.ToString();
+            txtValordd.Text = Ejercicio.DemandaDiaria.ToString();
+        
+
+
+
+            
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

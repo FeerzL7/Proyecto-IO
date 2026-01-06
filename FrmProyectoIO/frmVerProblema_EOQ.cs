@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace FrmProyectoIO
+﻿namespace FrmProyectoIO
 {
     public partial class frmVerProblema_EOQ : Form
     {
@@ -50,6 +40,23 @@ namespace FrmProyectoIO
 
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
+
+            txtValorD.Text = Ejercicio.DemandaXunidadTiempo.ToString();
+            txtValorCh.Text = Ejercicio.CostoPorAlmacenar.ToString();
+            txtValorCo.Text = Ejercicio.CostoAnualXOrdenar.ToString();
+            txtValorL.Text = Ejercicio.TiempoDeEntrega.ToString();
+            txtValorY.Text = Ejercicio.DiasLaboradosAño.ToString();
+            txtValorDemandaDiaria.Text = Ejercicio.DemandaDiaria.ToString();
+
+
+
+            lblValorCAO.Text = Ejercicio.CostoAnualXOrdenar.ToString();
+            lblValorCAA.Text = Ejercicio.CostoAnualXAlmacenar.ToString();
+            lblValort0.Text =Ejercicio .DuracionDelCiclo.ToString();
+            lblValorCT.Text = Ejercicio.CostoTotalXUnidadTiempo.ToString();
+            lblValorLe.Text =Ejercicio .TiempoEfectivo.ToString();
+            lblValorCLE.Text =Ejercicio.CantidadDeLoteEconomico.ToString();
+            lblPuntoDeReorden.Text =Ejercicio .PuntoDeReorden.ToString();
 
         }
 
