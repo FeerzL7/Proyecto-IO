@@ -26,6 +26,9 @@ namespace FrmProyectoIO
          * NOMBRE DEL ENUNCIADO: txtEnunciado
          */
         public Almacenamiento principal { get; set; } = new Almacenamiento();
+        public Dificultad dificultadSeleccionada { get; private set; }
+        public object dificultadActual { get; private set; }
+
         List<Inventario> ejercicios = new List<Inventario>();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {

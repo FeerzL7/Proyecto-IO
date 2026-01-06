@@ -28,8 +28,8 @@ namespace FrmProyectoIO
                     Texto = txtEnunciado.Text,
                     Titulo = txtTitulo.Text,
                     DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
-                    CostoPorColocarOrden = decimal.Parse(txtValorCo.Text),
-                    CostoPorAlmacenar = decimal.Parse(txtValorCo.Text),
+                    CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
+                    CostoPorAlmacenar = decimal.Parse(txtValorCoCs.Text),
                     TiempoDeEntrega = ushort.Parse(txtValorL.Text),
                     DiasLaboradosAño = ushort.Parse(txtValorY.Text),
                 };
@@ -93,7 +93,7 @@ namespace FrmProyectoIO
                     return;
                 }
 
-                if (!decimal.TryParse(txtValorCo.Text, out var costoOrden))
+                if (!decimal.TryParse(txtValorCoCs.Text, out var costoOrden))
                 {
                     MessageBox.Show("El costo por ordenar debe ser numérico");
                     return;
@@ -155,11 +155,46 @@ namespace FrmProyectoIO
         {
             try
             {
+                if (!ushort.TryParse(txtValorD.Text, out var demanda))
+                {
+                    MessageBox.Show("La demanda debe ser numérica");
+                    return;
+                }
+        
+
+                if (!decimal.TryParse(txtValorCoCs.Text, out var costoOrden))
+                {
+                    MessageBox.Show("El costo por ordenar debe ser numérico");
+                    return;
+                }
+
+                if (!decimal.TryParse(txtValorCh.Text, out var costoAlmac))
+                {
+                    MessageBox.Show("El costo por almacenar debe ser numérico");
+                    return;
+                }
+
+                if (!ushort.TryParse(txtValorY.Text, out var dias))
+                {
+                    MessageBox.Show("Los días laborados deben ser numéricos");
+                    return;
+                }
+
+                if (!ushort.TryParse(txtValorL.Text, out var tiempoEntrega))
+                {
+                    MessageBox.Show("El tiempo de entrega debe ser numérico");
+                    return;
+                }
+                if (!ushort.TryParse(txtValorDemandaDiaria.Text, out var demandadiaria))
+                {
+                    MessageBox.Show("La demanda diaria debe ser numerica");
+                    return;
+                }
                 Inventario reactivo = new Inventario()
                 {
                     DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
 
-                    CostoPorColocarOrden = decimal.Parse(txtValorCo.Text),
+                    CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
                     CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
                     TiempoDeEntrega = ushort.Parse(txtValorL.Text),
                     DiasLaboradosAño = ushort.Parse(txtValorY.Text),

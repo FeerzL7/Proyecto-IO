@@ -10,6 +10,7 @@
         }
         public Inventario Ejercicio { get; internal set; } = new();
         public InventarioProduccion ReferenciaInv { get; internal set; } = new();
+       
         public Almacenamiento ReferenciaAlmacenamiento { get; internal set; } = new();
         public Almacenamiento referenciaAlmacenamiento { get; internal set; }
 
@@ -37,13 +38,13 @@
         private void frmVerProblema_EOQ_Load(object sender, EventArgs e)
         {
             if (Ejercicio == null) return;
-
+            //MOSTRAR DIFICULTAD
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
 
             txtValorD.Text = Ejercicio.DemandaXunidadTiempo.ToString();
             txtValorCh.Text = Ejercicio.CostoPorAlmacenar.ToString();
-            txtValorCo.Text = Ejercicio.CostoAnualXOrdenar.ToString();
+            txtValorCoCs.Text = Ejercicio.CostoPorColocarOrden.ToString();
             txtValorL.Text = Ejercicio.TiempoDeEntrega.ToString();
             txtValorY.Text = Ejercicio.DiasLaboradosAño.ToString();
             txtValorDemandaDiaria.Text = Ejercicio.DemandaDiaria.ToString();
@@ -57,6 +58,7 @@
             lblValorLe.Text =Ejercicio .TiempoEfectivo.ToString();
             lblValorCLE.Text =Ejercicio.CantidadDeLoteEconomico.ToString();
             lblPuntoDeReorden.Text =Ejercicio .PuntoDeReorden.ToString();
+            lblDuracionCiclPedido.Text = Ejercicio.DuracionDelCiclo.ToString();
 
         }
 
