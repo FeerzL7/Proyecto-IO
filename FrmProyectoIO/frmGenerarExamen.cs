@@ -20,6 +20,16 @@ namespace FrmProyectoIO
         public Almacenamiento Rprincipal { get; set; }
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //BOTON DE FORMULARIO, TRABAJAR AQUI ↓↓↓
+        private void btnGenerarExamen_Click(object sender, EventArgs e)
+        {
             try
             {
                 SaveFileDialog Guardar = new();
@@ -28,7 +38,7 @@ namespace FrmProyectoIO
                 if (Guardar.ShowDialog() == DialogResult.OK)
                 {
 
-                    Rprincipal.GenerarExamenPDF(Guardar.FileName, int.Parse(txtDBaja.Text), int.Parse(txtDAlta.Text));
+                    //      Rprincipal.GenerarExamenPDF(Guardar.FileName, int.Parse(txtDBaja.Text), int.Parse(txtDAlta.Text));
                     MessageBox.Show("Examen generado correctamente");
                 }
             }
