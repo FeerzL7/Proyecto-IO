@@ -88,12 +88,47 @@
         {
             try
             {
+                if (string.IsNullOrWhiteSpace(txtValorCh.Text))
+                {
+                    throw new ArgumentException("Ningún valor puede estar vacio, asegurese de rellenar todos los datos.");
+                }
+                if (string.IsNullOrWhiteSpace(txtValorCoCs.Text))
+                {
+                    throw new ArgumentException("Ningún valor puede estar vacio, asegurese de rellenar todos los datos.");
+                }
+                if (string.IsNullOrWhiteSpace(txtValorD.Text))
+                {
+                    throw new ArgumentException("Ningún valor puede estar vacio, asegurese de rellenar todos los datos.");
+                }
+                if (string.IsNullOrWhiteSpace(txtValorp.Text))
+                {
+                    throw new ArgumentException("Ningún valor puede estar vacio, asegurese de rellenar todos los datos.");
+                }
+                if (string.IsNullOrWhiteSpace(txtValordd.Text))
+                {
+                    throw new ArgumentException("Ningún valor puede estar vacio, asegurese de rellenar todos los datos.");
+                }
+                if (!ushort.TryParse(txtValorD.Text, out ushort demanda))
+                    throw new ArgumentException("La demanda debe ser un número entero válido.");
+
+                if (!decimal.TryParse(txtValorCoCs.Text, out decimal costoOrden))
+                    throw new ArgumentException("El costo por ordenar debe ser numérico.");
+
+                if (!decimal.TryParse(txtValorCh.Text, out decimal costoAlmacenar))
+                    throw new ArgumentException("El costo por almacenar debe ser numérico.");
+
+                if (!ushort.TryParse(txtValorp.Text, out ushort tasaProd))
+                    throw new ArgumentException("La tasa de producción debe ser un número entero.");
+
+                if (!ushort.TryParse(txtValordd.Text, out ushort demandaDiaria))
+                    throw new ArgumentException("La demanda diaria debe ser un número entero.");
                 InventarioProduccion produccion = new InventarioProduccion()
                 {
                     DemandaXunidadTiempo = ushort.Parse(txtValorD.Text),
                     CostoPorColocarOrden = decimal.Parse(txtValorCoCs.Text),
                     CostoPorAlmacenar = decimal.Parse(txtValorCh.Text),
-                    TasaDeProduccion = ushort.Parse(txtValorp.Text)
+                    TasaDeProduccion = ushort.Parse(txtValorp.Text),
+                    DemandaDiaria = ushort.Parse(txtValordd.Text)
                 };
                 lblValort.Text = produccion.TiempoDelCiclo.ToString();
                 lblNumCorridxAño.Text = produccion.NumeroDeLotes.ToString();
