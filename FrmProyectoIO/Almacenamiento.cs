@@ -27,6 +27,8 @@ namespace FrmProyectoIO
 
             if (!Enum.IsDefined(typeof(Dificultad), dificultad))
                 throw new ArgumentException("Seleccionó algún dato no compatible.");
+            if (string.IsNullOrWhiteSpace(inventario.Titulo))
+                throw new ArgumentException("Escriba el titulo del ejercicio.");
 
             if (inventario.DemandaXunidadTiempo <= 0)
                 throw new ArgumentException("La demanda anual debe ser mayor a cero.");
@@ -56,6 +58,8 @@ namespace FrmProyectoIO
             if (!Enum.IsDefined(typeof(Dificultad), dificultad))
                 throw new ArgumentException("Seleccionó algún dato no compatible.");
 
+            if (string.IsNullOrWhiteSpace(inventario.Titulo))
+                throw new ArgumentException("Escriba el titulo del ejercicio.");
             if (inventario.DemandaXunidadTiempo <= 0)
                 throw new ArgumentException("La demanda anual debe ser mayor a cero.");
             if (inventario.CostoPorColocarOrden <= 0)
