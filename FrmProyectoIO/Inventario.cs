@@ -40,6 +40,8 @@ namespace FrmProyectoIO
         {
             get
             {
+                if (DemandaXunidadTiempo == 0)
+                    throw new ArgumentException("La demanda deve ser mayór a cero");
                 double Operacion = Math.Sqrt((double)((2 * DemandaXunidadTiempo * CostoPorColocarOrden) / CostoPorAlmacenar));
                 return Operacion;
             }
