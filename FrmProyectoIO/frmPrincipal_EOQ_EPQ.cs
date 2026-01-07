@@ -135,8 +135,11 @@ namespace FrmProyectoIO
                 {
                     if (ejercicio is InventarioProduccion epq)
                     {
+
                         frmVerProblema_EPQ frm = new frmVerProblema_EPQ();
+
                         frm.Ejercicio = epq;
+
                         frm.ShowDialog();
                     }
                 }
