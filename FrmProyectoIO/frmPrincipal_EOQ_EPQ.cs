@@ -135,7 +135,7 @@ namespace FrmProyectoIO
                 {
                     if (ejercicio is InventarioProduccion epq)
                     {
-                        frmMod_Eje_EPQ frm = new frmMod_Eje_EPQ();
+                        frmVerProblema_EPQ frm = new frmVerProblema_EPQ();
                         frm.Ejercicio = epq;
                         frm.ShowDialog();
                     }
