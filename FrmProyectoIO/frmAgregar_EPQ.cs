@@ -130,7 +130,7 @@
                     TasaDeProduccion = ushort.Parse(txtValorp.Text),
                     DemandaDiaria = ushort.Parse(txtValordd.Text)
                 };
-                lblValort.Text = produccion.TiempoProduccion.ToString();
+                lblValort.Text = produccion.DuracionCicloProduccion.ToString();
                 lblNumCorridxAño.Text = produccion.NumeroDeLotes.ToString();
                 lblValorImax.Text = produccion.InventarioMaximo.ToString();
                 lblValorIprom.Text = produccion.InventarioPromedio.ToString();
@@ -138,8 +138,8 @@
                 lblValorCprep.Text = produccion.CostoAnualXPreparacion.ToString();
                 lblValorCT.Text = produccion.CostoTotalXUnidadTiempo.ToString();
                 lblValorQ.Text = produccion.CantidadDeLoteEconomico.ToString();
-                lblValort0.Text = produccion.TiempoProduccion.ToString();
-                lblValortp.Text = produccion.TiempoEfectivo.ToString();
+                lblValort0.Text = produccion.DuracionCicloProduccion.ToString();
+                lblValortp.Text = produccion.TiempoProduccion.ToString();
             }
             catch (Exception ex)
             {
