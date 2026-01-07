@@ -17,6 +17,7 @@ namespace FrmProyectoIO
 {
     public partial class frmPrincipal_EOQ_EPQ : Form
     {
+       
         public frmPrincipal_EOQ_EPQ()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace FrmProyectoIO
          */
         public Almacenamiento principal { get; set; } = new Almacenamiento();
         public Dificultad dificultadSeleccionada { get; private set; }
-        public object dificultadActual { get; private set; }
+ 
 
         List<Inventario> ejercicios = new List<Inventario>();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
@@ -135,7 +136,8 @@ namespace FrmProyectoIO
                 {
                     if (ejercicio is InventarioProduccion epq)
                     {
-                        frmMod_Eje_EPQ frm = new frmMod_Eje_EPQ();
+
+                        frmVerProblema_EPQ frm = new frmVerProblema_EPQ();
                         frm.Ejercicio = epq;
                         frm.ShowDialog();
                     }
@@ -147,20 +149,33 @@ namespace FrmProyectoIO
             {
                 if (rdbEOQ.Checked)
                 {
-                    frmMod_Eje_EOQ frm = new frmMod_Eje_EOQ();
-                    frm.Ejercicio = ejercicio;
-                    frm.ShowDialog();
+                    if (ejercicio is Inventario eoq)
+                    {
+                        frmMod_Eje_EOQ frm = new frmMod_Eje_EOQ
+                        {
+                            Ejercicio = eoq,
+                            DificultadSeleccionada = dificultadSeleccionada,
+                            ReferenciaAlmacenamiento = principal
+                        };
+
+                        frm.ShowDialog();
+                    }
                 }
                 else if (rdbEPQ.Checked)
                 {
                     if (ejercicio is InventarioProduccion epq)
                     {
-                        frmMod_Eje_EPQ frm = new frmMod_Eje_EPQ();
-                        frm.Ejercicio = epq;
+                        frmMod_Eje_EPQ frm = new frmMod_Eje_EPQ
+                        {
+                            Ejercicio = epq,
+                            DificultadSeleccionada = dificultadSeleccionada,
+                            ReferenciaAlmacenamiento = principal
+                        };
+
                         frm.ShowDialog();
                     }
 
-                    
+
                 }
 
                 RefrescarGrid();

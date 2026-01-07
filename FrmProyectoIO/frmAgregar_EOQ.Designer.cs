@@ -165,7 +165,7 @@
             label1.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.Location = new Point(3, 0);
             label1.Name = "label1";
-            label1.Size = new Size(185, 52);
+            label1.Size = new Size(183, 52);
             label1.TabIndex = 0;
             label1.Text = "Titulo: ";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -175,11 +175,11 @@
             tableLayoutPanel1.SetColumnSpan(txtTitulo, 3);
             txtTitulo.Dock = DockStyle.Fill;
             txtTitulo.Font = new Font("Verdana", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTitulo.Location = new Point(194, 2);
+            txtTitulo.Location = new Point(192, 2);
             txtTitulo.Margin = new Padding(3, 2, 3, 2);
             txtTitulo.Multiline = true;
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(386, 48);
+            txtTitulo.Size = new Size(383, 48);
             txtTitulo.TabIndex = 1;
             // 
             // cmbNivelDificultad
@@ -189,10 +189,10 @@
             cmbNivelDificultad.Enabled = false;
             cmbNivelDificultad.Font = new Font("Verdana", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbNivelDificultad.FormattingEnabled = true;
-            cmbNivelDificultad.Location = new Point(194, 54);
+            cmbNivelDificultad.Location = new Point(192, 54);
             cmbNivelDificultad.Margin = new Padding(3, 2, 3, 2);
             cmbNivelDificultad.Name = "cmbNivelDificultad";
-            cmbNivelDificultad.Size = new Size(386, 40);
+            cmbNivelDificultad.Size = new Size(383, 40);
             cmbNivelDificultad.TabIndex = 3;
             // 
             // label2
@@ -203,7 +203,7 @@
             label2.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(3, 52);
             label2.Name = "label2";
-            label2.Size = new Size(185, 42);
+            label2.Size = new Size(183, 42);
             label2.TabIndex = 2;
             label2.Text = "Nivel de Dificultad:";
             label2.TextAlign = ContentAlignment.MiddleCenter;
@@ -239,14 +239,14 @@
             tableLayoutPanel1.SetRowSpan(tableLayoutPanel2, 2);
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 66F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 34F));
-            tableLayoutPanel2.Size = new Size(577, 150);
+            tableLayoutPanel2.Size = new Size(572, 150);
             tableLayoutPanel2.TabIndex = 5;
             // 
             // txtValorDemandaDiaria
             // 
             txtValorDemandaDiaria.Dock = DockStyle.Fill;
             txtValorDemandaDiaria.Font = new Font("Verdana", 12F);
-            txtValorDemandaDiaria.Location = new Point(491, 101);
+            txtValorDemandaDiaria.Location = new Point(486, 101);
             txtValorDemandaDiaria.Margin = new Padding(3, 2, 3, 2);
             txtValorDemandaDiaria.Multiline = true;
             txtValorDemandaDiaria.Name = "txtValorDemandaDiaria";
@@ -259,7 +259,7 @@
             label14.BackColor = Color.FromArgb(28, 46, 74);
             label14.Dock = DockStyle.Fill;
             label14.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label14.Location = new Point(491, 0);
+            label14.Location = new Point(486, 0);
             label14.Name = "label14";
             label14.Size = new Size(83, 99);
             label14.TabIndex = 20;
@@ -270,11 +270,11 @@
             // 
             txtValorY.Dock = DockStyle.Fill;
             txtValorY.Font = new Font("Verdana", 12F);
-            txtValorY.Location = new Point(398, 101);
+            txtValorY.Location = new Point(394, 101);
             txtValorY.Margin = new Padding(3, 2, 3, 2);
             txtValorY.Multiline = true;
             txtValorY.Name = "txtValorY";
-            txtValorY.Size = new Size(87, 47);
+            txtValorY.Size = new Size(86, 47);
             txtValorY.TabIndex = 19;
             // 
             // label12
@@ -283,9 +283,9 @@
             label12.BackColor = Color.FromArgb(28, 46, 74);
             label12.Dock = DockStyle.Fill;
             label12.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label12.Location = new Point(398, 0);
+            label12.Location = new Point(394, 0);
             label12.Name = "label12";
-            label12.Size = new Size(87, 99);
+            label12.Size = new Size(86, 99);
             label12.TabIndex = 18;
             label12.Text = "Y (Dias Elaborados al Año):";
             label12.TextAlign = ContentAlignment.MiddleCenter;
@@ -294,11 +294,11 @@
             // 
             txtValorL.Dock = DockStyle.Fill;
             txtValorL.Font = new Font("Verdana", 12F);
-            txtValorL.Location = new Point(298, 101);
+            txtValorL.Location = new Point(295, 101);
             txtValorL.Margin = new Padding(3, 2, 3, 2);
             txtValorL.Multiline = true;
             txtValorL.Name = "txtValorL";
-            txtValorL.Size = new Size(94, 47);
+            txtValorL.Size = new Size(93, 47);
             txtValorL.TabIndex = 17;
             // 
             // label11
@@ -307,9 +307,9 @@
             label11.BackColor = Color.FromArgb(28, 46, 74);
             label11.Dock = DockStyle.Fill;
             label11.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label11.Location = new Point(298, 0);
+            label11.Location = new Point(295, 0);
             label11.Name = "label11";
-            label11.Size = new Size(94, 99);
+            label11.Size = new Size(93, 99);
             label11.TabIndex = 16;
             label11.Text = "L (Tiempo de Entrega):";
             label11.TextAlign = ContentAlignment.MiddleCenter;
@@ -320,9 +320,9 @@
             label7.BackColor = Color.FromArgb(28, 46, 74);
             label7.Dock = DockStyle.Fill;
             label7.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(199, 0);
+            label7.Location = new Point(197, 0);
             label7.Name = "label7";
-            label7.Size = new Size(93, 99);
+            label7.Size = new Size(92, 99);
             label7.TabIndex = 15;
             label7.Text = "Ch (Costo por Almacenaje):";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -331,11 +331,11 @@
             // 
             txtValorCoCs.Dock = DockStyle.Fill;
             txtValorCoCs.Font = new Font("Verdana", 12F);
-            txtValorCoCs.Location = new Point(109, 101);
+            txtValorCoCs.Location = new Point(108, 101);
             txtValorCoCs.Margin = new Padding(3, 2, 3, 2);
             txtValorCoCs.Multiline = true;
             txtValorCoCs.Name = "txtValorCoCs";
-            txtValorCoCs.Size = new Size(84, 47);
+            txtValorCoCs.Size = new Size(83, 47);
             txtValorCoCs.TabIndex = 11;
             // 
             // label5
@@ -344,9 +344,9 @@
             label5.BackColor = Color.FromArgb(28, 46, 74);
             label5.Dock = DockStyle.Fill;
             label5.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(109, 0);
+            label5.Location = new Point(108, 0);
             label5.Name = "label5";
-            label5.Size = new Size(84, 99);
+            label5.Size = new Size(83, 99);
             label5.TabIndex = 7;
             label5.Text = "Costo por ordenar:";
             label5.TextAlign = ContentAlignment.MiddleCenter;
@@ -359,7 +359,7 @@
             label4.Font = new Font("Microsoft Sans Serif", 13.2000008F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(3, 0);
             label4.Name = "label4";
-            label4.Size = new Size(100, 99);
+            label4.Size = new Size(99, 99);
             label4.TabIndex = 6;
             label4.Text = "D (Demanda Anual):";
             label4.TextAlign = ContentAlignment.MiddleCenter;
@@ -372,18 +372,18 @@
             txtValorD.Margin = new Padding(3, 2, 3, 2);
             txtValorD.Multiline = true;
             txtValorD.Name = "txtValorD";
-            txtValorD.Size = new Size(100, 47);
+            txtValorD.Size = new Size(99, 47);
             txtValorD.TabIndex = 10;
             // 
             // txtValorCh
             // 
             txtValorCh.Dock = DockStyle.Fill;
             txtValorCh.Font = new Font("Verdana", 12F);
-            txtValorCh.Location = new Point(199, 101);
+            txtValorCh.Location = new Point(197, 101);
             txtValorCh.Margin = new Padding(3, 2, 3, 2);
             txtValorCh.Multiline = true;
             txtValorCh.Name = "txtValorCh";
-            txtValorCh.Size = new Size(93, 47);
+            txtValorCh.Size = new Size(92, 47);
             txtValorCh.TabIndex = 13;
             // 
             // label3
@@ -395,7 +395,7 @@
             label3.Font = new Font("Microsoft Sans Serif", 19F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.Location = new Point(3, 102);
             label3.Name = "label3";
-            label3.Size = new Size(577, 43);
+            label3.Size = new Size(572, 43);
             label3.TabIndex = 4;
             label3.Text = "Valores: ";
             label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -409,7 +409,7 @@
             label8.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label8.Location = new Point(3, 313);
             label8.Name = "label8";
-            label8.Size = new Size(577, 58);
+            label8.Size = new Size(572, 58);
             label8.TabIndex = 6;
             label8.Text = "Enunciado: ";
             label8.TextAlign = ContentAlignment.MiddleCenter;
@@ -422,7 +422,7 @@
             txtEnunciado.Location = new Point(3, 374);
             txtEnunciado.Multiline = true;
             txtEnunciado.Name = "txtEnunciado";
-            txtEnunciado.Size = new Size(577, 71);
+            txtEnunciado.Size = new Size(572, 71);
             txtEnunciado.TabIndex = 12;
             // 
             // btnAgregar
@@ -433,9 +433,9 @@
             btnAgregar.BackgroundImageLayout = ImageLayout.Stretch;
             btnAgregar.Dock = DockStyle.Fill;
             btnAgregar.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            btnAgregar.Location = new Point(194, 460);
+            btnAgregar.Location = new Point(192, 460);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(150, 122);
+            btnAgregar.Size = new Size(149, 122);
             btnAgregar.TabIndex = 8;
             btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnModificar_Click;
@@ -461,7 +461,7 @@
             tableLayoutPanel3.Controls.Add(lblValorCLE, 1, 10);
             tableLayoutPanel3.Controls.Add(lblPuntoDeReorden, 1, 12);
             tableLayoutPanel3.Controls.Add(lblDuracionCiclPedido, 1, 14);
-            tableLayoutPanel3.Location = new Point(586, 2);
+            tableLayoutPanel3.Location = new Point(581, 2);
             tableLayoutPanel3.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 16;
@@ -711,12 +711,12 @@
             tableLayoutPanel4.Controls.Add(btnCalcular, 1, 0);
             tableLayoutPanel4.Controls.Add(button1, 3, 0);
             tableLayoutPanel4.Dock = DockStyle.Fill;
-            tableLayoutPanel4.Location = new Point(586, 460);
+            tableLayoutPanel4.Location = new Point(581, 460);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 2;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Size = new Size(711, 122);
+            tableLayoutPanel4.Size = new Size(716, 122);
             tableLayoutPanel4.TabIndex = 14;
             // 
             // btnCalcular
@@ -726,10 +726,10 @@
             btnCalcular.BackgroundImageLayout = ImageLayout.Stretch;
             btnCalcular.Dock = DockStyle.Fill;
             btnCalcular.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCalcular.Location = new Point(119, 3);
+            btnCalcular.Location = new Point(120, 3);
             btnCalcular.Name = "btnCalcular";
             tableLayoutPanel4.SetRowSpan(btnCalcular, 2);
-            btnCalcular.Size = new Size(228, 116);
+            btnCalcular.Size = new Size(232, 116);
             btnCalcular.TabIndex = 15;
             btnCalcular.Text = "Calcular";
             btnCalcular.UseVisualStyleBackColor = false;
@@ -743,7 +743,7 @@
             button1.BackgroundImageLayout = ImageLayout.Stretch;
             button1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ControlLight;
-            button1.Location = new Point(504, 3);
+            button1.Location = new Point(509, 3);
             button1.Name = "button1";
             tableLayoutPanel4.SetRowSpan(button1, 2);
             button1.Size = new Size(141, 116);

@@ -29,7 +29,7 @@ namespace FrmProyectoIO
                 throw new ArgumentException("Seleccionó algún dato no compatible.");
             if (string.IsNullOrWhiteSpace(inventario.Titulo))
                 throw new ArgumentException("Escriba el titulo del ejercicio.");
-
+            if (inventario.DiasLaboradosAño > 365) throw new ArgumentException("Los dias laborados no pueden exceder los 365 dias del año");
             if (inventario.DemandaXunidadTiempo <= 0)
                 throw new ArgumentException("La demanda anual debe ser mayor a cero.");
             if (inventario.CostoPorColocarOrden <= 0)
@@ -142,41 +142,110 @@ namespace FrmProyectoIO
             //IMPORTANTE: INSTALAR LA LIBRERIA "iTextSharp"
             //IMPORTANTE: INSTALAR LA LIBRERIA "iTextSharp"
 
-            iTextSharp.text.Document doc = new iTextSharp.text.Document(PageSize.A4, 25, 25, 25, 25);
+            iTextSharp.text.Document doc =
+new iTextSharp.text.Document(PageSize.A4, 25, 25, 25, 25);
+
             PdfWriter.GetInstance(doc, new FileStream(RutaDeAcceso, FileMode.Create));
             doc.Open();
+
+
+
             PdfPCell Header(string texto)
             {
                 PdfPCell cell = new PdfPCell(new Phrase(texto));
                 cell.BackgroundColor = BaseColor.YELLOW;
                 cell.HorizontalAlignment = Element.ALIGN_CENTER;
                 cell.VerticalAlignment = Element.ALIGN_MIDDLE;
-                cell.Padding = 5;
+                cell.Padding = 6;
                 return cell;
             }
+
             Paragraph Header2(string texto)
             {
-                iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14);
+                iTextSharp.text.Font font =
+                    FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14);
+
                 Paragraph p = new Paragraph(texto, font);
                 p.Alignment = Element.ALIGN_CENTER;
                 p.SpacingAfter = 10;
                 return p;
             }
+
+
             foreach (Inventario inv in ejercicios)
             {
+
+
                 if (inv is InventarioProduccion epq)
                 {
-                    doc.Add(new Paragraph(Header2("EPQ")));
-                    doc.Add(new Paragraph(Header2(inv.Titulo)));
+                    doc.Add(Header2("EPQ"));
+                    doc.Add(Header2(inv.Titulo));
                     doc.Add(new Paragraph(inv.Texto));
-                    doc.Add(new Paragraph($"Demanda anual: {inv.DemandaXunidadTiempo}" + $"Costo por colocar orden: {inv.CostoPorColocarOrden:F2}"));
-                    doc.Add(new Paragraph($"Costo por almacenar: {inv.CostoPorAlmacenar:F2}" + $"Demanda diaria: {inv.DemandaDiaria:F2}"));
-                    doc.Add(new Paragraph($"Producción diaria: {epq.TasaDeProduccion}"));
-                    doc.Add(new Paragraph(" "));
+
+
                     PdfPTable tabla = new PdfPTable(8);
                     tabla.WidthPercentage = 100;
+                    tabla.SpacingBefore = 10f;
+                    tabla.SpacingAfter = 15f;
+
+                    tabla.AddCell(Header("Q"));
+                    tabla.AddCell(Header("N"));
+                    tabla.AddCell(Header("Imax"));
+                    tabla.AddCell(Header("Iprom"));
+                    tabla.AddCell(Header("Calm"));
+                    tabla.AddCell(Header("Cprom"));
+                    tabla.AddCell(Header("CT"));
+                    tabla.AddCell(Header("Tp"));
+                    tabla.AddCell(epq.CantidadDeLoteEconomico.ToString("F2"));
+                    tabla.AddCell(epq.NumeroDeLotes.ToString("F2"));
+                    tabla.AddCell(epq.InventarioMaximo.ToString("F2"));
+                    tabla.AddCell(epq.InventarioPromedio.ToString("F2"));
+                    tabla.AddCell(epq.CostoAnualXAlmacenar.ToString("F2"));
+                    tabla.AddCell(epq.CostoAnualXPreparacion.ToString("F2"));
+                    tabla.AddCell(epq.CostoTotalXUnidadTiempo.ToString("F2"));
+                    tabla.AddCell(epq.DuracionDelCiclo.ToString("F2"));
+
+
+
+                    doc.Add(tabla);
+                }
+                else
+                {
+                    doc.Add(Header2("EOQ"));
+                    doc.Add(Header2(inv.Titulo));
+                    doc.Add(new Paragraph(inv.Texto));
+
+
+                    PdfPTable tabla = new PdfPTable(8);
+                    tabla.WidthPercentage = 100;
+                    tabla.SpacingBefore = 10f;
+                    tabla.SpacingAfter = 15f;
+
+                    tabla.AddCell(Header("Q"));
+                    tabla.AddCell(Header("CAO"));
+                    tabla.AddCell(Header("CAA"));
+                    tabla.AddCell(Header("CT"));
+                    tabla.AddCell(Header("TO"));
+                    tabla.AddCell(Header("Cpro"));
+                    tabla.AddCell(Header("Le"));
+                    tabla.AddCell(Header("r"));
+                    tabla.AddCell(inv.CantidadDeLoteEconomico.ToString("F2"));
+                    tabla.AddCell(inv.CostoAnualXOrdenar.ToString("F2"));
+                    tabla.AddCell(inv.CostoAnualXAlmacenar.ToString("F2"));
+                    tabla.AddCell(inv.CostoTotalXUnidadTiempo.ToString("F2"));
+                    tabla.AddCell(inv.DuracionDelCiclo.ToString("F2"));
+                    tabla.AddCell(inv.CantidadPromInventario.ToString("F2"));
+                    tabla.AddCell(inv.TiempoEfectivo.ToString("F2"));
+                    tabla.AddCell(inv.PuntoDeReorden.ToString("F2"));
+
+
+
+
+                    doc.Add(tabla);
                 }
             }
+
+            doc.Close();
         }
         public void GenerarExamenPDF(string RutaDeAcceso,
             int NFEOQ, int NMEOQ, int NDEOQ,
