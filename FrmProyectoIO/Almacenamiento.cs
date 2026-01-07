@@ -75,7 +75,7 @@ namespace FrmProyectoIO
                 throw new ArgumentException("En EPQ la producción diaria debe ser mayor que la demanda diaria.");
             if (string.IsNullOrWhiteSpace(inventario.Texto))
                 throw new ArgumentException("No nos a proporcionado el texto.");
-            inventario .Dificultad = dificultad;
+            inventario.Dificultad = dificultad;
             if (!Ejercicios.ContainsKey(dificultad))
             {
                 Ejercicios.Add(dificultad, new List<Inventario>() { inventario });
@@ -140,10 +140,8 @@ namespace FrmProyectoIO
         {
 
             //IMPORTANTE: INSTALAR LA LIBRERIA "iTextSharp"
-            //IMPORTANTE: INSTALAR LA LIBRERIA "iTextSharp"
 
-            iTextSharp.text.Document doc =
-new iTextSharp.text.Document(PageSize.A4, 25, 25, 25, 25);
+            iTextSharp.text.Document doc =new iTextSharp.text.Document(PageSize.A4, 25, 25, 25, 25);
 
             PdfWriter.GetInstance(doc, new FileStream(RutaDeAcceso, FileMode.Create));
             doc.Open();
@@ -247,10 +245,8 @@ new iTextSharp.text.Document(PageSize.A4, 25, 25, 25, 25);
 
             doc.Close();
         }
-        public void GenerarExamenPDF(string RutaDeAcceso,
-            int NFEOQ, int NMEOQ, int NDEOQ,
-            int NFEPQ, int NMEPQ, int NDEPQ
-            )
+        //N(Numero)D(Indicandola dificultad)EOQ(indicando el tipo de ejercicio que es)
+        public void GenerarExamenPDF(string RutaDeAcceso, int NFEOQ, int NMEOQ, int NDEOQ, int NFEPQ, int NMEPQ, int NDEPQ)
         {
 
             List<Inventario> DEOQ = Ejercicios[Dificultad.Dificil].Where(x => x is not InventarioProduccion).ToList();
@@ -307,7 +303,8 @@ new iTextSharp.text.Document(PageSize.A4, 25, 25, 25, 25);
                     Seleccion.Add(DEOQ[seleccionado]);
                     i++;
                 }
-            }i = 0;
+            }
+            i = 0;
             while (i < NFEPQ)
             {
                 int seleccionado = azar.Next(FEPQ.Count);

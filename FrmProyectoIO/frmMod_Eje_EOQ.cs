@@ -20,12 +20,6 @@ namespace FrmProyectoIO
         {
             InitializeComponent();
         }
-
-        private void btnModificar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmMod_Eje_EOQ_Load(object sender, EventArgs e)
         {
             cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
@@ -42,12 +36,6 @@ namespace FrmProyectoIO
             txtValorY.Text = Ejercicio.DiasLaboradosAño.ToString();
             txtValorDemandaDiaria.Text = Ejercicio.DemandaDiaria.ToString();
         }
-
-        private void btnCalcular_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //TRABAJAR AQUI: ↓↓↓
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
@@ -69,18 +57,20 @@ namespace FrmProyectoIO
                     DiasLaboradosAño = ushort.Parse(txtValorY.Text),
                     DemandaDiaria = ushort.Parse(txtValorDemandaDiaria.Text)
                 };
-
-                ReferenciaAlmacenamiento.Modificar(
-    Ejercicio.Dificultad,
-    modificado
-);
-
+                ReferenciaAlmacenamiento.Modificar(Ejercicio.Dificultad, modificado);
                 MessageBox.Show("Ejercicio EOQ modificado correctamente");
                 Close();
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (FormatException) {
+                MessageBox.Show("Escriba todo en formato Numerico");
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Ninguno de los datos Debe ser negativo");
             }
         }
 

@@ -17,7 +17,7 @@ namespace FrmProyectoIO
 {
     public partial class frmPrincipal_EOQ_EPQ : Form
     {
-       
+
         public frmPrincipal_EOQ_EPQ()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace FrmProyectoIO
          */
         public Almacenamiento principal { get; set; } = new Almacenamiento();
         public Dificultad dificultadSeleccionada { get; private set; }
- 
+
 
         List<Inventario> ejercicios = new List<Inventario>();
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
@@ -101,19 +101,10 @@ namespace FrmProyectoIO
             principal.Guardar();
         }
 
-
-
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        //ESTE BOTON NO EXISTE ↓↓
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -124,7 +115,7 @@ namespace FrmProyectoIO
             var ejercicio = dgvEjercicios.Rows[e.RowIndex].DataBoundItem as Inventario;
             if (ejercicio == null) return;
 
-           
+
             if (dgvEjercicios.Columns[e.ColumnIndex].Name == "Ver")
             {
                 if (rdbEOQ.Checked)
@@ -132,7 +123,8 @@ namespace FrmProyectoIO
                     frmVerProblema_EOQ frm = new frmVerProblema_EOQ();
                     frm.Ejercicio = ejercicio;
                     frm.ShowDialog();
-                }else if (rdbEPQ.Checked)
+                }
+                else if (rdbEPQ.Checked)
                 {
                     if (ejercicio is InventarioProduccion epq)
                     {
@@ -144,7 +136,7 @@ namespace FrmProyectoIO
                 }
             }
 
-           
+
             else if (dgvEjercicios.Columns[e.ColumnIndex].Name == "Modificar")
             {
                 if (rdbEOQ.Checked)
@@ -181,48 +173,38 @@ namespace FrmProyectoIO
                 RefrescarGrid();
             }
         }
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         // BOTON DE FORMULARIO ( LIMPIAR ), TRABAJAR AQUI: ↓↓↓
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtEnunciado.Clear();
             txtTitulo.Clear();
         }
-
-        private void btnGenerarExamen_Click(object sender, EventArgs e)
-        {
-
-        }
-
         // BOTON DE FORMULARIO (ELIMINAR), TRABAJAR AQUI: ↓↓↓
-        private void button_Click(object sender, EventArgs e)
+        private void btnBorrarEjercicio_Click(object sender, EventArgs e)
         {
-            if (dgvEjercicios.CurrentRow == null)
+            try
             {
-                MessageBox.Show("Selecciona un ejercicio primero");
-                return;
+
+                if (dgvEjercicios.CurrentRow == null)
+                {
+                    throw new ArgumentException("Selecciona un ejercicio primero");
+                }
+                if (cmbNivelDificultad.SelectedItem == null)
+                {
+                    throw new ArgumentException("Seleccione una dificultad");
+                }
+                Inventario i = (Inventario)dgvEjercicios.CurrentRow.DataBoundItem;
+                principal.Eliminar((Dificultad)cmbNivelDificultad.SelectedItem, i);
+                principal.Guardar();
+                RefrescarGrid();
+                txtTitulo.Clear();
+                txtEnunciado.Clear();
             }
-
-            if (dgvEjercicios.CurrentRow.DataBoundItem is not Inventario ej)
-                return;
-
-            var dificultad = (Dificultad)cmbNivelDificultad.SelectedItem;
-
-            principal.Ejercicios[dificultad].Remove(ej);
-
-            principal.Guardar();
-
-            RefrescarGrid();
-
-            txtTitulo.Clear();
-            txtEnunciado.Clear();
+            catch (ArgumentException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
-
 
 
 
@@ -315,5 +297,7 @@ namespace FrmProyectoIO
         {
             RefrescarGrid();
         }
+
+
     }
 }
