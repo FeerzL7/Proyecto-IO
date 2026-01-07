@@ -34,19 +34,31 @@ namespace FrmProyectoIO
         //AL CARGAR DEBE MOSTRAR LOS DATOS GUARDADOS DEL PROBLEMA SELECCIONADO DEL → DataGridView ←
         private void frmVerProblema_EPQ_Load(object sender, EventArgs e)
         {
+            cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
+
             if (Ejercicio == null) return;
 
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
+            cmbNivelDificultad.SelectedItem = Ejercicio.Dificultad;
 
             txtValorD.Text = Ejercicio.DemandaXunidadTiempo.ToString();
             txtValorCh.Text = Ejercicio.CostoPorAlmacenar.ToString();
-            txtValorCoCs.Text = Ejercicio.CostoAnualXPreparacion.ToString();
+            txtValorCoCs.Text = Ejercicio.CostoPorColocarOrden.ToString();
             txtValorp.Text = Ejercicio.TasaDeProduccion.ToString();
             txtValordd.Text = Ejercicio.DemandaDiaria.ToString();
         
 
-
+            lblNumCorridxAño.Text =Ejercicio.NumeroDeLotes.ToString();
+            lblValorImax .Text =Ejercicio.InventarioMaximo .ToString();
+            lblValort0.Text = Ejercicio.DuracionCicloProduccion.ToString();
+            lblValorIprom.Text = Ejercicio.InventarioPromedio.ToString();
+            lblValorCalm.Text = Ejercicio.CostoAnualXAlmacenar.ToString();
+            lblValorCprep.Text =Ejercicio .CostoAnualXPreparacion .ToString();
+            lblValorCT.Text =Ejercicio .CostoTotalXUnidadTiempo .ToString();
+            lblValorQ.Text =Ejercicio .CantidadDeLoteEconomico .ToString();
+            lblValortp.Text =Ejercicio .TiempoProduccion.ToString();
+            lblValort.Text =Ejercicio .DuracionCicloProduccion .ToString();
 
             
         }
