@@ -21,7 +21,15 @@ namespace FrmProyectoIO
         public delegate void Profesor();
         public event Profesor? AlCambiar;
 
-
+        public List<Inventario> TodosEjercicios()
+        {
+            List<Inventario> lista = new();
+            foreach(var grupo in Ejercicios.Values)
+            {
+                lista.AddRange(grupo);
+            }
+            return lista;
+        }
         public void Registrar(Dificultad dificultad, Inventario inventario)
         {
 
@@ -35,7 +43,7 @@ namespace FrmProyectoIO
                 throw new ArgumentException("El coto por ordenar debe ser mayor a cero.");
             if (inventario.CostoPorAlmacenar <= 0)
                 throw new ArgumentException("El costo por almacenar debe ser mayor a cero.");
-            if (inventario.TiempoDeEntrega > 0 && inventario.DemandaDiaria <= 0)
+            if (inventario.TiempoDeEntrega <= 0 && inventario.DemandaDiaria <= 0)
                 throw new ArgumentException("Si el tiempo de entrega es mayor a cero debe \n proporcionarnos la demanda diaria");
             if (string.IsNullOrWhiteSpace(inventario.Texto))
                 throw new ArgumentException("No nos a proporcionado el texto");

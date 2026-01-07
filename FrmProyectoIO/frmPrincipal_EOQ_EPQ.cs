@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -23,10 +24,47 @@ namespace FrmProyectoIO
         }
         public Almacenamiento principal { get; set; } = new Almacenamiento();
         List<Inventario> ejercicios = new List<Inventario>();
+        private void CargarEjercicios()
+        {
+            IEnumerable<Inventario> ejercicios = principal.TodosEjercicios();
+
+            if (rdbEOQ.Checked)
+            {
+                ejercicios = ejercicios.Where(x => x.Tipo == TipoEjercicio.EOQ);
+            }
+            if (rdbEPQ.Checked)
+            {
+                ejercicios = ejercicios.Where(z => z.Tipo == TipoEjercicio.EPQ);
+            }
+
+            //if(cmbNivelDificultad.SelectedItem!=null)
+            //{
+            //    Dificultad difi =(Dificultad) cmbNivelDificultad.SelectedItem;
+
+            //}
+            dgvEjercicios.DataSource = ejercicios.ToList();
+        }
         private void frmPrincipal_EOQ_EPQ_Load(object sender, EventArgs e)
         {
             principal.Leer();
             cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
+            CargarEjercicios();
+
+            //rellena el data great view
+            dgvEjercicios.AutoGenerateColumns = false;
+            dgvEjercicios.Columns.Clear();
+
+            DataGridViewTextBoxColumn colTitulo = new DataGridViewTextBoxColumn();
+            colTitulo.HeaderText = "Titulo";
+            colTitulo.DataPropertyName = "Titulo";
+            colTitulo.ReadOnly = true;
+            dgvEjercicios.Columns.Add(colTitulo);
+
+            DataGridViewLinkColumn columVer = new DataGridViewLinkColumn();
+            columVer.HeaderText = "Ver";
+            columVer.Text = "Ver Ejercicio";
+            columVer.UseColumnTextForLinkValue = true;
+            dgvEjercicios.Columns.Add(columVer);
         }
 
         private void frmPrincipal_EOQ_EPQ_FormClosing(object sender, FormClosingEventArgs e)
@@ -49,7 +87,26 @@ namespace FrmProyectoIO
 
         private void dgvEjercicios_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
+            if (dgvEjercicios.Columns[e.ColumnIndex].Name != "Ver")
+            {
+                Inventario seleccionado = (Inventario)dgvEjercicios.Rows[e.RowIndex].DataBoundItem;
 
+                if (seleccionado.Tipo==TipoEjercicio.EPQ)
+                {
+                    frmVerProblema_EPQ frmVerProblema = new();
+                    frmVerProblema.Ejercicio = (InventarioProduccion)seleccionado;
+                    frmVerProblema.ReferenciaAlmacenamiento = principal;
+                    frmVerProblema.ShowDialog();
+                }
+                else
+                {
+                    frmVerProblema_EOQ frmVerEOQ = new();
+                    frmVerEOQ.Ejercicio = seleccionado;
+                    frmVerEOQ.referenciaAlmacenamiento = principal;
+                    frmVerEOQ.ShowDialog();
+                }
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -75,7 +132,7 @@ namespace FrmProyectoIO
 
         }
 
-  
+
 
 
         // BOTON DE FORMULARIO (GENERAR EXAMEN), TRABAJAR AQUI: ↓↓↓
@@ -150,6 +207,16 @@ namespace FrmProyectoIO
                 MessageBox.Show("PDF creado correctamente");
                 ejercicios = new();
             }
+        }
+
+        private void rdbEOQ_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarEjercicios();
+        }
+
+        private void rdbEPQ_CheckedChanged(object sender, EventArgs e)
+        {
+            CargarEjercicios();
         }
     }
 }
