@@ -162,6 +162,7 @@
             txtAltaEPQ.Name = "txtAltaEPQ";
             txtAltaEPQ.Size = new Size(73, 39);
             txtAltaEPQ.TabIndex = 16;
+            txtAltaEPQ.Text = "0";
             // 
             // label11
             // 
@@ -199,6 +200,7 @@
             txtAltaEOQ.Name = "txtAltaEOQ";
             txtAltaEOQ.Size = new Size(73, 39);
             txtAltaEOQ.TabIndex = 14;
+            txtAltaEOQ.Text = "0";
             // 
             // tableLayoutPanel3
             // 
@@ -227,6 +229,7 @@
             txtMediaEPQ.Name = "txtMediaEPQ";
             txtMediaEPQ.Size = new Size(95, 39);
             txtMediaEPQ.TabIndex = 16;
+            txtMediaEPQ.Text = "0";
             // 
             // label9
             // 
@@ -264,6 +267,7 @@
             txtMediaEOQ.Name = "txtMediaEOQ";
             txtMediaEOQ.Size = new Size(95, 39);
             txtMediaEOQ.TabIndex = 14;
+            txtMediaEOQ.Text = "0";
             // 
             // label8
             // 
@@ -333,6 +337,7 @@
             txtFacilEPQ.Name = "txtFacilEPQ";
             txtFacilEPQ.Size = new Size(81, 39);
             txtFacilEPQ.TabIndex = 16;
+            txtFacilEPQ.Text = "0";
             // 
             // label6
             // 
@@ -370,6 +375,7 @@
             txtFacilEOQ.Name = "txtFacilEOQ";
             txtFacilEOQ.Size = new Size(81, 39);
             txtFacilEOQ.TabIndex = 14;
+            txtFacilEOQ.Text = "0";
             // 
             // btnSalir
             // 

@@ -111,17 +111,22 @@ namespace FrmProyectoIO
                     TasaDeProduccion = ushort.Parse(txtValorp.Text),
                 };
 
-                ReferenciaAlmacenamiento.Modificar(
-    Ejercicio.Dificultad,
-    modificado
-);
+                ReferenciaAlmacenamiento.Modificar(Ejercicio.Dificultad,modificado);
 
                 MessageBox.Show("Ejercicio EPQ modificado correctamente");
                 Close();
             }
-            catch (Exception ex)
+            catch (ArgumentException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Escriba todo en formato Numerico");
+            }
+            catch (OverflowException)
+            {
+                MessageBox.Show("Ninguno de los datos Debe ser negativo");
             }
         }
 

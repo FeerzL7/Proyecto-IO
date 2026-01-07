@@ -70,14 +70,13 @@
             // 
             btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.Location = new Point(113, 11);
+            btnEliminar.Font = new Font("Times New Roman", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.Location = new Point(50, 50);
             btnEliminar.Margin = new Padding(2);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(232, 183);
+            btnEliminar.Size = new Size(0, 0);
             btnEliminar.TabIndex = 9;
             btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnBorrarEjercicio
             // 
@@ -91,7 +90,7 @@
             btnBorrarEjercicio.Size = new Size(135, 94);
             btnBorrarEjercicio.TabIndex = 9;
             btnBorrarEjercicio.UseVisualStyleBackColor = true;
-            btnBorrarEjercicio.Click += button_Click;
+            btnBorrarEjercicio.Click += btnBorrarEjercicio_Click;
             // 
             // btnAgregarEjercicio
             // 
