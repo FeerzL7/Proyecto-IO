@@ -49,16 +49,16 @@ namespace FrmProyectoIO
             txtValordd.Text = Ejercicio.DemandaDiaria.ToString();
         
 
-            lblNumCorridxAño.Text =Ejercicio.NumeroDeLotes.ToString();
-            lblValorImax .Text =Ejercicio.InventarioMaximo .ToString();
-            lblValort0.Text = Ejercicio.DuracionCicloProduccion.ToString();
-            lblValorIprom.Text = Ejercicio.InventarioPromedio.ToString();
-            lblValorCalm.Text = Ejercicio.CostoAnualXAlmacenar.ToString();
-            lblValorCprep.Text =Ejercicio .CostoAnualXPreparacion .ToString();
-            lblValorCT.Text =Ejercicio .CostoTotalXUnidadTiempo .ToString();
-            lblValorQ.Text =Ejercicio .CantidadDeLoteEconomico .ToString();
-            lblValortp.Text =Ejercicio .TiempoProduccion.ToString();
-            lblValort.Text =Ejercicio .DuracionCicloProduccion .ToString();
+            lblNumCorridxAño.Text =Ejercicio.NumeroDeLotes.ToString("N4");
+            lblValorImax .Text =Ejercicio.InventarioMaximo .ToString("N4");
+            lblValort0.Text = Ejercicio.DuracionCicloProduccion.ToString(   "N4");
+            lblValorIprom.Text = Ejercicio.InventarioPromedio.ToString("N4");
+            lblValorCalm.Text = Ejercicio.CostoAnualXAlmacenar.ToString("N4");
+            lblValorCprep.Text =Ejercicio .CostoAnualXPreparacion .ToString("N4");
+            lblValorCT.Text =Ejercicio .CostoTotalXUnidadTiempo .ToString("N4");
+            lblValorQ.Text =Ejercicio .CantidadDeLoteEconomico .ToString("N4");
+            lblValortp.Text =Ejercicio .TiempoProduccion.ToString("N4");
+            lblValort.Text =Ejercicio .DuracionCicloProduccion .ToString("N4");
 
             
         }

@@ -45,23 +45,23 @@
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
 
-            txtValorD.Text = Ejercicio.DemandaXunidadTiempo.ToString();
-            txtValorCh.Text = Ejercicio.CostoPorAlmacenar.ToString();
-            txtValorCoCs.Text = Ejercicio.CostoPorColocarOrden.ToString();
-            txtValorL.Text = Ejercicio.TiempoDeEntrega.ToString();
-            txtValorY.Text = Ejercicio.DiasLaboradosAño.ToString();
-            txtValorDemandaDiaria.Text = Ejercicio.DemandaDiaria.ToString();
+            txtValorD.Text = Ejercicio.DemandaXunidadTiempo.ToString("");
+            txtValorCh.Text = Ejercicio.CostoPorAlmacenar.ToString("");
+            txtValorCoCs.Text = Ejercicio.CostoPorColocarOrden.ToString("");
+            txtValorL.Text = Ejercicio.TiempoDeEntrega.ToString("");
+            txtValorY.Text = Ejercicio.DiasLaboradosAño.ToString("");
+            txtValorDemandaDiaria.Text = Ejercicio.DemandaDiaria.ToString("");
 
 
 
-            lblValorCAO.Text = Ejercicio.CostoAnualXOrdenar.ToString();
-            lblValorCAA.Text = Ejercicio.CostoAnualXAlmacenar.ToString();
-            lblValort0.Text =Ejercicio .DuracionDelCiclo.ToString();
-            lblValorCT.Text = Ejercicio.CostoTotalXUnidadTiempo.ToString();
-            lblValorLe.Text =Ejercicio .TiempoEfectivo.ToString();
-            lblValorCLE.Text =Ejercicio.CantidadDeLoteEconomico.ToString();
-            lblPuntoDeReorden.Text =Ejercicio .PuntoDeReorden.ToString();
-            lblDuracionCiclPedido.Text = Ejercicio.DuracionDelCiclo.ToString();
+            lblValorCAO.Text = Ejercicio.CostoAnualXOrdenar.ToString("N4");
+            lblValorCAA.Text = Ejercicio.CostoAnualXAlmacenar.ToString("N4");
+            lblValort0.Text = Ejercicio.DuracionDelCiclo.ToString("N4");
+            lblValorCT.Text = Ejercicio.CostoTotalXUnidadTiempo.ToString("N4");
+            lblValorLe.Text = Ejercicio.TiempoEfectivo.ToString("N4");
+            lblValorCLE.Text = Ejercicio.CantidadDeLoteEconomico.ToString("N4");
+            lblPuntoDeReorden.Text = Ejercicio.PuntoDeReorden.ToString("N4");
+            lblDuracionCiclPedido.Text = Ejercicio.DuracionDelCiclo.ToString("N4");
 
         }
 

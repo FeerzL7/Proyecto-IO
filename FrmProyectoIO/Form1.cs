@@ -38,7 +38,9 @@ namespace FrmProyectoIO
         {
             frmPrincipal_EOQ_EPQ alma = new();
             alma.principal = almacenamiento;
+            this.Hide();
             alma.ShowDialog();
+            this.Show();
         }
 
         //private void guna2ImageBtnEOQ_Click(object sender, EventArgs e)
