@@ -40,6 +40,7 @@ namespace FrmProyectoIO
                 throw new ArgumentException("Si el tiempo de entrega es mayor a cero debe \n proporcionarnos la demanda diaria");
             if (string.IsNullOrWhiteSpace(inventario.Texto))
                 throw new ArgumentException("No nos a proporcionado el texto");
+            inventario.Dificultad = dificultad;
             if (!Ejercicios.ContainsKey(dificultad))
             {
                 Ejercicios.Add(dificultad, new List<Inventario>() { inventario });
@@ -74,6 +75,7 @@ namespace FrmProyectoIO
                 throw new ArgumentException("En EPQ la producción diaria debe ser mayor que la demanda diaria.");
             if (string.IsNullOrWhiteSpace(inventario.Texto))
                 throw new ArgumentException("No nos a proporcionado el texto.");
+            inventario .Dificultad = dificultad;
             if (!Ejercicios.ContainsKey(dificultad))
             {
                 Ejercicios.Add(dificultad, new List<Inventario>() { inventario });

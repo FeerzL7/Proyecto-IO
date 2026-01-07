@@ -28,6 +28,7 @@ namespace FrmProyectoIO
         public virtual TipoEjercicio Tipo => TipoEjercicio.EOQ;
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Titulo { get; set; } = "";
+        public Dificultad Dificultad { get; set; }
         public string Texto { get; set; } = "";
         public ushort DemandaXunidadTiempo { get; set; }
         public decimal CostoPorColocarOrden { get; set; }
@@ -59,6 +60,16 @@ namespace FrmProyectoIO
         {
             get { return CostoAnualXAlmacenar + CostoAnualXOrdenar; }
         }
+        public double DuracionCicloProduccion
+        {
+            get
+            {
+                
+
+                return CantidadDeLoteEconomico / DemandaXunidadTiempo;
+            }
+        }
+
         public double DuracionDelCiclo
         {
             get

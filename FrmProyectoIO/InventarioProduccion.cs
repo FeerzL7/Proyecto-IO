@@ -51,7 +51,7 @@ namespace FrmProyectoIO
                 ;
             }
         }
-        public double TiempoDelCiclo
+        public double TiempoProduccion
         {
             get { return CantidadDeLoteEconomico / TasaDeProduccion; }
         }

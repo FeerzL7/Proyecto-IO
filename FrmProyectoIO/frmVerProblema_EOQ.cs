@@ -37,8 +37,11 @@
         //LOAD DEL FORMULARIO, HACER AQUI LAS FUNCIONES DE VER EJERCICIO ↓↓↓
         private void frmVerProblema_EOQ_Load(object sender, EventArgs e)
         {
+            cmbNivelDificultad.DataSource = Enum.GetValues(typeof(Dificultad));
+
             if (Ejercicio == null) return;
             //MOSTRAR DIFICULTAD
+            cmbNivelDificultad.SelectedItem = Ejercicio.Dificultad;
             txtTitulo.Text = Ejercicio.Titulo;
             txtEnunciado.Text = Ejercicio.Texto;
 
